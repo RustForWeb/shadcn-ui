@@ -24,7 +24,7 @@ TODO
 
 Documentation for the crates is available on [Docs.rs](https://docs.rs/):
 
--   [`shadcn-ui-leptos-button`](https://docs.rs/shadcn-ui-leptos-button/latest/shadcn_ui_leptos_button/)
+TODO
 
 ## Credits
 

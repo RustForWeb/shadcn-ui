@@ -4,8 +4,5 @@
 //!
 //! See <https://ui.shadcn.com/docs/components/button> for the original documentation.
 
-#[cfg(feature = "style-default")]
 pub mod default;
-
-#[cfg(feature = "style-new-york")]
 pub mod new_york;

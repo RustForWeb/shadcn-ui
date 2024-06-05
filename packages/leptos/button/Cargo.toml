@@ -1,6 +1,7 @@
 [package]
 name = "shadcn-ui-leptos-button"
 description = "Leptos port of shadcn/ui button."
+publish = false
 
 authors.workspace = true
 edition.workspace = true
@@ -11,8 +12,3 @@ version.workspace = true
 [dependencies]
 leptos.workspace = true
 tailwind_fuse.workspace = true
-
-[features]
-default = ["style-default"]
-style-default = []
-style-new-york = []
