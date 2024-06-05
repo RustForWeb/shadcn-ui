@@ -8,7 +8,7 @@
 
 # shadcn-ui-leptos-button
 
-TODO
+Displays a button or a component that looks like a button.
 
 ## Rust shadcn/ui
 

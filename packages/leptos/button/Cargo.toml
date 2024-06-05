@@ -10,3 +10,9 @@ version.workspace = true
 
 [dependencies]
 leptos.workspace = true
+tailwind_fuse.workspace = true
+
+[features]
+default = ["style-default"]
+style-default = []
+style-new-york = []

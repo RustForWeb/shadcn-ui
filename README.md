@@ -24,7 +24,11 @@ TODO
 
 Documentation for the crates is available on [Docs.rs](https://docs.rs/):
 
-TODO
+-   [`shadcn-ui-leptos-button`](https://docs.rs/shadcn-ui-leptos-button/latest/shadcn_ui_leptos_button/)
+
+## Credits
+
+The logo is a combination of the [shadcn/ui logo](https://github.com/shadcn-ui/ui/blob/main/apps/www/components/icons.tsx) and [Ferris the Rustacean](https://rustacean.net/).
 
 ## License
 
