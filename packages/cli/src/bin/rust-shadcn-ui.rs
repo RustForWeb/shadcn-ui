@@ -87,9 +87,9 @@ async fn main() -> Result<(), Box<dyn Error>> {
             overwrite: sub_matches.get_flag("overwrite"),
             path: sub_matches.get_one::<PathBuf>("path").cloned(),
             yes: sub_matches.get_flag("yes"),
-        })?,
+        }).await,
+        Some(("diff", _sub_matches)) => Err("Command `diff` is not yet implemented".into()),
+        Some(("init", _sub_matches)) => Err("Command `init` is not yet implemented.".into()),
         _ => unreachable!("Exhausted list of subcommands and subcommand_required prevents `None`"),
     }
-
-    Ok(())
 }

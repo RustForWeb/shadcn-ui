@@ -13,11 +13,11 @@ pub struct RawConfig {
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct TailwindConfig {
-    config: String,
-    css: String,
-    base_color: String,
-    css_variables: bool,
-    prefix: String,
+    pub config: String,
+    pub css: String,
+    pub base_color: String,
+    pub css_variables: bool,
+    pub prefix: String,
 }
 
 #[derive(Clone, Debug)]
