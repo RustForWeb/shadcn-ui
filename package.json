@@ -1,0 +1,19 @@
+{
+    "name": "@nixysoftware/shadcn-ui",
+    "description": "Rust port of shadcn/ui.",
+    "author": "Nixy <info@nixy.software>",
+    "repository": "github:NixySoftware/shadcn-ui",
+    "license": "MIT",
+    "private": true,
+    "scripts": {},
+    "devDependencies": {
+        "@types/node": "^20.11.28",
+        "prettier": "^3.2.5",
+        "prettier-plugin-tailwindcss": "^0.6.0",
+        "tailwindcss": "^3.4.1",
+        "tailwindcss-animate": "^1.0.7"
+    },
+    "engines": {
+        "node": ">=18"
+    }
+}
