@@ -22,8 +22,6 @@ TODO
 
 ## Documentation
 
-Documentation for the crates is available on [Docs.rs](https://docs.rs/):
-
 TODO
 
 ## Credits
