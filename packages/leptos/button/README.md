@@ -6,8 +6,6 @@
 
 <h1 align="center">shadcn-ui-leptos-button</h1>
 
-# shadcn-ui-leptos-button
-
 Displays a button or a component that looks like a button.
 
 ## Rust shadcn/ui
