@@ -1,0 +1,14 @@
+[package]
+name = "shadcn-ui-leptos-input"
+description = "Leptos port of shadcn/ui input."
+publish = false
+
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+version.workspace = true
+
+[dependencies]
+leptos.workspace = true
+tailwind_fuse.workspace = true
