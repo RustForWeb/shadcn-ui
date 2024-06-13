@@ -1,0 +1,12 @@
+[package]
+name = "shadcn-ui-cli"
+description = "CLI for Rust shadcn/ui."
+
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+version.workspace = true
+
+[dependencies]
+clap = { version = "4.5.4", features = ["cargo"] }

@@ -1,5 +1,5 @@
 [workspace]
-members = ["packages/*/*"]
+members = ["packages/cli", "packages/leptos/*"]
 resolver = "2"
 
 [workspace.package]
