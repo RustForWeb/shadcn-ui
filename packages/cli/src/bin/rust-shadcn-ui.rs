@@ -1,6 +1,12 @@
-use clap::{command, Arg, ArgAction, Command};
+use std::{env, error::Error, path::PathBuf};
 
-fn main() {
+use clap::{command, value_parser, Arg, ArgAction, Command};
+use shadcn_ui_cli::commands::{add, AddOptions};
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn Error>> {
+    env_logger::init();
+
     let matches = command!()
         .propagate_version(true)
         .subcommand_required(true)
@@ -24,7 +30,8 @@ fn main() {
                     Arg::new("cwd")
                         .short('c')
                         .long("cwd")
-                        .help("The working directory, defaults to the current directory"),
+                        .help("The working directory, defaults to the current directory")
+                        .value_parser(value_parser!(PathBuf)),
                 )
                 .arg(
                     Arg::new("overwrite")
@@ -37,7 +44,8 @@ fn main() {
                     Arg::new("path")
                         .short('p')
                         .long("path")
-                        .help("The path to add the component to"),
+                        .help("The path to add the component to")
+                        .value_parser(value_parser!(PathBuf)),
                 )
                 .arg(
                     Arg::new("yes")
@@ -68,14 +76,20 @@ fn main() {
         .get_matches();
 
     match matches.subcommand() {
-        Some(("add", sub_matches)) => println!(
-            "'myapp add' was used, name is: {:?}",
-            sub_matches
+        Some(("add", sub_matches)) => add(AddOptions {
+            components: sub_matches
                 .get_many::<String>("component")
                 .unwrap_or_default()
-                .map(|v| v.as_str())
-                .collect::<Vec<_>>()
-        ),
+                .cloned()
+                .collect::<Vec<_>>(),
+            all: sub_matches.get_flag("all"),
+            cwd: sub_matches.get_one::<PathBuf>("cwd").cloned().unwrap_or(env::current_dir().expect("Current directory does not exist or there are insufficient permissions to access it.")),
+            overwrite: sub_matches.get_flag("overwrite"),
+            path: sub_matches.get_one::<PathBuf>("path").cloned(),
+            yes: sub_matches.get_flag("yes"),
+        })?,
         _ => unreachable!("Exhausted list of subcommands and subcommand_required prevents `None`"),
     }
+
+    Ok(())
 }

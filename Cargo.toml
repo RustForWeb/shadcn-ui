@@ -10,9 +10,6 @@ repository = "https://github.com/NixySoftware/shadcn-ui"
 version = "0.0.1"
 
 [workspace.dependencies]
-console_log = "1.0.0"
-console_error_panic_hook = "0.1.7"
 leptos = { version = "0.6.9", features = ["nightly"] }
 log = "0.4.21"
 tailwind_fuse = { version = "0.3.0", features = ["variant"] }
-web-sys = "0.3.69"
