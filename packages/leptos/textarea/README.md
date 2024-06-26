@@ -10,4 +10,4 @@ Displays a form textarea or a component that looks like a textarea.
 
 ## Rust shadcn/ui
 
-[Rust shadcn/ui](https://github.com/NixySoftware/shadcn-ui) is a Rust port of [shadcn/ui](https://ui.shadcn.com/).
+[Rust shadcn/ui](https://github.com/RustForWeb/shadcn-ui) is a Rust port of [shadcn/ui](https://ui.shadcn.com/).

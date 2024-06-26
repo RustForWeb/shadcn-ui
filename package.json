@@ -1,8 +1,8 @@
 {
-    "name": "@nixysoftware/shadcn-ui",
+    "name": "@rustforweb/shadcn-ui",
     "description": "Rust port of shadcn/ui.",
-    "author": "Nixy <info@nixy.software>",
-    "repository": "github:NixySoftware/shadcn-ui",
+    "author": "Rust For Web <info@rustforweb.org>",
+    "repository": "github:RustForWeb/shadcn-ui",
     "license": "MIT",
     "private": true,
     "scripts": {},

@@ -10,4 +10,4 @@ Displays a card with header, content, and footer.
 
 ## Rust shadcn/ui
 
-[Rust shadcn/ui](https://github.com/NixySoftware/shadcn-ui) is a Rust port of [shadcn/ui](https://ui.shadcn.com/).
+[Rust shadcn/ui](https://github.com/RustForWeb/shadcn-ui) is a Rust port of [shadcn/ui](https://ui.shadcn.com/).

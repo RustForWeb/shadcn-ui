@@ -1,0 +1,8 @@
+style = "default"
+
+[tailwind]
+config = "tailwind.config.js"
+css = "src/styles/global.css"
+base_color = "slate"
+css_variables = true
+prefix = ""
