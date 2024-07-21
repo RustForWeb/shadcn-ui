@@ -2,7 +2,7 @@
 //!
 //! Displays a callout for user attention.
 //!
-//! See <https://ui.shadcn.com/docs/components/alert> for the original documentation.
+//! See [the Rust shadcn/ui book](https://shadcn-ui.rustforweb.org/components/alert.html) for more documenation.
 
 pub mod default;
 pub mod new_york;

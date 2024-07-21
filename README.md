@@ -16,13 +16,16 @@ Rust shadcn/ui is available for these Rust frameworks:
 
 -   [Leptos](./packages/leptos)
 
-## Examples
+The following frameworks are under consideration:
 
-TODO
+-   [Dioxus](https://dioxuslabs.com/)
+-   [Yew](https://yew.rs/)
+
+See [the Rust shadcn/ui book](https://shadcn-ui.rustforweb.org/introduction.html#frameworks) for more information.
 
 ## Documentation
 
-TODO
+See [the Rust shadcn/ui book](https://shadcn-ui.rustforweb.org).
 
 ## Credits
 

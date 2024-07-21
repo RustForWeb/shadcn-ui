@@ -2,7 +2,7 @@
 //!
 //! Displays a form textarea or a component that looks like a textarea.
 //!
-//! See <https://ui.shadcn.com/docs/components/textarea> for the original documentation.
+//! See [the Rust shadcn/ui book](https://shadcn-ui.rustforweb.org/components/textarea.html) for more documenation.
 
 pub mod default;
 pub mod new_york;
