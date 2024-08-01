@@ -10,11 +10,11 @@ pub struct TextareaClass {}
 #[component]
 pub fn Textarea(
     #[prop(into, optional)] class: MaybeSignal<String>,
-    #[prop(attrs)] attributes: Vec<(&'static str, Attribute)>,
+    #[prop(attrs)] attrs: Vec<(&'static str, Attribute)>,
 ) -> impl IntoView {
     let class = create_memo(move |_| TextareaClass {}.with_class(class.get()));
 
     view! {
-        <textarea {..attributes} class=class />
+        <textarea {..attrs} class=class />
     }
 }

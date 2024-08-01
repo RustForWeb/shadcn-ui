@@ -11,7 +11,7 @@ title = "Rust shadcn/ui"
 
 [output.html]
 additional-css = ["theme/tabs.css", "theme/theme.css"]
-additional-js = ["theme/tabs.js"]
+additional-js = ["theme/tabs.js", "theme/theme.js"]
 edit-url-template = "https://github.com/RustForWeb/shadcn-ui/edit/main/book/{path}"
 git-repository-url = "https://github.com/RustForWeb/shadcn-ui"
 

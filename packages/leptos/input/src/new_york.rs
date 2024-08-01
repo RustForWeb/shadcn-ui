@@ -10,11 +10,11 @@ pub struct InputClass {}
 #[component]
 pub fn Input(
     #[prop(into, optional)] class: MaybeSignal<String>,
-    #[prop(attrs)] attributes: Vec<(&'static str, Attribute)>,
+    #[prop(attrs)] attrs: Vec<(&'static str, Attribute)>,
 ) -> impl IntoView {
     let class = create_memo(move |_| InputClass {}.with_class(class.get()));
 
     view! {
-        <input {..attributes} class=class />
+        <input {..attrs} class=class />
     }
 }

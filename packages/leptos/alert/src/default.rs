@@ -23,7 +23,7 @@ pub enum AlertVariant {
 pub fn Alert(
     #[prop(into, optional)] variant: MaybeSignal<AlertVariant>,
     #[prop(into, optional)] class: MaybeSignal<String>,
-    #[prop(attrs)] attributes: Vec<(&'static str, Attribute)>,
+    #[prop(attrs)] attrs: Vec<(&'static str, Attribute)>,
     children: Children,
 ) -> impl IntoView {
     let class = create_memo(move |_| {
@@ -34,7 +34,7 @@ pub fn Alert(
     });
 
     view! {
-        <div {..attributes} class=class>
+        <div {..attrs} class=class>
             {children()}
         </div>
     }
@@ -47,13 +47,13 @@ pub struct AlertTitleClass {}
 #[component]
 pub fn AlertTitle(
     #[prop(into, optional)] class: MaybeSignal<String>,
-    #[prop(attrs)] attributes: Vec<(&'static str, Attribute)>,
+    #[prop(attrs)] attrs: Vec<(&'static str, Attribute)>,
     children: Children,
 ) -> impl IntoView {
     let class = create_memo(move |_| AlertTitleClass {}.with_class(class.get()));
 
     view! {
-        <h5 {..attributes} class=class>
+        <h5 {..attrs} class=class>
             {children()}
         </h5>
     }
@@ -66,13 +66,13 @@ pub struct AlertDescriptionClass {}
 #[component]
 pub fn AlertDescription(
     #[prop(into, optional)] class: MaybeSignal<String>,
-    #[prop(attrs)] attributes: Vec<(&'static str, Attribute)>,
+    #[prop(attrs)] attrs: Vec<(&'static str, Attribute)>,
     children: Children,
 ) -> impl IntoView {
     let class = create_memo(move |_| AlertDescriptionClass {}.with_class(class.get()));
 
     view! {
-        <div {..attributes} class=class>
+        <div {..attrs} class=class>
             {children()}
         </div>
     }

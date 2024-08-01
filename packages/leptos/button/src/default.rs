@@ -46,7 +46,7 @@ pub fn Button(
     #[prop(into, optional)] variant: MaybeSignal<ButtonVariant>,
     #[prop(into, optional)] size: MaybeSignal<ButtonSize>,
     #[prop(into, optional)] class: MaybeSignal<String>,
-    #[prop(attrs)] attributes: Vec<(&'static str, Attribute)>,
+    #[prop(attrs)] attrs: Vec<(&'static str, Attribute)>,
     children: Children,
 ) -> impl IntoView {
     let class = create_memo(move |_| {
@@ -58,7 +58,7 @@ pub fn Button(
     });
 
     view! {
-        <button {..attributes} class=class>
+        <button {..attrs} class=class>
             {children()}
         </button>
     }
