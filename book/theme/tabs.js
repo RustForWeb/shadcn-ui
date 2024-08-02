@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const global = container.dataset.tabglobal;
 
         const name = localStorage.getItem(`mdbook-tabs-${global}`);
-        if (name) {
+        if (name && document.querySelector(`.mdbook-tab[data-tabname=${name}]`)) {
             changeTab(container, name);
         }
     }
