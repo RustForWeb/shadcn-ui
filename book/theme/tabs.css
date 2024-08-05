@@ -3,7 +3,7 @@
 }
 
 .mdbook-tab {
-    background-color: #f6f7f6;
+    background-color: var(--table-alternate-bg);
     padding: 0.5rem 1rem;
     cursor: pointer;
     border: none;
