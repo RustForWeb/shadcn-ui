@@ -8,7 +8,6 @@ window.addEventListener('message', (event) => {
         (iframe) => iframe.contentWindow === event.source
     );
     if (iframe) {
-        iframe.style.width = `${data.width}px`;
         iframe.style.height = `${data.height}px`;
     }
 });
