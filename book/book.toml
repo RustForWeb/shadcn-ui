@@ -10,8 +10,8 @@ title = "Rust shadcn/ui"
 [preprocessor.trunk]
 
 [output.html]
-additional-css = ["theme/tabs.css", "theme/theme.css"]
-additional-js = ["theme/tabs.js", "theme/theme.js"]
+additional-css = ["theme/tabs.css", "theme/theme.css", "theme/trunk.css"]
+additional-js = ["theme/tabs.js", "theme/theme.js", "theme/trunk.js"]
 edit-url-template = "https://github.com/RustForWeb/shadcn-ui/edit/main/book/{path}"
 git-repository-url = "https://github.com/RustForWeb/shadcn-ui"
 

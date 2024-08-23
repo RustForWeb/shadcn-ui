@@ -8,6 +8,7 @@ Displays a callout for user attention.
 ```toml,trunk
 package = "shadcn-ui-leptos-book"
 features = ["alert"]
+files = ["src/alert.rs"]
 ```
 
 {{#endtab }}
@@ -69,6 +70,7 @@ fn Usage() -> impl IntoView {
 ```toml,trunk
 package = "shadcn-ui-leptos-book"
 features = ["alert"]
+files = ["src/alert.rs"]
 ```
 
 {{#endtab }}
@@ -82,6 +84,7 @@ features = ["alert"]
 ```toml,trunk
 package = "shadcn-ui-leptos-book"
 features = ["alert-destructive"]
+files = ["src/alert_destructive.rs"]
 ```
 
 {{#endtab }}

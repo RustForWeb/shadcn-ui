@@ -1,5 +1,6 @@
 name: Book
 on:
+    pull_request: {}
     push:
         branches:
             - main
@@ -42,8 +43,9 @@ jobs:
               working-directory: book
 
     deploy:
-        needs: test
         name: Deploy
+        needs: test
+        if: github.ref == 'refs/heads/main'
         runs-on: ubuntu-latest
         permissions:
             contents: read

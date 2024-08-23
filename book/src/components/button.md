@@ -8,6 +8,7 @@ Displays a button or a component that looks like a button.
 ```toml,trunk
 package = "shadcn-ui-leptos-book"
 features = ["button"]
+files = ["src/button.rs"]
 ```
 
 {{#endtab }}
@@ -63,6 +64,7 @@ fn Usage() -> impl IntoView {
 ```toml,trunk
 package = "shadcn-ui-leptos-book"
 features = ["button"]
+files = ["src/button.rs"]
 ```
 
 {{#endtab }}
@@ -76,6 +78,7 @@ features = ["button"]
 ```toml,trunk
 package = "shadcn-ui-leptos-book"
 features = ["button-secondary"]
+files = ["src/button_secondary.rs"]
 ```
 
 {{#endtab }}
@@ -89,6 +92,7 @@ features = ["button-secondary"]
 ```toml,trunk
 package = "shadcn-ui-leptos-book"
 features = ["button-destructive"]
+files = ["src/button_destructive.rs"]
 ```
 
 {{#endtab }}
@@ -102,6 +106,7 @@ features = ["button-destructive"]
 ```toml,trunk
 package = "shadcn-ui-leptos-book"
 features = ["button-outline"]
+files = ["src/button_outline.rs"]
 ```
 
 {{#endtab }}
@@ -115,6 +120,7 @@ features = ["button-outline"]
 ```toml,trunk
 package = "shadcn-ui-leptos-book"
 features = ["button-ghost"]
+files = ["src/button_ghost.rs"]
 ```
 
 {{#endtab }}
@@ -128,6 +134,7 @@ features = ["button-ghost"]
 ```toml,trunk
 package = "shadcn-ui-leptos-book"
 features = ["button-link"]
+files = ["src/button_link.rs"]
 ```
 
 {{#endtab }}
@@ -141,6 +148,7 @@ features = ["button-link"]
 ```toml,trunk
 package = "shadcn-ui-leptos-book"
 features = ["button-icon"]
+files = ["src/button_icon.rs"]
 ```
 
 {{#endtab }}
@@ -154,6 +162,7 @@ features = ["button-icon"]
 ```toml,trunk
 package = "shadcn-ui-leptos-book"
 features = ["button-with-icon"]
+files = ["src/button_with_icon.rs"]
 ```
 
 {{#endtab }}
@@ -167,6 +176,7 @@ features = ["button-with-icon"]
 ```toml,trunk
 package = "shadcn-ui-leptos-book"
 features = ["button-loading"]
+files = ["src/button_loading.rs"]
 ```
 
 {{#endtab }}
@@ -180,6 +190,7 @@ features = ["button-loading"]
 ```toml,trunk
 package = "shadcn-ui-leptos-book"
 features = ["button-as-child"]
+files = ["src/button_as_child.rs"]
 ```
 
 {{#endtab }}
