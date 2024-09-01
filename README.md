@@ -34,3 +34,9 @@ The logo is a combination of the [shadcn/ui logo](https://github.com/shadcn-ui/u
 ## License
 
 This project is available under the [MIT license](LICENSE.md).
+
+## Rust For Web
+
+The Rust shadcn/ui project is part of the [Rust For Web](https://github.com/RustForWeb).
+
+[Rust For Web](https://github.com/RustForWeb) creates and ports web UI libraries for Rust. All projects are free and open source.

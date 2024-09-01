@@ -1,12 +1,6 @@
-<p align="center">
-    <a href="../../../logo.svg">
-        <img src="../../../logo.svg" width="300" height="200" alt="Rust shadcn/ui Logo">
-    </a>
-</p>
+# shadcn-ui-cli
 
-<h1 align="center">shadcn-ui-leptos-alert</h1>
-
-Displays a callout for user attention.
+CLI for Rust shadcn/ui.
 
 [Rust shadcn/ui](https://github.com/RustForWeb/shadcn-ui) is a Rust port of [shadcn/ui](https://ui.shadcn.com/).
 
