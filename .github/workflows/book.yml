@@ -36,7 +36,7 @@ jobs:
                   echo "$(pwd)/bin" >> $GITHUB_PATH
 
             - name: Install mdBook plugins
-              run: cargo install mdbook-trunk
+              run: cargo install mdbook-tabs mdbook-trunk
 
             - name: Run tests
               run: mdbook test
