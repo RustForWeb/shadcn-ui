@@ -1,5 +1,10 @@
 [workspace]
-members = ["book-examples/*", "packages/cli", "packages/leptos/*"]
+members = [
+    "book-examples/*",
+    "packages/cli",
+    "packages/leptos/*",
+    "packages/shadcn",
+]
 resolver = "2"
 
 [workspace.package]
