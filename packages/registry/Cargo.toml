@@ -11,3 +11,4 @@ version.workspace = true
 
 [dependencies]
 serde.workspace = true
+serde_with = "3.10.0"

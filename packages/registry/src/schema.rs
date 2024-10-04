@@ -1,4 +1,7 @@
-use std::collections::HashMap;
+use std::{
+    collections::HashMap,
+    fmt::{self, Display},
+};
 
 use serde::{Deserialize, Serialize};
 
@@ -9,6 +12,20 @@ pub enum Style {
     NewYork,
 }
 
+impl Display for Style {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(
+            f,
+            "{}",
+            match self {
+                Style::Default => "default",
+                Style::NewYork => "new-york",
+            }
+        )
+    }
+}
+
+#[serde_with::skip_serializing_none]
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct BlockChunk {
@@ -20,6 +37,7 @@ pub struct BlockChunk {
     pub container: Option<BlockChunkContainer>,
 }
 
+#[serde_with::skip_serializing_none]
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct BlockChunkContainer {
@@ -48,6 +66,7 @@ pub enum RegistryItemType {
     Ui,
 }
 
+#[serde_with::skip_serializing_none]
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct RegistryItemFile {
@@ -57,12 +76,14 @@ pub struct RegistryItemFile {
     pub target: Option<String>,
 }
 
+#[serde_with::skip_serializing_none]
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct RegistryItemTailwind {
     pub config: RegistryItemTailwindConfig,
 }
 
+#[serde_with::skip_serializing_none]
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct RegistryItemTailwindConfig {
@@ -71,6 +92,7 @@ pub struct RegistryItemTailwindConfig {
     pub plugins: Option<Vec<String>>,
 }
 
+#[serde_with::skip_serializing_none]
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct RegistryItemCssVars {
@@ -78,6 +100,7 @@ pub struct RegistryItemCssVars {
     pub dark: Option<HashMap<String, String>>,
 }
 
+#[serde_with::skip_serializing_none]
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct RegistryEntry {
@@ -99,6 +122,7 @@ pub struct RegistryEntry {
 
 pub type Registry = Vec<RegistryEntry>;
 
+#[serde_with::skip_serializing_none]
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Block {
@@ -123,6 +147,7 @@ pub struct Block {
     pub highlighted_code: String,
 }
 
+#[serde_with::skip_serializing_none]
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(rename_all = "camelCase")]
 pub struct BlockContainer {

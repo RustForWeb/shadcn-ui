@@ -34,11 +34,11 @@ fn build_registry(output_path: &Path) -> Result<()> {
         .iter()
         .filter(|item| item.r#type == RegistryItemType::Ui)
         .collect::<Vec<_>>();
-    let registry_json = serde_json::to_string(&items)?;
+    let registry_json = serde_json::to_string_pretty(&items)?;
     let path = output_path.join("r/index.json");
     fs::write(&path, registry_json)?;
 
-    let index_json = serde_json::to_string(&items)?;
+    let index_json = serde_json::to_string_pretty(&items)?;
     let path = output_path.join("__registry__/index.json");
     fs::write(&path, index_json)?;
 
@@ -46,10 +46,9 @@ fn build_registry(output_path: &Path) -> Result<()> {
 }
 
 /// Build `registry/styles/[style]/[name].json` and `registry/styles/index.json`.
-fn build_styles(input_path: &Path, output_path: &Path) -> Result<()> {
+fn build_styles(_input_path: &Path, output_path: &Path) -> Result<()> {
     for style in STYLES {
-        let style_name = serde_json::to_string(&style.name)?;
-        let target_path = output_path.join("r/styles").join(&style_name);
+        let target_path = output_path.join("r/styles").join(style.name.to_string());
 
         // Create directory if it doesn't exist.
         if !target_path.exists() {
@@ -65,8 +64,10 @@ fn build_styles(input_path: &Path, output_path: &Path) -> Result<()> {
             if let Some(item_files) = &item.files {
                 let mut files: Vec<RegistryItemFile> = vec![];
                 for file in item_files {
-                    let content =
-                        fs::read_to_string(input_path.join(&style_name).join(&file.path))?;
+                    // TODO
+                    // let content =
+                    //     fs::read_to_string(input_path.join(style.name.to_string()).join(&file.path))?;
+                    let content = "".to_string();
 
                     // TODO: Strip certain declarations?
 
@@ -86,15 +87,15 @@ fn build_styles(input_path: &Path, output_path: &Path) -> Result<()> {
                 files: payload_files,
                 ..item.clone()
             };
-            let payload_json = serde_json::to_string(&payload)?;
+            let payload_json = serde_json::to_string_pretty(&payload)?;
             fs::write(
-                target_path.join(format!("r/{}.json", item.name)),
+                target_path.join(format!("{}.json", item.name)),
                 payload_json,
             )?;
         }
     }
 
-    let styles_json = serde_json::to_string(&STYLES)?;
+    let styles_json = serde_json::to_string_pretty(&STYLES)?;
     fs::write(output_path.join("r/styles/index.json"), styles_json)?;
 
     Ok(())
@@ -103,8 +104,7 @@ fn build_styles(input_path: &Path, output_path: &Path) -> Result<()> {
 /// Build `registry/styles/[name]/index.json`.
 fn build_styles_index(output_path: &Path) -> Result<()> {
     for style in STYLES {
-        let style_name = serde_json::to_string(&style.name)?;
-        let target_path = output_path.join("r/styles").join(&style_name);
+        let target_path = output_path.join("r/styles").join(style.name.to_string());
 
         // TODO: Rustify dependencies
 
@@ -120,7 +120,7 @@ fn build_styles_index(output_path: &Path) -> Result<()> {
         }
 
         let payload = RegistryEntry {
-            name: style_name,
+            name: style.name.to_string(),
             r#type: RegistryItemType::Style,
             description: None,
             dependencies: Some(dependencies),
@@ -130,7 +130,7 @@ fn build_styles_index(output_path: &Path) -> Result<()> {
             tailwind: Some(RegistryItemTailwind {
                 config: RegistryItemTailwindConfig {
                     content: None,
-                    plugins: Some(vec!["tailwindcss-animate".into()]),
+                    plugins: Some(vec!["require(\"tailwindcss-animate\")".into()]),
                 },
             }),
             css_vars: Some(RegistryItemCssVars {
@@ -144,7 +144,7 @@ fn build_styles_index(output_path: &Path) -> Result<()> {
             docs: None,
         };
 
-        let payload_json = serde_json::to_string(&payload)?;
+        let payload_json = serde_json::to_string_pretty(&payload)?;
         fs::write(target_path.join("index.json"), payload_json)?;
     }
 
@@ -163,6 +163,20 @@ fn main() -> Result<()> {
 
     let input_path = env::current_dir()?;
     let output_path = env::current_dir()?.join("dist");
+
+    if output_path.exists() {
+        fs::remove_dir_all(&output_path)?;
+    }
+    fs::create_dir_all(&output_path)?;
+
+    let path = output_path.join("r");
+    if !path.exists() {
+        fs::create_dir_all(&path)?;
+    }
+    let path = output_path.join("__registry__");
+    if !path.exists() {
+        fs::create_dir_all(&path)?;
+    }
 
     build_registry(&output_path)?;
     build_styles(&input_path, &output_path)?;
