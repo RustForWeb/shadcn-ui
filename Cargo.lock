@@ -2105,20 +2105,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "shadcn-ui-cli"
-version = "0.0.1"
-dependencies = [
- "clap",
- "env_logger",
- "log",
- "reqwest",
- "serde",
- "serde_json",
- "tokio",
- "toml",
-]
-
-[[package]]
 name = "shadcn-ui-leptos-alert"
 version = "0.0.1"
 dependencies = [

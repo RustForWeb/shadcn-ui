@@ -1,7 +1,6 @@
 [workspace]
 members = [
     "book-examples/*",
-    "packages/cli",
     "packages/leptos/*",
     "packages/registry",
     "packages/shadcn",
