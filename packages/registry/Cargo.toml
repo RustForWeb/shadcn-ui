@@ -1,0 +1,13 @@
+[package]
+name = "shadcn-registry"
+description = "Rust port of shadcn registry."
+publish = false
+
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+version.workspace = true
+
+[dependencies]
+serde.workspace = true

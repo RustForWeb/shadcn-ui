@@ -1,6 +1,7 @@
 [package]
-name = "shadcn"
-description = "Rust port of shadcn CLI."
+name = "scripts"
+description = "Scripts for Rust shadcn/ui."
+publish = false
 
 authors.workspace = true
 edition.workspace = true
@@ -10,11 +11,8 @@ version.workspace = true
 
 [dependencies]
 anyhow.workspace = true
-clap = { version = "4.5.4", features = ["cargo", "derive"] }
-env_logger = "0.11.3"
+env_logger.workspace = true
 log.workspace = true
-reqwest = { version = "0.12.4", features = ["gzip", "json"] }
-serde.workspace = true
+shadcn-registry = { path = "../packages/registry" }
 serde_json.workspace = true
 tokio.workspace = true
-toml = "0.8.14"
