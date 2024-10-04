@@ -1,7 +1,10 @@
 use std::{collections::HashMap, env, fs, path::Path};
 
 use anyhow::Result;
+use regex::Regex;
+use serde::{Deserialize, Serialize};
 use shadcn_registry::{
+    registry_colors::{Color, COLORS},
     registry_styles::STYLES,
     schema::{
         RegistryEntry, RegistryItemCssVars, RegistryItemFile, RegistryItemTailwind,
@@ -152,7 +155,79 @@ fn build_styles_index(output_path: &Path) -> Result<()> {
 }
 
 /// Build `registry/colors/index.json`.
-fn build_themes(_output_path: &Path) -> Result<()> {
+fn build_themes(output_path: &Path) -> Result<()> {
+    #[derive(Clone, Debug, Deserialize, Serialize)]
+    #[serde(untagged)]
+    pub enum JsonColor {
+        String(String),
+        Value(JsonColorValue),
+        Values(Vec<JsonColorScaleValue>),
+    }
+
+    #[derive(Clone, Debug, Deserialize, Serialize)]
+    #[serde(rename_all = "camelCase")]
+    pub struct JsonColorValue {
+        pub hex: String,
+        pub rgb: String,
+        pub hsl: String,
+        pub rgb_channel: String,
+        pub hsl_channel: String,
+    }
+
+    #[derive(Clone, Debug, Deserialize, Serialize)]
+    #[serde(rename_all = "camelCase")]
+    pub struct JsonColorScaleValue {
+        pub scale: usize,
+        pub hex: String,
+        pub rgb: String,
+        pub hsl: String,
+        pub rgb_channel: String,
+        pub hsl_channel: String,
+    }
+
+    let colors_target_path = output_path.join("r/colors");
+    if colors_target_path.exists() {
+        fs::remove_dir_all(&colors_target_path)?;
+    }
+    fs::create_dir_all(&colors_target_path)?;
+
+    let rgb_regex = Regex::new(r"^rgb\((\d+),(\d+),(\d+)\)$").expect("Regex should be valid.");
+    let hsl_regex =
+        Regex::new(r"^hsl\(([\d.]+),([\d.]+%),([\d.]+%)\)$").expect("Regex should be valid.");
+
+    let mut color_data: HashMap<String, JsonColor> = HashMap::new();
+    for (color, value) in COLORS.iter() {
+        color_data.insert(
+            color.clone(),
+            match value {
+                Color::String(value) => JsonColor::String(value.clone()),
+                Color::Value(value) => JsonColor::Value(JsonColorValue {
+                    hex: value.hex.clone(),
+                    rgb: value.rgb.clone(),
+                    hsl: value.hsl.clone(),
+                    rgb_channel: rgb_regex.replace(&value.rgb, "$1 $2 $3").to_string(),
+                    hsl_channel: hsl_regex.replace(&value.hsl, "$1 $2 $3").to_string(),
+                }),
+                Color::Values(values) => JsonColor::Values(
+                    values
+                        .iter()
+                        .map(|value| JsonColorScaleValue {
+                            scale: value.scale,
+                            hex: value.hex.clone(),
+                            rgb: value.rgb.clone(),
+                            hsl: value.hsl.clone(),
+                            rgb_channel: rgb_regex.replace(&value.rgb, "$1 $2 $3").to_string(),
+                            hsl_channel: hsl_regex.replace(&value.hsl, "$1 $2 $3").to_string(),
+                        })
+                        .collect::<Vec<_>>(),
+                ),
+            },
+        );
+    }
+
+    let color_data_json = serde_json::to_string_pretty(&color_data)?;
+    fs::write(colors_target_path.join("index.json"), color_data_json)?;
+
     // TODO
 
     Ok(())

@@ -31,6 +31,6 @@ pub struct InitOptions {
     src_dir: bool,
 }
 
-pub async fn init(options: InitOptions) -> Result<()> {
+pub async fn init(_options: InitOptions) -> Result<()> {
     Ok(())
 }

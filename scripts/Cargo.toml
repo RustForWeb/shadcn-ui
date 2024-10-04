@@ -13,6 +13,8 @@ version.workspace = true
 anyhow.workspace = true
 env_logger.workspace = true
 log.workspace = true
+regex = "1.11.0"
 shadcn-registry = { path = "../packages/registry" }
+serde.workspace = true
 serde_json.workspace = true
 tokio.workspace = true
