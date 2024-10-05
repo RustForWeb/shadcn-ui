@@ -136,9 +136,6 @@ jobs:
                   path: dist
                   merge-multiple: true
 
-            - name: Display merged artifacts
-              run: ls -R dist
-
             - name: Setup Pages
               uses: actions/configure-pages@v4
 
