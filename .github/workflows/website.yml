@@ -1,4 +1,4 @@
-name: Book
+name: Website
 on:
     pull_request: {}
     push:
@@ -10,8 +10,8 @@ concurrency:
     cancel-in-progress: false
 
 jobs:
-    test:
-        name: Test
+    book-test:
+        name: Test Book
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
@@ -42,15 +42,10 @@ jobs:
               run: mdbook test
               working-directory: book
 
-    deploy:
-        name: Deploy
-        needs: test
-        if: github.ref == 'refs/heads/main'
+    book-build:
+        name: Build Book
+        needs: book-test
         runs-on: ubuntu-latest
-        permissions:
-            contents: read
-            pages: write
-            id-token: write
         steps:
             - uses: actions/checkout@v4
               with:
@@ -92,13 +87,72 @@ jobs:
               run: mdbook-trunk combine
               working-directory: book
 
+            - name: Upload artifact
+              uses: actions/upload-artifact@v3
+              with:
+                  name: book
+                  path: book/dist
+                  retention-days: 1
+                  if-no-files-found: error
+
+    registry-build:
+        name: Build Registry
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+
+            - name: Set up Rust toolchain
+              run: rustup toolchain install stable --no-self-update --profile minimal
+
+            - name: Set up Rust cache
+              uses: swatinem/rust-cache@v2
+              with:
+                  cache-on-failure: true
+                  save-if: ${{ github.ref == 'refs/heads/main' }}
+
+            - name: Build Registry
+              run: cargo run -p scripts --bin build_registry
+
+            - name: Upload artifact
+              uses: actions/upload-artifact@v4
+              with:
+                  name: registry
+                  path: dist
+                  retention-days: 1
+                  if-no-files-found: error
+
+    deploy:
+        name: Deploy
+        needs: [book-build, registry-build]
+        if: github.ref == 'refs/heads/main'
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            pages: write
+            id-token: write
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+
+            - name: Download artifcats
+              uses: actions/download-artifact@v4
+              with:
+                  path: dist
+                  merge-multiple: true
+
+            - name: Display merged artifacts
+              run: ls -R dist
+
             - name: Setup Pages
               uses: actions/configure-pages@v4
 
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v3
               with:
-                  path: 'book/dist'
+                  path: dist
 
             - name: Deploy to GitHub Pages
               id: deployment
