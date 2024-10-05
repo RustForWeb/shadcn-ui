@@ -62,16 +62,11 @@ jobs:
                   cache-on-failure: true
                   save-if: ${{ github.ref == 'refs/heads/main' }}
 
-            - name: Install Trunk
-              run: cargo install trunk
+            - name: Install Cargo Binary Install
+              uses: cargo-bins/cargo-binstall@main
 
-            - name: Install latest mdbook
-              run: |
-                  tag=$(curl 'https://api.github.com/repos/rust-lang/mdbook/releases/latest' | jq -r '.tag_name')
-                  url="https://github.com/rust-lang/mdbook/releases/download/${tag}/mdbook-${tag}-x86_64-unknown-linux-gnu.tar.gz"
-                  mkdir mdbook
-                  curl -sSL $url | tar -xz --directory=./mdbook
-                  echo `pwd`/mdbook >> $GITHUB_PATH
+            - name: Install mdBook and Trunk
+              run: cargo binstall mdbook trunk
 
             - name: Install mdBook plugins
               run: cargo install mdbook-tabs mdbook-trunk
@@ -88,7 +83,7 @@ jobs:
               working-directory: book
 
             - name: Upload artifact
-              uses: actions/upload-artifact@v3
+              uses: actions/upload-artifact@v4
               with:
                   name: book
                   path: book/dist
