@@ -24,15 +24,15 @@ const REGISTRY_INDEX_WHITELIST: [RegistryItemType; 5] = [
 
 /// Build `registry/index.json` and `__registry__/index.json`.
 fn build_registry(output_path: &Path) -> Result<()> {
-    let mut index: HashMap<Style, HashMap<String, RegistryEntry>> = HashMap::new();
+    // let mut index: HashMap<Style, HashMap<String, RegistryEntry>> = HashMap::new();
 
-    for style in STYLES {
-        index.insert(style.name, HashMap::new());
+    // for style in STYLES {
+    //     index.insert(style.name, HashMap::new());
 
-        for _item in REGISTRY.iter() {
-            // TODO
-        }
-    }
+    //     for _item in REGISTRY.iter() {
+    //         // TODO
+    //     }
+    // }
 
     let items = REGISTRY
         .iter()
@@ -42,9 +42,9 @@ fn build_registry(output_path: &Path) -> Result<()> {
     let path = output_path.join("r/index.json");
     fs::write(&path, registry_json)?;
 
-    let index_json = serde_json::to_string_pretty(&items)?;
-    let path = output_path.join("__registry__/index.json");
-    fs::write(&path, index_json)?;
+    // let index_json = serde_json::to_string_pretty(&items)?;
+    // let path = output_path.join("__registry__/index.json");
+    // fs::write(&path, index_json)?;
 
     Ok(())
 }
@@ -321,10 +321,10 @@ fn main() -> Result<()> {
     if !path.exists() {
         fs::create_dir_all(&path)?;
     }
-    let path = output_path.join("__registry__");
-    if !path.exists() {
-        fs::create_dir_all(&path)?;
-    }
+    // let path = output_path.join("__registry__");
+    // if !path.exists() {
+    //     fs::create_dir_all(&path)?;
+    // }
 
     build_registry(&output_path)?;
     build_styles(&input_path, &output_path)?;
