@@ -7,6 +7,13 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Copy, Debug, Deserialize, Eq, Hash, PartialEq, Serialize)]
 #[serde(rename_all = "kebab-case")]
+pub enum Mode {
+    Light,
+    Dark,
+}
+
+#[derive(Clone, Copy, Debug, Deserialize, Eq, Hash, PartialEq, Serialize)]
+#[serde(rename_all = "kebab-case")]
 pub enum Style {
     Default,
     NewYork,
@@ -92,13 +99,7 @@ pub struct RegistryItemTailwindConfig {
     pub plugins: Option<Vec<String>>,
 }
 
-#[serde_with::skip_serializing_none]
-#[derive(Clone, Debug, Deserialize, Serialize)]
-#[serde(rename_all = "camelCase")]
-pub struct RegistryItemCssVars {
-    pub light: Option<HashMap<String, String>>,
-    pub dark: Option<HashMap<String, String>>,
-}
+pub type RegistryItemCssVars = HashMap<Mode, HashMap<String, String>>;
 
 #[serde_with::skip_serializing_none]
 #[derive(Clone, Debug, Deserialize, Serialize)]

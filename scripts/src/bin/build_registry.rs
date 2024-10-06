@@ -1,14 +1,15 @@
 use std::{collections::HashMap, env, fs, path::Path};
 
 use anyhow::Result;
+use handlebars::Handlebars;
 use regex::Regex;
 use serde::{Deserialize, Serialize};
 use shadcn_registry::{
-    registry_colors::{Color, COLORS},
+    registry_colors::{Color, COLORS, COLOR_MAPPING},
     registry_styles::STYLES,
     schema::{
-        RegistryEntry, RegistryItemCssVars, RegistryItemFile, RegistryItemTailwind,
-        RegistryItemTailwindConfig, RegistryItemType, Style,
+        Mode, RegistryEntry, RegistryItemFile, RegistryItemTailwind, RegistryItemTailwindConfig,
+        RegistryItemType, Style,
     },
     REGISTRY,
 };
@@ -136,10 +137,7 @@ fn build_styles_index(output_path: &Path) -> Result<()> {
                     plugins: Some(vec!["require(\"tailwindcss-animate\")".into()]),
                 },
             }),
-            css_vars: Some(RegistryItemCssVars {
-                light: None,
-                dark: None,
-            }),
+            css_vars: Some(HashMap::new()),
             source: None,
             category: None,
             subcategory: None,
@@ -154,7 +152,7 @@ fn build_styles_index(output_path: &Path) -> Result<()> {
     Ok(())
 }
 
-/// Build `registry/colors/index.json`.
+/// Build `registry/colors/index.json` and `registry/colors/[base].json`.
 fn build_themes(output_path: &Path) -> Result<()> {
     #[derive(Clone, Debug, Deserialize, Serialize)]
     #[serde(untagged)]
@@ -228,7 +226,82 @@ fn build_themes(output_path: &Path) -> Result<()> {
     let color_data_json = serde_json::to_string_pretty(&color_data)?;
     fs::write(colors_target_path.join("index.json"), color_data_json)?;
 
-    // TODO
+    let handlebars = Handlebars::new();
+
+    const BASE_STYLES: &str = include_str!("templates/base_style.css");
+    const BASE_STYLES_WITH_VARIABLES: &str =
+        include_str!("templates/base_style_with_variables.css");
+
+    #[derive(Clone, Debug, Default, Deserialize, Serialize)]
+    #[serde(rename_all = "camelCase")]
+    struct BaseColor {
+        inline_colors: HashMap<Mode, HashMap<String, String>>,
+        css_vars: HashMap<Mode, HashMap<String, String>>,
+        inline_colors_template: String,
+        css_vars_template: String,
+    }
+
+    let base_color_regex = Regex::new(r"\{\{base\}\}-").expect("Regex should be valid.");
+
+    for base_color in ["slate", "gray", "zinc", "neutral", "stone"] {
+        let mut base = BaseColor::default();
+
+        for (mode, values) in COLOR_MAPPING.iter() {
+            let mut inline_colors = HashMap::new();
+            let mut css_vars = HashMap::new();
+
+            for (key, value) in values {
+                // Chart colors do not have a 1-to-1 mapping with Tailwind colors.
+                if key.starts_with("chart-") {
+                    css_vars.insert(key.clone(), value.clone());
+                    continue;
+                }
+
+                let resolved_color = base_color_regex
+                    .replace_all(value, format!("{base_color}-"))
+                    .to_string();
+                inline_colors.insert(key.clone(), resolved_color.clone());
+
+                let mut split = resolved_color.split('-');
+                let resolved_base = split.next().expect("Split should have at least one match.");
+                let scale = split.next().and_then(|scale| scale.parse::<usize>().ok());
+                let color = color_data.get(resolved_base).expect("msg");
+                let color = match scale {
+                    Some(scale) => match color {
+                        JsonColor::Values(values) => values.iter().find_map(|value| {
+                            (value.scale == scale).then_some(value.hsl_channel.clone())
+                        }),
+                        _ => unreachable!("Color must be a scale."),
+                    },
+                    None => match color {
+                        JsonColor::Value(value) => Some(value.hsl_channel.clone()),
+                        _ => unreachable!("Color must not be a string or a scale."),
+                    },
+                };
+                if let Some(color) = color {
+                    css_vars.insert(key.clone(), color);
+                }
+            }
+
+            base.inline_colors.insert(*mode, inline_colors);
+            base.css_vars.insert(*mode, css_vars);
+        }
+
+        // Build CSS vars.
+        base.inline_colors_template = handlebars.render_template(BASE_STYLES, &())?;
+        base.css_vars_template = handlebars.render_template(
+            BASE_STYLES_WITH_VARIABLES,
+            &HashMap::from([("colors", &base.css_vars)]),
+        )?;
+
+        let base_json = serde_json::to_string_pretty(&base)?;
+        fs::write(
+            output_path.join(format!("r/colors/{base_color}.json")),
+            base_json,
+        )?;
+
+        // TODO
+    }
 
     Ok(())
 }

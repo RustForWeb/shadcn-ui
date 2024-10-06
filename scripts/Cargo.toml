@@ -12,6 +12,7 @@ version.workspace = true
 [dependencies]
 anyhow.workspace = true
 env_logger.workspace = true
+handlebars = "6.1.0"
 log.workspace = true
 regex = "1.11.0"
 shadcn-registry = { path = "../packages/registry" }
