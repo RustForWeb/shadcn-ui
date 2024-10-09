@@ -1918,6 +1918,7 @@ name = "scripts"
 version = "0.0.1"
 dependencies = [
  "anyhow",
+ "convert_case",
  "env_logger",
  "handlebars",
  "log",
@@ -2207,6 +2208,14 @@ dependencies = [
 
 [[package]]
 name = "shadcn-ui-leptos-textarea"
+version = "0.0.1"
+dependencies = [
+ "leptos",
+ "tailwind_fuse",
+]
+
+[[package]]
+name = "shadcn-ui-leptos-utils"
 version = "0.0.1"
 dependencies = [
  "leptos",

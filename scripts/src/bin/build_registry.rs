@@ -1,6 +1,7 @@
 use std::{collections::HashMap, env, fs, path::Path};
 
 use anyhow::Result;
+use convert_case::{Case, Casing};
 use handlebars::Handlebars;
 use regex::Regex;
 use serde::{Deserialize, Serialize};
@@ -8,6 +9,7 @@ use serde_json::json;
 use shadcn_registry::{
     registry_base_colors::BASE_COLORS,
     registry_colors::{Color, COLORS, COLOR_MAPPING},
+    registry_frameworks::FRAMEWORKS,
     registry_styles::STYLES,
     schema::{
         Mode, RegistryEntry, RegistryItemFile, RegistryItemTailwind, RegistryItemTailwindConfig,
@@ -24,117 +26,151 @@ const REGISTRY_INDEX_WHITELIST: [RegistryItemType; 5] = [
     RegistryItemType::Ui,
 ];
 
-/// Build `registry/index.json`.
-fn build_registry(output_path: &Path) -> Result<()> {
-    let items = REGISTRY
-        .iter()
-        .filter(|item| item.r#type == RegistryItemType::Ui)
-        .collect::<Vec<_>>();
-    let registry_json = serde_json::to_string_pretty(&items)?;
-    let path = output_path.join("r/index.json");
-    fs::write(&path, registry_json)?;
+/// Build `registry/frameworks/index.json`.
+fn build_frameworks(output_path: &Path) -> Result<()> {
+    fs::create_dir_all(output_path.join("r/frameworks"))?;
+
+    let frameworks_json = serde_json::to_string_pretty(&*FRAMEWORKS)?;
+    let path = output_path.join("r/frameworks/index.json");
+    fs::write(&path, frameworks_json)?;
+
+    for framework in FRAMEWORKS.iter() {
+        let path = output_path.join(format!("r/frameworks/{}", framework.name));
+        if !path.exists() {
+            fs::create_dir_all(&path)?;
+        }
+    }
 
     Ok(())
 }
 
-/// Build `registry/styles/[style]/[name].json` and `registry/styles/index.json`.
-fn build_styles(_input_path: &Path, output_path: &Path) -> Result<()> {
-    for style in STYLES {
-        let target_path = output_path.join("r/styles").join(style.name.to_string());
+/// Build `registry/frameworks/[framework]/index.json`.
+fn build_registry(output_path: &Path) -> Result<()> {
+    for (framework, registry) in REGISTRY.iter() {
+        let items = registry
+            .iter()
+            .filter(|item| item.r#type == RegistryItemType::Ui)
+            .collect::<Vec<_>>();
 
-        // Create directory if it doesn't exist.
-        if !target_path.exists() {
-            fs::create_dir_all(&target_path)?;
-        }
+        let registry_json = serde_json::to_string_pretty(&items)?;
+        let path = output_path.join(format!("r/frameworks/{}/index.json", framework));
+        fs::write(&path, registry_json)?;
+    }
 
-        for item in REGISTRY.iter() {
-            if !REGISTRY_INDEX_WHITELIST.contains(&item.r#type) {
-                continue;
+    Ok(())
+}
+
+/// Build `registry/frameworks/[framework]/styles/[style]/[name].json` and `registry/frameworks/[framework]/styles/index.json`.
+fn build_styles(input_path: &Path, output_path: &Path) -> Result<()> {
+    for (framework, registry) in REGISTRY.iter() {
+        let target_path = output_path.join(format!("r/frameworks/{}", framework));
+
+        for style in STYLES {
+            let target_path = target_path.join(format!("styles/{}", style.name));
+
+            // Create directory if it doesn't exist.
+            if !target_path.exists() {
+                fs::create_dir_all(&target_path)?;
             }
 
-            let mut payload_files = None;
-            if let Some(item_files) = &item.files {
-                let mut files: Vec<RegistryItemFile> = vec![];
-                for file in item_files {
-                    // TODO
-                    // let content =
-                    //     fs::read_to_string(input_path.join(style.name.to_string()).join(&file.path))?;
-                    let content = "".to_string();
-
-                    // TODO: Strip certain declarations?
-
-                    files.push(RegistryItemFile {
-                        content: Some(content),
-                        ..file.clone()
-                    });
+            for item in registry {
+                if !REGISTRY_INDEX_WHITELIST.contains(&item.r#type) {
+                    continue;
                 }
-                payload_files = Some(files);
+
+                let mut payload_files = None;
+                if let Some(item_files) = &item.files {
+                    let mut files: Vec<RegistryItemFile> = vec![];
+                    for file in item_files {
+                        let path = input_path.join(format!(
+                            "{}/{}/src/{}.rs",
+                            framework,
+                            item.name,
+                            style.name.to_string().to_case(Case::Snake)
+                        ));
+                        log::info!("{:?}", path);
+                        let content = fs::read_to_string(path)?;
+
+                        // TODO: Strip certain declarations?
+
+                        files.push(RegistryItemFile {
+                            content: Some(content),
+                            ..file.clone()
+                        });
+                    }
+                    payload_files = Some(files);
+                }
+
+                let payload = RegistryEntry {
+                    source: None,
+                    category: None,
+                    subcategory: None,
+                    chunks: None,
+                    files: payload_files,
+                    ..item.clone()
+                };
+                let payload_json = serde_json::to_string_pretty(&payload)?;
+                fs::write(
+                    target_path.join(format!("{}.json", item.name)),
+                    payload_json,
+                )?;
+            }
+        }
+
+        let styles_json = serde_json::to_string_pretty(&STYLES)?;
+        fs::write(target_path.join("styles/index.json"), styles_json)?;
+    }
+
+    Ok(())
+}
+
+/// Build `registry/frameworks/[framework]/styles/[name]/index.json`.
+fn build_styles_index(output_path: &Path) -> Result<()> {
+    for framework in FRAMEWORKS.iter() {
+        for style in STYLES {
+            let target_path = output_path.join(format!(
+                "r/frameworks/{}/styles/{}",
+                framework.name, style.name
+            ));
+
+            // TODO: Rustify dependencies
+
+            let mut dependencies: Vec<String> = vec![
+                "tailwindcss-animate".into(),
+                "class-variance-authority".into(),
+                "lucide-react".into(),
+            ];
+
+            // TODO: Remove this when we migrate to lucide-react.
+            if style.name == Style::NewYork {
+                dependencies.push("@radix-ui/react-icons".into());
             }
 
             let payload = RegistryEntry {
+                name: style.name.to_string(),
+                r#type: RegistryItemType::Style,
+                description: None,
+                dependencies: Some(dependencies),
+                dev_dependencies: None,
+                registry_dependencies: Some(vec!["utils".into()]),
+                files: Some(vec![]),
+                tailwind: Some(RegistryItemTailwind {
+                    config: RegistryItemTailwindConfig {
+                        content: None,
+                        plugins: Some(vec!["require(\"tailwindcss-animate\")".into()]),
+                    },
+                }),
+                css_vars: Some(HashMap::new()),
                 source: None,
                 category: None,
                 subcategory: None,
                 chunks: None,
-                files: payload_files,
-                ..item.clone()
+                docs: None,
             };
+
             let payload_json = serde_json::to_string_pretty(&payload)?;
-            fs::write(
-                target_path.join(format!("{}.json", item.name)),
-                payload_json,
-            )?;
+            fs::write(target_path.join("index.json"), payload_json)?;
         }
-    }
-
-    let styles_json = serde_json::to_string_pretty(&STYLES)?;
-    fs::write(output_path.join("r/styles/index.json"), styles_json)?;
-
-    Ok(())
-}
-
-/// Build `registry/styles/[name]/index.json`.
-fn build_styles_index(output_path: &Path) -> Result<()> {
-    for style in STYLES {
-        let target_path = output_path.join("r/styles").join(style.name.to_string());
-
-        // TODO: Rustify dependencies
-
-        let mut dependencies: Vec<String> = vec![
-            "tailwindcss-animate".into(),
-            "class-variance-authority".into(),
-            "lucide-react".into(),
-        ];
-
-        // TODO: Remove this when we migrate to lucide-react.
-        if style.name == Style::NewYork {
-            dependencies.push("@radix-ui/react-icons".into());
-        }
-
-        let payload = RegistryEntry {
-            name: style.name.to_string(),
-            r#type: RegistryItemType::Style,
-            description: None,
-            dependencies: Some(dependencies),
-            dev_dependencies: None,
-            registry_dependencies: Some(vec!["utils".into()]),
-            files: Some(vec![]),
-            tailwind: Some(RegistryItemTailwind {
-                config: RegistryItemTailwindConfig {
-                    content: None,
-                    plugins: Some(vec!["require(\"tailwindcss-animate\")".into()]),
-                },
-            }),
-            css_vars: Some(HashMap::new()),
-            source: None,
-            category: None,
-            subcategory: None,
-            chunks: None,
-            docs: None,
-        };
-
-        let payload_json = serde_json::to_string_pretty(&payload)?;
-        fs::write(target_path.join("index.json"), payload_json)?;
     }
 
     Ok(())
@@ -375,7 +411,7 @@ fn build_themes(output_path: &Path) -> Result<()> {
 fn main() -> Result<()> {
     env_logger::Builder::from_env(env_logger::Env::default().default_filter_or("info")).init();
 
-    let input_path = env::current_dir()?;
+    let input_path = env::current_dir()?.join("packages");
     let output_path = env::current_dir()?.join("dist");
 
     if output_path.exists() {
@@ -388,6 +424,7 @@ fn main() -> Result<()> {
         fs::create_dir_all(&path)?;
     }
 
+    build_frameworks(&output_path)?;
     build_registry(&output_path)?;
     build_styles(&input_path, &output_path)?;
     build_styles_index(&output_path)?;

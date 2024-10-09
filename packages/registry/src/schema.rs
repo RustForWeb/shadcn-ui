@@ -12,6 +12,19 @@ pub enum Mode {
     Dark,
 }
 
+impl Display for Mode {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(
+            f,
+            "{}",
+            match self {
+                Mode::Light => "light",
+                Mode::Dark => "dark",
+            }
+        )
+    }
+}
+
 #[derive(Clone, Copy, Debug, Deserialize, Eq, Hash, PartialEq, Serialize)]
 #[serde(rename_all = "kebab-case")]
 pub enum Style {
@@ -154,4 +167,34 @@ pub struct Block {
 pub struct BlockContainer {
     pub height: Option<String>,
     pub class_name: Option<String>,
+}
+
+#[derive(Clone, Copy, Debug, Deserialize, Eq, Hash, PartialEq, Serialize)]
+#[serde(rename_all = "kebab-case")]
+pub enum FrameworkName {
+    Dioxus,
+    Leptos,
+    Yew,
+}
+
+impl Display for FrameworkName {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(
+            f,
+            "{}",
+            match self {
+                FrameworkName::Dioxus => "dioxus",
+                FrameworkName::Leptos => "leptos",
+                FrameworkName::Yew => "yew",
+            }
+        )
+    }
+}
+
+#[derive(Clone, Debug, Deserialize, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct Framework {
+    pub name: FrameworkName,
+    pub label: String,
+    pub detect_dependencies: Vec<String>,
 }

@@ -1,5 +1,11 @@
-use std::sync::LazyLock;
+use std::{collections::HashMap, sync::LazyLock};
 
-use crate::schema::Registry;
+use crate::schema::{FrameworkName, Registry};
 
-pub static CHARTS: LazyLock<Registry> = LazyLock::new(Vec::new);
+pub static CHARTS: LazyLock<HashMap<FrameworkName, Registry>> = LazyLock::new(|| {
+    HashMap::from([
+        (FrameworkName::Dioxus, vec![]),
+        (FrameworkName::Leptos, vec![]),
+        (FrameworkName::Yew, vec![]),
+    ])
+});
