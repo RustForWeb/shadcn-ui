@@ -1656,7 +1656,7 @@ pub static COLOR_MAPPING: LazyLock<HashMap<Mode, HashMap<String, String>>> = Laz
                 ("accent".into(), "{{base}}-800".into()),
                 ("accent-foreground".into(), "{{base}}-50".into()),
                 ("destructive".into(), "red-900".into()),
-                ("destructive-foregroun.into(),".into(), "{{base}}-50".into()),
+                ("destructive-foreground".into(), "{{base}}-50".into()),
                 ("border".into(), "{{base}}-800".into()),
                 ("input".into(), "{{base}}-800".into()),
                 ("ring".into(), "{{base}}-300".into()),

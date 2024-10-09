@@ -4,7 +4,9 @@ use anyhow::Result;
 use handlebars::Handlebars;
 use regex::Regex;
 use serde::{Deserialize, Serialize};
+use serde_json::json;
 use shadcn_registry::{
+    registry_base_colors::BASE_COLORS,
     registry_colors::{Color, COLORS, COLOR_MAPPING},
     registry_styles::STYLES,
     schema::{
@@ -22,18 +24,8 @@ const REGISTRY_INDEX_WHITELIST: [RegistryItemType; 5] = [
     RegistryItemType::Ui,
 ];
 
-/// Build `registry/index.json` and `__registry__/index.json`.
+/// Build `registry/index.json`.
 fn build_registry(output_path: &Path) -> Result<()> {
-    // let mut index: HashMap<Style, HashMap<String, RegistryEntry>> = HashMap::new();
-
-    // for style in STYLES {
-    //     index.insert(style.name, HashMap::new());
-
-    //     for _item in REGISTRY.iter() {
-    //         // TODO
-    //     }
-    // }
-
     let items = REGISTRY
         .iter()
         .filter(|item| item.r#type == RegistryItemType::Ui)
@@ -41,10 +33,6 @@ fn build_registry(output_path: &Path) -> Result<()> {
     let registry_json = serde_json::to_string_pretty(&items)?;
     let path = output_path.join("r/index.json");
     fs::write(&path, registry_json)?;
-
-    // let index_json = serde_json::to_string_pretty(&items)?;
-    // let path = output_path.join("__registry__/index.json");
-    // fs::write(&path, index_json)?;
 
     Ok(())
 }
@@ -228,9 +216,9 @@ fn build_themes(output_path: &Path) -> Result<()> {
 
     let handlebars = Handlebars::new();
 
-    const BASE_STYLES: &str = include_str!("templates/base_style.css");
+    const BASE_STYLES: &str = include_str!("templates/base_styles.css");
     const BASE_STYLES_WITH_VARIABLES: &str =
-        include_str!("templates/base_style_with_variables.css");
+        include_str!("templates/base_styles_with_variables.css");
 
     #[derive(Clone, Debug, Default, Deserialize, Serialize)]
     #[serde(rename_all = "camelCase")]
@@ -265,8 +253,7 @@ fn build_themes(output_path: &Path) -> Result<()> {
                 let mut split = resolved_color.split('-');
                 let resolved_base = split.next().expect("Split should have at least one match.");
                 let scale = split.next().and_then(|scale| scale.parse::<usize>().ok());
-                let color = color_data.get(resolved_base).expect("msg");
-                let color = match scale {
+                let color = color_data.get(resolved_base).and_then(|color| match scale {
                     Some(scale) => match color {
                         JsonColor::Values(values) => values.iter().find_map(|value| {
                             (value.scale == scale).then_some(value.hsl_channel.clone())
@@ -277,7 +264,7 @@ fn build_themes(output_path: &Path) -> Result<()> {
                         JsonColor::Value(value) => Some(value.hsl_channel.clone()),
                         _ => unreachable!("Color must not be a string or a scale."),
                     },
-                };
+                });
                 if let Some(color) = color {
                     css_vars.insert(key.clone(), color);
                 }
@@ -291,7 +278,9 @@ fn build_themes(output_path: &Path) -> Result<()> {
         base.inline_colors_template = handlebars.render_template(BASE_STYLES, &())?;
         base.css_vars_template = handlebars.render_template(
             BASE_STYLES_WITH_VARIABLES,
-            &HashMap::from([("colors", &base.css_vars)]),
+            &json!({
+                "colors": &base.css_vars
+            }),
         )?;
 
         let base_json = serde_json::to_string_pretty(&base)?;
@@ -300,7 +289,84 @@ fn build_themes(output_path: &Path) -> Result<()> {
             base_json,
         )?;
 
-        // TODO
+        const THEME_STYLES_WITH_VARIABLES: &str =
+            include_str!("templates/theme_styles_with_variables.css");
+
+        let mut theme_css = vec![];
+        for theme in BASE_COLORS.iter() {
+            theme_css.push(handlebars.render_template(
+                THEME_STYLES_WITH_VARIABLES,
+                &json!({
+                    "colors": theme.css_vars,
+                    "theme": theme.name
+                }),
+            )?);
+        }
+
+        fs::write(output_path.join("r/themes.css"), theme_css.join("\n"))?;
+
+        #[derive(Clone, Debug, Default, Deserialize, Serialize)]
+        #[serde(rename_all = "camelCase")]
+        struct Payload {
+            name: String,
+            label: String,
+            css_vars: HashMap<Mode, HashMap<String, String>>,
+        }
+
+        let target_path = output_path.join("r/themes");
+        if target_path.exists() {
+            fs::remove_dir_all(&target_path)?;
+        }
+        fs::create_dir_all(&target_path)?;
+
+        for base_color in ["slate", "gray", "zinc", "neutral", "stone"] {
+            let mut css_vars = HashMap::new();
+
+            for (mode, values) in COLOR_MAPPING.iter() {
+                let mut vars = HashMap::new();
+
+                for (key, value) in values {
+                    let resolved_color = base_color_regex
+                        .replace_all(value, format!("{base_color}-"))
+                        .to_string();
+                    vars.insert(key.clone(), resolved_color.clone());
+
+                    let mut split = resolved_color.split('-');
+                    let resolved_base =
+                        split.next().expect("Split should have at least one match.");
+                    let scale = split.next().and_then(|scale| scale.parse::<usize>().ok());
+                    let color = color_data.get(resolved_base).and_then(|color| match scale {
+                        Some(scale) => match color {
+                            JsonColor::Values(values) => values.iter().find_map(|value| {
+                                (value.scale == scale).then_some(value.hsl_channel.clone())
+                            }),
+                            _ => unreachable!("Color must be a scale."),
+                        },
+                        None => match color {
+                            JsonColor::Value(value) => Some(value.hsl_channel.clone()),
+                            _ => unreachable!("Color must not be a string or a scale."),
+                        },
+                    });
+                    if let Some(color) = color {
+                        vars.insert(key.clone(), color);
+                    }
+                }
+
+                css_vars.insert(*mode, vars);
+            }
+
+            let payload = Payload {
+                name: base_color.to_string(),
+                label: format!("{}{}", &base_color[0..1].to_uppercase(), &base_color[1..]),
+                css_vars,
+            };
+
+            let payload_json = serde_json::to_string_pretty(&payload)?;
+            fs::write(
+                target_path.join(format!("{}.json", payload.name)),
+                payload_json,
+            )?;
+        }
     }
 
     Ok(())
@@ -321,10 +387,6 @@ fn main() -> Result<()> {
     if !path.exists() {
         fs::create_dir_all(&path)?;
     }
-    // let path = output_path.join("__registry__");
-    // if !path.exists() {
-    //     fs::create_dir_all(&path)?;
-    // }
 
     build_registry(&output_path)?;
     build_styles(&input_path, &output_path)?;
