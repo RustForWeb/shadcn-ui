@@ -130,7 +130,7 @@ jobs:
               with:
                   fetch-depth: 0
 
-            - name: Download artifcats
+            - name: Download artifacts
               uses: actions/download-artifact@v4
               with:
                   path: dist
