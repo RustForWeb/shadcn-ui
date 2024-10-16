@@ -15,11 +15,11 @@ Rust port of [shadcn/ui](https://ui.shadcn.com/).
 Rust shadcn/ui is available for these Rust frameworks:
 
 -   [Leptos](./packages/leptos)
+-   [Yew](https://yew.rs/)
 
 The following frameworks are under consideration:
 
 -   [Dioxus](https://dioxuslabs.com/)
--   [Yew](https://yew.rs/)
 
 See [the Rust shadcn/ui book](https://shadcn-ui.rustforweb.org/introduction.html#frameworks) for more information.
 
