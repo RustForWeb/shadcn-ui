@@ -56,7 +56,7 @@ pub async fn init(options: InitOptions) -> Result<()> {
         }
         preflight.project_info
     } else {
-        Some(get_project_info(options.cwd).await?)
+        Some(get_project_info(&options.cwd).await?)
     };
 
     // TODO

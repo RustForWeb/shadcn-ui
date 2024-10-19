@@ -19,13 +19,15 @@ impl Spinner {
         self.inner.stop_with_symbol(&HIGHLIGHTER.error("✖"));
     }
 
-    pub fn succeed(&mut self) {
+    pub fn succeed(&mut self, text: Option<String>) {
+        // TODO: text
         self.inner.stop_with_symbol(&HIGHLIGHTER.success("✔"));
     }
 }
 
 #[derive(Default)]
 pub struct SpinnerOptions {
+    // TODO
     pub silent: bool,
 }
 
