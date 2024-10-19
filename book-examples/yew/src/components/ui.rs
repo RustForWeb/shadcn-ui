@@ -13,3 +13,5 @@
     feature = "button-as-child"
 ))]
 pub use shadcn_ui_yew_button::default as button;
+#[cfg(any(feature = "skeleton", feature = "skeleton-card",))]
+pub use shadcn_ui_yew_skeleton::default as skeleton;

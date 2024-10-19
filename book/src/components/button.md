@@ -71,7 +71,7 @@ fn Usage() -> impl IntoView {
 ```
 
 {{#endtab }}
-{{#tab name="Leptos" }}
+{{#tab name="Yew" }}
 
 ```rust,ignore
 use yew::prelude::*;

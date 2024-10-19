@@ -2694,12 +2694,21 @@ dependencies = [
  "console_log",
  "log",
  "shadcn-ui-yew-button",
+ "shadcn-ui-yew-skeleton",
  "yew",
  "yew-lucide",
 ]
 
 [[package]]
 name = "shadcn-ui-yew-button"
+version = "0.0.1"
+dependencies = [
+ "tailwind_fuse",
+ "yew",
+]
+
+[[package]]
+name = "shadcn-ui-yew-skeleton"
 version = "0.0.1"
 dependencies = [
  "tailwind_fuse",

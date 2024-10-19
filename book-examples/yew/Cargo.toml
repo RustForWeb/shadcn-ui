@@ -14,6 +14,7 @@ console_error_panic_hook.workspace = true
 console_log.workspace = true
 log.workspace = true
 shadcn-ui-yew-button = { path = "../../packages/yew/button", optional = true }
+shadcn-ui-yew-skeleton = { path = "../../packages/yew/skeleton", optional = true }
 yew = { workspace = true, features = ["csr"] }
 yew-lucide = { git = "https://gitlab.com/stephan.dilly/yew-lucide", branch = "yew-upgrade", optional = true }
 
@@ -29,6 +30,8 @@ default = [
     "button-with-icon",
     "button-loading",
     "button-as-child",
+    "skeleton",
+    "skeleton-card",
 ]
 button = ["dep:shadcn-ui-yew-button"]
 button-secondary = ["dep:shadcn-ui-yew-button"]
@@ -40,3 +43,5 @@ button-icon = ["dep:shadcn-ui-yew-button", "dep:yew-lucide"]
 button-with-icon = ["dep:shadcn-ui-yew-button", "dep:yew-lucide"]
 button-loading = ["dep:shadcn-ui-yew-button", "dep:yew-lucide"]
 button-as-child = ["dep:shadcn-ui-yew-button"]
+skeleton = ["dep:shadcn-ui-yew-skeleton"]
+skeleton-card = ["dep:shadcn-ui-yew-skeleton"]

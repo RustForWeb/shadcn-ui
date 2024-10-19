@@ -1,0 +1,15 @@
+[package]
+name = "shadcn-ui-yew-skeleton"
+description = "Yew port of shadcn/ui skeleton."
+homepage = "https://shadcn-ui.rustforweb.org/components/skeleton.html"
+publish = false
+
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+version.workspace = true
+
+[dependencies]
+tailwind_fuse.workspace = true
+yew.workspace = true

@@ -74,6 +74,20 @@ pub fn App() -> Html {
             <ButtonAsChild />
         });
     }
+    #[cfg(feature = "skeleton")]
+    {
+        use crate::skeleton::SkeletonDemo;
+        children.push(html! {
+            <SkeletonDemo />
+        });
+    }
+    #[cfg(feature = "skeleton-card")]
+    {
+        use crate::skeleton_card::SkeletonCard;
+        children.push(html! {
+            <SkeletonCard />
+        });
+    }
 
     // TODO: add style selector (provide value as context?)
 

@@ -21,6 +21,10 @@ mod button_outline;
 mod button_secondary;
 #[cfg(feature = "button-with-icon")]
 mod button_with_icon;
+#[cfg(feature = "skeleton")]
+mod skeleton;
+#[cfg(feature = "skeleton-card")]
+mod skeleton_card;
 
 use crate::app::App;
 
