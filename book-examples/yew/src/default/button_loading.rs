@@ -1,7 +1,7 @@
 use yew::prelude::*;
 use yew_lucide::Loader2;
 
-use crate::components::ui::button::Button;
+use super::components::ui::button::Button;
 
 #[function_component]
 pub fn ButtonLoading() -> Html {

@@ -1,12 +1,12 @@
 use yew::prelude::*;
 
-use crate::components::ui::skeleton::Skeleton;
+use super::components::ui::skeleton::Skeleton;
 
 #[function_component]
-pub fn SkeletonCard() -> Html {
+pub fn SkeletonDemo() -> Html {
     html! {
-        <div class="flex flex-col space-y-3">
-            <Skeleton class="h-[125px] w-[250px] rounded-xl" />
+        <div class="flex items-center space-x-4">
+            <Skeleton class="h-12 w-12 rounded-full" />
             <div class="space-y-2">
                 <Skeleton class="h-4 w-[250px]" />
                 <Skeleton class="h-4 w-[200px]" />

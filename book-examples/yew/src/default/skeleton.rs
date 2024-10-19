@@ -1,6 +1,6 @@
 use yew::prelude::*;
 
-use crate::components::ui::skeleton::Skeleton;
+use super::components::ui::skeleton::Skeleton;
 
 #[function_component]
 pub fn SkeletonDemo() -> Html {

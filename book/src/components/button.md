@@ -17,7 +17,7 @@ files = ["src/button.rs"]
 ```toml,trunk
 package = "shadcn-ui-yew-book"
 features = ["button"]
-files = ["src/button.rs"]
+files = ["src/default/button.rs"]
 ```
 
 {{#endtab }}
@@ -108,7 +108,7 @@ files = ["src/button.rs"]
 ```toml,trunk
 package = "shadcn-ui-yew-book"
 features = ["button"]
-files = ["src/button.rs"]
+files = ["src/default/button.rs"]
 ```
 
 {{#endtab }}
@@ -131,7 +131,7 @@ files = ["src/button_secondary.rs"]
 ```toml,trunk
 package = "shadcn-ui-yew-book"
 features = ["button-secondary"]
-files = ["src/button_secondary.rs"]
+files = ["src/default/button_secondary.rs"]
 ```
 
 {{#endtab }}
@@ -154,7 +154,7 @@ files = ["src/button_destructive.rs"]
 ```toml,trunk
 package = "shadcn-ui-yew-book"
 features = ["button-destructive"]
-files = ["src/button_destructive.rs"]
+files = ["src/default/button_destructive.rs"]
 ```
 
 {{#endtab }}
@@ -177,7 +177,7 @@ files = ["src/button_outline.rs"]
 ```toml,trunk
 package = "shadcn-ui-yew-book"
 features = ["button-outline"]
-files = ["src/button_outline.rs"]
+files = ["src/default/button_outline.rs"]
 ```
 
 {{#endtab }}
@@ -200,7 +200,7 @@ files = ["src/button_ghost.rs"]
 ```toml,trunk
 package = "shadcn-ui-yew-book"
 features = ["button-ghost"]
-files = ["src/button_ghost.rs"]
+files = ["src/default/button_ghost.rs"]
 ```
 
 {{#endtab }}
@@ -223,7 +223,7 @@ files = ["src/button_link.rs"]
 ```toml,trunk
 package = "shadcn-ui-yew-book"
 features = ["button-link"]
-files = ["src/button_link.rs"]
+files = ["src/default/button_link.rs"]
 ```
 
 {{#endtab }}
@@ -246,7 +246,7 @@ files = ["src/button_icon.rs"]
 ```toml,trunk
 package = "shadcn-ui-yew-book"
 features = ["button-icon"]
-files = ["src/button_icon.rs"]
+files = ["src/default/button_icon.rs"]
 ```
 
 {{#endtab }}
@@ -269,7 +269,7 @@ files = ["src/button_with_icon.rs"]
 ```toml,trunk
 package = "shadcn-ui-yew-book"
 features = ["button-with-icon"]
-files = ["src/button_with_icon.rs"]
+files = ["src/default/button_with_icon.rs"]
 ```
 
 {{#endtab }}
@@ -292,7 +292,7 @@ files = ["src/button_loading.rs"]
 ```toml,trunk
 package = "shadcn-ui-yew-book"
 features = ["button-loading"]
-files = ["src/button_loading.rs"]
+files = ["src/default/button_loading.rs"]
 ```
 
 {{#endtab }}
@@ -317,7 +317,7 @@ files = ["src/button_as_child.rs"]
 ```toml,trunk
 package = "shadcn-ui-yew-book"
 features = ["button-as-child"]
-files = ["src/button_as_child.rs"]
+files = ["src/default/button_as_child.rs"]
 ```
 
 {{#endtab }}

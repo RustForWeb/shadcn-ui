@@ -1,6 +1,6 @@
 use yew::prelude::*;
 
-use crate::components::ui::button::{Button, ButtonChildProps};
+use super::components::ui::button::{Button, ButtonChildProps};
 
 #[function_component]
 pub fn ButtonAsChild() -> Html {

@@ -1,30 +1,6 @@
 mod app;
-mod components;
-
-#[cfg(feature = "button")]
-mod button;
-#[cfg(feature = "button-as-child")]
-mod button_as_child;
-#[cfg(feature = "button-destructive")]
-mod button_destructive;
-#[cfg(feature = "button-ghost")]
-mod button_ghost;
-#[cfg(feature = "button-icon")]
-mod button_icon;
-#[cfg(feature = "button-link")]
-mod button_link;
-#[cfg(feature = "button-loading")]
-mod button_loading;
-#[cfg(feature = "button-outline")]
-mod button_outline;
-#[cfg(feature = "button-secondary")]
-mod button_secondary;
-#[cfg(feature = "button-with-icon")]
-mod button_with_icon;
-#[cfg(feature = "skeleton")]
-mod skeleton;
-#[cfg(feature = "skeleton-card")]
-mod skeleton_card;
+mod default;
+mod new_york;
 
 use crate::app::App;
 

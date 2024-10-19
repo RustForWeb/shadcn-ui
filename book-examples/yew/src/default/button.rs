@@ -1,6 +1,6 @@
 use yew::prelude::*;
 
-use crate::components::ui::button::Button;
+use super::components::ui::button::Button;
 
 #[function_component]
 pub fn ButtonDemo() -> Html {

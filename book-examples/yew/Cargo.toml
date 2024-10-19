@@ -15,6 +15,7 @@ console_log.workspace = true
 log.workspace = true
 shadcn-ui-yew-button = { path = "../../packages/yew/button", optional = true }
 shadcn-ui-yew-skeleton = { path = "../../packages/yew/skeleton", optional = true }
+web-sys.workspace = true
 yew = { workspace = true, features = ["csr"] }
 yew-lucide = { git = "https://gitlab.com/stephan.dilly/yew-lucide", branch = "yew-upgrade", optional = true }
 

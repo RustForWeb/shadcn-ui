@@ -8,8 +8,32 @@ Use to show a placeholder while content is loading.
 ```toml,trunk
 package = "shadcn-ui-yew-book"
 features = ["skeleton"]
-files = ["src/skeleton.rs"]
+files = ["src/default/skeleton.rs"]
+url_fragment = "#default"
 ```
+
+<!-- {{#tabs global="style" }}
+{{#tab name="Default" }}
+
+```toml,trunk
+package = "shadcn-ui-yew-book"
+features = ["skeleton"]
+files = ["src/default/skeleton.rs"]
+url_fragment = "#default"
+```
+
+{{#endtab }}
+{{#tab name="New York" }}
+
+```toml,trunk
+package = "shadcn-ui-yew-book"
+features = ["skeleton"]
+files = ["src/new_york/skeleton.rs"]
+url_fragment = "#new-york"
+```
+
+{{#endtab }}
+{{#endtabs }} -->
 
 {{#endtab }}
 {{#endtabs }}
@@ -65,7 +89,7 @@ fn Usage() -> impl IntoView {
 ```toml,trunk
 package = "shadcn-ui-yew-book"
 features = ["skeleton-card"]
-files = ["src/skeleton_card.rs"]
+files = ["src/default/skeleton_card.rs"]
 ```
 
 {{#endtab }}

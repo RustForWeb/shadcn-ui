@@ -1,91 +1,124 @@
+use std::str::FromStr;
+
+use web_sys::window;
 use yew::prelude::*;
+
+pub enum Style {
+    Default,
+    NewYork,
+}
+
+impl FromStr for Style {
+    type Err = &'static str;
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        match s {
+            "default" => Ok(Style::Default),
+            "new-york" => Ok(Style::NewYork),
+            _ => Err("Unknown style."),
+        }
+    }
+}
 
 #[function_component]
 pub fn App() -> Html {
+    let style: Style = window()
+        .expect("Window should exist.")
+        .location()
+        .hash()
+        .map(|hash| {
+            hash.strip_prefix('#')
+                .map(|hash| hash.to_string())
+                .unwrap_or(hash)
+        })
+        .unwrap_or_default()
+        .parse()
+        .unwrap_or(Style::Default);
+
     let mut children: Vec<Html> = vec![];
 
     #[cfg(feature = "button")]
     {
-        use crate::button::ButtonDemo;
-        children.push(html! {
-            <ButtonDemo />
+        children.push(match style {
+            Style::Default => html! { <crate::default::button::ButtonDemo /> },
+            Style::NewYork => html! { <crate::new_york::button::ButtonDemo /> },
         });
     }
     #[cfg(feature = "button-secondary")]
     {
-        use crate::button_secondary::ButtonSecondary;
-        children.push(html! {
-            <ButtonSecondary />
+        children.push(match style {
+            Style::Default => html! { <crate::default::button_secondary::ButtonSecondary /> },
+            Style::NewYork => html! { <crate::new_york::button_secondary::ButtonSecondary /> },
         });
     }
     #[cfg(feature = "button-destructive")]
     {
-        use crate::button_destructive::ButtonDestructive;
-        children.push(html! {
-            <ButtonDestructive />
+        children.push(match style {
+            Style::Default => html! { <crate::default::button_destructive::ButtonDestructive /> },
+            Style::NewYork => html! { <crate::new_york::button_destructive::ButtonDestructive /> },
         });
     }
     #[cfg(feature = "button-outline")]
     {
-        use crate::button_outline::ButtonOutline;
-        children.push(html! {
-            <ButtonOutline />
+        children.push(match style {
+            Style::Default => html! { <crate::default::button_outline::ButtonOutline /> },
+            Style::NewYork => html! { <crate::new_york::button_outline::ButtonOutline /> },
         });
     }
     #[cfg(feature = "button-ghost")]
     {
-        use crate::button_ghost::ButtonGhost;
-        children.push(html! {
-            <ButtonGhost />
+        children.push(match style {
+            Style::Default => html! { <crate::default::button_ghost::ButtonGhost /> },
+            Style::NewYork => html! { <crate::new_york::button_ghost::ButtonGhost /> },
         });
     }
     #[cfg(feature = "button-link")]
     {
-        use crate::button_link::ButtonLink;
-        children.push(html! {
-            <ButtonLink />
+        children.push(match style {
+            Style::Default => html! { <crate::default::button_link::ButtonLink /> },
+            Style::NewYork => html! { <crate::new_york::button_link::ButtonLink /> },
         });
     }
     #[cfg(feature = "button-icon")]
     {
-        use crate::button_icon::ButtonIcon;
-        children.push(html! {
-            <ButtonIcon />
+        children.push(match style {
+            Style::Default => html! { <crate::default::button_icon::ButtonIcon /> },
+            Style::NewYork => html! { <crate::new_york::button_icon::ButtonIcon /> },
         });
     }
     #[cfg(feature = "button-with-icon")]
     {
-        use crate::button_with_icon::ButtonWithIcon;
-        children.push(html! {
-            <ButtonWithIcon />
+        children.push(match style {
+            Style::Default => html! { <crate::default::button_with_icon::ButtonWithIcon /> },
+            Style::NewYork => html! { <crate::new_york::button_with_icon::ButtonWithIcon /> },
         });
     }
     #[cfg(feature = "button-loading")]
     {
-        use crate::button_loading::ButtonLoading;
-        children.push(html! {
-            <ButtonLoading />
+        children.push(match style {
+            Style::Default => html! { <crate::default::button_loading::ButtonLoading /> },
+            Style::NewYork => html! { <crate::new_york::button_loading::ButtonLoading /> },
         });
     }
     #[cfg(feature = "button-as-child")]
     {
-        use crate::button_as_child::ButtonAsChild;
-        children.push(html! {
-            <ButtonAsChild />
+        children.push(match style {
+            Style::Default => html! { <crate::default::button_as_child::ButtonAsChild /> },
+            Style::NewYork => html! { <crate::new_york::button_as_child::ButtonAsChild /> },
         });
     }
     #[cfg(feature = "skeleton")]
     {
-        use crate::skeleton::SkeletonDemo;
-        children.push(html! {
-            <SkeletonDemo />
+        children.push(match style {
+            Style::Default => html! { <crate::default::skeleton::SkeletonDemo /> },
+            Style::NewYork => html! { <crate::new_york::skeleton::SkeletonDemo /> },
         });
     }
     #[cfg(feature = "skeleton-card")]
     {
-        use crate::skeleton_card::SkeletonCard;
-        children.push(html! {
-            <SkeletonCard />
+        children.push(match style {
+            Style::Default => html! { <crate::default::skeleton_card::SkeletonCard /> },
+            Style::NewYork => html! { <crate::new_york::skeleton_card::SkeletonCard /> },
         });
     }
 
