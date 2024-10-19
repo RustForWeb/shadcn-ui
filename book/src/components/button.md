@@ -12,6 +12,15 @@ files = ["src/button.rs"]
 ```
 
 {{#endtab }}
+{{#tab name="Yew" }}
+
+```toml,trunk
+package = "shadcn-ui-yew-book"
+features = ["button"]
+files = ["src/button.rs"]
+```
+
+{{#endtab }}
 {{#endtabs }}
 
 ## Installation
@@ -32,6 +41,15 @@ rust-shadcn-ui add button
 -   [View source](https://github.com/RustForWeb/shadcn-ui/tree/main/packages/leptos/button)
 
 {{#endtab }}
+{{#tab name="Yew" }}
+
+```shell
+rust-shadcn-ui add button
+```
+
+-   [View source](https://github.com/RustForWeb/shadcn-ui/tree/main/packages/yew/button)
+
+{{#endtab }}
 {{#endtabs }}
 
 ## Usage
@@ -41,12 +59,29 @@ rust-shadcn-ui add button
 
 ```rust,ignore
 use leptos::*;
+
 use crate::components::ui::button::{Button, ButtonVariant};
 
 #[component]
 fn Usage() -> impl IntoView {
     view! {
         <Button variant=ButtonVariant::Outline>Button>/Button>
+    }
+}
+```
+
+{{#endtab }}
+{{#tab name="Leptos" }}
+
+```rust,ignore
+use yew::prelude::*;
+
+use crate::components::ui::button::{Button, ButtonVariant};
+
+#[component]
+fn Usage() -> impl IntoView {
+    view! {
+        <Button variant={ButtonVariant::Outline}>{"Button"}>/Button>
     }
 }
 ```
@@ -68,6 +103,15 @@ files = ["src/button.rs"]
 ```
 
 {{#endtab }}
+{{#tab name="Yew" }}
+
+```toml,trunk
+package = "shadcn-ui-yew-book"
+features = ["button"]
+files = ["src/button.rs"]
+```
+
+{{#endtab }}
 {{#endtabs }}
 
 ### Secondary
@@ -77,6 +121,15 @@ files = ["src/button.rs"]
 
 ```toml,trunk
 package = "shadcn-ui-leptos-book"
+features = ["button-secondary"]
+files = ["src/button_secondary.rs"]
+```
+
+{{#endtab }}
+{{#tab name="Yew" }}
+
+```toml,trunk
+package = "shadcn-ui-yew-book"
 features = ["button-secondary"]
 files = ["src/button_secondary.rs"]
 ```
@@ -96,6 +149,15 @@ files = ["src/button_destructive.rs"]
 ```
 
 {{#endtab }}
+{{#tab name="Yew" }}
+
+```toml,trunk
+package = "shadcn-ui-yew-book"
+features = ["button-destructive"]
+files = ["src/button_destructive.rs"]
+```
+
+{{#endtab }}
 {{#endtabs }}
 
 ### Outline
@@ -105,6 +167,15 @@ files = ["src/button_destructive.rs"]
 
 ```toml,trunk
 package = "shadcn-ui-leptos-book"
+features = ["button-outline"]
+files = ["src/button_outline.rs"]
+```
+
+{{#endtab }}
+{{#tab name="Yew" }}
+
+```toml,trunk
+package = "shadcn-ui-yew-book"
 features = ["button-outline"]
 files = ["src/button_outline.rs"]
 ```
@@ -124,6 +195,15 @@ files = ["src/button_ghost.rs"]
 ```
 
 {{#endtab }}
+{{#tab name="Yew" }}
+
+```toml,trunk
+package = "shadcn-ui-yew-book"
+features = ["button-ghost"]
+files = ["src/button_ghost.rs"]
+```
+
+{{#endtab }}
 {{#endtabs }}
 
 ### Link
@@ -133,6 +213,15 @@ files = ["src/button_ghost.rs"]
 
 ```toml,trunk
 package = "shadcn-ui-leptos-book"
+features = ["button-link"]
+files = ["src/button_link.rs"]
+```
+
+{{#endtab }}
+{{#tab name="Yew" }}
+
+```toml,trunk
+package = "shadcn-ui-yew-book"
 features = ["button-link"]
 files = ["src/button_link.rs"]
 ```
@@ -152,6 +241,15 @@ files = ["src/button_icon.rs"]
 ```
 
 {{#endtab }}
+{{#tab name="Yew" }}
+
+```toml,trunk
+package = "shadcn-ui-yew-book"
+features = ["button-icon"]
+files = ["src/button_icon.rs"]
+```
+
+{{#endtab }}
 {{#endtabs }}
 
 ### With Icon
@@ -161,6 +259,15 @@ files = ["src/button_icon.rs"]
 
 ```toml,trunk
 package = "shadcn-ui-leptos-book"
+features = ["button-with-icon"]
+files = ["src/button_with_icon.rs"]
+```
+
+{{#endtab }}
+{{#tab name="Yew" }}
+
+```toml,trunk
+package = "shadcn-ui-yew-book"
 features = ["button-with-icon"]
 files = ["src/button_with_icon.rs"]
 ```
@@ -180,12 +287,22 @@ files = ["src/button_loading.rs"]
 ```
 
 {{#endtab }}
+{{#tab name="Yew" }}
+
+```toml,trunk
+package = "shadcn-ui-yew-book"
+features = ["button-loading"]
+files = ["src/button_loading.rs"]
+```
+
+{{#endtab }}
 {{#endtabs }}
 
-<!-- ### As Child
+### As Child
 
 {{#tabs global="framework" }}
-{{#tab name="Leptos" }}
+
+<!-- {{#tab name="Leptos" }}
 
 ```toml,trunk
 package = "shadcn-ui-leptos-book"
@@ -193,8 +310,18 @@ features = ["button-as-child"]
 files = ["src/button_as_child.rs"]
 ```
 
+{{#endtab }} -->
+
+{{#tab name="Yew" }}
+
+```toml,trunk
+package = "shadcn-ui-yew-book"
+features = ["button-as-child"]
+files = ["src/button_as_child.rs"]
+```
+
 {{#endtab }}
-{{#endtabs }} -->
+{{#endtabs }}
 
 ## See Also
 

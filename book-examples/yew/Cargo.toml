@@ -1,0 +1,42 @@
+[package]
+name = "shadcn-ui-yew-book"
+description = "Book examples for shadcn/ui Yew."
+publish = false
+
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+version.workspace = true
+
+[dependencies]
+console_error_panic_hook.workspace = true
+console_log.workspace = true
+log.workspace = true
+shadcn-ui-yew-button = { path = "../../packages/yew/button", optional = true }
+yew = { workspace = true, features = ["csr"] }
+yew-lucide = { git = "https://gitlab.com/stephan.dilly/yew-lucide", branch = "yew-upgrade", optional = true }
+
+[features]
+default = [
+    "button",
+    "button-secondary",
+    "button-destructive",
+    "button-outline",
+    "button-ghost",
+    "button-link",
+    "button-icon",
+    "button-with-icon",
+    "button-loading",
+    "button-as-child",
+]
+button = ["dep:shadcn-ui-yew-button"]
+button-secondary = ["dep:shadcn-ui-yew-button"]
+button-destructive = ["dep:shadcn-ui-yew-button"]
+button-outline = ["dep:shadcn-ui-yew-button"]
+button-ghost = ["dep:shadcn-ui-yew-button"]
+button-link = ["dep:shadcn-ui-yew-button"]
+button-icon = ["dep:shadcn-ui-yew-button", "dep:yew-lucide"]
+button-with-icon = ["dep:shadcn-ui-yew-button", "dep:yew-lucide"]
+button-loading = ["dep:shadcn-ui-yew-button", "dep:yew-lucide"]
+button-as-child = ["dep:shadcn-ui-yew-button"]
