@@ -31,7 +31,7 @@ jobs:
               uses: cargo-bins/cargo-binstall@main
 
             - name: Install mdBook
-              run: cargo binstall -y mdbook mdbook-tabs mdbook-trunk
+              run: cargo binstall --force -y mdbook mdbook-tabs mdbook-trunk
 
             - name: Run tests
               run: mdbook test
@@ -61,7 +61,7 @@ jobs:
               uses: cargo-bins/cargo-binstall@main
 
             - name: Install mdBook and Trunk
-              run: cargo binstall -y mdbook mdbook-tabs mdbook-trunk trunk
+              run: cargo binstall --force -y mdbook mdbook-tabs mdbook-trunk trunk
 
             - name: Install Node.js dependencies
               run: npm install
