@@ -1,4 +1,4 @@
-use leptos::*;
+use leptos::prelude::*;
 use tailwind_fuse::*;
 
 #[derive(TwClass)]
@@ -48,10 +48,9 @@ pub fn Button(
     #[prop(into, optional)] variant: MaybeSignal<ButtonVariant>,
     #[prop(into, optional)] size: MaybeSignal<ButtonSize>,
     #[prop(into, optional)] class: MaybeSignal<String>,
-    #[prop(attrs)] attrs: Vec<(&'static str, Attribute)>,
     children: Children,
 ) -> impl IntoView {
-    let class = create_memo(move |_| {
+    let class = Memo::new(move |_| {
         ButtonClass {
             variant: variant.get(),
             size: size.get(),
@@ -60,7 +59,7 @@ pub fn Button(
     });
 
     view! {
-        <button {..attrs} class=class>
+        <button class=class>
             {children()}
         </button>
     }

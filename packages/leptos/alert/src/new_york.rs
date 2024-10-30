@@ -1,4 +1,4 @@
-use leptos::*;
+use leptos::prelude::*;
 use tailwind_fuse::*;
 
 #[derive(TwClass)]
@@ -23,10 +23,9 @@ pub enum AlertVariant {
 pub fn Alert(
     #[prop(into, optional)] variant: MaybeSignal<AlertVariant>,
     #[prop(into, optional)] class: MaybeSignal<String>,
-    #[prop(attrs)] attrs: Vec<(&'static str, Attribute)>,
     children: Children,
 ) -> impl IntoView {
-    let class = create_memo(move |_| {
+    let class = Memo::new(move |_| {
         AlertClass {
             variant: variant.get(),
         }
@@ -34,7 +33,7 @@ pub fn Alert(
     });
 
     view! {
-        <div {..attrs} class=class>
+        <div class=class>
             {children()}
         </div>
     }
@@ -47,13 +46,12 @@ pub struct AlertTitleClass {}
 #[component]
 pub fn AlertTitle(
     #[prop(into, optional)] class: MaybeSignal<String>,
-    #[prop(attrs)] attrs: Vec<(&'static str, Attribute)>,
     children: Children,
 ) -> impl IntoView {
-    let class = create_memo(move |_| AlertTitleClass {}.with_class(class.get()));
+    let class = Memo::new(move |_| AlertTitleClass {}.with_class(class.get()));
 
     view! {
-        <h5 {..attrs} class=class>
+        <h5 class=class>
             {children()}
         </h5>
     }
@@ -66,13 +64,12 @@ pub struct AlertDescriptionClass {}
 #[component]
 pub fn AlertDescription(
     #[prop(into, optional)] class: MaybeSignal<String>,
-    #[prop(attrs)] attrs: Vec<(&'static str, Attribute)>,
     children: Children,
 ) -> impl IntoView {
-    let class = create_memo(move |_| AlertDescriptionClass {}.with_class(class.get()));
+    let class = Memo::new(move |_| AlertDescriptionClass {}.with_class(class.get()));
 
     view! {
-        <div {..attrs} class=class>
+        <div class=class>
             {children()}
         </div>
     }

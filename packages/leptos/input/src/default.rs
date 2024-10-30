@@ -1,4 +1,4 @@
-use leptos::*;
+use leptos::prelude::*;
 use tailwind_fuse::*;
 
 #[derive(TwClass)]
@@ -8,13 +8,10 @@ use tailwind_fuse::*;
 pub struct InputClass {}
 
 #[component]
-pub fn Input(
-    #[prop(into, optional)] class: MaybeSignal<String>,
-    #[prop(attrs)] attrs: Vec<(&'static str, Attribute)>,
-) -> impl IntoView {
-    let class = create_memo(move |_| InputClass {}.with_class(class.get()));
+pub fn Input(#[prop(into, optional)] class: MaybeSignal<String>) -> impl IntoView {
+    let class = Memo::new(move |_| InputClass {}.with_class(class.get()));
 
     view! {
-        <input {..attrs} class=class />
+        <input class=class />
     }
 }

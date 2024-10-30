@@ -1,4 +1,4 @@
-use leptos::*;
+use leptos::prelude::*;
 
 use crate::components::ui::alert::{Alert, AlertDescription, AlertTitle, AlertVariant};
 
