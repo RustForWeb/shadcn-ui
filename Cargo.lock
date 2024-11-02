@@ -2812,6 +2812,7 @@ dependencies = [
  "log",
  "radix-yew-icons",
  "shadcn-ui-yew-button",
+ "shadcn-ui-yew-pagination",
  "shadcn-ui-yew-skeleton",
  "web-sys",
  "yew",
@@ -2825,6 +2826,17 @@ version = "0.0.1"
 dependencies = [
  "tailwind_fuse",
  "yew",
+]
+
+[[package]]
+name = "shadcn-ui-yew-pagination"
+version = "0.0.1"
+dependencies = [
+ "radix-yew-icons",
+ "shadcn-ui-yew-button",
+ "tailwind_fuse",
+ "yew",
+ "yew-lucide",
 ]
 
 [[package]]

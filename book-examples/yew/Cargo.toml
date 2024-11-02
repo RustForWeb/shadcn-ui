@@ -15,6 +15,7 @@ console_log.workspace = true
 log.workspace = true
 radix-yew-icons = { workspace = true, optional = true }
 shadcn-ui-yew-button = { path = "../../packages/yew/button", optional = true }
+shadcn-ui-yew-pagination = { path = "../../packages/yew/pagination", optional = true }
 shadcn-ui-yew-skeleton = { path = "../../packages/yew/skeleton", optional = true }
 web-sys.workspace = true
 yew = { workspace = true, features = ["csr"] }
@@ -22,7 +23,7 @@ yew-lucide = { git = "https://gitlab.com/stephan.dilly/yew-lucide", branch = "ye
 yew-router.workspace = true
 
 [features]
-default = ["button", "skeleton"]
+default = ["button", "pagination", "skeleton"]
 button = [
     "dep:radix-yew-icons",
     "dep:shadcn-ui-yew-button",
@@ -31,4 +32,5 @@ button = [
     "radix-yew-icons/envelope-open",
     "radix-yew-icons/reload",
 ]
+pagination = ["dep:shadcn-ui-yew-pagination"]
 skeleton = ["dep:shadcn-ui-yew-skeleton"]

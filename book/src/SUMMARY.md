@@ -31,7 +31,7 @@
     -   [Label]()
     -   [Menubar]()
     -   [Navigation Menu]()
-    -   [Pagination]()
+    -   [Pagination](./components/pagination.md)
     -   [Popover]()
     -   [Progress]()
     -   [Radio Group]()

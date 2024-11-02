@@ -59,7 +59,7 @@ The tables below show the support for the various frameworks.
 | Label           | ❌ [#38](https://github.com/RustForWeb/shadcn-ui/issues/38) | ❌ [#87](https://github.com/RustForWeb/shadcn-ui/issues/87)   | ❌ [#136](https://github.com/RustForWeb/shadcn-ui/issues/136) |
 | Menubar         | ❌ [#39](https://github.com/RustForWeb/shadcn-ui/issues/39) | ❌ [#88](https://github.com/RustForWeb/shadcn-ui/issues/88)   | ❌ [#137](https://github.com/RustForWeb/shadcn-ui/issues/137) |
 | Navigation Menu | ❌ [#40](https://github.com/RustForWeb/shadcn-ui/issues/40) | ❌ [#89](https://github.com/RustForWeb/shadcn-ui/issues/89)   | ❌ [#138](https://github.com/RustForWeb/shadcn-ui/issues/138) |
-| Pagination      | ❌ [#41](https://github.com/RustForWeb/shadcn-ui/issues/41) | ❌ [#90](https://github.com/RustForWeb/shadcn-ui/issues/90)   | ❌ [#139](https://github.com/RustForWeb/shadcn-ui/issues/139) |
+| Pagination      | ❌ [#41](https://github.com/RustForWeb/shadcn-ui/issues/41) | ❌ [#90](https://github.com/RustForWeb/shadcn-ui/issues/90)   | 🟦 [#139](https://github.com/RustForWeb/shadcn-ui/issues/139) |
 | Popover         | ❌ [#42](https://github.com/RustForWeb/shadcn-ui/issues/42) | ❌ [#91](https://github.com/RustForWeb/shadcn-ui/issues/91)   | ❌ [#140](https://github.com/RustForWeb/shadcn-ui/issues/140) |
 | Progress        | ❌ [#43](https://github.com/RustForWeb/shadcn-ui/issues/43) | ❌ [#92](https://github.com/RustForWeb/shadcn-ui/issues/92)   | ❌ [#141](https://github.com/RustForWeb/shadcn-ui/issues/141) |
 | Radio Group     | ❌ [#44](https://github.com/RustForWeb/shadcn-ui/issues/44) | ❌ [#93](https://github.com/RustForWeb/shadcn-ui/issues/93)   | ❌ [#142](https://github.com/RustForWeb/shadcn-ui/issues/142) |

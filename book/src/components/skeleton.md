@@ -67,7 +67,7 @@ rust-shadcn-ui add skeleton
 ```rust,ignore
 use yew::prelude::*;
 
-use crate::components::ui::button::{Skeleton};
+use crate::components::ui::skeleton::{Skeleton};
 
 #[component]
 fn Usage() -> impl IntoView {

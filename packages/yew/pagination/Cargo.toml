@@ -1,0 +1,22 @@
+[package]
+name = "shadcn-ui-yew-pagination"
+description = "Yew port of shadcn/ui pagination."
+homepage = "https://shadcn-ui.rustforweb.org/components/pagination.html"
+publish = false
+
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+version.workspace = true
+
+[dependencies]
+radix-yew-icons = { workspace = true, features = [
+    "chevron-left",
+    "chevron-right",
+    "dots-horizontal",
+] }
+shadcn-ui-yew-button = { path = "../button" }
+tailwind_fuse.workspace = true
+yew.workspace = true
+yew-lucide.workspace = true

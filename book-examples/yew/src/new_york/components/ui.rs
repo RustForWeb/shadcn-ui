@@ -2,5 +2,7 @@
 
 #[cfg(feature = "button")]
 pub use shadcn_ui_yew_button::new_york as button;
+#[cfg(feature = "pagination")]
+pub use shadcn_ui_yew_pagination::new_york as pagination;
 #[cfg(feature = "skeleton")]
 pub use shadcn_ui_yew_skeleton::new_york as skeleton;

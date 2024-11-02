@@ -49,10 +49,13 @@ pub struct ButtonProps {
     pub variant: ButtonVariant,
     #[prop_or_default]
     pub size: ButtonSize,
+
+    // Attributes from `button`
     #[prop_or_default]
     pub disabled: bool,
     #[prop_or_default]
     pub on_click: Callback<MouseEvent>,
+
     #[prop_or_default]
     pub node_ref: NodeRef,
     #[prop_or_default]

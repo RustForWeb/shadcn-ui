@@ -2,6 +2,8 @@ mod components;
 
 #[cfg(feature = "button")]
 mod button;
+#[cfg(feature = "pagination")]
+mod pagination;
 #[cfg(feature = "skeleton")]
 mod skeleton;
 
@@ -16,6 +18,13 @@ pub fn render() -> Html {
         use self::button::{render, ButtonRoute};
         children.push(html! {
             <Switch<ButtonRoute> render={render} />
+        });
+    }
+    #[cfg(feature = "pagination")]
+    {
+        use self::pagination::{render, PaginationRoute};
+        children.push(html! {
+            <Switch<PaginationRoute> render={render} />
         });
     }
     #[cfg(feature = "skeleton")]

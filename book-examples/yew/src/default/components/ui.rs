@@ -2,5 +2,7 @@
 
 #[cfg(feature = "button")]
 pub use shadcn_ui_yew_button::default as button;
+#[cfg(feature = "pagination")]
+pub use shadcn_ui_yew_pagination::default as pagination;
 #[cfg(feature = "skeleton")]
 pub use shadcn_ui_yew_skeleton::default as skeleton;
