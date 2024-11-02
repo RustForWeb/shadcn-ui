@@ -2,7 +2,7 @@
 
 Displays a callout for user attention.
 
-{{#tabs global="framework" }}
+<!-- {{#tabs global="framework" }}
 {{#tab name="Leptos" }}
 
 ```toml,trunk
@@ -12,7 +12,7 @@ files = ["src/alert.rs"]
 ```
 
 {{#endtab }}
-{{#endtabs }}
+{{#endtabs }} -->
 
 ## Installation
 
@@ -22,7 +22,7 @@ The CLI is not yet available. For now, manually copy the component source into y
 
 </div>
 
-{{#tabs global="framework" }}
+<!-- {{#tabs global="framework" }}
 {{#tab name="Leptos" }}
 
 ```shell
@@ -32,11 +32,11 @@ rust-shadcn-ui add alert
 -   [View source](https://github.com/RustForWeb/shadcn-ui/tree/main/packages/leptos/alert)
 
 {{#endtab }}
-{{#endtabs }}
+{{#endtabs }} -->
 
 ## Usage
 
-{{#tabs global="framework" }}
+<!-- {{#tabs global="framework" }}
 {{#tab name="Leptos" }}
 
 ```rust,ignore
@@ -58,13 +58,13 @@ fn Usage() -> impl IntoView {
 ```
 
 {{#endtab }}
-{{#endtabs }}
+{{#endtabs }} -->
 
 ## Examples
 
 ### Default
 
-{{#tabs global="framework" }}
+<!-- {{#tabs global="framework" }}
 {{#tab name="Leptos" }}
 
 ```toml,trunk
@@ -74,11 +74,11 @@ files = ["src/alert.rs"]
 ```
 
 {{#endtab }}
-{{#endtabs }}
+{{#endtabs }} -->
 
 ### Destructive
 
-{{#tabs global="framework" }}
+<!-- {{#tabs global="framework" }}
 {{#tab name="Leptos" }}
 
 ```toml,trunk
@@ -88,7 +88,7 @@ files = ["src/alert_destructive.rs"]
 ```
 
 {{#endtab }}
-{{#endtabs }}
+{{#endtabs }} -->
 
 ## See Also
 

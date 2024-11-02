@@ -1,6 +1,6 @@
 use yew::prelude::*;
 
-use crate::components::ui::button::{Button, ButtonVariant};
+use crate::new_york::components::ui::button::{Button, ButtonVariant};
 
 #[function_component]
 pub fn ButtonGhost() -> Html {

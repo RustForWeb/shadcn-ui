@@ -1,7 +1,7 @@
 use yew::prelude::*;
 use yew_lucide::Mail;
 
-use crate::components::ui::button::Button;
+use crate::default::components::ui::button::Button;
 
 #[function_component]
 pub fn ButtonWithIcon() -> Html {

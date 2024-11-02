@@ -13,35 +13,22 @@ version.workspace = true
 console_error_panic_hook.workspace = true
 console_log.workspace = true
 log.workspace = true
+radix-yew-icons = { workspace = true, optional = true }
 shadcn-ui-yew-button = { path = "../../packages/yew/button", optional = true }
 shadcn-ui-yew-skeleton = { path = "../../packages/yew/skeleton", optional = true }
+web-sys.workspace = true
 yew = { workspace = true, features = ["csr"] }
 yew-lucide = { git = "https://gitlab.com/stephan.dilly/yew-lucide", branch = "yew-upgrade", optional = true }
+yew-router.workspace = true
 
 [features]
-default = [
-    "button",
-    "button-secondary",
-    "button-destructive",
-    "button-outline",
-    "button-ghost",
-    "button-link",
-    "button-icon",
-    "button-with-icon",
-    "button-loading",
-    "button-as-child",
-    "skeleton",
-    "skeleton-card",
+default = ["button", "skeleton"]
+button = [
+    "dep:radix-yew-icons",
+    "dep:shadcn-ui-yew-button",
+    "dep:yew-lucide",
+    "radix-yew-icons/chevron-right",
+    "radix-yew-icons/envelope-open",
+    "radix-yew-icons/reload",
 ]
-button = ["dep:shadcn-ui-yew-button"]
-button-secondary = ["dep:shadcn-ui-yew-button"]
-button-destructive = ["dep:shadcn-ui-yew-button"]
-button-outline = ["dep:shadcn-ui-yew-button"]
-button-ghost = ["dep:shadcn-ui-yew-button"]
-button-link = ["dep:shadcn-ui-yew-button"]
-button-icon = ["dep:shadcn-ui-yew-button", "dep:yew-lucide"]
-button-with-icon = ["dep:shadcn-ui-yew-button", "dep:yew-lucide"]
-button-loading = ["dep:shadcn-ui-yew-button", "dep:yew-lucide"]
-button-as-child = ["dep:shadcn-ui-yew-button"]
 skeleton = ["dep:shadcn-ui-yew-skeleton"]
-skeleton-card = ["dep:shadcn-ui-yew-skeleton"]

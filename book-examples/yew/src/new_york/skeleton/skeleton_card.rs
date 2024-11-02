@@ -1,6 +1,6 @@
 use yew::prelude::*;
 
-use crate::components::ui::skeleton::Skeleton;
+use crate::new_york::components::ui::skeleton::Skeleton;
 
 #[function_component]
 pub fn SkeletonCard() -> Html {

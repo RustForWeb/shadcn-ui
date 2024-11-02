@@ -3,7 +3,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     darkMode: ['class'],
-    content: ['*.html', './src/**/*.rs', '../../packages/leptos/*/src/default.rs'],
+    content: ['*.html', './src/**/*.rs', '../../packages/leptos/*/src/*.rs'],
     theme: {
         container: {
             center: true,

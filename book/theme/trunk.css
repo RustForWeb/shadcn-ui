@@ -15,6 +15,13 @@
     display: flex;
 }
 
+.mdbook-trunk-files-header {
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    font-size: 1.6rem;
+    line-height: 1.45em;
+}
+
 .mdbook-trunk-file {
     background-color: var(--table-alternate-bg);
     padding: 0.5rem 1rem;

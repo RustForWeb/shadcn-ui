@@ -37,7 +37,7 @@ The tables below show the support for the various frameworks.
 | Avatar          | ❌ [#16](https://github.com/RustForWeb/shadcn-ui/issues/16) | ❌ [#65](https://github.com/RustForWeb/shadcn-ui/issues/65)   | ❌ [#114](https://github.com/RustForWeb/shadcn-ui/issues/114) |
 | Badge           | ❌ [#17](https://github.com/RustForWeb/shadcn-ui/issues/17) | ❌ [#66](https://github.com/RustForWeb/shadcn-ui/issues/66)   | ❌ [#115](https://github.com/RustForWeb/shadcn-ui/issues/115) |
 | Breadcrumb      | ❌ [#18](https://github.com/RustForWeb/shadcn-ui/issues/18) | ❌ [#67](https://github.com/RustForWeb/shadcn-ui/issues/67)   | ❌ [#116](https://github.com/RustForWeb/shadcn-ui/issues/116) |
-| Button          | ❌ [#19](https://github.com/RustForWeb/shadcn-ui/issues/19) | 🟦 [#68](https://github.com/RustForWeb/shadcn-ui/issues/68)   | ❌ [#117](https://github.com/RustForWeb/shadcn-ui/issues/117) |
+| Button          | ❌ [#19](https://github.com/RustForWeb/shadcn-ui/issues/19) | ❌ [#68](https://github.com/RustForWeb/shadcn-ui/issues/68)   | 🟦 [#117](https://github.com/RustForWeb/shadcn-ui/issues/117) |
 | Calendar        | ❌ [#20](https://github.com/RustForWeb/shadcn-ui/issues/20) | ❌ [#69](https://github.com/RustForWeb/shadcn-ui/issues/69)   | ❌ [#118](https://github.com/RustForWeb/shadcn-ui/issues/118) |
 | Card            | ❌ [#21](https://github.com/RustForWeb/shadcn-ui/issues/21) | ❌ [#70](https://github.com/RustForWeb/shadcn-ui/issues/70)   | ❌ [#119](https://github.com/RustForWeb/shadcn-ui/issues/119) |
 | Carousel        | ❌ [#22](https://github.com/RustForWeb/shadcn-ui/issues/22) | ❌ [#71](https://github.com/RustForWeb/shadcn-ui/issues/71)   | ❌ [#120](https://github.com/RustForWeb/shadcn-ui/issues/120) |
@@ -68,7 +68,7 @@ The tables below show the support for the various frameworks.
 | Select          | ❌ [#47](https://github.com/RustForWeb/shadcn-ui/issues/47) | ❌ [#96](https://github.com/RustForWeb/shadcn-ui/issues/96)   | ❌ [#145](https://github.com/RustForWeb/shadcn-ui/issues/145) |
 | Separator       | ❌ [#48](https://github.com/RustForWeb/shadcn-ui/issues/48) | ❌ [#97](https://github.com/RustForWeb/shadcn-ui/issues/97)   | ❌ [#146](https://github.com/RustForWeb/shadcn-ui/issues/146) |
 | Sheet           | ❌ [#49](https://github.com/RustForWeb/shadcn-ui/issues/49) | ❌ [#98](https://github.com/RustForWeb/shadcn-ui/issues/98)   | ❌ [#147](https://github.com/RustForWeb/shadcn-ui/issues/147) |
-| Skeleton        | ❌ [#50](https://github.com/RustForWeb/shadcn-ui/issues/50) | 🟦 [#99](https://github.com/RustForWeb/shadcn-ui/issues/99)   | ❌ [#148](https://github.com/RustForWeb/shadcn-ui/issues/148) |
+| Skeleton        | ❌ [#50](https://github.com/RustForWeb/shadcn-ui/issues/50) | ❌ [#99](https://github.com/RustForWeb/shadcn-ui/issues/99)   | 🟦 [#148](https://github.com/RustForWeb/shadcn-ui/issues/148) |
 | Slider          | ❌ [#51](https://github.com/RustForWeb/shadcn-ui/issues/51) | ❌ [#100](https://github.com/RustForWeb/shadcn-ui/issues/100) | ❌ [#149](https://github.com/RustForWeb/shadcn-ui/issues/149) |
 | Sonner          | ❌ [#52](https://github.com/RustForWeb/shadcn-ui/issues/52) | ❌ [#101](https://github.com/RustForWeb/shadcn-ui/issues/101) | ❌ [#150](https://github.com/RustForWeb/shadcn-ui/issues/150) |
 | Switch          | ❌ [#53](https://github.com/RustForWeb/shadcn-ui/issues/53) | ❌ [#102](https://github.com/RustForWeb/shadcn-ui/issues/102) | ❌ [#151](https://github.com/RustForWeb/shadcn-ui/issues/151) |

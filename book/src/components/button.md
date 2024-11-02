@@ -3,22 +3,38 @@
 Displays a button or a component that looks like a button.
 
 {{#tabs global="framework" }}
-{{#tab name="Leptos" }}
-
-```toml,trunk
-package = "shadcn-ui-leptos-book"
-features = ["button"]
-files = ["src/button.rs"]
-```
-
-{{#endtab }}
 {{#tab name="Yew" }}
+
+{{#tabs global="style" }}
+{{#tab name="Default" }}
 
 ```toml,trunk
 package = "shadcn-ui-yew-book"
 features = ["button"]
-files = ["src/button.rs"]
+files = ["src/default/button/button.rs"]
+url_fragment = "#/default/"
+
+[[file_replacements]]
+find = "crate::default::"
+replace = "crate::"
 ```
+
+{{#endtab }}
+{{#tab name="New York" }}
+
+```toml,trunk
+package = "shadcn-ui-yew-book"
+features = ["button"]
+files = ["src/new_york/button/button.rs"]
+url_fragment = "#/new-york/"
+
+[[file_replacements]]
+find = "crate::new_york::"
+replace = "crate::"
+```
+
+{{#endtab }}
+{{#endtabs }}
 
 {{#endtab }}
 {{#endtabs }}
@@ -32,7 +48,8 @@ The CLI is not yet available. For now, manually copy the component source into y
 </div>
 
 {{#tabs global="framework" }}
-{{#tab name="Leptos" }}
+
+<!-- {{#tab name="Leptos" }}
 
 ```shell
 rust-shadcn-ui add button
@@ -40,7 +57,8 @@ rust-shadcn-ui add button
 
 -   [View source](https://github.com/RustForWeb/shadcn-ui/tree/main/packages/leptos/button)
 
-{{#endtab }}
+{{#endtab }} -->
+
 {{#tab name="Yew" }}
 
 ```shell
@@ -55,7 +73,8 @@ rust-shadcn-ui add button
 ## Usage
 
 {{#tabs global="framework" }}
-{{#tab name="Leptos" }}
+
+<!-- {{#tab name="Leptos" }}
 
 ```rust,ignore
 use leptos::*;
@@ -70,7 +89,8 @@ fn Usage() -> impl IntoView {
 }
 ```
 
-{{#endtab }}
+{{#endtab }} -->
+
 {{#tab name="Yew" }}
 
 ```rust,ignore
@@ -94,22 +114,38 @@ fn Usage() -> impl IntoView {
 ### Primary
 
 {{#tabs global="framework" }}
-{{#tab name="Leptos" }}
-
-```toml,trunk
-package = "shadcn-ui-leptos-book"
-features = ["button"]
-files = ["src/button.rs"]
-```
-
-{{#endtab }}
 {{#tab name="Yew" }}
+
+{{#tabs global="style" }}
+{{#tab name="Default" }}
 
 ```toml,trunk
 package = "shadcn-ui-yew-book"
 features = ["button"]
-files = ["src/button.rs"]
+files = ["src/default/button/button.rs"]
+url_fragment = "#/default/"
+
+[[file_replacements]]
+find = "crate::default::"
+replace = "crate::"
 ```
+
+{{#endtab }}
+{{#tab name="New York" }}
+
+```toml,trunk
+package = "shadcn-ui-yew-book"
+features = ["button"]
+files = ["src/new_york/button/button.rs"]
+url_fragment = "#/new-york/"
+
+[[file_replacements]]
+find = "crate::new_york::"
+replace = "crate::"
+```
+
+{{#endtab }}
+{{#endtabs }}
 
 {{#endtab }}
 {{#endtabs }}
@@ -117,22 +153,34 @@ files = ["src/button.rs"]
 ### Secondary
 
 {{#tabs global="framework" }}
-{{#tab name="Leptos" }}
-
-```toml,trunk
-package = "shadcn-ui-leptos-book"
-features = ["button-secondary"]
-files = ["src/button_secondary.rs"]
-```
-
-{{#endtab }}
 {{#tab name="Yew" }}
+
+{{#tabs global="style" }}
+{{#tab name="Default" }}
 
 ```toml,trunk
 package = "shadcn-ui-yew-book"
-features = ["button-secondary"]
-files = ["src/button_secondary.rs"]
+features = ["button"]
+files = ["src/default/button/button_secondary.rs"]
+url_fragment = "#/default/secondary"
+
+[[file_replacements]]
+find = "crate::new_york::"
+replace = "crate::"
 ```
+
+{{#endtab }}
+{{#tab name="New York" }}
+
+```toml,trunk
+package = "shadcn-ui-yew-book"
+features = ["button"]
+files = ["src/new_york/button/button_secondary.rs"]
+url_fragment = "#/new-york/secondary"
+```
+
+{{#endtab }}
+{{#endtabs }}
 
 {{#endtab }}
 {{#endtabs }}
@@ -140,22 +188,34 @@ files = ["src/button_secondary.rs"]
 ### Destructive
 
 {{#tabs global="framework" }}
-{{#tab name="Leptos" }}
-
-```toml,trunk
-package = "shadcn-ui-leptos-book"
-features = ["button-destructive"]
-files = ["src/button_destructive.rs"]
-```
-
-{{#endtab }}
 {{#tab name="Yew" }}
+
+{{#tabs global="style" }}
+{{#tab name="Default" }}
 
 ```toml,trunk
 package = "shadcn-ui-yew-book"
-features = ["button-destructive"]
-files = ["src/button_destructive.rs"]
+features = ["button"]
+files = ["src/default/button/button_destructive.rs"]
+url_fragment = "#/default/destructive"
+
+[[file_replacements]]
+find = "crate::new_york::"
+replace = "crate::"
 ```
+
+{{#endtab }}
+{{#tab name="New York" }}
+
+```toml,trunk
+package = "shadcn-ui-yew-book"
+features = ["button"]
+files = ["src/new_york/button/button_destructive.rs"]
+url_fragment = "#/new-york/destructive"
+```
+
+{{#endtab }}
+{{#endtabs }}
 
 {{#endtab }}
 {{#endtabs }}
@@ -163,22 +223,34 @@ files = ["src/button_destructive.rs"]
 ### Outline
 
 {{#tabs global="framework" }}
-{{#tab name="Leptos" }}
-
-```toml,trunk
-package = "shadcn-ui-leptos-book"
-features = ["button-outline"]
-files = ["src/button_outline.rs"]
-```
-
-{{#endtab }}
 {{#tab name="Yew" }}
+
+{{#tabs global="style" }}
+{{#tab name="Default" }}
 
 ```toml,trunk
 package = "shadcn-ui-yew-book"
-features = ["button-outline"]
-files = ["src/button_outline.rs"]
+features = ["button"]
+files = ["src/default/button/button_outline.rs"]
+url_fragment = "#/default/outline"
+
+[[file_replacements]]
+find = "crate::new_york::"
+replace = "crate::"
 ```
+
+{{#endtab }}
+{{#tab name="New York" }}
+
+```toml,trunk
+package = "shadcn-ui-yew-book"
+features = ["button"]
+files = ["src/new_york/button/button_outline.rs"]
+url_fragment = "#/new-york/outline"
+```
+
+{{#endtab }}
+{{#endtabs }}
 
 {{#endtab }}
 {{#endtabs }}
@@ -186,22 +258,34 @@ files = ["src/button_outline.rs"]
 ### Ghost
 
 {{#tabs global="framework" }}
-{{#tab name="Leptos" }}
-
-```toml,trunk
-package = "shadcn-ui-leptos-book"
-features = ["button-ghost"]
-files = ["src/button_ghost.rs"]
-```
-
-{{#endtab }}
 {{#tab name="Yew" }}
+
+{{#tabs global="style" }}
+{{#tab name="Default" }}
 
 ```toml,trunk
 package = "shadcn-ui-yew-book"
-features = ["button-ghost"]
-files = ["src/button_ghost.rs"]
+features = ["button"]
+files = ["src/default/button/button_ghost.rs"]
+url_fragment = "#/default/ghost"
+
+[[file_replacements]]
+find = "crate::new_york::"
+replace = "crate::"
 ```
+
+{{#endtab }}
+{{#tab name="New York" }}
+
+```toml,trunk
+package = "shadcn-ui-yew-book"
+features = ["button"]
+files = ["src/new_york/button/button_ghost.rs"]
+url_fragment = "#/new-york/ghost"
+```
+
+{{#endtab }}
+{{#endtabs }}
 
 {{#endtab }}
 {{#endtabs }}
@@ -209,22 +293,34 @@ files = ["src/button_ghost.rs"]
 ### Link
 
 {{#tabs global="framework" }}
-{{#tab name="Leptos" }}
-
-```toml,trunk
-package = "shadcn-ui-leptos-book"
-features = ["button-link"]
-files = ["src/button_link.rs"]
-```
-
-{{#endtab }}
 {{#tab name="Yew" }}
+
+{{#tabs global="style" }}
+{{#tab name="Default" }}
 
 ```toml,trunk
 package = "shadcn-ui-yew-book"
-features = ["button-link"]
-files = ["src/button_link.rs"]
+features = ["button"]
+files = ["src/default/button/button_link.rs"]
+url_fragment = "#/default/link"
+
+[[file_replacements]]
+find = "crate::new_york::"
+replace = "crate::"
 ```
+
+{{#endtab }}
+{{#tab name="New York" }}
+
+```toml,trunk
+package = "shadcn-ui-yew-book"
+features = ["button"]
+files = ["src/new_york/button/button_link.rs"]
+url_fragment = "#/new-york/link"
+```
+
+{{#endtab }}
+{{#endtabs }}
 
 {{#endtab }}
 {{#endtabs }}
@@ -232,22 +328,34 @@ files = ["src/button_link.rs"]
 ### Icon
 
 {{#tabs global="framework" }}
-{{#tab name="Leptos" }}
-
-```toml,trunk
-package = "shadcn-ui-leptos-book"
-features = ["button-icon"]
-files = ["src/button_icon.rs"]
-```
-
-{{#endtab }}
 {{#tab name="Yew" }}
+
+{{#tabs global="style" }}
+{{#tab name="Default" }}
 
 ```toml,trunk
 package = "shadcn-ui-yew-book"
-features = ["button-icon"]
-files = ["src/button_icon.rs"]
+features = ["button"]
+files = ["src/default/button/button_icon.rs"]
+url_fragment = "#/default/icon"
+
+[[file_replacements]]
+find = "crate::new_york::"
+replace = "crate::"
 ```
+
+{{#endtab }}
+{{#tab name="New York" }}
+
+```toml,trunk
+package = "shadcn-ui-yew-book"
+features = ["button"]
+files = ["src/new_york/button/button_icon.rs"]
+url_fragment = "#/new-york/icon"
+```
+
+{{#endtab }}
+{{#endtabs }}
 
 {{#endtab }}
 {{#endtabs }}
@@ -255,22 +363,34 @@ files = ["src/button_icon.rs"]
 ### With Icon
 
 {{#tabs global="framework" }}
-{{#tab name="Leptos" }}
-
-```toml,trunk
-package = "shadcn-ui-leptos-book"
-features = ["button-with-icon"]
-files = ["src/button_with_icon.rs"]
-```
-
-{{#endtab }}
 {{#tab name="Yew" }}
+
+{{#tabs global="style" }}
+{{#tab name="Default" }}
 
 ```toml,trunk
 package = "shadcn-ui-yew-book"
-features = ["button-with-icon"]
-files = ["src/button_with_icon.rs"]
+features = ["button"]
+files = ["src/default/button/button_with_icon.rs"]
+url_fragment = "#/default/with-icon"
+
+[[file_replacements]]
+find = "crate::new_york::"
+replace = "crate::"
 ```
+
+{{#endtab }}
+{{#tab name="New York" }}
+
+```toml,trunk
+package = "shadcn-ui-yew-book"
+features = ["button"]
+files = ["src/new_york/button/button_with_icon.rs"]
+url_fragment = "#/new-york/with-icon"
+```
+
+{{#endtab }}
+{{#endtabs }}
 
 {{#endtab }}
 {{#endtabs }}
@@ -278,22 +398,34 @@ files = ["src/button_with_icon.rs"]
 ### Loading
 
 {{#tabs global="framework" }}
-{{#tab name="Leptos" }}
-
-```toml,trunk
-package = "shadcn-ui-leptos-book"
-features = ["button-loading"]
-files = ["src/button_loading.rs"]
-```
-
-{{#endtab }}
 {{#tab name="Yew" }}
+
+{{#tabs global="style" }}
+{{#tab name="Default" }}
 
 ```toml,trunk
 package = "shadcn-ui-yew-book"
-features = ["button-loading"]
-files = ["src/button_loading.rs"]
+features = ["button"]
+files = ["src/default/button/button_loading.rs"]
+url_fragment = "#/default/loading"
+
+[[file_replacements]]
+find = "crate::new_york::"
+replace = "crate::"
 ```
+
+{{#endtab }}
+{{#tab name="New York" }}
+
+```toml,trunk
+package = "shadcn-ui-yew-book"
+features = ["button"]
+files = ["src/new_york/button/button_loading.rs"]
+url_fragment = "#/new-york/loading"
+```
+
+{{#endtab }}
+{{#endtabs }}
 
 {{#endtab }}
 {{#endtabs }}
@@ -301,24 +433,34 @@ files = ["src/button_loading.rs"]
 ### As Child
 
 {{#tabs global="framework" }}
-
-<!-- {{#tab name="Leptos" }}
-
-```toml,trunk
-package = "shadcn-ui-leptos-book"
-features = ["button-as-child"]
-files = ["src/button_as_child.rs"]
-```
-
-{{#endtab }} -->
-
 {{#tab name="Yew" }}
+
+{{#tabs global="style" }}
+{{#tab name="Default" }}
 
 ```toml,trunk
 package = "shadcn-ui-yew-book"
-features = ["button-as-child"]
-files = ["src/button_as_child.rs"]
+features = ["button"]
+files = ["src/default/button/button_as_child.rs"]
+url_fragment = "#/default/as-child"
+
+[[file_replacements]]
+find = "crate::new_york::"
+replace = "crate::"
 ```
+
+{{#endtab }}
+{{#tab name="New York" }}
+
+```toml,trunk
+package = "shadcn-ui-yew-book"
+features = ["button"]
+files = ["src/new_york/button/button_as_child.rs"]
+url_fragment = "#/new-york/as-child"
+```
+
+{{#endtab }}
+{{#endtabs }}
 
 {{#endtab }}
 {{#endtabs }}

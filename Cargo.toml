@@ -23,11 +23,14 @@ console_error_panic_hook = "0.1.7"
 env_logger = "0.11.3"
 leptos = { version = "0.6.9", features = ["nightly"] }
 log = "0.4.21"
+radix-yew-icons = { git = "https://github.com/RustForWeb/radix.git" }
 serde = { version = "1.0.203", features = ["derive"] }
 serde_json = "1.0.117"
 tailwind_fuse = { version = "0.3.0", features = ["variant"] }
 tokio = { version = "1.38.0", features = ["full"] }
+web-sys = "0.3.72"
 yew = "0.21.0"
+yew-lucide = { git = "https://gitlab.com/stephan.dilly/yew-lucide", branch = "yew-upgrade" }
 yew-router = "0.18.0"
 
 [patch.crates-io]

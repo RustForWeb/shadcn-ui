@@ -5,11 +5,36 @@ Use to show a placeholder while content is loading.
 {{#tabs global="framework" }}
 {{#tab name="Yew" }}
 
+{{#tabs global="style" }}
+{{#tab name="Default" }}
+
 ```toml,trunk
 package = "shadcn-ui-yew-book"
 features = ["skeleton"]
-files = ["src/skeleton.rs"]
+files = ["src/default/skeleton/skeleton.rs"]
+url_fragment = "#/default/"
+
+[[file_replacements]]
+find = "crate::default::"
+replace = "crate::"
 ```
+
+{{#endtab }}
+{{#tab name="New York" }}
+
+```toml,trunk
+package = "shadcn-ui-yew-book"
+features = ["skeleton"]
+files = ["src/new_york/skeleton/skeleton.rs"]
+url_fragment = "#/new-york/"
+
+[[file_replacements]]
+find = "crate::new_york::"
+replace = "crate::"
+```
+
+{{#endtab }}
+{{#endtabs }}
 
 {{#endtab }}
 {{#endtabs }}
@@ -62,11 +87,36 @@ fn Usage() -> impl IntoView {
 {{#tabs global="framework" }}
 {{#tab name="Yew" }}
 
+{{#tabs global="style" }}
+{{#tab name="Default" }}
+
 ```toml,trunk
 package = "shadcn-ui-yew-book"
-features = ["skeleton-card"]
-files = ["src/skeleton_card.rs"]
+features = ["skeleton"]
+files = ["src/default/skeleton/skeleton_card.rs"]
+url_fragment = "#/default/card"
+
+[[file_replacements]]
+find = "crate::default::"
+replace = "crate::"
 ```
+
+{{#endtab }}
+{{#tab name="New York" }}
+
+```toml,trunk
+package = "shadcn-ui-yew-book"
+features = ["skeleton"]
+files = ["src/new_york/skeleton/skeleton_card.rs"]
+url_fragment = "#/new-york/card"
+
+[[file_replacements]]
+find = "crate::new_york::"
+replace = "crate::"
+```
+
+{{#endtab }}
+{{#endtabs }}
 
 {{#endtab }}
 {{#endtabs }}
