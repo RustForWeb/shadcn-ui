@@ -6,7 +6,7 @@
 
 Rust shadcn/ui is a Rust port of [shadcn/ui](https://ui.shadcn.com/).
 
-TODO: introduction text
+[shadcn/ui](https://ui.shadcn.com/) is a library of beautifully designed components that you can copy and paste into your apps.
 
 ## Frameworks
 

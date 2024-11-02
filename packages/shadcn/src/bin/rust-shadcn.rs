@@ -32,8 +32,8 @@ async fn main() -> Result<()> {
     let cli = Cli::parse();
 
     match cli.command {
-        Commands::Add(args) => Ok(()),
-        Commands::Diff(args) => Ok(()),
+        Commands::Add(_args) => Ok(()),
+        Commands::Diff(_args) => Ok(()),
         Commands::Init(args) => init(args).await,
     }
 }

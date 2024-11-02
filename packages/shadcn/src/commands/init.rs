@@ -8,7 +8,7 @@ use crate::{
     utils::{errors::ErrorType, get_project_info::get_project_info, logger::LOGGER},
 };
 
-fn default_cwd() -> PathBuf {
+fn _default_cwd() -> PathBuf {
     env::current_dir().expect("Current directory should be accessible.")
 }
 
