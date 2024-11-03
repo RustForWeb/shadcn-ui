@@ -6,5 +6,6 @@
 -   [Button](./button.md)
 -   [Card](./card.md)
 -   [Input](./input.md)
+-   [Label](./label.md)
 -   [Pagination](./pagination.md)
 -   [Textarea](./textarea.md)

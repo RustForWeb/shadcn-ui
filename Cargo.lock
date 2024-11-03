@@ -2218,6 +2218,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "radix-yew-label"
+version = "0.0.2"
+source = "git+https://github.com/RustForWeb/radix.git#f75b74a45a15c3562c08378f9c64aad226977350"
+dependencies = [
+ "web-sys",
+ "yew",
+]
+
+[[package]]
 name = "reactive_graph"
 version = "0.1.0-rc0"
 source = "git+https://github.com/DanielleHuisman/leptos.git?branch=fix%2Funpin-wasm-bindgen#e6d79b50655dc425a5ae8ee0e3df7651ad254ea7"
@@ -2832,6 +2841,7 @@ dependencies = [
  "shadcn-ui-yew-badge",
  "shadcn-ui-yew-button",
  "shadcn-ui-yew-card",
+ "shadcn-ui-yew-label",
  "shadcn-ui-yew-pagination",
  "shadcn-ui-yew-skeleton",
  "web-sys",
@@ -2852,6 +2862,15 @@ dependencies = [
 name = "shadcn-ui-yew-card"
 version = "0.0.1"
 dependencies = [
+ "tailwind_fuse",
+ "yew",
+]
+
+[[package]]
+name = "shadcn-ui-yew-label"
+version = "0.0.1"
+dependencies = [
+ "radix-yew-label",
  "tailwind_fuse",
  "yew",
 ]

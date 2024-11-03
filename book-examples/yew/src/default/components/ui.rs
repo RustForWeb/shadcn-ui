@@ -10,6 +10,8 @@ pub use shadcn_ui_yew_badge::default as badge;
 pub use shadcn_ui_yew_button::default as button;
 #[cfg(feature = "card")]
 pub use shadcn_ui_yew_card::default as card;
+#[cfg(feature = "label")]
+pub use shadcn_ui_yew_label::default as label;
 #[cfg(feature = "pagination")]
 pub use shadcn_ui_yew_pagination::default as pagination;
 #[cfg(feature = "skeleton")]

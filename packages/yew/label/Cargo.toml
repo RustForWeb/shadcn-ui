@@ -1,0 +1,16 @@
+[package]
+name = "shadcn-ui-yew-label"
+description = "Yew port of shadcn/ui label."
+homepage = "https://shadcn-ui.rustforweb.org/components/label.html"
+publish = false
+
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+version.workspace = true
+
+[dependencies]
+radix-yew-label = { git = "https://github.com/RustForWeb/radix" }
+tailwind_fuse.workspace = true
+yew.workspace = true

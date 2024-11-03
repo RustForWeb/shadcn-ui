@@ -28,7 +28,7 @@
     -   [Hover Card]()
     -   [Input](./components/input.md)
     -   [Input OTP]()
-    -   [Label]()
+    -   [Label](./components/label.md)
     -   [Menubar]()
     -   [Navigation Menu]()
     -   [Pagination](./components/pagination.md)

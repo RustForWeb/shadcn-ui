@@ -1,9 +1,9 @@
-# Avatar
+# Label
 
-An image element with a fallback for representing the user.
+Renders an accessible label associated with controls.
 
--   [Docs](https://radix.rustforweb.org/primitives/components/avatar.html)
--   [API Reference](https://radix.rustforweb.org/primitives/components/avatar.html#api-reference)
+-   [Docs](https://radix.rustforweb.org/primitives/components/label.html)
+-   [API Reference](https://radix.rustforweb.org/primitives/components/label.html#api-reference)
 
 {{#tabs global="framework" }}
 {{#tab name="Yew" }}
@@ -13,8 +13,8 @@ An image element with a fallback for representing the user.
 
 ```toml,trunk
 package = "shadcn-ui-yew-book"
-features = ["avatar"]
-files = ["src/default/avatar/avatar.rs"]
+features = ["label"]
+files = ["src/default/label/label.rs"]
 url_fragment = "#/default/"
 
 [[file_replacements]]
@@ -27,8 +27,8 @@ replace = "crate::"
 
 ```toml,trunk
 package = "shadcn-ui-yew-book"
-features = ["avatar"]
-files = ["src/new_york/avatar/avatar.rs"]
+features = ["label"]
+files = ["src/new_york/label/label.rs"]
 url_fragment = "#/new-york/"
 
 [[file_replacements]]
@@ -54,10 +54,10 @@ The CLI is not yet available. For now, manually copy the component source into y
 {{#tab name="Yew" }}
 
 ```shell
-rust-shadcn-ui add avatar
+rust-shadcn-ui add label
 ```
 
--   [View source](https://github.com/RustForWeb/shadcn-ui/tree/main/packages/yew/avatar)
+-   [View source](https://github.com/RustForWeb/shadcn-ui/tree/main/packages/yew/label)
 
 {{#endtab }}
 {{#endtabs }}
@@ -70,15 +70,12 @@ rust-shadcn-ui add avatar
 ```rust,ignore
 use yew::prelude::*;
 
-use crate::components::ui::avatar::{Avatar, AvatarFallback, AvatarImage};
+use crate::components::ui::label::Label;
 
 #[component]
 fn Usage() -> impl IntoView {
     view! {
-        <Avatar>
-            <AvatarImage src="https://github.com/shadcn.png" />
-            <AvatarFallback>{"CN"}</AvatarFallback>
-        </Avatar>
+        <Label r#for="email">{"Your email address"}</Label>
     }
 }
 ```
@@ -88,4 +85,4 @@ fn Usage() -> impl IntoView {
 
 ## See Also
 
--   [shadcn/ui documentation](https://ui.shadcn.com/docs/components/avatar)
+-   [shadcn/ui documentation](https://ui.shadcn.com/docs/components/label)

@@ -10,6 +10,8 @@ mod badge;
 mod button;
 #[cfg(feature = "card")]
 mod card;
+#[cfg(feature = "label")]
+mod label;
 #[cfg(feature = "pagination")]
 mod pagination;
 #[cfg(feature = "skeleton")]
@@ -54,6 +56,13 @@ pub fn render() -> Html {
         use self::card::{render, CardRoute};
         children.push(html! {
             <Switch<CardRoute> render={render} />
+        });
+    }
+    #[cfg(feature = "label")]
+    {
+        use self::label::{render, LabelRoute};
+        children.push(html! {
+            <Switch<LabelRoute> render={render} />
         });
     }
     #[cfg(feature = "pagination")]
