@@ -1,5 +1,7 @@
 mod components;
 
+#[cfg(feature = "alert")]
+mod alert;
 #[cfg(feature = "button")]
 mod button;
 #[cfg(feature = "pagination")]
@@ -13,6 +15,13 @@ use yew_router::prelude::*;
 pub fn render() -> Html {
     let mut children: Vec<Html> = vec![];
 
+    #[cfg(feature = "alert")]
+    {
+        use self::alert::{render, AlertRoute};
+        children.push(html! {
+            <Switch<AlertRoute> render={render} />
+        });
+    }
     #[cfg(feature = "button")]
     {
         use self::button::{render, ButtonRoute};

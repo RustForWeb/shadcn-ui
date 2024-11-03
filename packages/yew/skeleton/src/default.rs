@@ -19,7 +19,7 @@ pub fn Skeleton(props: &SkeletonProps) -> Html {
         <div
             ref={props.node_ref.clone()}
             id={props.id.clone()}
-            class={tw_merge!("animate-pulse rounded-md bg-muted", props.class.clone())}
+            class={tw_merge!("animate-pulse rounded-md bg-muted", &props.class)}
             style={props.style.clone()}
         />
     }

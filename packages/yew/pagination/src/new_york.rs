@@ -23,7 +23,7 @@ pub fn Pagination(props: &PaginationProps) -> Html {
         <nav
             ref={props.node_ref.clone()}
             id={props.id.clone()}
-            class={tw_merge!("mx-auto flex w-full justify-center", props.class.clone())}
+            class={tw_merge!("mx-auto flex w-full justify-center", &props.class)}
             style={props.style.clone()}
 
             role="navigation"
@@ -54,7 +54,7 @@ pub fn PaginationContent(props: &PaginationContentProps) -> Html {
         <ul
             ref={props.node_ref.clone()}
             id={props.id.clone()}
-            class={tw_merge!("flex flex-row items-center gap-1", props.class.clone())}
+            class={tw_merge!("flex flex-row items-center gap-1", &props.class)}
             style={props.style.clone()}
         >
             {props.children.clone()}
@@ -82,7 +82,7 @@ pub fn PaginationItem(props: &PaginationItemProps) -> Html {
         <li
             ref={props.node_ref.clone()}
             id={props.id.clone()}
-            class={tw_merge!("", props.class.clone())}
+            class={tw_merge!("", &props.class)}
             style={props.style.clone()}
         >
             {props.children.clone()}
@@ -185,7 +185,7 @@ pub fn PaginationPrevious(props: &PaginationPreviousProps) -> Html {
 
             node_ref={props.node_ref.clone()}
             id={props.id.clone()}
-            class={tw_merge!("gap-1 pl-2.5", props.class.clone())}
+            class={tw_merge!("gap-1 pl-2.5", &props.class)}
             style={props.style.clone()}
         >
             <ChevronLeftIcon class="h-4 w-4" />
@@ -228,7 +228,7 @@ pub fn PaginationNext(props: &PaginationNextProps) -> Html {
 
             node_ref={props.node_ref.clone()}
             id={props.id.clone()}
-            class={tw_merge!("gap-1 pr-2.5", props.class.clone())}
+            class={tw_merge!("gap-1 pr-2.5", &props.class)}
             style={props.style.clone()}
         >
             <span>{"Next"}</span>
@@ -255,7 +255,7 @@ pub fn PaginationEllipsis(props: &PaginationEllipsisProps) -> Html {
         <span
             ref={props.node_ref.clone()}
             id={props.id.clone()}
-            class={tw_merge!("flex h-9 w-9 items-center justify-center", props.class.clone())}
+            class={tw_merge!("flex h-9 w-9 items-center justify-center", &props.class)}
             style={props.style.clone()}
             aria-hidden="true"
         >

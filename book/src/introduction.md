@@ -31,7 +31,7 @@ The tables below show the support for the various frameworks.
 | Name            | Dioxus                                                      | Leptos                                                        | Yew                                                           |
 | --------------- | ----------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
 | Accordion       | ❌ [#12](https://github.com/RustForWeb/shadcn-ui/issues/12) | ❌ [#61](https://github.com/RustForWeb/shadcn-ui/issues/61)   | ❌ [#110](https://github.com/RustForWeb/shadcn-ui/issues/110) |
-| Alert           | ❌ [#13](https://github.com/RustForWeb/shadcn-ui/issues/13) | ❌ [#62](https://github.com/RustForWeb/shadcn-ui/issues/62)   | ❌ [#111](https://github.com/RustForWeb/shadcn-ui/issues/111) |
+| Alert           | ❌ [#13](https://github.com/RustForWeb/shadcn-ui/issues/13) | ❌ [#62](https://github.com/RustForWeb/shadcn-ui/issues/62)   | 🟦 [#111](https://github.com/RustForWeb/shadcn-ui/issues/111) |
 | Alert Dialog    | ❌ [#14](https://github.com/RustForWeb/shadcn-ui/issues/14) | ❌ [#63](https://github.com/RustForWeb/shadcn-ui/issues/63)   | ❌ [#112](https://github.com/RustForWeb/shadcn-ui/issues/112) |
 | Aspect Ratio    | ❌ [#15](https://github.com/RustForWeb/shadcn-ui/issues/15) | ❌ [#64](https://github.com/RustForWeb/shadcn-ui/issues/64)   | ❌ [#113](https://github.com/RustForWeb/shadcn-ui/issues/113) |
 | Avatar          | ❌ [#16](https://github.com/RustForWeb/shadcn-ui/issues/16) | ❌ [#65](https://github.com/RustForWeb/shadcn-ui/issues/65)   | ❌ [#114](https://github.com/RustForWeb/shadcn-ui/issues/114) |
