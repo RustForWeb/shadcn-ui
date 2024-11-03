@@ -10,6 +10,8 @@ mod badge;
 mod button;
 #[cfg(feature = "card")]
 mod card;
+#[cfg(feature = "input")]
+mod input;
 #[cfg(feature = "label")]
 mod label;
 #[cfg(feature = "pagination")]
@@ -56,6 +58,13 @@ pub fn render() -> Html {
         use self::card::{render, CardRoute};
         children.push(html! {
             <Switch<CardRoute> render={render} />
+        });
+    }
+    #[cfg(feature = "input")]
+    {
+        use self::input::{render, InputRoute};
+        children.push(html! {
+            <Switch<InputRoute> render={render} />
         });
     }
     #[cfg(feature = "label")]

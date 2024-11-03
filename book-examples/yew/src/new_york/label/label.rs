@@ -6,7 +6,7 @@ use crate::new_york::components::ui::label::Label;
 pub fn LabelDemo() -> Html {
     html! {
         <div>
-            <div className="flex items-center space-x-2">
+            <div class="flex items-center space-x-2">
                 // TODO
                 // <Checkbox id="terms" />
                 <Label r#for="terms">{"Accept terms and conditions"}</Label>

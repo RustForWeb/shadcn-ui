@@ -6,11 +6,13 @@ pub use shadcn_ui_yew_alert::default as alert;
 pub use shadcn_ui_yew_avatar::default as avatar;
 #[cfg(feature = "badge")]
 pub use shadcn_ui_yew_badge::default as badge;
-#[cfg(any(feature = "button", feature = "card"))]
+#[cfg(any(feature = "button", feature = "card", feature = "input"))]
 pub use shadcn_ui_yew_button::default as button;
 #[cfg(feature = "card")]
 pub use shadcn_ui_yew_card::default as card;
-#[cfg(any(feature = "label", feature = "card"))]
+#[cfg(any(feature = "input", feature = "card"))]
+pub use shadcn_ui_yew_input::default as input;
+#[cfg(any(feature = "label", feature = "card", feature = "input"))]
 pub use shadcn_ui_yew_label::default as label;
 #[cfg(feature = "pagination")]
 pub use shadcn_ui_yew_pagination::default as pagination;

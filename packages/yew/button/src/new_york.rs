@@ -52,7 +52,35 @@ pub struct ButtonProps {
 
     // Attributes from `button`
     #[prop_or_default]
+    pub autofocus: bool,
+    #[prop_or_default]
+    pub command: Option<String>,
+    #[prop_or_default]
+    pub commandfor: Option<String>,
+    #[prop_or_default]
     pub disabled: bool,
+    #[prop_or_default]
+    pub form: Option<String>,
+    #[prop_or_default]
+    pub formaction: Option<String>,
+    #[prop_or_default]
+    pub formenctype: Option<String>,
+    #[prop_or_default]
+    pub formmethod: Option<String>,
+    #[prop_or_default]
+    pub formnovalidate: bool,
+    #[prop_or_default]
+    pub formtarget: Option<String>,
+    #[prop_or_default]
+    pub name: Option<String>,
+    #[prop_or_default]
+    pub popovertarget: Option<String>,
+    #[prop_or_default]
+    pub popovertargetaction: Option<String>,
+    #[prop_or_default]
+    pub r#type: Option<String>,
+    #[prop_or_default]
+    pub value: Option<String>,
     #[prop_or_default]
     pub on_click: Callback<MouseEvent>,
 
@@ -76,8 +104,23 @@ pub struct ButtonChildProps {
     pub id: Option<String>,
     pub class: String,
     pub style: Option<String>,
+
+    pub autofocus: bool,
+    pub command: Option<String>,
+    pub commandfor: Option<String>,
     pub disabled: bool,
-    pub onclick: Callback<MouseEvent>,
+    pub form: Option<String>,
+    pub formaction: Option<String>,
+    pub formenctype: Option<String>,
+    pub formmethod: Option<String>,
+    pub formnovalidate: bool,
+    pub formtarget: Option<String>,
+    pub name: Option<String>,
+    pub popovertarget: Option<String>,
+    pub popovertargetaction: Option<String>,
+    pub r#type: Option<String>,
+    pub value: Option<String>,
+    pub on_click: Callback<MouseEvent>,
 }
 
 impl ButtonChildProps {
@@ -88,8 +131,23 @@ impl ButtonChildProps {
                 id={self.id}
                 class={self.class}
                 style={self.style}
+
+                autofocus={self.autofocus}
+                command={self.command}
+                commandfor={self.commandfor}
                 disabled={self.disabled}
-                onclick={self.onclick}
+                form={self.form}
+                formaction={self.formaction}
+                formenctype={self.formenctype}
+                formmethod={self.formmethod}
+                formnovalidate={self.formnovalidate}
+                formtarget={self.formtarget}
+                name={self.name}
+                popovertarget={self.popovertarget}
+                popovertargetaction={self.popovertargetaction}
+                type={self.r#type}
+                value={self.value}
+                onclick={self.on_click}
             >
                 {children}
             </button>
@@ -115,8 +173,23 @@ pub fn Button(props: &ButtonProps) -> Html {
         id: props.id.clone(),
         class: (*class).clone(),
         style: props.style.clone(),
+
+        autofocus: props.autofocus,
+        command: props.command.clone(),
+        commandfor: props.commandfor.clone(),
         disabled: props.disabled,
-        onclick: props.on_click.clone(),
+        form: props.form.clone(),
+        formaction: props.formaction.clone(),
+        formenctype: props.formenctype.clone(),
+        formmethod: props.formmethod.clone(),
+        formnovalidate: props.formnovalidate,
+        formtarget: props.formtarget.clone(),
+        name: props.name.clone(),
+        popovertarget: props.popovertarget.clone(),
+        popovertargetaction: props.popovertargetaction.clone(),
+        r#type: props.r#type.clone(),
+        value: props.value.clone(),
+        on_click: props.on_click.clone(),
     };
 
     if let Some(as_child) = props.as_child.as_ref() {

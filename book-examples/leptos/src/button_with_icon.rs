@@ -6,7 +6,7 @@ use crate::components::ui::button::Button;
 pub fn ButtonWithIcon() -> impl IntoView {
     view! {
         <Button>
-            {/* <Mail className="mr-2 h-4 w-4" /> */}
+            {/* <Mail class="mr-2 h-4 w-4" /> */}
             Login with Email
         </Button>
     }

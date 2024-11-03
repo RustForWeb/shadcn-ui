@@ -3,6 +3,7 @@ use yew::prelude::*;
 use crate::new_york::components::ui::{
     button::{Button, ButtonVariant},
     card::{Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle},
+    input::Input,
     label::Label,
 };
 
@@ -19,8 +20,7 @@ pub fn CardWithForm() -> Html {
                     <div class="grid w-full items-center gap-4">
                         <div class="flex flex-col space-y-1.5">
                             <Label r#for="name">{"Name"}</Label>
-                            // TODO
-                            // <Input id="name" placeholder="Name of your project" />
+                            <Input id="name" placeholder="Name of your project" />
                         </div>
                         <div class="flex flex-col space-y-1.5">
                             <Label r#for="framework">{"Framework"}</Label>

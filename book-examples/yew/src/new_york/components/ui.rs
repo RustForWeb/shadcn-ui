@@ -6,11 +6,13 @@ pub use shadcn_ui_yew_alert::new_york as alert;
 pub use shadcn_ui_yew_avatar::new_york as avatar;
 #[cfg(feature = "badge")]
 pub use shadcn_ui_yew_badge::new_york as badge;
-#[cfg(any(feature = "button", feature = "card"))]
+#[cfg(any(feature = "button", feature = "card", feature = "input"))]
 pub use shadcn_ui_yew_button::new_york as button;
 #[cfg(feature = "card")]
 pub use shadcn_ui_yew_card::new_york as card;
-#[cfg(any(feature = "label", feature = "card"))]
+#[cfg(any(feature = "input", feature = "card"))]
+pub use shadcn_ui_yew_input::new_york as input;
+#[cfg(any(feature = "label", feature = "card", feature = "input"))]
 pub use shadcn_ui_yew_label::new_york as label;
 #[cfg(feature = "pagination")]
 pub use shadcn_ui_yew_pagination::new_york as pagination;
