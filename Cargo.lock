@@ -2831,6 +2831,7 @@ dependencies = [
  "shadcn-ui-yew-avatar",
  "shadcn-ui-yew-badge",
  "shadcn-ui-yew-button",
+ "shadcn-ui-yew-card",
  "shadcn-ui-yew-pagination",
  "shadcn-ui-yew-skeleton",
  "web-sys",
@@ -2841,6 +2842,14 @@ dependencies = [
 
 [[package]]
 name = "shadcn-ui-yew-button"
+version = "0.0.1"
+dependencies = [
+ "tailwind_fuse",
+ "yew",
+]
+
+[[package]]
+name = "shadcn-ui-yew-card"
 version = "0.0.1"
 dependencies = [
  "tailwind_fuse",

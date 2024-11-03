@@ -4,7 +4,7 @@ use yew::prelude::*;
 use crate::new_york::components::ui::alert::{Alert, AlertDescription, AlertTitle, AlertVariant};
 
 #[function_component]
-pub fn AlertDestructiveDemo() -> Html {
+pub fn AlertDestructive() -> Html {
     html! {
         <Alert variant={AlertVariant::Destructive}>
             <ExclamationTriangleIcon class="h-4 w-4" />

@@ -4,7 +4,7 @@ use yew_lucide::AlertCircle;
 use crate::default::components::ui::alert::{Alert, AlertDescription, AlertTitle, AlertVariant};
 
 #[function_component]
-pub fn AlertDestructiveDemo() -> Html {
+pub fn AlertDestructive() -> Html {
     html! {
         <Alert variant={AlertVariant::Destructive}>
             <AlertCircle class="h-4 w-4" />

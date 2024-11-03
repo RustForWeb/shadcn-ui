@@ -16,6 +16,6 @@ pub enum AlertRoute {
 pub fn render(route: AlertRoute) -> Html {
     match route {
         AlertRoute::Root => html! { <alert::AlertDemo /> },
-        AlertRoute::Destructive => html! { <alert_destructive::AlertDestructiveDemo /> },
+        AlertRoute::Destructive => html! { <alert_destructive::AlertDestructive /> },
     }
 }

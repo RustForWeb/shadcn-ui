@@ -18,6 +18,7 @@ shadcn-ui-yew-alert = { path = "../../packages/yew/alert", optional = true }
 shadcn-ui-yew-avatar = { path = "../../packages/yew/avatar", optional = true }
 shadcn-ui-yew-badge = { path = "../../packages/yew/badge", optional = true }
 shadcn-ui-yew-button = { path = "../../packages/yew/button", optional = true }
+shadcn-ui-yew-card = { path = "../../packages/yew/card", optional = true }
 shadcn-ui-yew-pagination = { path = "../../packages/yew/pagination", optional = true }
 shadcn-ui-yew-skeleton = { path = "../../packages/yew/skeleton", optional = true }
 web-sys.workspace = true
@@ -26,7 +27,15 @@ yew-lucide = { git = "https://gitlab.com/stephan.dilly/yew-lucide", branch = "ye
 yew-router.workspace = true
 
 [features]
-default = ["alert", "avatar", "badge", "button", "pagination", "skeleton"]
+default = [
+    "alert",
+    "avatar",
+    "badge",
+    "button",
+    "card",
+    "pagination",
+    "skeleton",
+]
 alert = [
     "dep:radix-yew-icons",
     "dep:shadcn-ui-yew-alert",
@@ -43,6 +52,14 @@ button = [
     "radix-yew-icons/chevron-right",
     "radix-yew-icons/envelope-open",
     "radix-yew-icons/reload",
+]
+card = [
+    "dep:radix-yew-icons",
+    "dep:shadcn-ui-yew-button",
+    "dep:shadcn-ui-yew-card",
+    "dep:yew-lucide",
+    "radix-yew-icons/bell",
+    "radix-yew-icons/check",
 ]
 pagination = ["dep:shadcn-ui-yew-pagination"]
 skeleton = ["dep:shadcn-ui-yew-skeleton"]
