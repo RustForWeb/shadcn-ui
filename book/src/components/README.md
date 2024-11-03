@@ -2,6 +2,7 @@
 
 -   [Alert](./alert.md)
 -   [Avatar](./avatar.md)
+-   [Badge](./badge.md)
 -   [Button](./button.md)
 -   [Card](./card.md)
 -   [Input](./input.md)

@@ -2812,6 +2812,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "shadcn-ui-yew-badge"
+version = "0.0.1"
+dependencies = [
+ "tailwind_fuse",
+ "yew",
+]
+
+[[package]]
 name = "shadcn-ui-yew-book"
 version = "0.0.1"
 dependencies = [
@@ -2821,6 +2829,7 @@ dependencies = [
  "radix-yew-icons",
  "shadcn-ui-yew-alert",
  "shadcn-ui-yew-avatar",
+ "shadcn-ui-yew-badge",
  "shadcn-ui-yew-button",
  "shadcn-ui-yew-pagination",
  "shadcn-ui-yew-skeleton",
