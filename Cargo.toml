@@ -34,5 +34,6 @@ yew-lucide = { git = "https://gitlab.com/stephan.dilly/yew-lucide", branch = "ye
 yew-router = "0.18.0"
 
 [patch.crates-io]
+leptos = { git = "https://github.com/DanielleHuisman/leptos.git", branch = "fix/unpin-wasm-bindgen" }
 yew = { git = "https://github.com/RustForWeb/yew.git", branch = "feature/use-composed-ref" }
 yew-router = { git = "https://github.com/RustForWeb/yew.git", branch = "feature/use-composed-ref" }

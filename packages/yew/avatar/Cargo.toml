@@ -1,0 +1,16 @@
+[package]
+name = "shadcn-ui-yew-avatar"
+description = "Yew port of shadcn/ui avatar."
+homepage = "https://shadcn-ui.rustforweb.org/components/avatar.html"
+publish = false
+
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+version.workspace = true
+
+[dependencies]
+radix-yew-avatar = { git = "https://github.com/RustForWeb/radix" }
+tailwind_fuse.workspace = true
+yew.workspace = true

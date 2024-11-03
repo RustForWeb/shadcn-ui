@@ -8,7 +8,7 @@ use tailwind_fuse::*;
 pub struct TextareaClass {}
 
 #[component]
-pub fn Textarea(#[prop(into, optional)] class: MaybeSignal<String>) -> impl IntoView {
+pub fn Textarea(#[prop(into, optional)] class: Signal<String>) -> impl IntoView {
     let class = Memo::new(move |_| TextareaClass {}.with_class(class.get()));
 
     view! {

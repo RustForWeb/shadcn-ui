@@ -2,6 +2,8 @@ mod components;
 
 #[cfg(feature = "alert")]
 mod alert;
+#[cfg(feature = "avatar")]
+mod avatar;
 #[cfg(feature = "button")]
 mod button;
 #[cfg(feature = "pagination")]
@@ -20,6 +22,13 @@ pub fn render() -> Html {
         use self::alert::{render, AlertRoute};
         children.push(html! {
             <Switch<AlertRoute> render={render} />
+        });
+    }
+    #[cfg(feature = "avatar")]
+    {
+        use self::avatar::{render, AvatarRoute};
+        children.push(html! {
+            <Switch<AvatarRoute> render={render} />
         });
     }
     #[cfg(feature = "button")]

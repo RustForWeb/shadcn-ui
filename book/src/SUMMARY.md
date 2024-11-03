@@ -6,7 +6,7 @@
     -   [Alert](./components/alert.md)
     -   [Alert Dialog]()
     -   [Aspect Ratio]()
-    -   [Avatar]()
+    -   [Avatar](./components/avatar.md)
     -   [Badge]()
     -   [Breadcrumb]()
     -   [Button](./components/button.md)

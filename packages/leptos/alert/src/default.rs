@@ -21,8 +21,8 @@ pub enum AlertVariant {
 
 #[component]
 pub fn Alert(
-    #[prop(into, optional)] variant: MaybeSignal<AlertVariant>,
-    #[prop(into, optional)] class: MaybeSignal<String>,
+    #[prop(into, optional)] variant: Signal<AlertVariant>,
+    #[prop(into, optional)] class: Signal<String>,
     children: Children,
 ) -> impl IntoView {
     let class = Memo::new(move |_| {
@@ -45,7 +45,7 @@ pub struct AlertTitleClass {}
 
 #[component]
 pub fn AlertTitle(
-    #[prop(into, optional)] class: MaybeSignal<String>,
+    #[prop(into, optional)] class: Signal<String>,
     children: Children,
 ) -> impl IntoView {
     let class = Memo::new(move |_| AlertTitleClass {}.with_class(class.get()));
@@ -63,7 +63,7 @@ pub struct AlertDescriptionClass {}
 
 #[component]
 pub fn AlertDescription(
-    #[prop(into, optional)] class: MaybeSignal<String>,
+    #[prop(into, optional)] class: Signal<String>,
     children: Children,
 ) -> impl IntoView {
     let class = Memo::new(move |_| AlertDescriptionClass {}.with_class(class.get()));

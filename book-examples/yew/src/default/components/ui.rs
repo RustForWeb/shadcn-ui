@@ -2,6 +2,8 @@
 
 #[cfg(feature = "alert")]
 pub use shadcn_ui_yew_alert::default as alert;
+#[cfg(feature = "avatar")]
+pub use shadcn_ui_yew_avatar::default as avatar;
 #[cfg(feature = "button")]
 pub use shadcn_ui_yew_button::default as button;
 #[cfg(feature = "pagination")]

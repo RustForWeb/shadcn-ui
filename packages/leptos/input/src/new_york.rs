@@ -8,7 +8,7 @@ use tailwind_fuse::*;
 pub struct InputClass {}
 
 #[component]
-pub fn Input(#[prop(into, optional)] class: MaybeSignal<String>) -> impl IntoView {
+pub fn Input(#[prop(into, optional)] class: Signal<String>) -> impl IntoView {
     let class = Memo::new(move |_| InputClass {}.with_class(class.get()));
 
     view! {

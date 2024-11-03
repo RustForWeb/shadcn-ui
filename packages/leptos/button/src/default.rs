@@ -43,9 +43,9 @@ pub enum ButtonSize {
 
 #[component]
 pub fn Button(
-    #[prop(into, optional)] variant: MaybeSignal<ButtonVariant>,
-    #[prop(into, optional)] size: MaybeSignal<ButtonSize>,
-    #[prop(into, optional)] class: MaybeSignal<String>,
+    #[prop(into, optional)] variant: Signal<ButtonVariant>,
+    #[prop(into, optional)] size: Signal<ButtonSize>,
+    #[prop(into, optional)] class: Signal<String>,
     children: Children,
 ) -> impl IntoView {
     let class = Memo::new(move |_| {
