@@ -3,6 +3,7 @@ use yew::prelude::*;
 use crate::default::components::ui::{
     button::{Button, ButtonVariant},
     card::{Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle},
+    label::Label,
 };
 
 #[function_component]
@@ -17,13 +18,13 @@ pub fn CardWithForm() -> Html {
                 <form>
                     <div class="grid w-full items-center gap-4">
                         <div class="flex flex-col space-y-1.5">
+                            <Label r#for="name">{"Name"}</Label>
                             // TODO
-                            // <Label r#for="name">{"Name"}</Label>
                             // <Input id="name" placeholder="Name of your project" />
                         </div>
                         <div class="flex flex-col space-y-1.5">
+                            <Label r#for="framework">{"Framework"}</Label>
                             // TODO
-                            // <Label r#for="framework">{"Framework"}</Label>
                             // <Select>
                             //     <SelectTrigger id="framework">
                             //         <SelectValue placeholder="Select" />

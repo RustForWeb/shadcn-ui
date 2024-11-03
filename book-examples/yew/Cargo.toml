@@ -59,6 +59,7 @@ card = [
     "dep:radix-yew-icons",
     "dep:shadcn-ui-yew-button",
     "dep:shadcn-ui-yew-card",
+    "dep:shadcn-ui-yew-label",
     "dep:yew-lucide",
     "radix-yew-icons/bell",
     "radix-yew-icons/check",

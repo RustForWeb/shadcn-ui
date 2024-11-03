@@ -10,7 +10,7 @@ pub use shadcn_ui_yew_badge::new_york as badge;
 pub use shadcn_ui_yew_button::new_york as button;
 #[cfg(feature = "card")]
 pub use shadcn_ui_yew_card::new_york as card;
-#[cfg(feature = "label")]
+#[cfg(any(feature = "label", feature = "card"))]
 pub use shadcn_ui_yew_label::new_york as label;
 #[cfg(feature = "pagination")]
 pub use shadcn_ui_yew_pagination::new_york as pagination;
