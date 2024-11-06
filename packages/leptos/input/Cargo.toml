@@ -1,6 +1,6 @@
 [package]
 name = "shadcn-ui-leptos-input"
-description = "Leptos port of shadcn/ui input."
+description = "Leptos port of shadcn/ui Input."
 publish = false
 
 authors.workspace = true

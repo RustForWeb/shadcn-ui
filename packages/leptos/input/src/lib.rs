@@ -1,4 +1,4 @@
-//! Leptos port of [shadcn/ui input](https://ui.shadcn.com/docs/components/input).
+//! Leptos port of [shadcn/ui Input](https://ui.shadcn.com/docs/components/input).
 //!
 //! Displays a form input field or a component that looks like an input field.
 //!

@@ -1,4 +1,4 @@
-//! Leptos port of [shadcn/ui button](https://ui.shadcn.com/docs/components/button).
+//! Leptos port of [shadcn/ui Button](https://ui.shadcn.com/docs/components/button).
 //!
 //! Displays a button or a component that looks like a button.
 //!

@@ -1,4 +1,4 @@
-//! Yew port of [shadcn/ui avatar](https://ui.shadcn.com/docs/components/avatar).
+//! Yew port of [shadcn/ui Avatar](https://ui.shadcn.com/docs/components/avatar).
 //!
 //! An image element with a fallback for representing the user.
 //!

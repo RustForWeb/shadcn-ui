@@ -1,6 +1,6 @@
 [package]
 name = "shadcn-ui-yew-pagination"
-description = "Yew port of shadcn/ui pagination."
+description = "Yew port of shadcn/ui Pagination."
 homepage = "https://shadcn-ui.rustforweb.org/components/pagination.html"
 publish = false
 

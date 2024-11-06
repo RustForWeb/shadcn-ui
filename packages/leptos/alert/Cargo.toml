@@ -1,6 +1,6 @@
 [package]
 name = "shadcn-ui-leptos-alert"
-description = "Leptos port of shadcn/ui alert."
+description = "Leptos port of shadcn/ui Alert."
 publish = false
 
 authors.workspace = true

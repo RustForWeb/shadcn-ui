@@ -1,4 +1,4 @@
-//! Yew port of [shadcn/ui pagination](https://ui.shadcn.com/docs/components/pagination).
+//! Yew port of [shadcn/ui Pagination](https://ui.shadcn.com/docs/components/pagination).
 //!
 //! Pagination with page navigation, next and previous links.
 //!

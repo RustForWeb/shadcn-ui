@@ -2,6 +2,8 @@ mod components;
 
 #[cfg(feature = "alert")]
 mod alert;
+#[cfg(feature = "aspect-ratio")]
+mod aspect_ratio;
 #[cfg(feature = "avatar")]
 mod avatar;
 #[cfg(feature = "badge")]
@@ -30,6 +32,13 @@ pub fn render() -> Html {
         use self::alert::{render, AlertRoute};
         children.push(html! {
             <Switch<AlertRoute> render={render} />
+        });
+    }
+    #[cfg(feature = "aspect-ratio")]
+    {
+        use self::aspect_ratio::{render, AspectRatioRoute};
+        children.push(html! {
+            <Switch<AspectRatioRoute> render={render} />
         });
     }
     #[cfg(feature = "avatar")]

@@ -1,6 +1,6 @@
 [package]
 name = "shadcn-ui-yew-label"
-description = "Yew port of shadcn/ui label."
+description = "Yew port of shadcn/ui Label."
 homepage = "https://shadcn-ui.rustforweb.org/components/label.html"
 publish = false
 

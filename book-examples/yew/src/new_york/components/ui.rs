@@ -2,6 +2,8 @@
 
 #[cfg(feature = "alert")]
 pub use shadcn_ui_yew_alert::new_york as alert;
+#[cfg(feature = "aspect-ratio")]
+pub use shadcn_ui_yew_aspect_ratio::new_york as aspect_ratio;
 #[cfg(feature = "avatar")]
 pub use shadcn_ui_yew_avatar::new_york as avatar;
 #[cfg(feature = "badge")]

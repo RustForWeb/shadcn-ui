@@ -5,7 +5,7 @@
     -   [Accordion]()
     -   [Alert](./components/alert.md)
     -   [Alert Dialog]()
-    -   [Aspect Ratio]()
+    -   [Aspect Ratio](./components/aspect-ratio.md)
     -   [Avatar](./components/avatar.md)
     -   [Badge](./components/badge.md)
     -   [Breadcrumb]()

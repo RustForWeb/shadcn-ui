@@ -2200,9 +2200,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "radix-yew-aspect-ratio"
+version = "0.0.2"
+source = "git+https://github.com/RustForWeb/radix.git#ae534ce920a01741efc11c812c8b3231b8194bb6"
+dependencies = [
+ "yew",
+]
+
+[[package]]
 name = "radix-yew-avatar"
 version = "0.0.2"
-source = "git+https://github.com/RustForWeb/radix.git#f75b74a45a15c3562c08378f9c64aad226977350"
+source = "git+https://github.com/RustForWeb/radix.git#ae534ce920a01741efc11c812c8b3231b8194bb6"
 dependencies = [
  "log",
  "web-sys",
@@ -2212,7 +2220,7 @@ dependencies = [
 [[package]]
 name = "radix-yew-icons"
 version = "0.0.2"
-source = "git+https://github.com/RustForWeb/radix.git#f75b74a45a15c3562c08378f9c64aad226977350"
+source = "git+https://github.com/RustForWeb/radix.git#ae534ce920a01741efc11c812c8b3231b8194bb6"
 dependencies = [
  "yew",
 ]
@@ -2220,7 +2228,7 @@ dependencies = [
 [[package]]
 name = "radix-yew-label"
 version = "0.0.2"
-source = "git+https://github.com/RustForWeb/radix.git#f75b74a45a15c3562c08378f9c64aad226977350"
+source = "git+https://github.com/RustForWeb/radix.git#ae534ce920a01741efc11c812c8b3231b8194bb6"
 dependencies = [
  "web-sys",
  "yew",
@@ -2812,6 +2820,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "shadcn-ui-yew-aspect-ratio"
+version = "0.0.1"
+dependencies = [
+ "radix-yew-aspect-ratio",
+]
+
+[[package]]
 name = "shadcn-ui-yew-avatar"
 version = "0.0.1"
 dependencies = [
@@ -2837,6 +2852,7 @@ dependencies = [
  "log",
  "radix-yew-icons",
  "shadcn-ui-yew-alert",
+ "shadcn-ui-yew-aspect-ratio",
  "shadcn-ui-yew-avatar",
  "shadcn-ui-yew-badge",
  "shadcn-ui-yew-button",

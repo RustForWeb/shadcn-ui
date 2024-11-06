@@ -1,4 +1,4 @@
-//! Yew port of [shadcn/ui label](https://ui.shadcn.com/docs/components/label).
+//! Yew port of [shadcn/ui Label](https://ui.shadcn.com/docs/components/label).
 //!
 //! Renders an accessible label associated with controls.
 //!

@@ -1,4 +1,4 @@
-//! Leptos port of [shadcn/ui textarea](https://ui.shadcn.com/docs/components/textarea).
+//! Leptos port of [shadcn/ui Textarea](https://ui.shadcn.com/docs/components/textarea).
 //!
 //! Displays a form textarea or a component that looks like a textarea.
 //!

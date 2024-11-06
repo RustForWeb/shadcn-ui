@@ -1,4 +1,4 @@
-//! Yew port of [shadcn/ui badge](https://ui.shadcn.com/docs/components/badge).
+//! Yew port of [shadcn/ui Badge](https://ui.shadcn.com/docs/components/badge).
 //!
 //! Displays a badge or a component that looks like a badge.
 //!

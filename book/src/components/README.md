@@ -1,6 +1,7 @@
 # Components
 
 -   [Alert](./alert.md)
+-   [Aspect Ratio](./aspect-ratio.md)
 -   [Avatar](./avatar.md)
 -   [Badge](./badge.md)
 -   [Button](./button.md)

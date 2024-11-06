@@ -2,6 +2,8 @@
 
 #[cfg(feature = "alert")]
 pub use shadcn_ui_yew_alert::default as alert;
+#[cfg(feature = "aspect-ratio")]
+pub use shadcn_ui_yew_aspect_ratio::default as aspect_ratio;
 #[cfg(feature = "avatar")]
 pub use shadcn_ui_yew_avatar::default as avatar;
 #[cfg(feature = "badge")]

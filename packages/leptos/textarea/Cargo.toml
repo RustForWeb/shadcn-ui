@@ -1,6 +1,6 @@
 [package]
 name = "shadcn-ui-leptos-textarea"
-description = "Leptos port of shadcn/ui textarea."
+description = "Leptos port of shadcn/ui Textarea."
 publish = false
 
 authors.workspace = true

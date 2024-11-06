@@ -15,6 +15,7 @@ console_log.workspace = true
 log.workspace = true
 radix-yew-icons = { workspace = true, optional = true }
 shadcn-ui-yew-alert = { path = "../../packages/yew/alert", optional = true }
+shadcn-ui-yew-aspect-ratio = { path = "../../packages/yew/aspect-ratio", optional = true }
 shadcn-ui-yew-avatar = { path = "../../packages/yew/avatar", optional = true }
 shadcn-ui-yew-badge = { path = "../../packages/yew/badge", optional = true }
 shadcn-ui-yew-button = { path = "../../packages/yew/button", optional = true }
@@ -31,6 +32,7 @@ yew-router.workspace = true
 [features]
 default = [
     "alert",
+    "aspect-ratio",
     "avatar",
     "badge",
     "button",
@@ -47,6 +49,7 @@ alert = [
     "radix-yew-icons/exclamation-triangle",
     "radix-yew-icons/rocket",
 ]
+aspect-ratio = ["dep:shadcn-ui-yew-aspect-ratio"]
 avatar = ["dep:shadcn-ui-yew-avatar"]
 badge = ["dep:shadcn-ui-yew-badge"]
 button = [

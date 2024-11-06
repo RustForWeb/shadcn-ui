@@ -1,4 +1,4 @@
-//! Yew port of [shadcn/ui alert](https://ui.shadcn.com/docs/components/alert).
+//! Yew port of [shadcn/ui Alert](https://ui.shadcn.com/docs/components/alert).
 //!
 //! Displays a callout for user attention.
 //!

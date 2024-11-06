@@ -1,0 +1,14 @@
+[package]
+name = "shadcn-ui-yew-aspect-ratio"
+description = "Yew port of shadcn/ui Aspect Ratio."
+homepage = "https://shadcn-ui.rustforweb.org/components/aspect-ratio.html"
+publish = false
+
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+version.workspace = true
+
+[dependencies]
+radix-yew-aspect-ratio = { git = "https://github.com/RustForWeb/radix" }

@@ -1,4 +1,4 @@
-//! Leptos port of [shadcn/ui card](https://ui.shadcn.com/docs/components/card).
+//! Leptos port of [shadcn/ui Card](https://ui.shadcn.com/docs/components/card).
 //!
 //! Displays a card with header, content, and footer.
 //!

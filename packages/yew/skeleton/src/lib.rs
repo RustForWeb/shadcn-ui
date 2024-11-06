@@ -1,4 +1,4 @@
-//! Yew port of [shadcn/ui skeleton](https://ui.shadcn.com/docs/components/skeleton).
+//! Yew port of [shadcn/ui Skeleton](https://ui.shadcn.com/docs/components/skeleton).
 //!
 //! Use to show a placeholder while content is loading.
 //!
