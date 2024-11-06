@@ -1,0 +1,15 @@
+[package]
+name = "shadcn-ui-yew-table"
+description = "Yew port of shadcn/ui Table."
+homepage = "https://shadcn-ui.rustforweb.org/components/card.html"
+publish = false
+
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+version.workspace = true
+
+[dependencies]
+tailwind_fuse.workspace = true
+yew.workspace = true

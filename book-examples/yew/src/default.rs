@@ -22,6 +22,8 @@ mod pagination;
 mod separator;
 #[cfg(feature = "skeleton")]
 mod skeleton;
+#[cfg(feature = "table")]
+mod table;
 
 use yew::prelude::*;
 use yew_router::prelude::*;
@@ -104,6 +106,13 @@ pub fn render() -> Html {
         use self::skeleton::{render, SkeletonRoute};
         children.push(html! {
             <Switch<SkeletonRoute> render={render} />
+        });
+    }
+    #[cfg(feature = "table")]
+    {
+        use self::table::{render, TableRoute};
+        children.push(html! {
+            <Switch<TableRoute> render={render} />
         });
     }
 

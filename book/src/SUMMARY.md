@@ -44,7 +44,7 @@
     -   [Slider]()
     -   [Sonner]()
     -   [Switch]()
-    -   [Table]()
+    -   [Table](./components/table.md)
     -   [Tabs]()
     -   [Textarea](./components/textarea.md)
     -   [Toast]()

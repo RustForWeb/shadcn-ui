@@ -2870,6 +2870,7 @@ dependencies = [
  "shadcn-ui-yew-pagination",
  "shadcn-ui-yew-separator",
  "shadcn-ui-yew-skeleton",
+ "shadcn-ui-yew-table",
  "web-sys",
  "yew",
  "yew-lucide",
@@ -2931,6 +2932,14 @@ dependencies = [
 
 [[package]]
 name = "shadcn-ui-yew-skeleton"
+version = "0.0.1"
+dependencies = [
+ "tailwind_fuse",
+ "yew",
+]
+
+[[package]]
+name = "shadcn-ui-yew-table"
 version = "0.0.1"
 dependencies = [
  "tailwind_fuse",

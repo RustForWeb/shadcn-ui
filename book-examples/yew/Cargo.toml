@@ -25,6 +25,7 @@ shadcn-ui-yew-label = { path = "../../packages/yew/label", optional = true }
 shadcn-ui-yew-pagination = { path = "../../packages/yew/pagination", optional = true }
 shadcn-ui-yew-separator = { path = "../../packages/yew/separator", optional = true }
 shadcn-ui-yew-skeleton = { path = "../../packages/yew/skeleton", optional = true }
+shadcn-ui-yew-table = { path = "../../packages/yew/table", optional = true }
 web-sys.workspace = true
 yew = { workspace = true, features = ["csr"] }
 yew-lucide = { git = "https://gitlab.com/stephan.dilly/yew-lucide", branch = "yew-upgrade", optional = true }
@@ -43,6 +44,7 @@ default = [
     "pagination",
     "separator",
     "skeleton",
+    "table",
 ]
 alert = [
     "dep:radix-yew-icons",
@@ -81,3 +83,4 @@ label = ["dep:shadcn-ui-yew-label"]
 pagination = ["dep:shadcn-ui-yew-pagination"]
 separator = ["dep:shadcn-ui-yew-separator"]
 skeleton = ["dep:shadcn-ui-yew-skeleton"]
+table = ["dep:shadcn-ui-yew-table"]
