@@ -38,7 +38,7 @@
     -   [Resizable]()
     -   [Scroll Area]()
     -   [Select]()
-    -   [Separator]()
+    -   [Separator](./components/separator.md)
     -   [Sheet]()
     -   [Skeleton](./components/skeleton.md)
     -   [Slider]()

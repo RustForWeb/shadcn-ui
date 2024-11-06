@@ -18,6 +18,8 @@ mod input;
 mod label;
 #[cfg(feature = "pagination")]
 mod pagination;
+#[cfg(feature = "separator")]
+mod separator;
 #[cfg(feature = "skeleton")]
 mod skeleton;
 
@@ -88,6 +90,13 @@ pub fn render() -> Html {
         use self::pagination::{render, PaginationRoute};
         children.push(html! {
             <Switch<PaginationRoute> render={render} />
+        });
+    }
+    #[cfg(feature = "separator")]
+    {
+        use self::separator::{render, SeparatorRoute};
+        children.push(html! {
+            <Switch<SeparatorRoute> render={render} />
         });
     }
     #[cfg(feature = "skeleton")]

@@ -18,5 +18,7 @@ pub use shadcn_ui_yew_input::new_york as input;
 pub use shadcn_ui_yew_label::new_york as label;
 #[cfg(feature = "pagination")]
 pub use shadcn_ui_yew_pagination::new_york as pagination;
+#[cfg(feature = "separator")]
+pub use shadcn_ui_yew_separator::new_york as separator;
 #[cfg(feature = "skeleton")]
 pub use shadcn_ui_yew_skeleton::new_york as skeleton;

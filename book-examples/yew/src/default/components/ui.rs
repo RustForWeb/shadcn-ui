@@ -18,5 +18,7 @@ pub use shadcn_ui_yew_input::default as input;
 pub use shadcn_ui_yew_label::default as label;
 #[cfg(feature = "pagination")]
 pub use shadcn_ui_yew_pagination::default as pagination;
+#[cfg(feature = "separator")]
+pub use shadcn_ui_yew_separator::default as separator;
 #[cfg(feature = "skeleton")]
 pub use shadcn_ui_yew_skeleton::default as skeleton;

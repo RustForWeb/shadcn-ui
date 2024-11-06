@@ -2235,6 +2235,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "radix-yew-separator"
+version = "0.0.2"
+source = "git+https://github.com/RustForWeb/radix.git#ae534ce920a01741efc11c812c8b3231b8194bb6"
+dependencies = [
+ "yew",
+]
+
+[[package]]
 name = "reactive_graph"
 version = "0.1.0-rc0"
 source = "git+https://github.com/DanielleHuisman/leptos.git?branch=fix%2Funpin-wasm-bindgen#e6d79b50655dc425a5ae8ee0e3df7651ad254ea7"
@@ -2860,6 +2868,7 @@ dependencies = [
  "shadcn-ui-yew-input",
  "shadcn-ui-yew-label",
  "shadcn-ui-yew-pagination",
+ "shadcn-ui-yew-separator",
  "shadcn-ui-yew-skeleton",
  "web-sys",
  "yew",
@@ -2909,6 +2918,15 @@ dependencies = [
  "tailwind_fuse",
  "yew",
  "yew-lucide",
+]
+
+[[package]]
+name = "shadcn-ui-yew-separator"
+version = "0.0.1"
+dependencies = [
+ "radix-yew-separator",
+ "tailwind_fuse",
+ "yew",
 ]
 
 [[package]]

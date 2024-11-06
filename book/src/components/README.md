@@ -9,4 +9,6 @@
 -   [Input](./input.md)
 -   [Label](./label.md)
 -   [Pagination](./pagination.md)
+-   [Separator](./separator.md)
+-   [Skeleton](./skeleton.md)
 -   [Textarea](./textarea.md)
