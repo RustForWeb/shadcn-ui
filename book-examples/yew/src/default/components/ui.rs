@@ -33,7 +33,7 @@ pub use shadcn_ui_yew_pagination::default as pagination;
 pub use shadcn_ui_yew_separator::default as separator;
 #[cfg(feature = "skeleton")]
 pub use shadcn_ui_yew_skeleton::default as skeleton;
-#[cfg(feature = "switch")]
+#[cfg(any(feature = "switch", feature = "card"))]
 pub use shadcn_ui_yew_switch::default as switch;
 #[cfg(feature = "table")]
 pub use shadcn_ui_yew_table::default as table;

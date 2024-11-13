@@ -33,7 +33,7 @@ pub use shadcn_ui_yew_pagination::new_york as pagination;
 pub use shadcn_ui_yew_separator::new_york as separator;
 #[cfg(feature = "skeleton")]
 pub use shadcn_ui_yew_skeleton::new_york as skeleton;
-#[cfg(feature = "switch")]
+#[cfg(any(feature = "switch", feature = "card"))]
 pub use shadcn_ui_yew_switch::default as switch;
 #[cfg(feature = "table")]
 pub use shadcn_ui_yew_table::new_york as table;

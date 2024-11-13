@@ -4,6 +4,7 @@ use yew::prelude::*;
 use crate::new_york::components::ui::{
     button::Button,
     card::{Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle},
+    switch::Switch,
 };
 
 struct Notification {
@@ -47,8 +48,7 @@ pub fn CardDemo() -> Html {
                             {"Send notifications to device."}
                         </p>
                     </div>
-                    // TODO
-                    // <Switch />
+                    <Switch />
                 </div>
                 <div>
                     {notifications().iter().enumerate().map(|(index, notification)| html! {

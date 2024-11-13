@@ -74,6 +74,7 @@ card = [
     "dep:shadcn-ui-yew-card",
     "dep:shadcn-ui-yew-input",
     "dep:shadcn-ui-yew-label",
+    "dep:shadcn-ui-yew-switch",
     "dep:yew-lucide",
     "radix-yew-icons/bell",
     "radix-yew-icons/check",
