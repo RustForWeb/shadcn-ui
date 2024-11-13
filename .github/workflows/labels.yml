@@ -1,0 +1,17 @@
+name: Labels
+
+on:
+    workflow_dispatch:
+
+jobs:
+    sync-labels:
+        name: Sync Labels
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  sparse-checkout: .github/labels.yml
+
+            - uses: EndBug/label-sync@v2
+              with:
+                  config-file: .github/labels.yml
