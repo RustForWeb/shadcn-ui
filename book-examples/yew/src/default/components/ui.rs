@@ -8,6 +8,8 @@ pub use shadcn_ui_yew_aspect_ratio::default as aspect_ratio;
 pub use shadcn_ui_yew_avatar::default as avatar;
 #[cfg(feature = "badge")]
 pub use shadcn_ui_yew_badge::default as badge;
+#[cfg(feature = "breadcrumb")]
+pub use shadcn_ui_yew_breadcrumb::default as breadcrumb;
 #[cfg(any(
     feature = "button",
     feature = "card",

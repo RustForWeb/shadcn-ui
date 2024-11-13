@@ -2914,6 +2914,7 @@ dependencies = [
  "shadcn-ui-yew-aspect-ratio",
  "shadcn-ui-yew-avatar",
  "shadcn-ui-yew-badge",
+ "shadcn-ui-yew-breadcrumb",
  "shadcn-ui-yew-button",
  "shadcn-ui-yew-card",
  "shadcn-ui-yew-input",
@@ -2928,6 +2929,17 @@ dependencies = [
  "yew",
  "yew-lucide",
  "yew-router",
+]
+
+[[package]]
+name = "shadcn-ui-yew-breadcrumb"
+version = "0.0.1"
+dependencies = [
+ "radix-yew-icons",
+ "tailwind_fuse",
+ "yew",
+ "yew-lucide",
+ "yew-struct-component",
 ]
 
 [[package]]

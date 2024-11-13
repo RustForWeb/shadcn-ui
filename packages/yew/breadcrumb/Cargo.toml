@@ -1,0 +1,21 @@
+[package]
+name = "shadcn-ui-yew-breadcrumb"
+description = "Yew port of shadcn/ui Breadcrumb."
+homepage = "https://shadcn-ui.rustforweb.org/components/breadcrumb.html"
+publish = false
+
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+version.workspace = true
+
+[dependencies]
+radix-yew-icons = { workspace = true, features = [
+    "chevron-right",
+    "dots-horizontal",
+] }
+tailwind_fuse.workspace = true
+yew.workspace = true
+yew-lucide.workspace = true
+yew-struct-component.workspace = true

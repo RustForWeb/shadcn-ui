@@ -8,6 +8,8 @@ pub use shadcn_ui_yew_aspect_ratio::new_york as aspect_ratio;
 pub use shadcn_ui_yew_avatar::new_york as avatar;
 #[cfg(feature = "badge")]
 pub use shadcn_ui_yew_badge::new_york as badge;
+#[cfg(feature = "breadcrumb")]
+pub use shadcn_ui_yew_breadcrumb::new_york as breadcrumb;
 #[cfg(any(
     feature = "button",
     feature = "card",

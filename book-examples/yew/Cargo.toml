@@ -18,6 +18,7 @@ shadcn-ui-yew-alert = { path = "../../packages/yew/alert", optional = true }
 shadcn-ui-yew-aspect-ratio = { path = "../../packages/yew/aspect-ratio", optional = true }
 shadcn-ui-yew-avatar = { path = "../../packages/yew/avatar", optional = true }
 shadcn-ui-yew-badge = { path = "../../packages/yew/badge", optional = true }
+shadcn-ui-yew-breadcrumb = { path = "../../packages/yew/breadcrumb", optional = true }
 shadcn-ui-yew-button = { path = "../../packages/yew/button", optional = true }
 shadcn-ui-yew-card = { path = "../../packages/yew/card", optional = true }
 shadcn-ui-yew-input = { path = "../../packages/yew/input", optional = true }
@@ -39,6 +40,7 @@ default = [
     "aspect-ratio",
     "avatar",
     "badge",
+    "breadcrumb",
     "button",
     "card",
     "input",
@@ -60,6 +62,13 @@ alert = [
 aspect-ratio = ["dep:shadcn-ui-yew-aspect-ratio"]
 avatar = ["dep:shadcn-ui-yew-avatar"]
 badge = ["dep:shadcn-ui-yew-badge"]
+breadcrumb = [
+    "dep:radix-yew-icons",
+    "dep:shadcn-ui-yew-breadcrumb",
+    "dep:yew-lucide",
+    "radix-yew-icons/chevron-down",
+    "radix-yew-icons/slash",
+]
 button = [
     "dep:radix-yew-icons",
     "dep:shadcn-ui-yew-button",

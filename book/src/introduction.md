@@ -36,7 +36,7 @@ The tables below show the support for the various frameworks.
 | Aspect Ratio    | ❌ [#15](https://github.com/RustForWeb/shadcn-ui/issues/15) | ❌ [#64](https://github.com/RustForWeb/shadcn-ui/issues/64)   | 🟦 [#113](https://github.com/RustForWeb/shadcn-ui/issues/113) |
 | Avatar          | ❌ [#16](https://github.com/RustForWeb/shadcn-ui/issues/16) | ❌ [#65](https://github.com/RustForWeb/shadcn-ui/issues/65)   | 🟦 [#114](https://github.com/RustForWeb/shadcn-ui/issues/114) |
 | Badge           | ❌ [#17](https://github.com/RustForWeb/shadcn-ui/issues/17) | ❌ [#66](https://github.com/RustForWeb/shadcn-ui/issues/66)   | 🟦 [#115](https://github.com/RustForWeb/shadcn-ui/issues/115) |
-| Breadcrumb      | ❌ [#18](https://github.com/RustForWeb/shadcn-ui/issues/18) | ❌ [#67](https://github.com/RustForWeb/shadcn-ui/issues/67)   | ❌ [#116](https://github.com/RustForWeb/shadcn-ui/issues/116) |
+| Breadcrumb      | ❌ [#18](https://github.com/RustForWeb/shadcn-ui/issues/18) | ❌ [#67](https://github.com/RustForWeb/shadcn-ui/issues/67)   | 🟦 [#116](https://github.com/RustForWeb/shadcn-ui/issues/116) |
 | Button          | ❌ [#19](https://github.com/RustForWeb/shadcn-ui/issues/19) | ❌ [#68](https://github.com/RustForWeb/shadcn-ui/issues/68)   | 🟦 [#117](https://github.com/RustForWeb/shadcn-ui/issues/117) |
 | Calendar        | ❌ [#20](https://github.com/RustForWeb/shadcn-ui/issues/20) | ❌ [#69](https://github.com/RustForWeb/shadcn-ui/issues/69)   | ❌ [#118](https://github.com/RustForWeb/shadcn-ui/issues/118) |
 | Card            | ❌ [#21](https://github.com/RustForWeb/shadcn-ui/issues/21) | ❌ [#70](https://github.com/RustForWeb/shadcn-ui/issues/70)   | 🟦 [#119](https://github.com/RustForWeb/shadcn-ui/issues/119) |
@@ -79,7 +79,7 @@ The tables below show the support for the various frameworks.
 | Toggle          | ❌ [#58](https://github.com/RustForWeb/shadcn-ui/issues/58) | ❌ [#107](https://github.com/RustForWeb/shadcn-ui/issues/107) | ❌ [#156](https://github.com/RustForWeb/shadcn-ui/issues/156) |
 | Toggle Group    | ❌ [#59](https://github.com/RustForWeb/shadcn-ui/issues/59) | ❌ [#108](https://github.com/RustForWeb/shadcn-ui/issues/108) | ❌ [#157](https://github.com/RustForWeb/shadcn-ui/issues/157) |
 | Tooltip         | ❌ [#60](https://github.com/RustForWeb/shadcn-ui/issues/60) | ❌ [#109](https://github.com/RustForWeb/shadcn-ui/issues/109) | ❌ [#158](https://github.com/RustForWeb/shadcn-ui/issues/158) |
-| **Total**       | 0 / 49                                                      | 0 / 49                                                        | 14 / 49                                                       |
+| **Total**       | 0 / 49                                                      | 0 / 49                                                        | 15 / 49                                                       |
 
 ## License
 

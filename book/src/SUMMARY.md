@@ -8,7 +8,7 @@
     -   [Aspect Ratio](./components/aspect-ratio.md)
     -   [Avatar](./components/avatar.md)
     -   [Badge](./components/badge.md)
-    -   [Breadcrumb]()
+    -   [Breadcrumb](./components/breadcrumb.md)
     -   [Button](./components/button.md)
     -   [Calendar]()
     -   [Card](./components/card.md)

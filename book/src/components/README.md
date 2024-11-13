@@ -4,6 +4,7 @@
 -   [Aspect Ratio](./aspect-ratio.md)
 -   [Avatar](./avatar.md)
 -   [Badge](./badge.md)
+-   [Breadcrumb](./breadcrumb.md)
 -   [Button](./button.md)
 -   [Card](./card.md)
 -   [Input](./input.md)

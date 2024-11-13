@@ -8,6 +8,8 @@ mod aspect_ratio;
 mod avatar;
 #[cfg(feature = "badge")]
 mod badge;
+#[cfg(feature = "breadcrumb")]
+mod breadcrumb;
 #[cfg(feature = "button")]
 mod button;
 #[cfg(feature = "card")]
@@ -61,6 +63,13 @@ pub fn render() -> Html {
         use self::badge::{render, BadgeRoute};
         children.push(html! {
             <Switch<BadgeRoute> render={render} />
+        });
+    }
+    #[cfg(feature = "breadcrumb")]
+    {
+        use self::breadcrumb::{render, BreadcrumbRoute};
+        children.push(html! {
+            <Switch<BreadcrumbRoute> render={render} />
         });
     }
     #[cfg(feature = "button")]
