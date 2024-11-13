@@ -2871,6 +2871,7 @@ dependencies = [
  "shadcn-ui-yew-separator",
  "shadcn-ui-yew-skeleton",
  "shadcn-ui-yew-table",
+ "shadcn-ui-yew-textarea",
  "web-sys",
  "yew",
  "yew-lucide",
@@ -2940,6 +2941,14 @@ dependencies = [
 
 [[package]]
 name = "shadcn-ui-yew-table"
+version = "0.0.1"
+dependencies = [
+ "tailwind_fuse",
+ "yew",
+]
+
+[[package]]
+name = "shadcn-ui-yew-textarea"
 version = "0.0.1"
 dependencies = [
  "tailwind_fuse",

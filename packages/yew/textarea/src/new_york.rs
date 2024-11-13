@@ -2,8 +2,8 @@ use tailwind_fuse::*;
 use yew::prelude::*;
 
 #[derive(PartialEq, Properties)]
-pub struct InputProps {
-    // Global attribnutes
+pub struct TextareaProps {
+    // Global attributes
     #[prop_or_default]
     pub autocapitalize: Option<String>,
     #[prop_or_default]
@@ -19,17 +19,11 @@ pub struct InputProps {
     #[prop_or_default]
     pub style: Option<String>,
 
-    // Attributes from `input`
-    #[prop_or_default]
-    pub accept: Option<String>,
-    #[prop_or_default]
-    pub alt: Option<String>,
+    // Attributes from `textarea`
     #[prop_or_default]
     pub autocomplete: Option<String>,
     #[prop_or_default]
-    pub capture: Option<String>,
-    #[prop_or_default]
-    pub checked: bool,
+    pub cols: Option<String>,
     #[prop_or_default]
     pub dirname: Option<String>,
     #[prop_or_default]
@@ -37,29 +31,9 @@ pub struct InputProps {
     #[prop_or_default]
     pub form: Option<String>,
     #[prop_or_default]
-    pub formaction: Option<String>,
-    #[prop_or_default]
-    pub formenctype: Option<String>,
-    #[prop_or_default]
-    pub formmethod: Option<String>,
-    #[prop_or_default]
-    pub formnovalidate: bool,
-    #[prop_or_default]
-    pub formtarget: Option<String>,
-    #[prop_or_default]
-    pub height: Option<String>,
-    #[prop_or_default]
-    pub list: Option<String>,
-    #[prop_or_default]
-    pub max: Option<String>,
-    #[prop_or_default]
     pub maxlength: Option<String>,
     #[prop_or_default]
-    pub min: Option<String>,
-    #[prop_or_default]
     pub minlength: Option<String>,
-    #[prop_or_default]
-    pub multiple: bool,
     #[prop_or_default]
     pub name: Option<String>,
     #[prop_or_default]
@@ -67,23 +41,13 @@ pub struct InputProps {
     #[prop_or_default]
     pub placeholder: Option<String>,
     #[prop_or_default]
-    pub popovertarget: Option<String>,
-    #[prop_or_default]
-    pub popovertargetaction: Option<String>,
-    #[prop_or_default]
     pub readonly: bool,
     #[prop_or_default]
     pub required: bool,
     #[prop_or_default]
-    pub src: Option<String>,
-    #[prop_or_default]
-    pub step: Option<String>,
-    #[prop_or_default]
-    pub r#type: Option<String>,
+    pub rows: Option<String>,
     #[prop_or_default]
     pub value: Option<String>,
-    #[prop_or_default]
-    pub width: Option<String>,
 
     // Event handler attributes
     #[prop_or_default]
@@ -100,54 +64,36 @@ pub struct InputProps {
 }
 
 #[function_component]
-pub fn Input(props: &InputProps) -> Html {
+pub fn Textarea(props: &TextareaProps) -> Html {
     html! {
-        <input
+        <textarea
             ref={props.node_ref.clone()}
 
             autocapitalize={props.autocapitalize.clone()}
             autocorrect={props.autocorrect.clone()}
             autofocus={props.autofocus}
             class={tw_merge!(
-                "flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
+                "flex min-h-[60px] w-full rounded-md border border-input bg-transparent px-3 py-2 text-base shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
                 &props.class
             )}
             id={props.id.clone()}
             spellcheck={props.spellcheck.clone()}
             style={props.style.clone()}
 
-            accept={props.accept.clone()}
-            alt={props.alt.clone()}
             autocomplete={props.autocomplete.clone()}
-            capture={props.capture.clone()}
-            checked={props.checked}
+            cols={props.cols.clone()}
             dirname={props.dirname.clone()}
             disabled={props.disabled}
             form={props.form.clone()}
-            formaction={props.formaction.clone()}
-            formenctype={props.formenctype.clone()}
-            formmethod={props.formmethod.clone()}
-            formnovalidate={props.formnovalidate}
-            formtarget={props.formtarget.clone()}
-            height={props.height.clone()}
-            list={props.list.clone()}
-            max={props.max.clone()}
             maxlength={props.maxlength.clone()}
-            min={props.min.clone()}
             minlength={props.minlength.clone()}
-            multiple={props.multiple}
             name={props.name.clone()}
             pattern={props.pattern.clone()}
             placeholder={props.placeholder.clone()}
-            popovertarget={props.popovertarget.clone()}
-            popovertargetaction={props.popovertargetaction.clone()}
             readonly={props.readonly}
             required={props.required}
-            src={props.src.clone()}
-            step={props.step.clone()}
-            type={props.r#type.clone()}
+            rows={props.rows.clone()}
             value={props.value.clone()}
-            width={props.width.clone()}
 
             onblur={props.on_blur.clone()}
             onchange={props.on_change.clone()}

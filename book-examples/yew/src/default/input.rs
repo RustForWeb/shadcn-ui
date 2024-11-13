@@ -5,6 +5,7 @@ mod input_file;
 mod input_form;
 mod input_with_button;
 mod input_with_label;
+mod input_with_text;
 
 use yew::prelude::*;
 use yew_router::prelude::*;
@@ -23,6 +24,8 @@ pub enum InputRoute {
     WithButton,
     #[at("/default/with-label")]
     WithLabel,
+    #[at("/default/with-text")]
+    WithText,
 }
 
 pub fn render(route: InputRoute) -> Html {
@@ -33,5 +36,6 @@ pub fn render(route: InputRoute) -> Html {
         InputRoute::Form => html! { <input_form::InputForm /> },
         InputRoute::WithButton => html! { <input_with_button::InputWithButton /> },
         InputRoute::WithLabel => html! { <input_with_label::InputWithLabel /> },
+        InputRoute::WithText => html! { <input_with_text::InputWithText /> },
     }
 }

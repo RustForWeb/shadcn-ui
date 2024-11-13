@@ -238,6 +238,45 @@ replace = "crate::"
 {{#endtab }}
 {{#endtabs }}
 
+### With Text
+
+{{#tabs global="framework" }}
+{{#tab name="Yew" }}
+
+{{#tabs global="style" }}
+{{#tab name="Default" }}
+
+```toml,trunk
+package = "shadcn-ui-yew-book"
+features = ["input"]
+files = ["src/default/input/input_with_text.rs"]
+url_fragment = "#/default/with-text"
+
+[[file_replacements]]
+find = "crate::default::"
+replace = "crate::"
+```
+
+{{#endtab }}
+{{#tab name="New York" }}
+
+```toml,trunk
+package = "shadcn-ui-yew-book"
+features = ["input"]
+files = ["src/new_york/input/input_with_text.rs"]
+url_fragment = "#/new-york/with-text"
+
+[[file_replacements]]
+find = "crate::new_york::"
+replace = "crate::"
+```
+
+{{#endtab }}
+{{#endtabs }}
+
+{{#endtab }}
+{{#endtabs }}
+
 ### With Button
 
 {{#tabs global="framework" }}

@@ -24,6 +24,8 @@ mod separator;
 mod skeleton;
 #[cfg(feature = "table")]
 mod table;
+#[cfg(feature = "textarea")]
+mod textarea;
 
 use yew::prelude::*;
 use yew_router::prelude::*;
@@ -113,6 +115,13 @@ pub fn render() -> Html {
         use self::table::{render, TableRoute};
         children.push(html! {
             <Switch<TableRoute> render={render} />
+        });
+    }
+    #[cfg(feature = "textarea")]
+    {
+        use self::textarea::{render, TextareaRoute};
+        children.push(html! {
+            <Switch<TextareaRoute> render={render} />
         });
     }
 

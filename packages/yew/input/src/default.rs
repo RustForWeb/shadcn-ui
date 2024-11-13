@@ -3,13 +3,27 @@ use yew::prelude::*;
 
 #[derive(PartialEq, Properties)]
 pub struct InputProps {
+    // Global attribnutes
+    #[prop_or_default]
+    pub autocapitalize: Option<String>,
+    #[prop_or_default]
+    pub autocorrect: Option<String>,
+    #[prop_or_default]
+    pub autofocus: bool,
+    #[prop_or_default]
+    pub class: Option<String>,
+    #[prop_or_default]
+    pub id: Option<String>,
+    #[prop_or_default]
+    pub spellcheck: Option<String>,
+    #[prop_or_default]
+    pub style: Option<String>,
+
     // Attributes from `input`
     #[prop_or_default]
     pub accept: Option<String>,
     #[prop_or_default]
     pub alt: Option<String>,
-    #[prop_or_default]
-    pub autocapitalize: Option<String>,
     #[prop_or_default]
     pub autocomplete: Option<String>,
     #[prop_or_default]
@@ -61,8 +75,6 @@ pub struct InputProps {
     #[prop_or_default]
     pub required: bool,
     #[prop_or_default]
-    pub spellcheck: Option<String>,
-    #[prop_or_default]
     pub src: Option<String>,
     #[prop_or_default]
     pub step: Option<String>,
@@ -72,6 +84,8 @@ pub struct InputProps {
     pub value: Option<String>,
     #[prop_or_default]
     pub width: Option<String>,
+
+    // Event handler attributes
     #[prop_or_default]
     pub on_blur: Callback<FocusEvent>,
     #[prop_or_default]
@@ -83,12 +97,6 @@ pub struct InputProps {
 
     #[prop_or_default]
     pub node_ref: NodeRef,
-    #[prop_or_default]
-    pub id: Option<String>,
-    #[prop_or_default]
-    pub class: Option<String>,
-    #[prop_or_default]
-    pub style: Option<String>,
 }
 
 #[function_component]
@@ -96,16 +104,20 @@ pub fn Input(props: &InputProps) -> Html {
     html! {
         <input
             ref={props.node_ref.clone()}
-            id={props.id.clone()}
+
+            autocapitalize={props.autocapitalize.clone()}
+            autocorrect={props.autocorrect.clone()}
+            autofocus={props.autofocus}
             class={tw_merge!(
                 "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
                 &props.class
             )}
+            id={props.id.clone()}
+            spellcheck={props.spellcheck.clone()}
             style={props.style.clone()}
 
             accept={props.accept.clone()}
             alt={props.alt.clone()}
-            autocapitalize={props.autocapitalize.clone()}
             autocomplete={props.autocomplete.clone()}
             capture={props.capture.clone()}
             checked={props.checked}
@@ -131,12 +143,12 @@ pub fn Input(props: &InputProps) -> Html {
             popovertargetaction={props.popovertargetaction.clone()}
             readonly={props.readonly}
             required={props.required}
-            spellcheck={props.spellcheck.clone()}
             src={props.src.clone()}
             step={props.step.clone()}
             type={props.r#type.clone()}
             value={props.value.clone()}
             width={props.width.clone()}
+
             onblur={props.on_blur.clone()}
             onchange={props.on_change.clone()}
             onfocus={props.on_focus.clone()}
