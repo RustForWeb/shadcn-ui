@@ -11,5 +11,6 @@
 -   [Pagination](./pagination.md)
 -   [Separator](./separator.md)
 -   [Skeleton](./skeleton.md)
+-   [Switch](./switch.md)
 -   [Table](./table.md)
 -   [Textarea](./textarea.md)

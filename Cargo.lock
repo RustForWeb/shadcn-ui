@@ -2202,25 +2202,27 @@ dependencies = [
 [[package]]
 name = "radix-yew-aspect-ratio"
 version = "0.0.2"
-source = "git+https://github.com/RustForWeb/radix.git#ae534ce920a01741efc11c812c8b3231b8194bb6"
+source = "git+https://github.com/RustForWeb/radix.git#439de247aec66a5274a0015d4968e286b0cad856"
 dependencies = [
  "yew",
+ "yew-struct-component",
 ]
 
 [[package]]
 name = "radix-yew-avatar"
 version = "0.0.2"
-source = "git+https://github.com/RustForWeb/radix.git#ae534ce920a01741efc11c812c8b3231b8194bb6"
+source = "git+https://github.com/RustForWeb/radix.git#439de247aec66a5274a0015d4968e286b0cad856"
 dependencies = [
  "log",
  "web-sys",
  "yew",
+ "yew-struct-component",
 ]
 
 [[package]]
 name = "radix-yew-icons"
 version = "0.0.2"
-source = "git+https://github.com/RustForWeb/radix.git#ae534ce920a01741efc11c812c8b3231b8194bb6"
+source = "git+https://github.com/RustForWeb/radix.git#439de247aec66a5274a0015d4968e286b0cad856"
 dependencies = [
  "yew",
 ]
@@ -2228,17 +2230,66 @@ dependencies = [
 [[package]]
 name = "radix-yew-label"
 version = "0.0.2"
-source = "git+https://github.com/RustForWeb/radix.git#ae534ce920a01741efc11c812c8b3231b8194bb6"
+source = "git+https://github.com/RustForWeb/radix.git#439de247aec66a5274a0015d4968e286b0cad856"
 dependencies = [
  "web-sys",
+ "yew",
+ "yew-struct-component",
+]
+
+[[package]]
+name = "radix-yew-primitive"
+version = "0.0.2"
+source = "git+https://github.com/RustForWeb/radix.git#439de247aec66a5274a0015d4968e286b0cad856"
+dependencies = [
  "yew",
 ]
 
 [[package]]
 name = "radix-yew-separator"
 version = "0.0.2"
-source = "git+https://github.com/RustForWeb/radix.git#ae534ce920a01741efc11c812c8b3231b8194bb6"
+source = "git+https://github.com/RustForWeb/radix.git#439de247aec66a5274a0015d4968e286b0cad856"
 dependencies = [
+ "yew",
+ "yew-struct-component",
+]
+
+[[package]]
+name = "radix-yew-switch"
+version = "0.0.2"
+source = "git+https://github.com/RustForWeb/radix.git#439de247aec66a5274a0015d4968e286b0cad856"
+dependencies = [
+ "radix-yew-primitive",
+ "radix-yew-use-controllable-state",
+ "radix-yew-use-previous",
+ "radix-yew-use-size",
+ "web-sys",
+ "yew",
+ "yew-struct-component",
+]
+
+[[package]]
+name = "radix-yew-use-controllable-state"
+version = "0.0.2"
+source = "git+https://github.com/RustForWeb/radix.git#439de247aec66a5274a0015d4968e286b0cad856"
+dependencies = [
+ "yew",
+]
+
+[[package]]
+name = "radix-yew-use-previous"
+version = "0.0.2"
+source = "git+https://github.com/RustForWeb/radix.git#439de247aec66a5274a0015d4968e286b0cad856"
+dependencies = [
+ "yew",
+]
+
+[[package]]
+name = "radix-yew-use-size"
+version = "0.0.2"
+source = "git+https://github.com/RustForWeb/radix.git#439de247aec66a5274a0015d4968e286b0cad856"
+dependencies = [
+ "web-sys",
  "yew",
 ]
 
@@ -2870,6 +2921,7 @@ dependencies = [
  "shadcn-ui-yew-pagination",
  "shadcn-ui-yew-separator",
  "shadcn-ui-yew-skeleton",
+ "shadcn-ui-yew-switch",
  "shadcn-ui-yew-table",
  "shadcn-ui-yew-textarea",
  "web-sys",
@@ -2936,6 +2988,15 @@ dependencies = [
 name = "shadcn-ui-yew-skeleton"
 version = "0.0.1"
 dependencies = [
+ "tailwind_fuse",
+ "yew",
+]
+
+[[package]]
+name = "shadcn-ui-yew-switch"
+version = "0.0.1"
+dependencies = [
+ "radix-yew-switch",
  "tailwind_fuse",
  "yew",
 ]

@@ -22,6 +22,8 @@ mod pagination;
 mod separator;
 #[cfg(feature = "skeleton")]
 mod skeleton;
+#[cfg(feature = "switch")]
+mod switch;
 #[cfg(feature = "table")]
 mod table;
 #[cfg(feature = "textarea")]
@@ -108,6 +110,13 @@ pub fn render() -> Html {
         use self::skeleton::{render, SkeletonRoute};
         children.push(html! {
             <Switch<SkeletonRoute> render={render} />
+        });
+    }
+    #[cfg(feature = "switch")]
+    {
+        use self::switch::{render, SwitchRoute};
+        children.push(html! {
+            <Switch<SwitchRoute> render={render} />
         });
     }
     #[cfg(feature = "table")]

@@ -1,0 +1,16 @@
+[package]
+name = "shadcn-ui-yew-switch"
+description = "Yew port of shadcn/ui Switch."
+homepage = "https://shadcn-ui.rustforweb.org/components/switch.html"
+publish = false
+
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+version.workspace = true
+
+[dependencies]
+radix-yew-switch = { git = "https://github.com/RustForWeb/radix" }
+tailwind_fuse.workspace = true
+yew.workspace = true

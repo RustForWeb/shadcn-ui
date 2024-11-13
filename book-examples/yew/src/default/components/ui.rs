@@ -23,6 +23,7 @@ pub use shadcn_ui_yew_input::default as input;
     feature = "label",
     feature = "card",
     feature = "input",
+    feature = "switch",
     feature = "textarea"
 ))]
 pub use shadcn_ui_yew_label::default as label;
@@ -32,6 +33,8 @@ pub use shadcn_ui_yew_pagination::default as pagination;
 pub use shadcn_ui_yew_separator::default as separator;
 #[cfg(feature = "skeleton")]
 pub use shadcn_ui_yew_skeleton::default as skeleton;
+#[cfg(feature = "switch")]
+pub use shadcn_ui_yew_switch::default as switch;
 #[cfg(feature = "table")]
 pub use shadcn_ui_yew_table::default as table;
 #[cfg(feature = "textarea")]

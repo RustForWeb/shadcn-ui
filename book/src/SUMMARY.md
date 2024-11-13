@@ -43,7 +43,7 @@
     -   [Skeleton](./components/skeleton.md)
     -   [Slider]()
     -   [Sonner]()
-    -   [Switch]()
+    -   [Switch](./components/switch.md)
     -   [Table](./components/table.md)
     -   [Tabs]()
     -   [Textarea](./components/textarea.md)
