@@ -7,14 +7,16 @@ use yew::prelude::*;
 
 #[derive(PartialEq, Properties)]
 pub struct AvatarProps {
-    #[prop_or_default]
-    pub node_ref: NodeRef,
-    #[prop_or_default]
-    pub id: Option<String>,
+    // Global attributes
     #[prop_or_default]
     pub class: Option<String>,
     #[prop_or_default]
+    pub id: Option<String>,
+    #[prop_or_default]
     pub style: Option<String>,
+
+    #[prop_or_default]
+    pub node_ref: NodeRef,
     #[prop_or_default]
     pub children: Html,
 }
@@ -23,10 +25,11 @@ pub struct AvatarProps {
 pub fn Avatar(props: &AvatarProps) -> Html {
     html! {
         <AvatarPrimitive
-            node_ref={props.node_ref.clone()}
-            id={props.id.clone()}
             class={tw_merge!("relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full", &props.class)}
+            id={props.id.clone()}
             style={props.style.clone()}
+
+            node_ref={props.node_ref.clone()}
         >
             {props.children.clone()}
         </AvatarPrimitive>
@@ -35,8 +38,17 @@ pub fn Avatar(props: &AvatarProps) -> Html {
 
 #[derive(PartialEq, Properties)]
 pub struct AvatarImageProps {
+    // Props from `AvatarImagePrimitive`
     #[prop_or_default]
     pub on_loading_status_change: Callback<ImageLoadingStatus>,
+
+    // Global attributes
+    #[prop_or_default]
+    pub class: Option<String>,
+    #[prop_or_default]
+    pub id: Option<String>,
+    #[prop_or_default]
+    pub style: Option<String>,
 
     // Attributes from `img`
     #[prop_or_default]
@@ -68,24 +80,17 @@ pub struct AvatarImageProps {
 
     #[prop_or_default]
     pub node_ref: NodeRef,
-    #[prop_or_default]
-    pub id: Option<String>,
-    #[prop_or_default]
-    pub class: Option<String>,
-    #[prop_or_default]
-    pub style: Option<String>,
 }
 
 #[function_component]
 pub fn AvatarImage(props: &AvatarImageProps) -> Html {
     html! {
         <AvatarImagePrimitive
-            node_ref={props.node_ref.clone()}
-            id={props.id.clone()}
-            class={tw_merge!("aspect-square h-full w-full", &props.class)}
-            style={props.style.clone()}
-
             on_loading_status_change={props.on_loading_status_change.clone()}
+
+            class={tw_merge!("aspect-square h-full w-full", &props.class)}
+            id={props.id.clone()}
+            style={props.style.clone()}
 
             alt={props.alt.clone()}
             crossorigin={props.crossorigin.clone()}
@@ -100,23 +105,28 @@ pub fn AvatarImage(props: &AvatarImageProps) -> Html {
             srcset={props.srcset.clone()}
             width={props.width.clone()}
             usemap={props.usemap.clone()}
+
+            node_ref={props.node_ref.clone()}
         />
     }
 }
 
 #[derive(PartialEq, Properties)]
 pub struct AvatarFallbackProps {
+    // Props from `AvatarFallbackPrimitive`
     #[prop_or_default]
     pub delay_ms: Option<i32>,
 
-    #[prop_or_default]
-    pub node_ref: NodeRef,
-    #[prop_or_default]
-    pub id: Option<String>,
+    // Global attributes
     #[prop_or_default]
     pub class: Option<String>,
     #[prop_or_default]
+    pub id: Option<String>,
+    #[prop_or_default]
     pub style: Option<String>,
+
+    #[prop_or_default]
+    pub node_ref: NodeRef,
     #[prop_or_default]
     pub children: Html,
 }
@@ -125,12 +135,13 @@ pub struct AvatarFallbackProps {
 pub fn AvatarFallback(props: &AvatarFallbackProps) -> Html {
     html! {
         <AvatarFallbackPrimitive
-            node_ref={props.node_ref.clone()}
-            id={props.id.clone()}
+            delay_ms={props.delay_ms}
+
             class={tw_merge!("flex h-full w-full items-center justify-center rounded-full bg-muted", &props.class)}
+            id={props.id.clone()}
             style={props.style.clone()}
 
-            delay_ms={props.delay_ms}
+            node_ref={props.node_ref.clone()}
         >
             {props.children.clone()}
         </AvatarFallbackPrimitive>

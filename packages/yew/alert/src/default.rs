@@ -24,14 +24,16 @@ pub struct AlertProps {
     #[prop_or_default]
     pub variant: AlertVariant,
 
-    #[prop_or_default]
-    pub node_ref: NodeRef,
-    #[prop_or_default]
-    pub id: Option<String>,
+    // Global attributes
     #[prop_or_default]
     pub class: Option<String>,
     #[prop_or_default]
+    pub id: Option<String>,
+    #[prop_or_default]
     pub style: Option<String>,
+
+    #[prop_or_default]
+    pub node_ref: NodeRef,
     #[prop_or_default]
     pub children: Html,
 }
@@ -45,11 +47,11 @@ pub fn Alert(props: &AlertProps) -> Html {
     html! {
         <div
             ref={props.node_ref.clone()}
-            id={props.id.clone()}
-            class={(*class).clone()}
-            style={props.style.clone()}
 
+            class={(*class).clone()}
+            id={props.id.clone()}
             role="alert"
+            style={props.style.clone()}
         >
             {props.children.clone()}
         </div>
@@ -58,14 +60,16 @@ pub fn Alert(props: &AlertProps) -> Html {
 
 #[derive(PartialEq, Properties)]
 pub struct AlertTitleProps {
-    #[prop_or_default]
-    pub node_ref: NodeRef,
-    #[prop_or_default]
-    pub id: Option<String>,
+    // Global attributes
     #[prop_or_default]
     pub class: Option<String>,
     #[prop_or_default]
+    pub id: Option<String>,
+    #[prop_or_default]
     pub style: Option<String>,
+
+    #[prop_or_default]
+    pub node_ref: NodeRef,
     #[prop_or_default]
     pub children: Html,
 }
@@ -75,8 +79,9 @@ pub fn AlertTitle(props: &AlertTitleProps) -> Html {
     html! {
         <h5
             ref={props.node_ref.clone()}
-            id={props.id.clone()}
+
             class={tw_merge!("mb-1 font-medium leading-none tracking-tight", &props.class)}
+            id={props.id.clone()}
             style={props.style.clone()}
         >
             {props.children.clone()}
@@ -86,14 +91,16 @@ pub fn AlertTitle(props: &AlertTitleProps) -> Html {
 
 #[derive(PartialEq, Properties)]
 pub struct AlertDescriptionProps {
-    #[prop_or_default]
-    pub node_ref: NodeRef,
-    #[prop_or_default]
-    pub id: Option<String>,
+    // Global attributes
     #[prop_or_default]
     pub class: Option<String>,
     #[prop_or_default]
+    pub id: Option<String>,
+    #[prop_or_default]
     pub style: Option<String>,
+
+    #[prop_or_default]
+    pub node_ref: NodeRef,
     #[prop_or_default]
     pub children: Html,
 }
@@ -103,8 +110,9 @@ pub fn AlertDescription(props: &AlertDescriptionProps) -> Html {
     html! {
         <div
             ref={props.node_ref.clone()}
-            id={props.id.clone()}
+
             class={tw_merge!("text-sm [&_p]:leading-relaxed", &props.class)}
+            id={props.id.clone()}
             style={props.style.clone()}
         >
             {props.children.clone()}

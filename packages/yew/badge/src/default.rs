@@ -33,14 +33,16 @@ pub struct BadgeProps {
     #[prop_or_default]
     pub variant: BadgeVariant,
 
-    #[prop_or_default]
-    pub node_ref: NodeRef,
-    #[prop_or_default]
-    pub id: Option<String>,
+    // Global attributes
     #[prop_or_default]
     pub class: Option<String>,
     #[prop_or_default]
+    pub id: Option<String>,
+    #[prop_or_default]
     pub style: Option<String>,
+
+    #[prop_or_default]
+    pub node_ref: NodeRef,
     #[prop_or_default]
     pub children: Html,
 }
@@ -54,8 +56,9 @@ pub fn Badge(props: &BadgeProps) -> Html {
     html! {
         <div
             ref={props.node_ref.clone()}
-            id={props.id.clone()}
+
             class={(*class).clone()}
+            id={props.id.clone()}
             style={props.style.clone()}
         >
             {props.children.clone()}

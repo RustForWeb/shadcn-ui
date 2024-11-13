@@ -3,14 +3,16 @@ use yew::prelude::*;
 
 #[derive(PartialEq, Properties)]
 pub struct TableProps {
-    #[prop_or_default]
-    pub node_ref: NodeRef,
-    #[prop_or_default]
-    pub id: Option<String>,
+    // Global attributes
     #[prop_or_default]
     pub class: Option<String>,
     #[prop_or_default]
+    pub id: Option<String>,
+    #[prop_or_default]
     pub style: Option<String>,
+
+    #[prop_or_default]
+    pub node_ref: NodeRef,
     #[prop_or_default]
     pub children: Html,
 }
@@ -21,8 +23,9 @@ pub fn Table(props: &TableProps) -> Html {
         <div class="relative w-full overflow-auto">
             <table
                 ref={props.node_ref.clone()}
-                id={props.id.clone()}
+
                 class={tw_merge!("w-full caption-bottom text-sm", &props.class)}
+                id={props.id.clone()}
                 style={props.style.clone()}
             >
                 {props.children.clone()}
@@ -33,14 +36,16 @@ pub fn Table(props: &TableProps) -> Html {
 
 #[derive(PartialEq, Properties)]
 pub struct TableHeaderProps {
-    #[prop_or_default]
-    pub node_ref: NodeRef,
-    #[prop_or_default]
-    pub id: Option<String>,
+    // Global attributes
     #[prop_or_default]
     pub class: Option<String>,
     #[prop_or_default]
+    pub id: Option<String>,
+    #[prop_or_default]
     pub style: Option<String>,
+
+    #[prop_or_default]
+    pub node_ref: NodeRef,
     #[prop_or_default]
     pub children: Html,
 }
@@ -50,8 +55,9 @@ pub fn TableHeader(props: &TableHeaderProps) -> Html {
     html! {
         <thead
             ref={props.node_ref.clone()}
-            id={props.id.clone()}
+
             class={tw_merge!("[&_tr]:border-b", &props.class)}
+            id={props.id.clone()}
             style={props.style.clone()}
         >
             {props.children.clone()}
@@ -61,14 +67,16 @@ pub fn TableHeader(props: &TableHeaderProps) -> Html {
 
 #[derive(PartialEq, Properties)]
 pub struct TableBodyProps {
-    #[prop_or_default]
-    pub node_ref: NodeRef,
-    #[prop_or_default]
-    pub id: Option<String>,
+    // Global attributes
     #[prop_or_default]
     pub class: Option<String>,
     #[prop_or_default]
+    pub id: Option<String>,
+    #[prop_or_default]
     pub style: Option<String>,
+
+    #[prop_or_default]
+    pub node_ref: NodeRef,
     #[prop_or_default]
     pub children: Html,
 }
@@ -78,8 +86,9 @@ pub fn TableBody(props: &TableBodyProps) -> Html {
     html! {
         <tbody
             ref={props.node_ref.clone()}
-            id={props.id.clone()}
+
             class={tw_merge!("[&_tr:last-child]:border-0", &props.class)}
+            id={props.id.clone()}
             style={props.style.clone()}
         >
             {props.children.clone()}
@@ -89,14 +98,16 @@ pub fn TableBody(props: &TableBodyProps) -> Html {
 
 #[derive(PartialEq, Properties)]
 pub struct TableFooterProps {
-    #[prop_or_default]
-    pub node_ref: NodeRef,
-    #[prop_or_default]
-    pub id: Option<String>,
+    // Global attributes
     #[prop_or_default]
     pub class: Option<String>,
     #[prop_or_default]
+    pub id: Option<String>,
+    #[prop_or_default]
     pub style: Option<String>,
+
+    #[prop_or_default]
+    pub node_ref: NodeRef,
     #[prop_or_default]
     pub children: Html,
 }
@@ -106,8 +117,9 @@ pub fn TableFooter(props: &TableFooterProps) -> Html {
     html! {
         <tfoot
             ref={props.node_ref.clone()}
-            id={props.id.clone()}
+
             class={tw_merge!("border-t bg-muted/50 font-medium [&>tr]:last:border-b-0", &props.class)}
+            id={props.id.clone()}
             style={props.style.clone()}
         >
             {props.children.clone()}
@@ -117,14 +129,16 @@ pub fn TableFooter(props: &TableFooterProps) -> Html {
 
 #[derive(PartialEq, Properties)]
 pub struct TableRowProps {
-    #[prop_or_default]
-    pub node_ref: NodeRef,
-    #[prop_or_default]
-    pub id: Option<String>,
+    // Global attributes
     #[prop_or_default]
     pub class: Option<String>,
     #[prop_or_default]
+    pub id: Option<String>,
+    #[prop_or_default]
     pub style: Option<String>,
+
+    #[prop_or_default]
+    pub node_ref: NodeRef,
     #[prop_or_default]
     pub children: Html,
 }
@@ -134,8 +148,9 @@ pub fn TableRow(props: &TableRowProps) -> Html {
     html! {
         <tr
             ref={props.node_ref.clone()}
-            id={props.id.clone()}
+
             class={tw_merge!("border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted", &props.class)}
+            id={props.id.clone()}
             style={props.style.clone()}
         >
             {props.children.clone()}
@@ -145,6 +160,14 @@ pub fn TableRow(props: &TableRowProps) -> Html {
 
 #[derive(PartialEq, Properties)]
 pub struct TableHeadProps {
+    // Global attributes
+    #[prop_or_default]
+    pub class: Option<String>,
+    #[prop_or_default]
+    pub id: Option<String>,
+    #[prop_or_default]
+    pub style: Option<String>,
+
     // Attributes from `th`
     #[prop_or_default]
     pub abbr: Option<String>,
@@ -160,12 +183,6 @@ pub struct TableHeadProps {
     #[prop_or_default]
     pub node_ref: NodeRef,
     #[prop_or_default]
-    pub id: Option<String>,
-    #[prop_or_default]
-    pub class: Option<String>,
-    #[prop_or_default]
-    pub style: Option<String>,
-    #[prop_or_default]
     pub children: Html,
 }
 
@@ -174,8 +191,9 @@ pub fn TableHead(props: &TableHeadProps) -> Html {
     html! {
         <th
             ref={props.node_ref.clone()}
-            id={props.id.clone()}
+
             class={tw_merge!("h-10 px-2 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]", &props.class)}
+            id={props.id.clone()}
             style={props.style.clone()}
 
             abbr={props.abbr.clone()}
@@ -191,6 +209,14 @@ pub fn TableHead(props: &TableHeadProps) -> Html {
 
 #[derive(PartialEq, Properties)]
 pub struct TableCellProps {
+    // Global attributes
+    #[prop_or_default]
+    pub class: Option<String>,
+    #[prop_or_default]
+    pub id: Option<String>,
+    #[prop_or_default]
+    pub style: Option<String>,
+
     // Attributes from `td`
     #[prop_or_default]
     pub colspan: Option<String>,
@@ -202,12 +228,6 @@ pub struct TableCellProps {
     #[prop_or_default]
     pub node_ref: NodeRef,
     #[prop_or_default]
-    pub id: Option<String>,
-    #[prop_or_default]
-    pub class: Option<String>,
-    #[prop_or_default]
-    pub style: Option<String>,
-    #[prop_or_default]
     pub children: Html,
 }
 
@@ -216,8 +236,9 @@ pub fn TableCell(props: &TableCellProps) -> Html {
     html! {
         <td
             ref={props.node_ref.clone()}
-            id={props.id.clone()}
+
             class={tw_merge!("p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]", &props.class)}
+            id={props.id.clone()}
             style={props.style.clone()}
 
             colspan={props.colspan.clone()}
@@ -231,14 +252,16 @@ pub fn TableCell(props: &TableCellProps) -> Html {
 
 #[derive(PartialEq, Properties)]
 pub struct TableCaptionProps {
-    #[prop_or_default]
-    pub node_ref: NodeRef,
-    #[prop_or_default]
-    pub id: Option<String>,
+    // Global attributes
     #[prop_or_default]
     pub class: Option<String>,
     #[prop_or_default]
+    pub id: Option<String>,
+    #[prop_or_default]
     pub style: Option<String>,
+
+    #[prop_or_default]
+    pub node_ref: NodeRef,
     #[prop_or_default]
     pub children: Html,
 }
@@ -248,8 +271,9 @@ pub fn TableCaption(props: &TableCaptionProps) -> Html {
     html! {
         <caption
             ref={props.node_ref.clone()}
-            id={props.id.clone()}
+
             class={tw_merge!("mt-4 text-sm text-muted-foreground", &props.class)}
+            id={props.id.clone()}
             style={props.style.clone()}
         >
             {props.children.clone()}

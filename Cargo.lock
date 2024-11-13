@@ -2884,6 +2884,7 @@ version = "0.0.1"
 dependencies = [
  "tailwind_fuse",
  "yew",
+ "yew-struct-component",
 ]
 
 [[package]]
@@ -3887,6 +3888,27 @@ dependencies = [
 name = "yew-router-macro"
 version = "0.18.0"
 source = "git+https://github.com/RustForWeb/yew.git?branch=feature%2Fuse-composed-ref#5e69003a25fb1cc8692f9ead409cd903f3f9074a"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.86",
+]
+
+[[package]]
+name = "yew-struct-component"
+version = "0.0.10"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "18f842f7971d873d6fe259a17db60b86acd5a09c825b6c539e01cd595609840e"
+dependencies = [
+ "yew",
+ "yew-struct-component-macro",
+]
+
+[[package]]
+name = "yew-struct-component-macro"
+version = "0.0.10"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e13d0273c0d0f3efdc78b7ad4704353401dacdab99e3d545b92aa56f56677910"
 dependencies = [
  "proc-macro2",
  "quote",

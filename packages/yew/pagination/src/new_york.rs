@@ -5,14 +5,16 @@ use yew::prelude::*;
 
 #[derive(PartialEq, Properties)]
 pub struct PaginationProps {
-    #[prop_or_default]
-    pub node_ref: NodeRef,
-    #[prop_or_default]
-    pub id: Option<String>,
+    // Global attributes
     #[prop_or_default]
     pub class: Option<String>,
     #[prop_or_default]
+    pub id: Option<String>,
+    #[prop_or_default]
     pub style: Option<String>,
+
+    #[prop_or_default]
+    pub node_ref: NodeRef,
     #[prop_or_default]
     pub children: Html,
 }
@@ -22,12 +24,12 @@ pub fn Pagination(props: &PaginationProps) -> Html {
     html! {
         <nav
             ref={props.node_ref.clone()}
-            id={props.id.clone()}
-            class={tw_merge!("mx-auto flex w-full justify-center", &props.class)}
-            style={props.style.clone()}
 
-            role="navigation"
             aria-label="pagination"
+            class={tw_merge!("mx-auto flex w-full justify-center", &props.class)}
+            id={props.id.clone()}
+            role="navigation"
+            style={props.style.clone()}
         >
             {props.children.clone()}
         </nav>
@@ -36,14 +38,16 @@ pub fn Pagination(props: &PaginationProps) -> Html {
 
 #[derive(PartialEq, Properties)]
 pub struct PaginationContentProps {
-    #[prop_or_default]
-    pub node_ref: NodeRef,
-    #[prop_or_default]
-    pub id: Option<String>,
+    // Global attributes
     #[prop_or_default]
     pub class: Option<String>,
     #[prop_or_default]
+    pub id: Option<String>,
+    #[prop_or_default]
     pub style: Option<String>,
+
+    #[prop_or_default]
+    pub node_ref: NodeRef,
     #[prop_or_default]
     pub children: Html,
 }
@@ -53,8 +57,9 @@ pub fn PaginationContent(props: &PaginationContentProps) -> Html {
     html! {
         <ul
             ref={props.node_ref.clone()}
-            id={props.id.clone()}
+
             class={tw_merge!("flex flex-row items-center gap-1", &props.class)}
+            id={props.id.clone()}
             style={props.style.clone()}
         >
             {props.children.clone()}
@@ -64,14 +69,16 @@ pub fn PaginationContent(props: &PaginationContentProps) -> Html {
 
 #[derive(PartialEq, Properties)]
 pub struct PaginationItemProps {
-    #[prop_or_default]
-    pub node_ref: NodeRef,
-    #[prop_or_default]
-    pub id: Option<String>,
+    // Global attributes
     #[prop_or_default]
     pub class: Option<String>,
     #[prop_or_default]
+    pub id: Option<String>,
+    #[prop_or_default]
     pub style: Option<String>,
+
+    #[prop_or_default]
+    pub node_ref: NodeRef,
     #[prop_or_default]
     pub children: Html,
 }
@@ -81,8 +88,9 @@ pub fn PaginationItem(props: &PaginationItemProps) -> Html {
     html! {
         <li
             ref={props.node_ref.clone()}
-            id={props.id.clone()}
+
             class={tw_merge!("", &props.class)}
+            id={props.id.clone()}
             style={props.style.clone()}
         >
             {props.children.clone()}
@@ -97,22 +105,26 @@ pub struct PaginationLinkProps {
     #[prop_or(ButtonSize::Icon)]
     pub size: ButtonSize,
 
-    // Attributes from `a`
+    // Global attributes
     #[prop_or_default]
     pub aria_label: Option<String>,
     #[prop_or_default]
+    pub class: Option<String>,
+    #[prop_or_default]
+    pub id: Option<String>,
+    #[prop_or_default]
+    pub style: Option<String>,
+
+    // Attributes from `a`
+    #[prop_or_default]
     pub href: Option<String>,
+
+    // Event handler attributes
     #[prop_or_default]
     pub on_click: Callback<MouseEvent>,
 
     #[prop_or_default]
     pub node_ref: NodeRef,
-    #[prop_or_default]
-    pub id: Option<String>,
-    #[prop_or_default]
-    pub class: Option<String>,
-    #[prop_or_default]
-    pub style: Option<String>,
     #[prop_or_default]
     pub children: Html,
 }
@@ -137,13 +149,15 @@ pub fn PaginationLink(props: &PaginationLinkProps) -> Html {
     html! {
         <a
             ref={props.node_ref.clone()}
-            id={props.id.clone()}
-            class={(*class).clone()}
-            style={props.style.clone()}
 
             aria-current={props.is_active.then_some("page")}
             aria-label={props.aria_label.clone()}
+            class={(*class).clone()}
+            id={props.id.clone()}
+            style={props.style.clone()}
+
             href={props.href.clone()}
+
             onclick={props.on_click.clone()}
         >
             {props.children.clone()}
@@ -156,20 +170,24 @@ pub struct PaginationPreviousProps {
     #[prop_or(false)]
     pub is_active: bool,
 
+    // Global attributes
+    #[prop_or_default]
+    pub class: Option<String>,
+    #[prop_or_default]
+    pub id: Option<String>,
+    #[prop_or_default]
+    pub style: Option<String>,
+
     // Attributes from `a`
     #[prop_or_default]
     pub href: Option<String>,
+
+    // Event handler attributes
     #[prop_or_default]
     pub on_click: Callback<MouseEvent>,
 
     #[prop_or_default]
     pub node_ref: NodeRef,
-    #[prop_or_default]
-    pub id: Option<String>,
-    #[prop_or_default]
-    pub class: Option<String>,
-    #[prop_or_default]
-    pub style: Option<String>,
 }
 
 #[function_component]
@@ -180,13 +198,15 @@ pub fn PaginationPrevious(props: &PaginationPreviousProps) -> Html {
             size={ButtonSize::Default}
 
             aria_label={"Go to previous page"}
+            class={tw_merge!("gap-1 pl-2.5", &props.class)}
+            id={props.id.clone()}
+            style={props.style.clone()}
+
             href={props.href.clone()}
+
             on_click={props.on_click.clone()}
 
             node_ref={props.node_ref.clone()}
-            id={props.id.clone()}
-            class={tw_merge!("gap-1 pl-2.5", &props.class)}
-            style={props.style.clone()}
         >
             <ChevronLeftIcon class="h-4 w-4" />
             <span>{"Previous"}</span>
@@ -199,20 +219,24 @@ pub struct PaginationNextProps {
     #[prop_or(false)]
     pub is_active: bool,
 
+    // Global attributes
+    #[prop_or_default]
+    pub class: Option<String>,
+    #[prop_or_default]
+    pub id: Option<String>,
+    #[prop_or_default]
+    pub style: Option<String>,
+
     // Attributes from `a`
     #[prop_or_default]
     pub href: Option<String>,
+
+    // Event handler attributes
     #[prop_or_default]
     pub on_click: Callback<MouseEvent>,
 
     #[prop_or_default]
     pub node_ref: NodeRef,
-    #[prop_or_default]
-    pub id: Option<String>,
-    #[prop_or_default]
-    pub class: Option<String>,
-    #[prop_or_default]
-    pub style: Option<String>,
 }
 
 #[function_component]
@@ -223,13 +247,15 @@ pub fn PaginationNext(props: &PaginationNextProps) -> Html {
             size={ButtonSize::Default}
 
             aria_label={"Go to next page"}
+            class={tw_merge!("gap-1 pr-2.5", &props.class)}
+            id={props.id.clone()}
+            style={props.style.clone()}
+
             href={props.href.clone()}
+
             on_click={props.on_click.clone()}
 
             node_ref={props.node_ref.clone()}
-            id={props.id.clone()}
-            class={tw_merge!("gap-1 pr-2.5", &props.class)}
-            style={props.style.clone()}
         >
             <span>{"Next"}</span>
             <ChevronRightIcon class="h-4 w-4" />
@@ -239,14 +265,16 @@ pub fn PaginationNext(props: &PaginationNextProps) -> Html {
 
 #[derive(PartialEq, Properties)]
 pub struct PaginationEllipsisProps {
-    #[prop_or_default]
-    pub node_ref: NodeRef,
-    #[prop_or_default]
-    pub id: Option<String>,
+    // Global attributes
     #[prop_or_default]
     pub class: Option<String>,
     #[prop_or_default]
+    pub id: Option<String>,
+    #[prop_or_default]
     pub style: Option<String>,
+
+    #[prop_or_default]
+    pub node_ref: NodeRef,
 }
 
 #[function_component]
@@ -254,10 +282,11 @@ pub fn PaginationEllipsis(props: &PaginationEllipsisProps) -> Html {
     html! {
         <span
             ref={props.node_ref.clone()}
-            id={props.id.clone()}
-            class={tw_merge!("flex h-9 w-9 items-center justify-center", &props.class)}
-            style={props.style.clone()}
+
             aria-hidden="true"
+            class={tw_merge!("flex h-9 w-9 items-center justify-center", &props.class)}
+            id={props.id.clone()}
+            style={props.style.clone()}
         >
             <DotsHorizontalIcon class="h-4 w-4" />
             <span class="sr-only">{"More pages"}</span>

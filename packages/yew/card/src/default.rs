@@ -3,14 +3,16 @@ use yew::prelude::*;
 
 #[derive(PartialEq, Properties)]
 pub struct CardProps {
-    #[prop_or_default]
-    pub node_ref: NodeRef,
-    #[prop_or_default]
-    pub id: Option<String>,
+    // Global attributes
     #[prop_or_default]
     pub class: Option<String>,
     #[prop_or_default]
+    pub id: Option<String>,
+    #[prop_or_default]
     pub style: Option<String>,
+
+    #[prop_or_default]
+    pub node_ref: NodeRef,
     #[prop_or_default]
     pub children: Html,
 }
@@ -20,8 +22,9 @@ pub fn Card(props: &CardProps) -> Html {
     html! {
         <div
             ref={props.node_ref.clone()}
-            id={props.id.clone()}
+
             class={tw_merge!("rounded-lg border bg-card text-card-foreground shadow-sm", &props.class)}
+            id={props.id.clone()}
             style={props.style.clone()}
         >
             {props.children.clone()}
@@ -31,14 +34,16 @@ pub fn Card(props: &CardProps) -> Html {
 
 #[derive(PartialEq, Properties)]
 pub struct CardHeaderProps {
-    #[prop_or_default]
-    pub node_ref: NodeRef,
-    #[prop_or_default]
-    pub id: Option<String>,
+    // Global attributes
     #[prop_or_default]
     pub class: Option<String>,
     #[prop_or_default]
+    pub id: Option<String>,
+    #[prop_or_default]
     pub style: Option<String>,
+
+    #[prop_or_default]
+    pub node_ref: NodeRef,
     #[prop_or_default]
     pub children: Html,
 }
@@ -48,8 +53,9 @@ pub fn CardHeader(props: &CardHeaderProps) -> Html {
     html! {
         <div
             ref={props.node_ref.clone()}
-            id={props.id.clone()}
+
             class={tw_merge!("flex flex-col space-y-1.5 p-6", &props.class)}
+            id={props.id.clone()}
             style={props.style.clone()}
         >
             {props.children.clone()}
@@ -59,14 +65,16 @@ pub fn CardHeader(props: &CardHeaderProps) -> Html {
 
 #[derive(PartialEq, Properties)]
 pub struct CardTitleProps {
-    #[prop_or_default]
-    pub node_ref: NodeRef,
-    #[prop_or_default]
-    pub id: Option<String>,
+    // Global attributes
     #[prop_or_default]
     pub class: Option<String>,
     #[prop_or_default]
+    pub id: Option<String>,
+    #[prop_or_default]
     pub style: Option<String>,
+
+    #[prop_or_default]
+    pub node_ref: NodeRef,
     #[prop_or_default]
     pub children: Html,
 }
@@ -76,8 +84,9 @@ pub fn CardTitle(props: &CardTitleProps) -> Html {
     html! {
         <div
             ref={props.node_ref.clone()}
-            id={props.id.clone()}
+
             class={tw_merge!("text-2xl font-semibold leading-none tracking-tight", &props.class)}
+            id={props.id.clone()}
             style={props.style.clone()}
         >
             {props.children.clone()}
@@ -87,14 +96,16 @@ pub fn CardTitle(props: &CardTitleProps) -> Html {
 
 #[derive(PartialEq, Properties)]
 pub struct CardDescriptionProps {
-    #[prop_or_default]
-    pub node_ref: NodeRef,
-    #[prop_or_default]
-    pub id: Option<String>,
+    // Global attributes
     #[prop_or_default]
     pub class: Option<String>,
     #[prop_or_default]
+    pub id: Option<String>,
+    #[prop_or_default]
     pub style: Option<String>,
+
+    #[prop_or_default]
+    pub node_ref: NodeRef,
     #[prop_or_default]
     pub children: Html,
 }
@@ -104,8 +115,9 @@ pub fn CardDescription(props: &CardDescriptionProps) -> Html {
     html! {
         <div
             ref={props.node_ref.clone()}
-            id={props.id.clone()}
+
             class={tw_merge!("text-sm text-muted-foreground", &props.class)}
+            id={props.id.clone()}
             style={props.style.clone()}
         >
             {props.children.clone()}
@@ -115,14 +127,16 @@ pub fn CardDescription(props: &CardDescriptionProps) -> Html {
 
 #[derive(PartialEq, Properties)]
 pub struct CardContentProps {
-    #[prop_or_default]
-    pub node_ref: NodeRef,
-    #[prop_or_default]
-    pub id: Option<String>,
+    // Global attributes
     #[prop_or_default]
     pub class: Option<String>,
     #[prop_or_default]
+    pub id: Option<String>,
+    #[prop_or_default]
     pub style: Option<String>,
+
+    #[prop_or_default]
+    pub node_ref: NodeRef,
     #[prop_or_default]
     pub children: Html,
 }
@@ -132,8 +146,9 @@ pub fn CardContent(props: &CardContentProps) -> Html {
     html! {
         <div
             ref={props.node_ref.clone()}
-            id={props.id.clone()}
+
             class={tw_merge!("p-6 pt-0", &props.class)}
+            id={props.id.clone()}
             style={props.style.clone()}
         >
             {props.children.clone()}
@@ -143,14 +158,16 @@ pub fn CardContent(props: &CardContentProps) -> Html {
 
 #[derive(PartialEq, Properties)]
 pub struct CardFooterProps {
-    #[prop_or_default]
-    pub node_ref: NodeRef,
-    #[prop_or_default]
-    pub id: Option<String>,
+    // Global attributes
     #[prop_or_default]
     pub class: Option<String>,
     #[prop_or_default]
+    pub id: Option<String>,
+    #[prop_or_default]
     pub style: Option<String>,
+
+    #[prop_or_default]
+    pub node_ref: NodeRef,
     #[prop_or_default]
     pub children: Html,
 }
@@ -160,8 +177,9 @@ pub fn CardFooter(props: &CardFooterProps) -> Html {
     html! {
         <div
             ref={props.node_ref.clone()}
-            id={props.id.clone()}
+
             class={tw_merge!("flex items-center p-6 pt-0", &props.class)}
+            id={props.id.clone()}
             style={props.style.clone()}
         >
             {props.children.clone()}

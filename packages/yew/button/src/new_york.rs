@@ -1,5 +1,6 @@
 use tailwind_fuse::*;
 use yew::prelude::*;
+use yew_struct_component::{struct_component, StructComponent};
 
 #[derive(TwClass)]
 #[tw(
@@ -50,9 +51,17 @@ pub struct ButtonProps {
     #[prop_or_default]
     pub size: ButtonSize,
 
-    // Attributes from `button`
+    // Global attributes
     #[prop_or_default]
     pub autofocus: bool,
+    #[prop_or_default]
+    pub class: Option<String>,
+    #[prop_or_default]
+    pub id: Option<String>,
+    #[prop_or_default]
+    pub style: Option<String>,
+
+    // Attributes from `button`
     #[prop_or_default]
     pub command: Option<String>,
     #[prop_or_default]
@@ -81,31 +90,31 @@ pub struct ButtonProps {
     pub r#type: Option<String>,
     #[prop_or_default]
     pub value: Option<String>,
+
+    // Event handler attributes
     #[prop_or_default]
     pub on_click: Callback<MouseEvent>,
 
     #[prop_or_default]
     pub node_ref: NodeRef,
-    #[prop_or_default]
-    pub id: Option<String>,
-    #[prop_or_default]
-    pub class: Option<String>,
-    #[prop_or_default]
-    pub style: Option<String>,
     #[prop_or_default]
     pub as_child: Option<Callback<ButtonChildProps, Html>>,
     #[prop_or_default]
     pub children: Html,
 }
 
-#[derive(Clone, PartialEq)]
+#[derive(Clone, PartialEq, StructComponent)]
+#[struct_component(tag = "button")]
 pub struct ButtonChildProps {
     pub node_ref: NodeRef,
-    pub id: Option<String>,
+
+    // Global attributes
+    pub autofocus: bool,
     pub class: String,
+    pub id: Option<String>,
     pub style: Option<String>,
 
-    pub autofocus: bool,
+    // Attributes from `button`
     pub command: Option<String>,
     pub commandfor: Option<String>,
     pub disabled: bool,
@@ -120,39 +129,9 @@ pub struct ButtonChildProps {
     pub popovertargetaction: Option<String>,
     pub r#type: Option<String>,
     pub value: Option<String>,
-    pub on_click: Callback<MouseEvent>,
-}
 
-impl ButtonChildProps {
-    pub fn render(self, children: Html) -> Html {
-        html! {
-            <button
-                ref={self.node_ref}
-                id={self.id}
-                class={self.class}
-                style={self.style}
-
-                autofocus={self.autofocus}
-                command={self.command}
-                commandfor={self.commandfor}
-                disabled={self.disabled}
-                form={self.form}
-                formaction={self.formaction}
-                formenctype={self.formenctype}
-                formmethod={self.formmethod}
-                formnovalidate={self.formnovalidate}
-                formtarget={self.formtarget}
-                name={self.name}
-                popovertarget={self.popovertarget}
-                popovertargetaction={self.popovertargetaction}
-                type={self.r#type}
-                value={self.value}
-                onclick={self.on_click}
-            >
-                {children}
-            </button>
-        }
-    }
+    // Event handler attributes
+    pub onclick: Callback<MouseEvent>,
 }
 
 #[function_component]
@@ -170,11 +149,14 @@ pub fn Button(props: &ButtonProps) -> Html {
 
     let child_props = ButtonChildProps {
         node_ref: props.node_ref.clone(),
-        id: props.id.clone(),
+
+        // Global attributes
+        autofocus: props.autofocus,
         class: (*class).clone(),
+        id: props.id.clone(),
         style: props.style.clone(),
 
-        autofocus: props.autofocus,
+        // Attributes from `button`
         command: props.command.clone(),
         commandfor: props.commandfor.clone(),
         disabled: props.disabled,
@@ -189,7 +171,9 @@ pub fn Button(props: &ButtonProps) -> Html {
         popovertargetaction: props.popovertargetaction.clone(),
         r#type: props.r#type.clone(),
         value: props.value.clone(),
-        on_click: props.on_click.clone(),
+
+        // Event handler attributes
+        onclick: props.on_click.clone(),
     };
 
     if let Some(as_child) = props.as_child.as_ref() {

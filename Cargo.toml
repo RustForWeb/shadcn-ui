@@ -32,6 +32,7 @@ web-sys = "0.3.70"
 yew = "0.21.0"
 yew-lucide = { git = "https://gitlab.com/stephan.dilly/yew-lucide", branch = "yew-upgrade" }
 yew-router = "0.18.0"
+yew-struct-component = "0.0.10"
 
 [patch.crates-io]
 leptos = { git = "https://github.com/DanielleHuisman/leptos.git", branch = "fix/unpin-wasm-bindgen" }

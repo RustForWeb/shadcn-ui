@@ -5,19 +5,22 @@ use yew::prelude::*;
 
 #[derive(PartialEq, Properties)]
 pub struct SeparatorProps {
+    // Props from `SeparatorPrimitive`
     #[prop_or(Orientation::Horizontal)]
     pub orientation: Orientation,
     #[prop_or(true)]
     pub decorative: bool,
 
-    #[prop_or_default]
-    pub node_ref: NodeRef,
-    #[prop_or_default]
-    pub id: Option<String>,
+    // Global attributes
     #[prop_or_default]
     pub class: Option<String>,
     #[prop_or_default]
+    pub id: Option<String>,
+    #[prop_or_default]
     pub style: Option<String>,
+
+    #[prop_or_default]
+    pub node_ref: NodeRef,
     #[prop_or_default]
     pub children: Html,
 }
@@ -26,8 +29,9 @@ pub struct SeparatorProps {
 pub fn Separator(props: &SeparatorProps) -> Html {
     html! {
         <SeparatorPrimitive
-            node_ref={props.node_ref.clone()}
-            id={props.id.clone()}
+            orientation={props.orientation}
+            decorative={props.decorative}
+
             class={tw_merge!(
                 "shrink-0 bg-border",
                 if props.orientation == Orientation::Horizontal {
@@ -37,10 +41,10 @@ pub fn Separator(props: &SeparatorProps) -> Html {
                 },
                 &props.class
             )}
+            id={props.id.clone()}
             style={props.style.clone()}
 
-            orientation={props.orientation}
-            decorative={props.decorative}
+            node_ref={props.node_ref.clone()}
         >
             {props.children.clone()}
         </SeparatorPrimitive>
