@@ -13,3 +13,4 @@ version.workspace = true
 [dependencies]
 tailwind_fuse.workspace = true
 yew.workspace = true
+yew-style.workspace = true

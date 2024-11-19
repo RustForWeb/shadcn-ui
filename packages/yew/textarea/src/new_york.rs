@@ -1,5 +1,6 @@
 use tailwind_fuse::*;
 use yew::prelude::*;
+use yew_style::Style;
 
 #[derive(PartialEq, Properties)]
 pub struct TextareaProps {
@@ -17,7 +18,7 @@ pub struct TextareaProps {
     #[prop_or_default]
     pub spellcheck: Option<String>,
     #[prop_or_default]
-    pub style: Option<String>,
+    pub style: Style,
 
     // Attributes from `textarea`
     #[prop_or_default]

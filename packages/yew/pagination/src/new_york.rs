@@ -2,6 +2,7 @@ use radix_yew_icons::{ChevronLeftIcon, ChevronRightIcon, DotsHorizontalIcon};
 use shadcn_ui_yew_button::new_york::{ButtonClass, ButtonSize, ButtonVariant};
 use tailwind_fuse::*;
 use yew::prelude::*;
+use yew_style::Style;
 
 #[derive(PartialEq, Properties)]
 pub struct PaginationProps {
@@ -11,7 +12,7 @@ pub struct PaginationProps {
     #[prop_or_default]
     pub id: Option<String>,
     #[prop_or_default]
-    pub style: Option<String>,
+    pub style: Style,
 
     #[prop_or_default]
     pub node_ref: NodeRef,
@@ -44,7 +45,7 @@ pub struct PaginationContentProps {
     #[prop_or_default]
     pub id: Option<String>,
     #[prop_or_default]
-    pub style: Option<String>,
+    pub style: Style,
 
     #[prop_or_default]
     pub node_ref: NodeRef,
@@ -75,7 +76,7 @@ pub struct PaginationItemProps {
     #[prop_or_default]
     pub id: Option<String>,
     #[prop_or_default]
-    pub style: Option<String>,
+    pub style: Style,
 
     #[prop_or_default]
     pub node_ref: NodeRef,
@@ -113,7 +114,7 @@ pub struct PaginationLinkProps {
     #[prop_or_default]
     pub id: Option<String>,
     #[prop_or_default]
-    pub style: Option<String>,
+    pub style: Style,
 
     // Attributes from `a`
     #[prop_or_default]
@@ -176,7 +177,7 @@ pub struct PaginationPreviousProps {
     #[prop_or_default]
     pub id: Option<String>,
     #[prop_or_default]
-    pub style: Option<String>,
+    pub style: Style,
 
     // Attributes from `a`
     #[prop_or_default]
@@ -225,7 +226,7 @@ pub struct PaginationNextProps {
     #[prop_or_default]
     pub id: Option<String>,
     #[prop_or_default]
-    pub style: Option<String>,
+    pub style: Style,
 
     // Attributes from `a`
     #[prop_or_default]
@@ -271,7 +272,7 @@ pub struct PaginationEllipsisProps {
     #[prop_or_default]
     pub id: Option<String>,
     #[prop_or_default]
-    pub style: Option<String>,
+    pub style: Style,
 
     #[prop_or_default]
     pub node_ref: NodeRef,

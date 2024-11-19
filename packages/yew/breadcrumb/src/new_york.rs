@@ -2,6 +2,7 @@ use radix_yew_icons::{ChevronRightIcon, DotsHorizontalIcon};
 use tailwind_fuse::*;
 use yew::{prelude::*, virtual_dom::VNode};
 use yew_struct_component::{struct_component, StructComponent};
+use yew_style::Style;
 
 #[derive(PartialEq, Properties)]
 pub struct BreadcrumbProps {
@@ -11,7 +12,7 @@ pub struct BreadcrumbProps {
     #[prop_or_default]
     pub id: Option<String>,
     #[prop_or_default]
-    pub style: Option<String>,
+    pub style: Style,
 
     #[prop_or_default]
     pub node_ref: NodeRef,
@@ -43,7 +44,7 @@ pub struct BreadcrumbListProps {
     #[prop_or_default]
     pub id: Option<String>,
     #[prop_or_default]
-    pub style: Option<String>,
+    pub style: Style,
 
     #[prop_or_default]
     pub node_ref: NodeRef,
@@ -77,7 +78,7 @@ pub struct BreadcrumbItemProps {
     #[prop_or_default]
     pub id: Option<String>,
     #[prop_or_default]
-    pub style: Option<String>,
+    pub style: Style,
 
     #[prop_or_default]
     pub node_ref: NodeRef,
@@ -108,7 +109,7 @@ pub struct BreadcrumbLinkProps {
     #[prop_or_default]
     pub id: Option<String>,
     #[prop_or_default]
-    pub style: Option<String>,
+    pub style: Style,
 
     // Attributes from `a`
     #[prop_or_default]
@@ -134,7 +135,7 @@ pub struct BreadcrumbLinkChildProps {
     // Global attributes
     pub class: String,
     pub id: Option<String>,
-    pub style: Option<String>,
+    pub style: Style,
 
     // Attributes from `a`
     pub href: Option<String>,
@@ -175,7 +176,7 @@ pub struct BreadcrumbPageProps {
     #[prop_or_default]
     pub id: Option<String>,
     #[prop_or_default]
-    pub style: Option<String>,
+    pub style: Style,
 
     #[prop_or_default]
     pub node_ref: NodeRef,
@@ -209,7 +210,7 @@ pub struct BreadcrumbSeparatorProps {
     #[prop_or_default]
     pub id: Option<String>,
     #[prop_or_default]
-    pub style: Option<String>,
+    pub style: Style,
 
     #[prop_or_default]
     pub node_ref: NodeRef,
@@ -246,7 +247,7 @@ pub struct BreadcrumbEllipsisProps {
     #[prop_or_default]
     pub id: Option<String>,
     #[prop_or_default]
-    pub style: Option<String>,
+    pub style: Style,
 
     #[prop_or_default]
     pub node_ref: NodeRef,

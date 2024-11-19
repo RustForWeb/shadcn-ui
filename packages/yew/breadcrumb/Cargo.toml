@@ -19,3 +19,4 @@ tailwind_fuse.workspace = true
 yew.workspace = true
 yew-lucide.workspace = true
 yew-struct-component.workspace = true
+yew-style.workspace = true
