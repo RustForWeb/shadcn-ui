@@ -1,6 +1,7 @@
 use radix_yew_switch::{Switch as SwitchPrimitive, SwitchThumb as SwitchThumbPrimitive};
 use tailwind_fuse::*;
 use yew::prelude::*;
+use yew_style::Style;
 
 #[derive(PartialEq, Properties)]
 pub struct SwitchProps {
@@ -18,7 +19,7 @@ pub struct SwitchProps {
     #[prop_or_default]
     pub id: Option<String>,
     #[prop_or_default]
-    pub style: Option<String>,
+    pub style: Style,
 
     // Attributes from `button`
     #[prop_or_default]

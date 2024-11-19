@@ -2,6 +2,7 @@ pub use radix_yew_separator::Orientation;
 use radix_yew_separator::Separator as SeparatorPrimitive;
 use tailwind_fuse::*;
 use yew::prelude::*;
+use yew_style::Style;
 
 #[derive(PartialEq, Properties)]
 pub struct SeparatorProps {
@@ -17,7 +18,7 @@ pub struct SeparatorProps {
     #[prop_or_default]
     pub id: Option<String>,
     #[prop_or_default]
-    pub style: Option<String>,
+    pub style: Style,
 
     #[prop_or_default]
     pub node_ref: NodeRef,

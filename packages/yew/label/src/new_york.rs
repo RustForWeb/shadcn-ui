@@ -1,6 +1,7 @@
 use radix_yew_label::Label as LabelPrimitive;
 use tailwind_fuse::*;
 use yew::prelude::*;
+use yew_style::Style;
 
 #[derive(PartialEq, Properties)]
 pub struct LabelProps {
@@ -10,7 +11,7 @@ pub struct LabelProps {
     #[prop_or_default]
     pub id: Option<String>,
     #[prop_or_default]
-    pub style: Option<String>,
+    pub style: Style,
 
     // Attributes from `label`
     #[prop_or_default]

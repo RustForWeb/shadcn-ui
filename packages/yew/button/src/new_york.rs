@@ -1,6 +1,7 @@
 use tailwind_fuse::*;
 use yew::prelude::*;
 use yew_struct_component::{struct_component, StructComponent};
+use yew_style::Style;
 
 #[derive(TwClass)]
 #[tw(
@@ -59,7 +60,7 @@ pub struct ButtonProps {
     #[prop_or_default]
     pub id: Option<String>,
     #[prop_or_default]
-    pub style: Option<String>,
+    pub style: Style,
 
     // Attributes from `button`
     #[prop_or_default]
@@ -112,7 +113,7 @@ pub struct ButtonChildProps {
     pub autofocus: bool,
     pub class: String,
     pub id: Option<String>,
-    pub style: Option<String>,
+    pub style: Style,
 
     // Attributes from `button`
     pub command: Option<String>,

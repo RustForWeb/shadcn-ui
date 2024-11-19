@@ -20,3 +20,4 @@ shadcn-ui-yew-button = { path = "../button" }
 tailwind_fuse.workspace = true
 yew.workspace = true
 yew-lucide.workspace = true
+yew-style.workspace = true
