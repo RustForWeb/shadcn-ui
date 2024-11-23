@@ -14,7 +14,18 @@ console_error_panic_hook.workspace = true
 console_log.workspace = true
 leptos = { workspace = true, features = ["csr"] }
 leptos_router.workspace = true
+leptos-lucide-icons = { version = "0.1.1", optional = true }
 log.workspace = true
+radix-leptos-icons = { workspace = true, optional = true }
+shadcn-ui-leptos-button = { path = "../../packages/leptos/button", optional = true }
 
 [features]
-default = []
+default = ["button"]
+button = [
+    "dep:radix-leptos-icons",
+    "dep:shadcn-ui-leptos-button",
+    "dep:leptos-lucide-icons",
+    "radix-leptos-icons/chevron-right",
+    "radix-leptos-icons/envelope-open",
+    "radix-leptos-icons/reload",
+]

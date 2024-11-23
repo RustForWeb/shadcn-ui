@@ -1,13 +1,25 @@
 mod components;
 
+#[cfg(feature = "button")]
+mod button;
+
 use leptos::prelude::*;
+use leptos_router::{
+    components::{Outlet, ParentRoute},
+    path, MatchNestedRoutes,
+};
 
-// TODO: remove allow
-#[allow(dead_code)]
-pub fn render() -> impl IntoView {
-    let children: Vec<AnyView> = vec![];
+#[component(transparent)]
+pub fn NewYork() -> impl MatchNestedRoutes + Clone {
+    let children = (
+        #[cfg(feature = "button")]
+        {
+            component_view(self::button::ButtonRoutes, ())
+        },
+    );
 
-    // TODO: component routes
-
-    children.into_view()
+    view! {
+        <ParentRoute path=path!("new-york") view=Outlet children=ToChildren::to_children(move || children) />
+    }
+    .into_inner()
 }
