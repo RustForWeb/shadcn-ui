@@ -1,6 +1,14 @@
 # Summary
 
 -   [Introduction](./introduction.md)
+-   [Getting Started](./getting-started/README.md)
+    -   [Introduction]()
+    -   [Installation]()
+    -   [components.toml]()
+    -   [Theming]()
+    -   [Dark Mode]()
+    -   [CLI]()
+    -   [Typography]()
 -   [Components](./components/README.md)
     -   [Accordion]()
     -   [Alert](./components/alert.md)
