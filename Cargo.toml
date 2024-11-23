@@ -21,7 +21,11 @@ anyhow = "1.0.89"
 console_log = "1.0.0"
 console_error_panic_hook = "0.1.7"
 env_logger = "0.11.3"
-leptos = "0.7.0-rc0"
+leptos = "0.7.0-rc2"
+leptos_router = "0.7.0-rc2"
+leptos-node-ref = "0.0.2"
+leptos-struct-component = "0.0.2"
+leptos-style = "0.0.2"
 log = "0.4.21"
 radix-yew-icons = { git = "https://github.com/RustForWeb/radix.git" }
 serde = { version = "1.0.203", features = ["derive"] }
@@ -36,6 +40,5 @@ yew-struct-component = "0.1.4"
 yew-style = "0.1.4"
 
 [patch.crates-io]
-leptos = { git = "https://github.com/DanielleHuisman/leptos.git", branch = "fix/unpin-wasm-bindgen" }
 yew = { git = "https://github.com/RustForWeb/yew.git", branch = "feature/use-composed-ref" }
 yew-router = { git = "https://github.com/RustForWeb/yew.git", branch = "feature/use-composed-ref" }

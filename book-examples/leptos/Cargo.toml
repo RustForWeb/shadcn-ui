@@ -13,43 +13,8 @@ version.workspace = true
 console_error_panic_hook.workspace = true
 console_log.workspace = true
 leptos = { workspace = true, features = ["csr"] }
+leptos_router.workspace = true
 log.workspace = true
-shadcn-ui-leptos-alert = { path = "../../packages/leptos/alert", optional = true }
-shadcn-ui-leptos-button = { path = "../../packages/leptos/button", optional = true }
-shadcn-ui-leptos-card = { path = "../../packages/leptos/card", optional = true }
-shadcn-ui-leptos-input = { path = "../../packages/leptos/input", optional = true }
-shadcn-ui-leptos-textarea = { path = "../../packages/leptos/textarea", optional = true }
 
 [features]
-default = [
-    "alert",
-    "alert-destructive",
-    "button",
-    "button-secondary",
-    "button-destructive",
-    "button-outline",
-    "button-ghost",
-    "button-link",
-    "button-icon",
-    "button-with-icon",
-    "button-loading",
-    "button-as-child",
-    "card",
-    "input",
-    "textarea",
-]
-alert = ["dep:shadcn-ui-leptos-alert"]
-alert-destructive = ["dep:shadcn-ui-leptos-alert"]
-button = ["dep:shadcn-ui-leptos-button"]
-button-secondary = ["dep:shadcn-ui-leptos-button"]
-button-destructive = ["dep:shadcn-ui-leptos-button"]
-button-outline = ["dep:shadcn-ui-leptos-button"]
-button-ghost = ["dep:shadcn-ui-leptos-button"]
-button-link = ["dep:shadcn-ui-leptos-button"]
-button-icon = ["dep:shadcn-ui-leptos-button"]
-button-with-icon = ["dep:shadcn-ui-leptos-button"]
-button-loading = ["dep:shadcn-ui-leptos-button"]
-button-as-child = ["dep:shadcn-ui-leptos-button"]
-card = ["dep:shadcn-ui-leptos-card"]
-input = ["dep:shadcn-ui-leptos-input"]
-textarea = ["dep:shadcn-ui-leptos-textarea"]
+default = []

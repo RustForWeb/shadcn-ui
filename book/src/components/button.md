@@ -48,17 +48,6 @@ The CLI is not yet available. For now, manually copy the component source into y
 </div>
 
 {{#tabs global="framework" }}
-
-<!-- {{#tab name="Leptos" }}
-
-```shell
-rust-shadcn-ui add button
-```
-
--   [View source](https://github.com/RustForWeb/shadcn-ui/tree/main/packages/leptos/button)
-
-{{#endtab }} -->
-
 {{#tab name="Yew" }}
 
 ```shell
@@ -73,24 +62,6 @@ rust-shadcn-ui add button
 ## Usage
 
 {{#tabs global="framework" }}
-
-<!-- {{#tab name="Leptos" }}
-
-```rust,ignore
-use leptos::*;
-
-use crate::components::ui::button::{Button, ButtonVariant};
-
-#[component]
-fn Usage() -> impl IntoView {
-    view! {
-        <Button variant=ButtonVariant::Outline>Button>/Button>
-    }
-}
-```
-
-{{#endtab }} -->
-
 {{#tab name="Yew" }}
 
 ```rust,ignore
