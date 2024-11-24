@@ -1,5 +1,5 @@
+use lucide_yew::Mail;
 use yew::prelude::*;
-use yew_lucide::Mail;
 
 use crate::default::components::ui::button::Button;
 

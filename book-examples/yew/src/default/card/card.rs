@@ -1,5 +1,5 @@
+use lucide_yew::{BellRing, Check};
 use yew::prelude::*;
-use yew_lucide::{BellRing, Check};
 
 use crate::default::components::ui::{
     button::Button,

@@ -1,5 +1,5 @@
+use lucide_yew::{ChevronDown, Slash};
 use yew::prelude::*;
-use yew_lucide::{ChevronDown, Slash};
 
 use crate::default::components::ui::breadcrumb::{
     Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator,

@@ -416,7 +416,7 @@ version = "0.14.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "68578f196d2a33ff61b27fae256c3164f65e36382648e30666dde05b8cc9dfdf"
 dependencies = [
- "convert_case 0.6.0",
+ "convert_case",
  "nom",
  "pathdiff",
  "serde",
@@ -468,12 +468,6 @@ name = "const_str_slice_concat"
 version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f67855af358fcb20fac58f9d714c94e2b228fe5694c1c9b4ead4a366343eda1b"
-
-[[package]]
-name = "convert_case"
-version = "0.5.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fb4a24b1aaf0fd0ce8b45161144d6f42cd91677fd5940fd431183eb023b3a2b8"
 
 [[package]]
 name = "convert_case"
@@ -1842,20 +1836,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "leptos-lucide-icons"
-version = "0.1.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bb8b0c9216974a7984c561e0e4482a24c437c86227b3a1bd70820a62e9a07c5b"
-dependencies = [
- "heck 0.5.0",
- "leptos 0.6.15",
- "proc-macro2",
- "quote",
- "regex",
- "walkdir",
-]
-
-[[package]]
 name = "leptos-node-ref"
 version = "0.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2011,7 +1991,7 @@ checksum = "4b13bc3db70715cd8218c4535a5af3ae3c0e5fea6f018531fc339377b36bc0e0"
 dependencies = [
  "attribute-derive 0.9.2",
  "cfg-if",
- "convert_case 0.6.0",
+ "convert_case",
  "html-escape",
  "itertools 0.12.1",
  "leptos_hot_reload 0.6.15",
@@ -2034,7 +2014,7 @@ checksum = "9c592d8e91148c73ee562f6d4b867d84d1995a5adb10d5a723f538b3dc173dfc"
 dependencies = [
  "attribute-derive 0.10.3",
  "cfg-if",
- "convert_case 0.6.0",
+ "convert_case",
  "html-escape",
  "itertools 0.13.0",
  "leptos_hot_reload 0.7.0-rc2",
@@ -2182,6 +2162,24 @@ name = "log"
 version = "0.4.22"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a7a70ba024b9dc04c27ea2f0c0548feb474ec5c54bba33a7f72f873a39d07b24"
+
+[[package]]
+name = "lucide-leptos"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1e61bdae4c69573b7bafb39d9f8e73ef7b4089743dff55b78c49a915ece5a7e6"
+dependencies = [
+ "leptos 0.7.0-rc2",
+]
+
+[[package]]
+name = "lucide-yew"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3482473a083c0854a43d414ce3862ee9caed81f65f31982fe23cc722ebb735ed"
+dependencies = [
+ "yew",
+]
 
 [[package]]
 name = "manyhow"
@@ -2892,7 +2890,7 @@ version = "0.1.0-rc2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b37fc52b98f16d437cdf5541cf60f661596b6e84a708e02b216a7bf864fe699b"
 dependencies = [
- "convert_case 0.6.0",
+ "convert_case",
  "proc-macro-error2",
  "proc-macro2",
  "quote",
@@ -3143,7 +3141,7 @@ name = "scripts"
 version = "0.0.1"
 dependencies = [
  "anyhow",
- "convert_case 0.6.0",
+ "convert_case",
  "env_logger",
  "handlebars",
  "log",
@@ -3385,7 +3383,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "faaaf648c6967aef78177c0610478abb5a3455811f401f3c62d10ae9bd3901a1"
 dependencies = [
  "const_format",
- "convert_case 0.6.0",
+ "convert_case",
  "proc-macro2",
  "quote",
  "syn 2.0.89",
@@ -3399,7 +3397,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4b7e77dd4f15d19a65019d24700963e40294b5a30c42c32bce2e532fbfe00b49"
 dependencies = [
  "const_format",
- "convert_case 0.6.0",
+ "convert_case",
  "proc-macro2",
  "quote",
  "syn 2.0.89",
@@ -3467,9 +3465,9 @@ dependencies = [
  "console_error_panic_hook",
  "console_log",
  "leptos 0.7.0-rc2",
- "leptos-lucide-icons",
  "leptos_router",
  "log",
+ "lucide-leptos",
  "radix-leptos-icons",
  "shadcn-ui-leptos-button",
 ]
@@ -3535,6 +3533,7 @@ dependencies = [
  "console_error_panic_hook",
  "console_log",
  "log",
+ "lucide-yew",
  "radix-yew-icons",
  "shadcn-ui-yew-alert",
  "shadcn-ui-yew-aspect-ratio",
@@ -3553,7 +3552,6 @@ dependencies = [
  "shadcn-ui-yew-textarea",
  "web-sys",
  "yew",
- "yew-lucide",
  "yew-router",
 ]
 
@@ -3561,10 +3559,10 @@ dependencies = [
 name = "shadcn-ui-yew-breadcrumb"
 version = "0.0.1"
 dependencies = [
+ "lucide-yew",
  "radix-yew-icons",
  "tailwind_fuse",
  "yew",
- "yew-lucide",
  "yew-struct-component",
  "yew-style",
 ]
@@ -3611,11 +3609,11 @@ dependencies = [
 name = "shadcn-ui-yew-pagination"
 version = "0.0.1"
 dependencies = [
+ "lucide-yew",
  "radix-yew-icons",
  "shadcn-ui-yew-button",
  "tailwind_fuse",
  "yew",
- "yew-lucide",
  "yew-style",
 ]
 
@@ -4614,17 +4612,6 @@ dependencies = [
  "wasm-bindgen-futures",
  "web-sys",
  "yew-macro",
-]
-
-[[package]]
-name = "yew-lucide"
-version = "0.330.0"
-source = "git+https://gitlab.com/stephan.dilly/yew-lucide?branch=yew-upgrade#93ea7d60a9c501af5a21b6e01d3a5d7fb8710f44"
-dependencies = [
- "convert_case 0.5.0",
- "serde",
- "serde_json",
- "yew",
 ]
 
 [[package]]

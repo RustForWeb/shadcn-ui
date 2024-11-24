@@ -13,6 +13,7 @@ version.workspace = true
 console_error_panic_hook.workspace = true
 console_log.workspace = true
 log.workspace = true
+lucide-yew = { workspace = true, optional = true }
 radix-yew-icons = { workspace = true, optional = true }
 shadcn-ui-yew-alert = { path = "../../packages/yew/alert", optional = true }
 shadcn-ui-yew-aspect-ratio = { path = "../../packages/yew/aspect-ratio", optional = true }
@@ -31,7 +32,6 @@ shadcn-ui-yew-table = { path = "../../packages/yew/table", optional = true }
 shadcn-ui-yew-textarea = { path = "../../packages/yew/textarea", optional = true }
 web-sys.workspace = true
 yew = { workspace = true, features = ["csr"] }
-yew-lucide = { git = "https://gitlab.com/stephan.dilly/yew-lucide", branch = "yew-upgrade", optional = true }
 yew-router.workspace = true
 
 [features]
@@ -53,9 +53,9 @@ default = [
     "textarea",
 ]
 alert = [
+    "dep:lucide-yew",
     "dep:radix-yew-icons",
     "dep:shadcn-ui-yew-alert",
-    "dep:yew-lucide",
     "radix-yew-icons/exclamation-triangle",
     "radix-yew-icons/rocket",
 ]
@@ -63,28 +63,28 @@ aspect-ratio = ["dep:shadcn-ui-yew-aspect-ratio"]
 avatar = ["dep:shadcn-ui-yew-avatar"]
 badge = ["dep:shadcn-ui-yew-badge"]
 breadcrumb = [
+    "dep:lucide-yew",
     "dep:radix-yew-icons",
     "dep:shadcn-ui-yew-breadcrumb",
-    "dep:yew-lucide",
     "radix-yew-icons/chevron-down",
     "radix-yew-icons/slash",
 ]
 button = [
+    "dep:lucide-yew",
     "dep:radix-yew-icons",
     "dep:shadcn-ui-yew-button",
-    "dep:yew-lucide",
     "radix-yew-icons/chevron-right",
     "radix-yew-icons/envelope-open",
     "radix-yew-icons/reload",
 ]
 card = [
+    "dep:lucide-yew",
     "dep:radix-yew-icons",
     "dep:shadcn-ui-yew-button",
     "dep:shadcn-ui-yew-card",
     "dep:shadcn-ui-yew-input",
     "dep:shadcn-ui-yew-label",
     "dep:shadcn-ui-yew-switch",
-    "dep:yew-lucide",
     "radix-yew-icons/bell",
     "radix-yew-icons/check",
 ]

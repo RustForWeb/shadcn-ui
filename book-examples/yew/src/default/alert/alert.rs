@@ -1,5 +1,5 @@
+use lucide_yew::Terminal;
 use yew::prelude::*;
-use yew_lucide::Terminal;
 
 use crate::default::components::ui::alert::{Alert, AlertDescription, AlertTitle};
 

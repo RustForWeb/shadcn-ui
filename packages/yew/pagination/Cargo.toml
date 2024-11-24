@@ -11,6 +11,7 @@ repository.workspace = true
 version.workspace = true
 
 [dependencies]
+lucide-yew.workspace = true
 radix-yew-icons = { workspace = true, features = [
     "chevron-left",
     "chevron-right",
@@ -19,5 +20,4 @@ radix-yew-icons = { workspace = true, features = [
 shadcn-ui-yew-button = { path = "../button" }
 tailwind_fuse.workspace = true
 yew.workspace = true
-yew-lucide.workspace = true
 yew-style.workspace = true

@@ -1,7 +1,7 @@
+use lucide_yew::{ChevronLeft, ChevronRight, Ellipsis};
 use shadcn_ui_yew_button::default::{ButtonClass, ButtonSize, ButtonVariant};
 use tailwind_fuse::*;
 use yew::prelude::*;
-use yew_lucide::{ChevronLeft, ChevronRight, MoreHorizontal};
 use yew_style::Style;
 
 #[derive(PartialEq, Properties)]
@@ -289,7 +289,7 @@ pub fn PaginationEllipsis(props: &PaginationEllipsisProps) -> Html {
             id={props.id.clone()}
             style={props.style.clone()}
         >
-            <MoreHorizontal class="h-4 w-4" />
+            <Ellipsis class="h-4 w-4" />
             <span class="sr-only">{"More pages"}</span>
         </span>
     }

@@ -1,6 +1,6 @@
+use lucide_yew::{ChevronRight, Ellipsis};
 use tailwind_fuse::*;
 use yew::{prelude::*, virtual_dom::VNode};
-use yew_lucide::{ChevronRight, MoreHorizontal};
 use yew_struct_component::{struct_component, StructComponent};
 use yew_style::Style;
 
@@ -265,7 +265,7 @@ pub fn BreadcrumbEllipsis(props: &BreadcrumbEllipsisProps) -> Html {
             role="presentation"
             style={props.style.clone()}
         >
-            <MoreHorizontal class="h-4 w-4" />
+            <Ellipsis class="h-4 w-4" />
             <span class="sr-only">{"More"}</span>
         </span>
     }

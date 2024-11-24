@@ -1,5 +1,5 @@
+use lucide_yew::ChevronRight;
 use yew::prelude::*;
-use yew_lucide::ChevronRight;
 
 use crate::default::components::ui::button::{Button, ButtonSize, ButtonVariant};
 

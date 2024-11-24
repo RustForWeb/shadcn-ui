@@ -1,5 +1,5 @@
+use lucide_yew::LoaderCircle;
 use yew::prelude::*;
-use yew_lucide::Loader2;
 
 use crate::default::components::ui::button::Button;
 
@@ -7,7 +7,7 @@ use crate::default::components::ui::button::Button;
 pub fn ButtonLoading() -> Html {
     html! {
         <Button disabled=true>
-            <Loader2 class="mr-2 h-4 w-4 animate-spin" />
+            <LoaderCircle class="mr-2 h-4 w-4 animate-spin" />
             {"Please wait"}
         </Button>
     }

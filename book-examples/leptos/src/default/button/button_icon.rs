@@ -1,5 +1,5 @@
 use leptos::prelude::*;
-// use leptos_lucide_icons::ChevronRight;
+use lucide_leptos::ChevronRight;
 
 use crate::default::components::ui::button::{Button, ButtonSize, ButtonVariant};
 
@@ -7,8 +7,7 @@ use crate::default::components::ui::button::{Button, ButtonSize, ButtonVariant};
 pub fn ButtonIcon() -> impl IntoView {
     view! {
         <Button variant={ButtonVariant::Outline} size={ButtonSize::Icon}>
-            // TODO
-            // <ChevronRight class="h-4 w-4" />
+            <ChevronRight attr:class="h-4 w-4" />
         </Button>
     }
 }

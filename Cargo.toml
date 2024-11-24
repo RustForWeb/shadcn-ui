@@ -27,6 +27,8 @@ leptos-node-ref = "0.0.2"
 leptos-struct-component = "0.0.2"
 leptos-style = "0.0.2"
 log = "0.4.21"
+lucide-leptos = "0.1.1"
+lucide-yew = "0.1.1"
 radix-leptos-icons = { git = "https://github.com/RustForWeb/radix.git" }
 radix-yew-icons = { git = "https://github.com/RustForWeb/radix.git" }
 serde = { version = "1.0.203", features = ["derive"] }
@@ -35,7 +37,6 @@ tailwind_fuse = { version = "0.3.0", features = ["variant"] }
 tokio = { version = "1.38.0", features = ["full"] }
 web-sys = "0.3.70"
 yew = "0.21.0"
-yew-lucide = { git = "https://gitlab.com/stephan.dilly/yew-lucide", branch = "yew-upgrade" }
 yew-router = "0.18.0"
 yew-struct-component = "0.1.4"
 yew-style = "0.1.4"
