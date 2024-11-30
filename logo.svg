@@ -2,8 +2,8 @@
 <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
   <defs/>
   <g>
-    <line x1="208" y1="128" x2="128" y2="208" fill="none" stroke="currentColor" strokelinecap="round" strokelinejoin="round" strokewidth="16"/>
-    <line x1="192" y1="40" x2="40" y2="192" fill="none" stroke="currentColor" strokelinecap="round" strokelinejoin="round" strokewidth="16"/>
+    <line x1="208" y1="128" x2="128" y2="208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
+    <line x1="192" y1="40" x2="40" y2="192" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/>
   </g>
   <g id="Layer-1" style="transform-origin: 600.52px 391.9px;" transform="matrix(0.315967, 0, 0, 0.315967, -212.851151, -119.657562)">
     <g transform="matrix(1,0,0,1,654.172,668.359)">
