@@ -92,16 +92,6 @@ dependencies = [
 
 [[package]]
 name = "any_spawner"
-version = "0.1.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9747eb01aed7603aba23f7c869d5d7e5d37aab9c3501aced42d8fdb786f1f6e3"
-dependencies = [
- "futures",
- "thiserror 1.0.69",
-]
-
-[[package]]
-name = "any_spawner"
 version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "41058deaa38c9d9dd933d6d238d825227cffa668e2839b52879f6619c63eee3b"
@@ -1817,7 +1807,7 @@ version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ba5046c590aea121f6ad5e71fcb75453a933425d39527b9a3b1b295235afc8df"
 dependencies = [
- "any_spawner 0.2.0",
+ "any_spawner",
  "cfg-if",
  "either_of",
  "futures",
@@ -2065,11 +2055,11 @@ dependencies = [
 
 [[package]]
 name = "leptos_router"
-version = "0.7.0-rc2"
+version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "123f2c0df5b3fd3025d1c26bc0dce1abd236409d9f031112ab5a0f871cfa6cbb"
+checksum = "32a4f1784486ebf36805dac22faee21e3e610aa64b6662a7386f065eeec27ae8"
 dependencies = [
- "any_spawner 0.1.1",
+ "any_spawner",
  "either_of",
  "futures",
  "gloo-net 0.6.0",
@@ -2089,9 +2079,9 @@ dependencies = [
 
 [[package]]
 name = "leptos_router_macro"
-version = "0.7.0-rc2"
+version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f84e0d92a7d6973682f02539b8de1f37651e72f557b1fd3f2d55460662669926"
+checksum = "eee7ecef3f1c69b51864190c564e4873d84f200e44efb37934208f9525f02a5f"
 dependencies = [
  "proc-macro-error2",
  "proc-macro2",
@@ -2120,7 +2110,7 @@ version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "93450589df3b3e398c7f5ea64d8f1c8369b1ba9b90e1f70f6cb996b8d443ca3e"
 dependencies = [
- "any_spawner 0.2.0",
+ "any_spawner",
  "base64",
  "codee",
  "futures",
@@ -2865,7 +2855,7 @@ version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c27f54685c1416af1f323a0c40e71cbdae281a1ebc623591790d367222d0ac65"
 dependencies = [
- "any_spawner 0.2.0",
+ "any_spawner",
  "async-lock",
  "futures",
  "guardian",
@@ -3863,7 +3853,7 @@ version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8be68dfd4abf192e11a1bdd484239daa84ffa6fcd27c25cf4f011b2b0fb27ddb"
 dependencies = [
- "any_spawner 0.2.0",
+ "any_spawner",
  "const_str_slice_concat",
  "drain_filter_polyfill",
  "either_of",
@@ -3921,7 +3911,7 @@ dependencies = [
  "fastrand",
  "once_cell",
  "rustix",
- "windows-sys 0.59.0",
+ "windows-sys 0.52.0",
 ]
 
 [[package]]
@@ -4435,7 +4425,7 @@ version = "0.1.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cf221c93e13a30d793f7645a0e7762c55d169dbb0a49671918a2319d289b10bb"
 dependencies = [
- "windows-sys 0.59.0",
+ "windows-sys 0.52.0",
 ]
 
 [[package]]
