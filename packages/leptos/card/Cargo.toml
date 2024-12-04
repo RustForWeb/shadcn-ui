@@ -1,0 +1,18 @@
+[package]
+name = "shadcn-ui-leptos-card"
+description = "Leptos port of shadcn/ui Card."
+homepage = "https://shadcn-ui.rustforweb.org/components/card.html"
+publish = false
+
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+version.workspace = true
+
+[dependencies]
+tailwind_fuse.workspace = true
+leptos.workspace = true
+leptos-node-ref.workspace = true
+leptos-struct-component.workspace = true
+leptos-style.workspace = true
