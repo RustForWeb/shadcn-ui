@@ -2,3 +2,6 @@
 
 #[cfg(feature = "button")]
 pub use shadcn_ui_leptos_button::default as button;
+
+#[cfg(feature = "card")]
+pub use shadcn_ui_leptos_card::default as card;
