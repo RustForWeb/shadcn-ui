@@ -1,9 +1,9 @@
 use leptos::prelude::*;
 use lucide_leptos::{BellRing, Check};
 
-use crate::default::components::ui::button::Button;
-use crate::default::components::ui::card::{
-    Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle,
+use crate::default::components::ui::{
+    button::Button,
+    card::{Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle},
 };
 
 struct Notification {
