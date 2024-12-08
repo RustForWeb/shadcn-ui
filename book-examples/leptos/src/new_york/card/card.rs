@@ -1,11 +1,10 @@
 use leptos::prelude::*;
 use lucide_leptos::{BellRing, Check};
-use shadcn_ui_leptos_button::new_york::Button;
-use shadcn_ui_leptos_card::new_york::{
-    CardContent, CardDescription, CardFooter, CardHeader, CardTitle,
-};
 
-use crate::new_york::components::ui::card::Card;
+use crate::new_york::components::ui::button::Button;
+use crate::new_york::components::ui::card::{
+    Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle,
+};
 
 struct Notification {
     id: usize,

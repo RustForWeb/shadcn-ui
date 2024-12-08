@@ -1,11 +1,10 @@
 use leptos::prelude::*;
 use lucide_leptos::{BellRing, Check};
-use shadcn_ui_leptos_button::default::Button;
-use shadcn_ui_leptos_card::default::{
-    CardContent, CardDescription, CardFooter, CardHeader, CardTitle,
-};
 
-use crate::default::components::ui::card::Card;
+use crate::default::components::ui::button::Button;
+use crate::default::components::ui::card::{
+    Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle,
+};
 
 struct Notification {
     id: usize,

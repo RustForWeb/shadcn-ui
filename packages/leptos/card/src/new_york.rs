@@ -6,8 +6,8 @@ use tailwind_fuse::*;
 #[component]
 pub fn Card(
     // Global attributes
-    #[prop(into, optional)] class: String,
-    #[prop(into, optional)] id: String,
+    #[prop(into, optional)] class: MaybeProp<String>,
+    #[prop(into, optional)] id: MaybeProp<String>,
     #[prop(into, optional)] style: Signal<Style>,
 
     #[prop(into, optional)] node_ref: AnyNodeRef,
@@ -16,8 +16,8 @@ pub fn Card(
     view! {
         <div
             node_ref=node_ref
-            class=tw_merge!("rounded-xl border bg-card text-card-foreground shadow", class)
-            id=id
+            class=move || tw_merge!("rounded-xl border bg-card text-card-foreground shadow", class.get())
+            id=move || id.get()
             style=style
         >
             {children()}
@@ -28,8 +28,8 @@ pub fn Card(
 #[component]
 pub fn CardHeader(
     // Global attributes
-    #[prop(into, optional)] class: String,
-    #[prop(into, optional)] id: String,
+    #[prop(into, optional)] class: MaybeProp<String>,
+    #[prop(into, optional)] id: MaybeProp<String>,
     #[prop(into, optional)] style: Signal<Style>,
 
     #[prop(into, optional)] node_ref: AnyNodeRef,
@@ -38,8 +38,8 @@ pub fn CardHeader(
     view! {
         <div
             node_ref=node_ref
-            class=tw_merge!("flex flex-col space-y-1.5 p-6", class)
-            id=id
+            class=move || tw_merge!("flex flex-col space-y-1.5 p-6", class.get())
+            id=move || id.get()
             style=style
         >{children()}
         </div>
@@ -49,8 +49,8 @@ pub fn CardHeader(
 #[component]
 pub fn CardTitle(
     // Global attributes
-    #[prop(into, optional)] class: String,
-    #[prop(into, optional)] id: String,
+    #[prop(into, optional)] class: MaybeProp<String>,
+    #[prop(into, optional)] id: MaybeProp<String>,
     #[prop(into, optional)] style: Signal<Style>,
 
     #[prop(into, optional)] node_ref: AnyNodeRef,
@@ -59,8 +59,8 @@ pub fn CardTitle(
     view! {
         <div
             node_ref=node_ref
-            class=tw_merge!("font-semibold leading-none tracking-tight", class)
-            id=id
+            class=move || tw_merge!("font-semibold leading-none tracking-tight", class.get())
+            id=move || id.get()
             style=style
         >
             {children()}
@@ -71,8 +71,8 @@ pub fn CardTitle(
 #[component]
 pub fn CardDescription(
     // Global attributes
-    #[prop(into, optional)] class: String,
-    #[prop(into, optional)] id: String,
+    #[prop(into, optional)] class: MaybeProp<String>,
+    #[prop(into, optional)] id: MaybeProp<String>,
     #[prop(into, optional)] style: Signal<Style>,
 
     #[prop(into, optional)] node_ref: AnyNodeRef,
@@ -81,8 +81,8 @@ pub fn CardDescription(
     view! {
         <div
             node_ref=node_ref
-            class=tw_merge!("text-sm text-muted-foreground", class)
-            id=id
+            class=move || tw_merge!("text-sm text-muted-foreground", class.get())
+            id=move || id.get()
             style=style
         >
             {children()}
@@ -93,8 +93,8 @@ pub fn CardDescription(
 #[component]
 pub fn CardContent(
     // Global attributes
-    #[prop(into, optional)] class: String,
-    #[prop(into, optional)] id: String,
+    #[prop(into, optional)] class: MaybeProp<String>,
+    #[prop(into, optional)] id: MaybeProp<String>,
     #[prop(into, optional)] style: Signal<Style>,
 
     #[prop(into, optional)] node_ref: AnyNodeRef,
@@ -103,8 +103,8 @@ pub fn CardContent(
     view! {
         <div
             node_ref=node_ref
-            class=tw_merge!("p-6 pt-0", class)
-            id=id
+            class=move || tw_merge!("p-6 pt-0", class.get())
+            id=move || id.get()
             style=style
         >
             {children()}
@@ -115,8 +115,8 @@ pub fn CardContent(
 #[component]
 pub fn CardFooter(
     // Global attributes
-    #[prop(into, optional)] class: String,
-    #[prop(into, optional)] id: String,
+    #[prop(into, optional)] class: MaybeProp<String>,
+    #[prop(into, optional)] id: MaybeProp<String>,
     #[prop(into, optional)] style: Signal<Style>,
 
     #[prop(into, optional)] node_ref: AnyNodeRef,
@@ -125,8 +125,8 @@ pub fn CardFooter(
     view! {
         <div
             node_ref=node_ref
-            class=tw_merge!("flex items-center p-6 pt-0", class)
-            id=id
+            class=move || tw_merge!("flex items-center p-6 pt-0", class.get())
+            id=move || id.get()
             style=style
         >
             {children()}

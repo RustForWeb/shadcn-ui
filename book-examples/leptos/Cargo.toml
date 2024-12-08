@@ -34,5 +34,6 @@ button = [
     "radix-leptos-icons/reload",
 ]
 card = [
+    "dep:shadcn-ui-leptos-button",
     "dep:shadcn-ui-leptos-card"
 ]
