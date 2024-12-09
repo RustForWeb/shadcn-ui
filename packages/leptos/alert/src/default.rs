@@ -1,8 +1,7 @@
-use leptos::{prelude::*, tachys::html::class};
+use leptos::prelude::*;
 use leptos_node_ref::AnyNodeRef;
 use leptos_struct_component::{struct_component, StructComponent};
 use leptos_style::Style;
-use merge::tw_merge;
 use tailwind_fuse::*;
 
 #[derive(TwClass)]
