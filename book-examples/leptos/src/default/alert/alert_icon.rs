@@ -1,5 +1,5 @@
 use leptos::prelude::*;
-use lucide_leptos::ChevronRight;
+use lucide_leptos::Terminal;
 
 use crate::default::components::ui::alert::{
     Alert, 
@@ -11,7 +11,7 @@ use crate::default::components::ui::alert::{
 pub fn AlertIcon() -> impl IntoView {
     view! {
         <Alert>
-            <ChevronRight attr:class="h-4 w-4" />
+            <Terminal attr:class="h-4 w-4" />
             <AlertTitle>"Heads up!"</AlertTitle>
             <AlertDescription>
                 "You can add components to your app using the cli."

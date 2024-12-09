@@ -1,15 +1,19 @@
 use leptos::prelude::*;
 
-use crate::default::components::ui::alert::Alert;
-use crate::default::components::ui::alert::AlertDescription;
-use crate::default::components::ui::alert::AlertTitle;
+use crate::default::components::ui::alert::{
+    Alert,
+    AlertTitle,
+    AlertDescription,
+};
 
 #[component]
 pub fn AlertDemo() -> impl IntoView {
     view! {
         <Alert>
-            <AlertTitle>"Title"</AlertTitle>
-            <AlertDescription>"Description"</AlertDescription>
+            <AlertTitle>"Heads up!"</AlertTitle>
+            <AlertDescription>
+                "You can add components to your app using the cli."
+            </AlertDescription>
         </Alert>
     }
 }

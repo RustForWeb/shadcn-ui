@@ -12,8 +12,10 @@ use crate::new_york::components::ui::alert::{
 pub fn AlertDestructive() -> impl IntoView {
     view! {
         <Alert variant={AlertVariant::Destructive}>
-            <AlertTitle>"Title"</AlertTitle>
-            <AlertDescription>"Description"</AlertDescription>
+            <AlertTitle>"Heads up!"</AlertTitle>
+            <AlertDescription>
+                "You can add components to your app using the cli."
+            </AlertDescription>
         </Alert>
     }
 }
