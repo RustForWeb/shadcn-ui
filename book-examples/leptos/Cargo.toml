@@ -18,9 +18,10 @@ lucide-leptos = { version = "0.1.1", optional = true }
 log.workspace = true
 radix-leptos-icons = { workspace = true, optional = true }
 shadcn-ui-leptos-button = { path = "../../packages/leptos/button", optional = true }
+shadcn-ui-leptos-alert = { path = "../../packages/leptos/alert" , optional = true }
 
 [features]
-default = ["button"]
+default = ["button", "alert"]
 button = [
     "dep:lucide-leptos",
     "dep:radix-leptos-icons",
@@ -28,4 +29,7 @@ button = [
     "radix-leptos-icons/chevron-right",
     "radix-leptos-icons/envelope-open",
     "radix-leptos-icons/reload",
+]
+alert = [
+    "dep:shadcn-ui-leptos-alert"
 ]
