@@ -65,7 +65,7 @@ pub fn Alert(
 
 #[derive(Clone, StructComponent)]
 #[struct_component(tag = "h5")]
-pub struct AlertSectionChildProps {
+pub struct AlertTitleChildProps {
     pub node_ref: AnyNodeRef,   
     pub class: MaybeProp<String>,
     pub id: MaybeProp<String>,
@@ -83,7 +83,7 @@ pub fn AlertTitle(
     #[prop(optional)] children: Option<Children>,
 ) -> impl IntoView {
             
-        let child_props = AlertSectionChildProps {
+        let child_props = AlertTitleChildProps {
             node_ref,            
             class: tw_merge!("mb-1 font-medium leading-none tracking-tight", class.get()).into(),
             id,
@@ -94,6 +94,14 @@ pub fn AlertTitle(
 }
 
 
+#[derive(Clone, StructComponent)]
+#[struct_component(tag = "div")]
+pub struct AlertDescriptionChildProps {
+    pub node_ref: AnyNodeRef,   
+    pub class: MaybeProp<String>,
+    pub id: MaybeProp<String>,
+    pub style: Signal<Style>,
+}
 
 
 #[component]
@@ -106,7 +114,7 @@ pub fn AlertDescription(
     #[prop(optional)] children: Option<Children>,
 ) -> impl IntoView {
  
-        let child_props = AlertSectionChildProps {
+        let child_props = AlertDescriptionChildProps {
             node_ref,       
             class: tw_merge!("text-sm [&_p]:leading-relaxed", class.get()).into(),
             id,
