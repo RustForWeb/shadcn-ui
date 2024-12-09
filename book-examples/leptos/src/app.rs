@@ -11,7 +11,7 @@ pub fn App() -> impl IntoView {
             <Router>
                 <Routes fallback=|| "Not found">
                     <Default />
-                    //<NewYork />
+                    <NewYork />
                 </Routes>
             </Router>
         </div>
