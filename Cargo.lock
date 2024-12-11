@@ -1838,9 +1838,9 @@ dependencies = [
 
 [[package]]
 name = "leptos-node-ref"
-version = "0.0.2"
+version = "0.0.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5477ae5b02e37e18b18a7b118618f36e796e8aee37cb8b53aa57da9c72e2b766"
+checksum = "0497a30ec51e76bdbf9542d29b65399c70d88c0397bc38551d8eff0385847bfc"
 dependencies = [
  "leptos 0.7.0",
  "send_wrapper",
