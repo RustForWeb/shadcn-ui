@@ -1848,9 +1848,9 @@ dependencies = [
 
 [[package]]
 name = "leptos-struct-component"
-version = "0.0.2"
+version = "0.0.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e300fe8ebec9b42c6488e956be9049d4cda8c3bdd4fda4873a548f6635bc4b5e"
+checksum = "743efc55646cb1a5c9e0a2ee544b92a72878a8c77a982344b0a015ed3fe59cd7"
 dependencies = [
  "leptos 0.7.0",
  "leptos-struct-component-macro",
@@ -1858,9 +1858,9 @@ dependencies = [
 
 [[package]]
 name = "leptos-struct-component-macro"
-version = "0.0.2"
+version = "0.0.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "eba46d3b87eb23ce212e454172e5250e31b20bba59f479bfd03b38169a711cb3"
+checksum = "8378d425e9152e0a1a079f6efd7f46eaecf50882f08ffba31624cf1e237a1e50"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -3923,7 +3923,7 @@ dependencies = [
  "fastrand",
  "once_cell",
  "rustix",
- "windows-sys 0.52.0",
+ "windows-sys 0.59.0",
 ]
 
 [[package]]
@@ -4436,7 +4436,7 @@ version = "0.1.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cf221c93e13a30d793f7645a0e7762c55d169dbb0a49671918a2319d289b10bb"
 dependencies = [
- "windows-sys 0.52.0",
+ "windows-sys 0.59.0",
 ]
 
 [[package]]
