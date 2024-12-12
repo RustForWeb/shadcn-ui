@@ -1,12 +1,6 @@
 use leptos::prelude::*;
 
-use crate::new_york::components::ui::alert::{
-    Alert, 
-    AlertDescription, 
-    AlertTitle, 
-    AlertVariant
-};
-
+use crate::new_york::components::ui::alert::{Alert, AlertDescription, AlertTitle, AlertVariant};
 
 #[component]
 pub fn AlertDestructive() -> impl IntoView {

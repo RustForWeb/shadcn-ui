@@ -1,10 +1,6 @@
 use leptos::prelude::*;
 
-use crate::default::components::ui::alert::{
-    Alert,
-    AlertTitle,
-    AlertDescription,
-};
+use crate::default::components::ui::alert::{Alert, AlertDescription, AlertTitle};
 
 #[component]
 pub fn AlertDemo() -> impl IntoView {

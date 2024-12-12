@@ -1,11 +1,7 @@
 use leptos::prelude::*;
 use lucide_leptos::Terminal;
 
-use crate::new_york::components::ui::alert::{
-    Alert,
-    AlertDescription,
-    AlertTitle,
-};
+use crate::new_york::components::ui::alert::{Alert, AlertDescription, AlertTitle};
 
 #[component]
 pub fn AlertIcon() -> impl IntoView {

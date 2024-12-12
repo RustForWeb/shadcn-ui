@@ -2,8 +2,12 @@ mod components;
 
 #[cfg(feature = "button")]
 mod button;
+
 #[cfg(feature = "alert")]
 mod alert;
+
+#[cfg(feature = "card")]
+mod card;
 
 use leptos::prelude::*;
 use leptos_router::{
@@ -21,6 +25,10 @@ pub fn Default() -> impl MatchNestedRoutes + Clone {
         #[cfg(feature = "alert")]
         {
             component_view(self::alert::AlertRoutes, ())
+        },
+        #[cfg(feature = "card")]
+        {
+            component_view(self::card::CardRoutes, ())
         },
     );
 

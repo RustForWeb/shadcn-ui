@@ -19,7 +19,7 @@ use leptos_router::{
 #[component(transparent)]
 pub fn ButtonRoutes() -> impl MatchNestedRoutes + Clone {
     view! {
-        <ParentRoute path=path!("button") view=Outlet>
+        <ParentRoute path=path!("/button") view=Outlet>
             <Route path=path!("/") view=button::ButtonDemo />
             <Route path=path!("/as-child") view=button_as_child::ButtonAsChild />
             <Route path=path!("/destructive") view=button_destructive::ButtonDestructive />

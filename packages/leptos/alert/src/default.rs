@@ -22,7 +22,6 @@ pub enum AlertVariant {
     Destructive,
 }
 
-
 #[derive(Clone, StructComponent)]
 #[struct_component(tag = "div")]
 pub struct AlertChildProps {
@@ -30,7 +29,6 @@ pub struct AlertChildProps {
     pub class: MaybeProp<String>,
     pub id: MaybeProp<String>,
     pub style: Signal<Style>,
-   
 }
 
 #[component]
@@ -58,20 +56,18 @@ pub fn Alert(
         id,
         style,
     };
-    
+
     child_props.render(children)
 }
-
 
 #[derive(Clone, StructComponent)]
 #[struct_component(tag = "h5")]
 pub struct AlertTitleChildProps {
-    pub node_ref: AnyNodeRef,   
+    pub node_ref: AnyNodeRef,
     pub class: MaybeProp<String>,
     pub id: MaybeProp<String>,
     pub style: Signal<Style>,
 }
-
 
 #[component]
 pub fn AlertTitle(
@@ -82,28 +78,23 @@ pub fn AlertTitle(
     #[prop(into, optional)] node_ref: AnyNodeRef,
     #[prop(optional)] children: Option<Children>,
 ) -> impl IntoView {
-            
-        let child_props = AlertTitleChildProps {
-            node_ref,            
-            class: tw_merge!("mb-1 font-medium leading-none tracking-tight", class.get()).into(),
-            id,
-            style,
-
-        };
-        child_props.render(children)   
+    let child_props = AlertTitleChildProps {
+        node_ref,
+        class: tw_merge!("mb-1 font-medium leading-none tracking-tight", class.get()).into(),
+        id,
+        style,
+    };
+    child_props.render(children)
 }
-
-
 
 #[derive(Clone, StructComponent)]
 #[struct_component(tag = "div")]
 pub struct AlertDescriptioinChildProps {
-    pub node_ref: AnyNodeRef,   
+    pub node_ref: AnyNodeRef,
     pub class: MaybeProp<String>,
     pub id: MaybeProp<String>,
     pub style: Signal<Style>,
 }
-
 
 #[component]
 pub fn AlertDescription(
@@ -114,13 +105,11 @@ pub fn AlertDescription(
     #[prop(into, optional)] node_ref: AnyNodeRef,
     #[prop(optional)] children: Option<Children>,
 ) -> impl IntoView {
- 
-        let child_props = AlertDescriptioinChildProps {
-            node_ref,       
-            class: tw_merge!("text-sm [&_p]:leading-relaxed", class.get()).into(),
-            id,
-            style,
-
-        };
-        child_props.render(children)
+    let child_props = AlertDescriptioinChildProps {
+        node_ref,
+        class: tw_merge!("text-sm [&_p]:leading-relaxed", class.get()).into(),
+        id,
+        style,
+    };
+    child_props.render(children)
 }
