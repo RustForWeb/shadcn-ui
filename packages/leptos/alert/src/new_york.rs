@@ -1,6 +1,5 @@
 use leptos::prelude::*;
 use leptos_node_ref::AnyNodeRef;
-use leptos_struct_component::{struct_component, StructComponent};
 use leptos_style::Style;
 use tailwind_fuse::*;
 
@@ -22,15 +21,6 @@ pub enum AlertVariant {
     Destructive,
 }
 
-#[derive(Clone, StructComponent)]
-#[struct_component(tag = "div")]
-pub struct AlertChildProps {
-    pub node_ref: AnyNodeRef,
-    pub class: MaybeProp<String>,
-    pub id: MaybeProp<String>,
-    pub style: Signal<Style>,
-}
-
 #[component]
 pub fn Alert(
     #[prop(into, optional)] variant: Signal<AlertVariant>,
@@ -41,7 +31,7 @@ pub fn Alert(
     #[prop(into, optional)] style: Signal<Style>,
 
     #[prop(into, optional)] node_ref: AnyNodeRef,
-    #[prop(optional)] children: Option<Children>,
+    children: Children,
 ) -> impl IntoView {
     let class = Memo::new(move |_| {
         AlertClass {
@@ -50,23 +40,15 @@ pub fn Alert(
         .with_class(class.get().unwrap_or_default())
     });
 
-    let child_props = AlertChildProps {
-        node_ref,
-        class: class.into(),
-        id,
-        style,
-    };
-
-    child_props.render(children)
-}
-
-#[derive(Clone, StructComponent)]
-#[struct_component(tag = "h5")]
-pub struct AlertTitleChildProps {
-    pub node_ref: AnyNodeRef,
-    pub class: MaybeProp<String>,
-    pub id: MaybeProp<String>,
-    pub style: Signal<Style>,
+    view! {
+        <div
+            node_ref=node_ref
+            class=class
+            id=move || id.get()
+            style=style
+        >{children()}
+        </div>
+    }
 }
 
 #[component]
@@ -76,24 +58,17 @@ pub fn AlertTitle(
     #[prop(into, optional)] style: Signal<Style>,
 
     #[prop(into, optional)] node_ref: AnyNodeRef,
-    #[prop(optional)] children: Option<Children>,
+    children: Children,
 ) -> impl IntoView {
-    let child_props = AlertTitleChildProps {
-        node_ref,
-        class: tw_merge!("mb-1 font-medium leading-none tracking-tight", class.get()).into(),
-        id,
-        style,
-    };
-    child_props.render(children)
-}
-
-#[derive(Clone, StructComponent)]
-#[struct_component(tag = "div")]
-pub struct AlertDescriptionChildProps {
-    pub node_ref: AnyNodeRef,
-    pub class: MaybeProp<String>,
-    pub id: MaybeProp<String>,
-    pub style: Signal<Style>,
+    view! {
+        <h5
+            node_ref=node_ref
+            class= move || tw_merge!("mb-1 font-medium leading-none tracking-tight", class.get())
+            id=move || id.get()
+            style=style
+        >{children()}
+        </h5>
+    }
 }
 
 #[component]
@@ -103,13 +78,15 @@ pub fn AlertDescription(
     #[prop(into, optional)] style: Signal<Style>,
 
     #[prop(into, optional)] node_ref: AnyNodeRef,
-    #[prop(optional)] children: Option<Children>,
+    children: Children,
 ) -> impl IntoView {
-    let child_props = AlertDescriptionChildProps {
-        node_ref,
-        class: tw_merge!("text-sm [&_p]:leading-relaxed", class.get()).into(),
-        id,
-        style,
-    };
-    child_props.render(children)
+    view! {
+        <div
+            node_ref=node_ref
+            class=move || tw_merge!("text-sm [&_p]:leading-relaxed", class.get())
+            id=move || id.get()
+            style=style
+        >{children()}
+        </div>
+    }
 }
