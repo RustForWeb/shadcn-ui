@@ -28,6 +28,10 @@ default = [
     "card"
 ]
 
+alert = [
+    "dep:shadcn-ui-leptos-alert"
+]
+
 button = [
     "dep:lucide-leptos",
     "dep:radix-leptos-icons",
@@ -35,9 +39,6 @@ button = [
     "radix-leptos-icons/chevron-right",
     "radix-leptos-icons/envelope-open",
     "radix-leptos-icons/reload",
-]
-alert = [
-    "dep:shadcn-ui-leptos-alert"
 ]
 card = [
     "dep:lucide-leptos",
