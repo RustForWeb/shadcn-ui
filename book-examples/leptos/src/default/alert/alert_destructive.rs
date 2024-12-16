@@ -1,5 +1,5 @@
-use lucide_leptos::CircleAlert;
 use leptos::prelude::*;
+use lucide_leptos::CircleAlert;
 
 use crate::default::components::ui::alert::{Alert, AlertDescription, AlertTitle, AlertVariant};
 

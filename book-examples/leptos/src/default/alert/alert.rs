@@ -1,5 +1,5 @@
-use lucide_leptos::Terminal;
 use leptos::prelude::*;
+use lucide_leptos::Terminal;
 
 use crate::default::components::ui::alert::{Alert, AlertDescription, AlertTitle};
 
@@ -15,4 +15,3 @@ pub fn AlertDemo() -> impl IntoView {
         </Alert>
     }
 }
-

@@ -1,10 +1,10 @@
 mod components;
 
-#[cfg(feature = "button")]
-mod button;
-
 #[cfg(feature = "alert")]
 mod alert;
+
+#[cfg(feature = "button")]
+mod button;
 
 #[cfg(feature = "card")]
 mod card;
@@ -18,13 +18,13 @@ use leptos_router::{
 #[component(transparent)]
 pub fn NewYork() -> impl MatchNestedRoutes + Clone {
     let children = (
-        #[cfg(feature = "button")]
-        {
-            component_view(self::button::ButtonRoutes, ())
-        },
         #[cfg(feature = "alert")]
         {
             component_view(self::alert::AlertRoutes, ())
+        },
+        #[cfg(feature = "button")]
+        {
+            component_view(self::button::ButtonRoutes, ())
         },
         #[cfg(feature = "card")]
         {
