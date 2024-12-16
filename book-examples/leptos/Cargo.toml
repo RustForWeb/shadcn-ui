@@ -23,13 +23,17 @@ shadcn-ui-leptos-card = { path = "../../packages/leptos/card", optional = true }
 
 [features]
 default = [
-    "button",
     "alert",
-    "card"
+    "button",
+    "card",
 ]
 
 alert = [
-    "dep:shadcn-ui-leptos-alert"
+    "dep:lucide-leptos",
+    "dep:radix-leptos-icons",
+    "dep:shadcn-ui-leptos-alert",
+    "radix-leptos-icons/exclamation-triangle",
+    "radix-leptos-icons/rocket",
 ]
 
 button = [
