@@ -3475,6 +3475,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "shadcn-ui-leptos-breadcrumb"
+version = "0.0.1"
+dependencies = [
+ "lucide-yew",
+ "radix-yew-icons",
+ "tailwind_fuse",
+ "yew",
+ "yew-struct-component",
+ "yew-style",
+]
+
+[[package]]
 name = "shadcn-ui-leptos-button"
 version = "0.0.1"
 dependencies = [
