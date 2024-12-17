@@ -17,21 +17,21 @@ leptos_router.workspace = true
 lucide-leptos = { version = "1.0.0", optional = true }
 log.workspace = true
 radix-leptos-icons = { workspace = true, optional = true }
+shadcn-ui-leptos-badge = { path = "../../packages/leptos/badge", optional = true }
 shadcn-ui-leptos-button = { path = "../../packages/leptos/button", optional = true }
 shadcn-ui-leptos-card = { path = "../../packages/leptos/card", optional = true }
 
 [features]
 default = [
+    "badge",
     "button",
     "card"
 ]
+badge = ["dep:shadcn-ui-leptos-badge"]
 button = [
     "dep:lucide-leptos",
     "dep:radix-leptos-icons",
     "dep:shadcn-ui-leptos-button",
-    "radix-leptos-icons/chevron-right",
-    "radix-leptos-icons/envelope-open",
-    "radix-leptos-icons/reload",
 ]
 card = [
     "dep:lucide-leptos",
