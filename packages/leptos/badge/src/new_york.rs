@@ -30,9 +30,8 @@ pub enum BadgeVariant {
     Outline,
 }
 
-
 #[component]
-pub fn Badge( 
+pub fn Badge(
     #[prop(into, optional)] variant: Signal<BadgeVariant>,
     // Global attributes
     #[prop(into, optional)] class: MaybeProp<String>,
@@ -49,7 +48,7 @@ pub fn Badge(
         .with_class(class.get().unwrap_or_default())
     });
 
-    view !{
+    view! {
         <div
             node_ref=node_ref
             class=class
