@@ -62,7 +62,7 @@ pub fn BreadcrumbItem(
     #[prop(into, optional)] style: Signal<Style>,
 
     #[prop(into, optional)] node_ref: AnyNodeRef,
-    children: Children
+    children: Children,
 ) ->impl IntoView{
     view! {
         <li
@@ -104,7 +104,7 @@ pub fn BreadcrumbLink(
     #[prop(into, optional)] onclick: Option<Callback<MouseEvent>>,
 
     #[prop(into, optional)] as_child: Option<Callback<BreadcrumbLinkChildProps, AnyView>>,
-    #[prop(optional)] children: Option<Children>,
+    children: Option<Children>,
 )-> impl IntoView {
     let child_props = BreadcrumbLinkChildProps {
         node_ref,
@@ -137,7 +137,7 @@ pub fn BreadcrumbPage(
     #[prop(into, optional)] style: Signal<Style>,
 
     #[prop(into, optional)] node_ref: AnyNodeRef,
-    children: Children,
+    #[prop(optional)] children: Children,
 )->impl IntoView{
     view!{
         <span
@@ -157,7 +157,7 @@ pub fn BreadcrumbPage(
 
 
 #[component]
-pub fn BreadCrumbSeparator(
+pub fn BreadcrumbSeparator(
     #[prop(into, optional)] class: MaybeProp<String>,
     #[prop(into, optional)] id: MaybeProp<String>,
     #[prop(into, optional)] style: Signal<Style>,
