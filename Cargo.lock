@@ -3565,12 +3565,13 @@ dependencies = [
 name = "shadcn-ui-leptos-breadcrumb"
 version = "0.0.1"
 dependencies = [
- "lucide-yew",
- "radix-yew-icons",
+ "leptos 0.7.0",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "lucide-leptos",
+ "radix-leptos-icons",
  "tailwind_fuse",
- "yew",
- "yew-struct-component",
- "yew-style",
 ]
 
 [[package]]

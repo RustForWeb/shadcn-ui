@@ -4,7 +4,7 @@
     </a>
 </p>
 
-<h1 align="center">shadcn-ui-yew-breaddcrumb</h1>
+<h1 align="center">shadcn-ui-leptos-breaddcrumb</h1>
 
 Displays the path to the current resource using a hierarchy of links.
 
