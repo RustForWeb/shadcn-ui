@@ -32,7 +32,7 @@ pub fn BreadCrumb(
 
 
 #[component]
-pub fn BreadCrumbList(
+pub fn BreadcrumbList(
     // Global attributes
     #[prop(into, optional)] class: MaybeProp<String>,
     #[prop(into, optional)] id: MaybeProp<String>,
@@ -55,7 +55,7 @@ pub fn BreadCrumbList(
 }
 
 #[component]
-pub fn BreadCrumbItem(
+pub fn BreadcrumbItem(
     // Global attributes
     #[prop(into, optional)] class: MaybeProp<String>,
     #[prop(into, optional)] id: MaybeProp<String>,
@@ -94,7 +94,7 @@ pub struct BreadcrumbLinkChildProps {
 }
 
 #[component]
-pub fn BreadCrumbLink(
+pub fn BreadcrumbLink(
     #[prop(into, optional)] class: MaybeProp<String>,
     #[prop(into, optional)] id: MaybeProp<String>,
     #[prop(into, optional)] style: Signal<Style>,
@@ -131,7 +131,7 @@ pub fn BreadCrumbLink(
 
 
 #[component]
-pub fn BreadcrumPage(
+pub fn BreadcrumbPage(
     #[prop(into, optional)] class: MaybeProp<String>,
     #[prop(into, optional)] id: MaybeProp<String>,
     #[prop(into, optional)] style: Signal<Style>,
@@ -157,7 +157,7 @@ pub fn BreadcrumPage(
 
 
 #[component]
-pub fn BreadCrumbSeparator(
+pub fn BreadcrumbSeparator(
     #[prop(into, optional)] class: MaybeProp<String>,
     #[prop(into, optional)] id: MaybeProp<String>,
     #[prop(into, optional)] style: Signal<Style>,
