@@ -3557,6 +3557,7 @@ dependencies = [
  "radix-leptos-icons",
  "shadcn-ui-leptos-alert",
  "shadcn-ui-leptos-badge",
+ "shadcn-ui-leptos-breadcrumb",
  "shadcn-ui-leptos-button",
  "shadcn-ui-leptos-card",
 ]
@@ -3565,7 +3566,7 @@ dependencies = [
 name = "shadcn-ui-leptos-breadcrumb"
 version = "0.0.1"
 dependencies = [
- "leptos 0.7.0",
+ "leptos 0.7.5",
  "leptos-node-ref",
  "leptos-struct-component",
  "leptos-style",

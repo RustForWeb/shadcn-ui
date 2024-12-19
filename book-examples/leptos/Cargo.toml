@@ -19,6 +19,7 @@ log.workspace = true
 radix-leptos-icons = { workspace = true, optional = true }
 shadcn-ui-leptos-alert = { path = "../../packages/leptos/alert" , optional = true }
 shadcn-ui-leptos-badge = { path = "../../packages/leptos/badge", optional = true }
+shadcn-ui-leptos-breadcrumb = { path = "../../packages/leptos/breadcrumb", optional = true }
 shadcn-ui-leptos-button = { path = "../../packages/leptos/button", optional = true }
 shadcn-ui-leptos-card = { path = "../../packages/leptos/card", optional = true }
 
@@ -26,6 +27,7 @@ shadcn-ui-leptos-card = { path = "../../packages/leptos/card", optional = true }
 default = [
     "alert",
     "badge",
+    "breadcrumb",
     "button",
     "card",
 ]
@@ -35,6 +37,11 @@ alert = [
     "dep:shadcn-ui-leptos-alert",
 ]
 badge = ["dep:shadcn-ui-leptos-badge"]
+breadcrumb = [
+    "dep:lucide-leptos",
+    "dep:radix-leptos-icons",
+    "dep:shadcn-ui-leptos-breadcrumb",
+]
 button = [
     "dep:lucide-leptos",
     "dep:radix-leptos-icons",
