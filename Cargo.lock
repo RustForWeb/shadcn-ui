@@ -3470,6 +3470,7 @@ dependencies = [
  "log",
  "lucide-leptos",
  "radix-leptos-icons",
+ "shadcn-ui-leptos-breadcrumb",
  "shadcn-ui-leptos-button",
  "shadcn-ui-leptos-card",
 ]
