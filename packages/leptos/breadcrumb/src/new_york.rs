@@ -1,14 +1,12 @@
+use leptos::{ev::MouseEvent, prelude::*};
 use leptos_node_ref::AnyNodeRef;
-use lucide_leptos::{ChevronRight, Ellipsis};
-use tailwind_fuse::*;
-use leptos::{ev::MouseEvent, prelude::*} ;
 use leptos_struct_component::{struct_component, StructComponent};
 use leptos_style::Style;
-
-
+use lucide_leptos::{ChevronRight, Ellipsis};
+use tailwind_fuse::*;
 
 #[component]
-pub fn BreadCrumb(
+pub fn Breadcrumb(
     // Global attributes
     #[prop(into, optional)] class: MaybeProp<String>,
     #[prop(into, optional)] id: MaybeProp<String>,
@@ -17,7 +15,7 @@ pub fn BreadCrumb(
     #[prop(into, optional)] node_ref: AnyNodeRef,
     children: Children,
 ) -> impl IntoView {
-    view!{
+    view! {
         <nav
             node_ref=node_ref
             aria-label="breadcrumb"
@@ -30,7 +28,6 @@ pub fn BreadCrumb(
     }
 }
 
-
 #[component]
 pub fn BreadcrumbList(
     // Global attributes
@@ -41,7 +38,7 @@ pub fn BreadcrumbList(
     #[prop(into, optional)] node_ref: AnyNodeRef,
     children: Children,
 ) -> impl IntoView {
-    view!{
+    view! {
         <ol
             node_ref=node_ref
         class= move || tw_merge!("flex flex-wrap items-center gap-1.5 break-words text-sm text-muted-foreground sm:gap-2.5",
@@ -62,8 +59,8 @@ pub fn BreadcrumbItem(
     #[prop(into, optional)] style: Signal<Style>,
 
     #[prop(into, optional)] node_ref: AnyNodeRef,
-    children: Children
-) ->impl IntoView{
+    children: Children,
+) -> impl IntoView {
     view! {
         <li
             node_ref=node_ref
@@ -105,7 +102,7 @@ pub fn BreadcrumbLink(
 
     #[prop(into, optional)] as_child: Option<Callback<BreadcrumbLinkChildProps, AnyView>>,
     #[prop(optional)] children: Option<Children>,
-)-> impl IntoView {
+) -> impl IntoView {
     let child_props = BreadcrumbLinkChildProps {
         node_ref,
 
@@ -123,12 +120,10 @@ pub fn BreadcrumbLink(
 
     if let Some(as_child) = as_child.as_ref() {
         as_child.run(child_props)
-    }else{
+    } else {
         child_props.render(children)
     }
 }
-
-
 
 #[component]
 pub fn BreadcrumbPage(
@@ -138,8 +133,8 @@ pub fn BreadcrumbPage(
 
     #[prop(into, optional)] node_ref: AnyNodeRef,
     children: Children,
-)->impl IntoView{
-    view!{
+) -> impl IntoView {
+    view! {
         <span
             node_ref=node_ref
 
@@ -149,12 +144,11 @@ pub fn BreadcrumbPage(
             class=move || tw_merge!("font-normal text-foreground", class.get())
             id=move || id.get()
             style=style
-        > 
+        >
             {children()}
         </span>
     }
 }
-
 
 #[component]
 pub fn BreadcrumbSeparator(
@@ -163,14 +157,9 @@ pub fn BreadcrumbSeparator(
     #[prop(into, optional)] style: Signal<Style>,
 
     #[prop(into, optional)] node_ref: AnyNodeRef,
-    children: ChildrenFragmentFn,
+    #[prop(optional)] children: Option<Children>,
 ) -> impl IntoView {
-    if children().nodes.is_empty(){
-        children()
-        .nodes
-        .push(  view!{<ChevronRight />}.into_any() );
-    }
-    view!{
+    view! {
         <li
             node_ref=node_ref
             aria-hidden="true"
@@ -179,11 +168,16 @@ pub fn BreadcrumbSeparator(
             role="presentation"
             style=style
         >
-            {children().nodes.into_any()}
+        {
+            if let Some(children) = children {
+                children()
+            } else {
+                view! { <ChevronRight /> }.into_any()
+            }
+        }
         </li>
     }
 }
-
 
 #[component]
 pub fn BreadcrumbEllipsis(
@@ -207,4 +201,3 @@ pub fn BreadcrumbEllipsis(
         </span>
     }
 }
-
