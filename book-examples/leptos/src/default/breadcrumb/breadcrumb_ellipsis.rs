@@ -1,8 +1,8 @@
 use leptos::prelude::*;
 
 use crate::default::components::ui::breadcrumb::{
-    Breadcrumb, BreadcrumbEllipsis ,BreadcrumbItem, BreadcrumbLink, BreadcrumbLinkChildProps,
-    BreadcrumbList,BreadcrumbPage,BreadcrumbSeparator,
+    Breadcrumb, BreadcrumbEllipsis, BreadcrumbItem, BreadcrumbLink, BreadcrumbLinkChildProps,
+    BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator,
 };
 
 #[component]

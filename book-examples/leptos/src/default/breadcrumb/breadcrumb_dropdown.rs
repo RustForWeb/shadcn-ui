@@ -1,5 +1,5 @@
-use lucide_leptos::{ChevronDown, Slash};
 use leptos::prelude::*;
+use lucide_leptos::{ChevronDown, Slash};
 
 use crate::default::components::ui::breadcrumb::{
     Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator,

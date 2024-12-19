@@ -159,8 +159,6 @@ pub fn BreadcrumbSeparator(
     #[prop(into, optional)] node_ref: AnyNodeRef,
     #[prop(optional)] children: Option<Children>,
 ) -> impl IntoView {
-
-
     view! {
         <li
             node_ref=node_ref
@@ -170,9 +168,9 @@ pub fn BreadcrumbSeparator(
             role="presentation"
             style=style
         >
-        { 
+        {
             if let Some(children) = children {
-                children()    
+                children()
             }else {
                 view! { <ChevronRight /> }.into_any()
             }

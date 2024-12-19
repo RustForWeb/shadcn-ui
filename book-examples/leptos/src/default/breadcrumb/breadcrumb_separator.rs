@@ -1,5 +1,5 @@
-use lucide_leptos::Slash;
 use leptos::prelude::*;
+use lucide_leptos::Slash;
 
 use crate::default::components::ui::breadcrumb::{
     Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator,
