@@ -3470,8 +3470,22 @@ dependencies = [
  "log",
  "lucide-leptos",
  "radix-leptos-icons",
+ "shadcn-ui-leptos-breadcrumb",
  "shadcn-ui-leptos-button",
  "shadcn-ui-leptos-card",
+]
+
+[[package]]
+name = "shadcn-ui-leptos-breadcrumb"
+version = "0.0.1"
+dependencies = [
+ "leptos 0.7.0",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "lucide-leptos",
+ "radix-leptos-icons",
+ "tailwind_fuse",
 ]
 
 [[package]]

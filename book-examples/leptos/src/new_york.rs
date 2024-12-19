@@ -1,5 +1,7 @@
 mod components;
 
+#[cfg(feature = "breadcrumb")]
+mod breadcrumb;
 #[cfg(feature = "button")]
 mod button;
 #[cfg(feature = "card")]
@@ -14,6 +16,10 @@ use leptos_router::{
 #[component(transparent)]
 pub fn NewYork() -> impl MatchNestedRoutes + Clone {
     let children = (
+        #[cfg(feature = "breadcrumb")]
+        {
+            component_view(self::breadcrumb::BreadcrumbRoutes, ())
+        },
         #[cfg(feature = "button")]
         {
             component_view(self::button::ButtonRoutes, ())
