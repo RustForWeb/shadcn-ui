@@ -8,6 +8,6 @@ use leptos::prelude::*;
 #[component]
 pub fn BreadcrumbResponsiveDemo() -> impl IntoView {
     view! {
-        // TODO
+        <h1>"TODO"</h1>
     }
 }
