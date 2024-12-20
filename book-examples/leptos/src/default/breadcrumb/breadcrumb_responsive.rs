@@ -8,6 +8,10 @@ use leptos::prelude::*;
 #[component]
 pub fn BreadcrumbResponsiveDemo() -> impl IntoView {
     view! {
+<<<<<<< HEAD
         <h1>"TODO"</h1>
+=======
+        <h1>"Breadcrumb Responsive needs to be implemented"</h1>
+>>>>>>> e9f8127 (Fix TODO error)
     }
 }
