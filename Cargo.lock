@@ -3501,7 +3501,9 @@ name = "shadcn-ui-leptos-input"
 version = "0.0.1"
 dependencies = [
  "leptos 0.7.0",
+ "leptos-node-ref",
  "leptos-style",
+ "shadcn-ui-leptos-utils",
  "tailwind_fuse",
 ]
 
