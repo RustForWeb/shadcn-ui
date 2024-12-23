@@ -4,9 +4,19 @@
 //!
 //! See [the Rust shadcn/ui book](https://shadcn-ui.rustforweb.org/) for more documenation.
 
-mod callback;
 pub mod default;
 pub mod new_york;
 
 
-pub use callback::*;
+
+
+pub fn generate_handler<T>( callback: Option<Callback<T>> ) -> impl FnMut(T) 
+    where 
+        T:  'static 
+{
+    move |event: T| {
+        if let Some(callback) = callback {
+            callback.run(event);
+        }
+    }
+} 
