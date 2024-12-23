@@ -2,24 +2,11 @@
 use leptos::{ev::Event, ev::FocusEvent,prelude::*};
 use leptos_node_ref::AnyNodeRef;
 use leptos_style::Style;
+use shadcn_ui_leptos_utils::generate_handler;
 use tailwind_fuse::*;
 
+use crate::types::InputType;
 
-// Define a generic type alias for an event handler 
-//type EventHandler<T> = Box<dyn FnMut(T) + 'static>;
-
-
-
-fn generate_handler<T>( callback: Option<Callback<T>> ) -> impl FnMut(T) 
-    where 
-        T:  'static 
-{
-    move |event: T| {
-        if let Some(callback) = callback {
-            callback.run(event);
-        }
-    }
-} 
     
 
 #[component]
