@@ -4,6 +4,5 @@
 //!
 //! See [the Rust shadcn/ui book](https://shadcn-ui.rustforweb.org/components/input.html) for more documenation.
 
-pub mod types;
 pub mod default;
 pub mod new_york;
