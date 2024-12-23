@@ -19,11 +19,14 @@ log.workspace = true
 radix-leptos-icons = { workspace = true, optional = true }
 shadcn-ui-leptos-button = { path = "../../packages/leptos/button", optional = true }
 shadcn-ui-leptos-card = { path = "../../packages/leptos/card", optional = true }
+shadcn-ui-leptos-input = { path = "../../packages/leptos/input", optional = true }
+
 
 [features]
 default = [
     "button",
-    "card"
+    "card",
+    "input",
 ]
 button = [
     "dep:lucide-leptos",
@@ -37,4 +40,8 @@ card = [
     "dep:lucide-leptos",
     "dep:shadcn-ui-leptos-button",
     "dep:shadcn-ui-leptos-card",
+]
+input = [
+    "dep:shadcn-ui-leptos-button",
+    "dep:shadcn-ui-leptos-input",
 ]

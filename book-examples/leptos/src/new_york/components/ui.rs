@@ -4,3 +4,5 @@
 pub use shadcn_ui_leptos_button::new_york as button;
 #[cfg(feature = "card")]
 pub use shadcn_ui_leptos_card::new_york as card;
+#[cfg(feature = "input")]
+pub use shadcn_ui_leptos_input::new_york as input;
