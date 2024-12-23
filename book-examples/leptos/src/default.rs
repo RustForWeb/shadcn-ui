@@ -11,7 +11,6 @@ mod button;
 
 #[cfg(feature = "card")]
 mod card;
-mod components;
 
 use leptos::prelude::*;
 use leptos_router::{

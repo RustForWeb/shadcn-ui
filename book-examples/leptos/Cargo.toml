@@ -34,8 +34,6 @@ alert = [
     "dep:lucide-leptos",
     "dep:radix-leptos-icons",
     "dep:shadcn-ui-leptos-alert",
-    "radix-leptos-icons/exclamation-triangle",
-    "radix-leptos-icons/rocket",
 ]
 badge = ["dep:shadcn-ui-leptos-badge"]
 button = [
