@@ -1,3 +1,4 @@
+#[allow(clippy::module_inception)]
 mod badge;
 mod badge_destructive;
 mod badge_outline;
