@@ -1,5 +1,4 @@
-
-use leptos::{ev::Event, ev::FocusEvent,prelude::*};
+use leptos::{ev::Event, ev::FocusEvent, prelude::*};
 use leptos_node_ref::AnyNodeRef;
 use leptos_style::Style;
 use shadcn_ui_leptos_utils::generate_handler;
@@ -39,52 +38,47 @@ impl InputType {
             Self::File => "file",
         }
     }
-}    
+}
 
 #[component]
 pub fn Input(
-     // Node reference
-     #[prop(into, optional)] node_ref: AnyNodeRef,
+    // Node reference
+    #[prop(into, optional)] node_ref: AnyNodeRef,
 
     #[prop(into, optional)] class: MaybeProp<String>,
     #[prop(into, optional)] id: MaybeProp<String>,
     #[prop(into, optional)] style: Signal<Style>,
-    
+
     #[prop(into, optional)] r#type: Signal<InputType>,
     #[prop(into, optional)] placeholder: MaybeProp<String>,
-    
 
     #[prop(into, optional)] on_input: Option<Callback<Event>>,
     #[prop(into, optional)] on_change: Option<Callback<Event>>,
     #[prop(into, optional)] on_blur: Option<Callback<FocusEvent>>,
     #[prop(into, optional)] on_focus: Option<Callback<FocusEvent>>,
-    
-    
+
     #[prop(into, optional)] value: Signal<String>,
-    
+
     #[prop(into, optional)] disabled: Signal<bool>,
     #[prop(into, optional)] readonly: Signal<bool>,
-  
-   
-
 ) -> impl IntoView {
     view! {
         <input
-            // Core Attributes 
-            node_ref=node_ref 
-            class=move || tw_merge!( 
+            // Core Attributes
+            node_ref=node_ref
+            class=move || tw_merge!(
                 "flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
-                class.get() 
-            ) 
-            id=move || id.get() 
-            style=style 
+                class.get()
+            )
+            id=move || id.get()
+            style=style
 
             // Input Attributes
-            type=move || r#type.get().as_str() 
-            value=move || value.get() 
-            placeholder=move || placeholder.get() 
+            type=move || r#type.get().as_str()
+            value=move || value.get()
+            placeholder=move || placeholder.get()
 
-            // Event Handlers 
+            // Event Handlers
             on:blur= generate_handler(on_blur)
             on:focus = generate_handler(on_focus)
             on:input= generate_handler(on_input)

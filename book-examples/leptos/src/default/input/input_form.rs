@@ -1,6 +1,6 @@
 use leptos::prelude::*;
 
-use crate::default::components::ui::input::{ Input ,  InputType};
+use crate::default::components::ui::input::{Input, InputType};
 
 #[component]
 pub fn InputFormDemo() -> impl IntoView {

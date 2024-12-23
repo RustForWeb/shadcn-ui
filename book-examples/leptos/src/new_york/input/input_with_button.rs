@@ -1,6 +1,6 @@
 use leptos::prelude::*;
 
-use crate:: new_york::components::ui::button::{Button, ButtonVariant};
+use crate::new_york::components::ui::button::{Button, ButtonVariant};
 use crate::new_york::components::ui::input::{Input, InputType};
 #[component]
 pub fn InputWithButtonDemo() -> impl IntoView {

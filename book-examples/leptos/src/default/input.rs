@@ -7,7 +7,6 @@ mod input_with_button;
 mod input_with_label;
 mod input_with_text;
 
-
 use leptos::prelude::*;
 use leptos_router::{
     components::{Outlet, ParentRoute, Route},
