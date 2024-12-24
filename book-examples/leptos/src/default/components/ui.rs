@@ -4,6 +4,8 @@
 pub use shadcn_ui_leptos_alert::default as alert;
 #[cfg(feature = "badge")]
 pub use shadcn_ui_leptos_badge::default as badge;
+#[cfg(feature = "breadcrumb")]
+pub use shadcn_ui_leptos_breadcrumb::default as breadcrumb;
 #[cfg(any(feature = "button", feature = "card"))]
 pub use shadcn_ui_leptos_button::default as button;
 #[cfg(feature = "card")]
