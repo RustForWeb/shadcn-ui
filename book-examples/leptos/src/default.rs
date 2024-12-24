@@ -12,6 +12,10 @@ mod button;
 #[cfg(feature = "card")]
 mod card;
 
+#[cfg(feature = "pagination")]
+mod pagination;
+
+
 use leptos::prelude::*;
 use leptos_router::{
     components::{Outlet, ParentRoute},
