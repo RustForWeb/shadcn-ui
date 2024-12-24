@@ -56,8 +56,6 @@ alert = [
     "dep:lucide-yew",
     "dep:radix-yew-icons",
     "dep:shadcn-ui-yew-alert",
-    "radix-yew-icons/exclamation-triangle",
-    "radix-yew-icons/rocket",
 ]
 aspect-ratio = ["dep:shadcn-ui-yew-aspect-ratio"]
 avatar = ["dep:shadcn-ui-yew-avatar"]
@@ -66,16 +64,11 @@ breadcrumb = [
     "dep:lucide-yew",
     "dep:radix-yew-icons",
     "dep:shadcn-ui-yew-breadcrumb",
-    "radix-yew-icons/chevron-down",
-    "radix-yew-icons/slash",
 ]
 button = [
     "dep:lucide-yew",
     "dep:radix-yew-icons",
     "dep:shadcn-ui-yew-button",
-    "radix-yew-icons/chevron-right",
-    "radix-yew-icons/envelope-open",
-    "radix-yew-icons/reload",
 ]
 card = [
     "dep:lucide-yew",
@@ -85,8 +78,6 @@ card = [
     "dep:shadcn-ui-yew-input",
     "dep:shadcn-ui-yew-label",
     "dep:shadcn-ui-yew-switch",
-    "radix-yew-icons/bell",
-    "radix-yew-icons/check",
 ]
 input = [
     "dep:shadcn-ui-yew-button",

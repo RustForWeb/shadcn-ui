@@ -1,9 +1,15 @@
 mod components;
 
+
+#[cfg(feature = "alert")]
+mod alert;
+
 #[cfg(feature = "breadcrumb")]
 mod breadcrumb;
+
 #[cfg(feature = "button")]
 mod button;
+
 #[cfg(feature = "card")]
 mod card;
 
@@ -16,6 +22,10 @@ use leptos_router::{
 #[component(transparent)]
 pub fn Default() -> impl MatchNestedRoutes + Clone {
     let children = (
+        #[cfg(feature = "alert")]
+        {
+            component_view(self::alert::AlertRoutes, ())
+        },
         #[cfg(feature = "breadcrumb")]
         {
             component_view(self::breadcrumb::BreadcrumbRoutes, ())

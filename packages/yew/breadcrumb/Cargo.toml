@@ -12,10 +12,7 @@ version.workspace = true
 
 [dependencies]
 lucide-yew.workspace = true
-radix-yew-icons = { workspace = true, features = [
-    "chevron-right",
-    "dots-horizontal",
-] }
+radix-yew-icons.workspace = true
 tailwind_fuse.workspace = true
 yew.workspace = true
 yew-struct-component.workspace = true
