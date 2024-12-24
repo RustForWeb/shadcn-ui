@@ -8,6 +8,8 @@ mod button;
 
 #[cfg(feature = "card")]
 mod card;
+#[cfg(feature = "input")]
+mod input;
 
 use leptos::prelude::*;
 use leptos_router::{
@@ -29,6 +31,10 @@ pub fn NewYork() -> impl MatchNestedRoutes + Clone {
         #[cfg(feature = "card")]
         {
             component_view(self::card::CardRoutes, ())
+        },
+        #[cfg(feature = "input")]
+        {
+            component_view(self::input::InputRoutes, ())
         },
     );
 
