@@ -3473,6 +3473,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "shadcn-ui-leptos-badge"
+version = "0.0.1"
+dependencies = [
+ "leptos 0.7.2",
+ "leptos-node-ref",
+ "leptos-style",
+ "tailwind_fuse",
+]
+
+[[package]]
 name = "shadcn-ui-leptos-book"
 version = "0.0.1"
 dependencies = [
@@ -3484,6 +3494,7 @@ dependencies = [
  "lucide-leptos",
  "radix-leptos-icons",
  "shadcn-ui-leptos-alert",
+ "shadcn-ui-leptos-badge",
  "shadcn-ui-leptos-breadcrumb",
  "shadcn-ui-leptos-button",
  "shadcn-ui-leptos-card",
