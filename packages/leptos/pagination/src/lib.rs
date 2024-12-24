@@ -1,14 +1,8 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
-}
+//! Yew port of [shadcn/ui Pagination](https://ui.shadcn.com/docs/components/pagination).
+//!
+//! Pagination with page navigation, next and previous links.
+//!
+//! See [the Rust shadcn/ui book](https://shadcn-ui.rustforweb.org/components/pagination.html) for more documenation.
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
-}
+pub mod default;
+pub mod new_york;
