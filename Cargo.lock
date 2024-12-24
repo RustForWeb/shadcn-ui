@@ -2777,7 +2777,8 @@ dependencies = [
 [[package]]
 name = "radix-yew-icons"
 version = "0.0.2"
-source = "git+https://github.com/RustForWeb/radix.git#aa5167ea0c8ae4498e2dc4ef1467fa87c428aa75"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fbfdd5e2c00a0db14eb1c071c94bb2e063286b21f6480cbd18d4ffe6430e4447"
 dependencies = [
  "yew",
 ]

@@ -2,13 +2,10 @@ mod components;
 
 #[cfg(feature = "alert")]
 mod alert;
-
 #[cfg(feature = "badge")]
 mod badge;
-
 #[cfg(feature = "button")]
 mod button;
-
 #[cfg(feature = "card")]
 mod card;
 

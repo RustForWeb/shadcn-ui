@@ -29,7 +29,6 @@ default = [
     "button",
     "card",
 ]
-
 alert = [
     "dep:lucide-leptos",
     "dep:radix-leptos-icons",

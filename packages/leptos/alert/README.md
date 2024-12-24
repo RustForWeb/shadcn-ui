@@ -4,9 +4,9 @@
     </a>
 </p>
 
-<h1 align="center">shadcn-ui-leptos-card</h1>
+<h1 align="center">shadcn-ui-leptos-alert</h1>
 
-Displays a card with header, content, and footer.
+Displays a callout for user attention.
 
 [Rust shadcn/ui](https://github.com/RustForWeb/shadcn-ui) is a Rust port of [shadcn/ui](https://ui.shadcn.com/).
 
