@@ -2,7 +2,6 @@ mod components;
 
 #[cfg(feature = "alert")]
 mod alert;
-
 #[cfg(feature = "badge")]
 mod badge;
 
