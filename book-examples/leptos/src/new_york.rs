@@ -3,6 +3,9 @@ mod components;
 #[cfg(feature = "alert")]
 mod alert;
 
+#[cfg(feature = "badge")]
+mod badge;
+
 #[cfg(feature = "button")]
 mod button;
 
@@ -23,6 +26,10 @@ pub fn NewYork() -> impl MatchNestedRoutes + Clone {
         #[cfg(feature = "alert")]
         {
             component_view(self::alert::AlertRoutes, ())
+        },
+        #[cfg(feature = "badge")]
+        {
+            component_view(self::badge::BadgeRoutes, ())
         },
         #[cfg(feature = "button")]
         {
