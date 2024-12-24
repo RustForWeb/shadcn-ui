@@ -5,6 +5,6 @@ use crate::default::components::ui::input::{Input, InputType};
 #[component]
 pub fn InputDisabledDemo() -> impl IntoView {
     view! {
-        <Input disabled=true r#type=InputType::Email placeholder="Email" />
+        <Input disabled=true r#type=InputType::Email placeholder="Email" is_error=true   />
     }
 }
