@@ -1,7 +1,7 @@
 use leptos::{ev::Event, ev::FocusEvent, prelude::*};
 use leptos_node_ref::AnyNodeRef;
 use leptos_style::Style;
-use shadcn_ui_leptos_utils::generate_handler;
+use shadcn_ui_leptos_utils::handlers::*;
 use tailwind_fuse::*;
 
 #[derive(Default, Clone)]
