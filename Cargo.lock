@@ -2440,10 +2440,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "56d80efc4b6721e8be2a10a5df21a30fa0b470f1539e53d8b4e6e75faf938b63"
 
 [[package]]
-name = "pagination"
-version = "0.0.1"
-
-[[package]]
 name = "parking"
 version = "2.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3525,6 +3521,21 @@ dependencies = [
  "leptos-node-ref",
  "leptos-struct-component",
  "leptos-style",
+ "tailwind_fuse",
+]
+
+[[package]]
+name = "shadcn-ui-leptos-pagination"
+version = "0.0.1"
+dependencies = [
+ "leptos 0.7.2",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "lucide-leptos",
+ "radix-leptos-icons",
+ "shadcn-ui-leptos-button",
+ "shadcn-ui-leptos-utils",
  "tailwind_fuse",
 ]
 

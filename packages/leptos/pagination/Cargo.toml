@@ -17,5 +17,7 @@ leptos-node-ref.workspace = true
 leptos-struct-component.workspace = true
 leptos-style.workspace = true
 shadcn-ui-leptos-button = { path = "../button"}
-lucide-yew.workspace = true
-radix-yew-icons.workspace = true
+lucide-leptos.workspace = true
+radix-leptos-icons.workspace = true
+shadcn-ui-leptos-utils = { path = "../utils" }
+
