@@ -1,296 +1,221 @@
-use radix_yew_icons::{ChevronLeftIcon, ChevronRightIcon, DotsHorizontalIcon};
-use shadcn_ui_yew_button::new_york::{ButtonClass, ButtonSize, ButtonVariant};
+use leptos_node_ref::AnyNodeRef;
+use lucide_leptos::{ChevronLeft, ChevronRight, Ellipsis};
+use shadcn_ui_leptos_button::default::{ButtonClass, ButtonSize, ButtonVariant};
+use shadcn_ui_leptos_utils::handlers::*;
 use tailwind_fuse::*;
-use yew::prelude::*;
-use yew_style::Style;
+use leptos::{ev::MouseEvent, prelude::*};
+use leptos_style::Style;
 
-#[derive(PartialEq, Properties)]
-pub struct PaginationProps {
-    // Global attributes
-    #[prop_or_default]
-    pub class: Option<String>,
-    #[prop_or_default]
-    pub id: Option<String>,
-    #[prop_or_default]
-    pub style: Style,
 
-    #[prop_or_default]
-    pub node_ref: NodeRef,
-    #[prop_or_default]
-    pub children: Html,
-}
-
-#[function_component]
-pub fn Pagination(props: &PaginationProps) -> Html {
-    html! {
+#[component]
+pub fn Pagination(
+    #[prop(into, optional)] class: MaybeProp<String>,
+    #[prop(into, optional)] id: MaybeProp<String>,
+    #[prop(into, optional)] style: Signal<Style>,
+    #[prop(into, optional)] node_ref: AnyNodeRef,
+    children: Children,
+) -> impl IntoView {
+    view! {
         <nav
-            ref={props.node_ref.clone()}
+            node_ref=node_ref
 
             aria-label="pagination"
-            class={tw_merge!("mx-auto flex w-full justify-center", &props.class)}
-            id={props.id.clone()}
             role="navigation"
-            style={props.style.clone()}
+            class=move || tw_merge!("mx-auto flex w-full justify-center", class.get())
+            id=id.get()
+            style=style
         >
-            {props.children.clone()}
+            {children()}
         </nav>
     }
 }
 
-#[derive(PartialEq, Properties)]
-pub struct PaginationContentProps {
-    // Global attributes
-    #[prop_or_default]
-    pub class: Option<String>,
-    #[prop_or_default]
-    pub id: Option<String>,
-    #[prop_or_default]
-    pub style: Style,
 
-    #[prop_or_default]
-    pub node_ref: NodeRef,
-    #[prop_or_default]
-    pub children: Html,
-}
-
-#[function_component]
-pub fn PaginationContent(props: &PaginationContentProps) -> Html {
-    html! {
+#[component]
+pub fn PaginationContent(
+    #[prop(into, optional)] class: MaybeProp<String>,
+    #[prop(into, optional)] id: MaybeProp<String>,
+    #[prop(into, optional)] style: Signal<Style>,
+    #[prop(into, optional)] node_ref: AnyNodeRef,
+    children: Children,
+) -> impl IntoView {
+    view! {
         <ul
-            ref={props.node_ref.clone()}
+            node_ref=node_ref
 
-            class={tw_merge!("flex flex-row items-center gap-1", &props.class)}
-            id={props.id.clone()}
-            style={props.style.clone()}
+            class=move || tw_merge!("flex flex-row items-center gap-1", class.get())
+            id=id.get()
+            style=style
         >
-            {props.children.clone()}
+            {children()}
         </ul>
     }
 }
 
-#[derive(PartialEq, Properties)]
-pub struct PaginationItemProps {
-    // Global attributes
-    #[prop_or_default]
-    pub class: Option<String>,
-    #[prop_or_default]
-    pub id: Option<String>,
-    #[prop_or_default]
-    pub style: Style,
 
-    #[prop_or_default]
-    pub node_ref: NodeRef,
-    #[prop_or_default]
-    pub children: Html,
-}
-
-#[function_component]
-pub fn PaginationItem(props: &PaginationItemProps) -> Html {
-    html! {
+#[component]
+pub fn PaginationItem(
+    #[prop(into, optional)] class: MaybeProp<String>,
+    #[prop(into, optional)] id: MaybeProp<String>,
+    #[prop(into, optional)] style: Signal<Style>,
+    #[prop(into, optional)] node_ref: AnyNodeRef,
+    children: Children,
+) -> impl IntoView {
+    view! {
         <li
-            ref={props.node_ref.clone()}
+            node_ref=node_ref
 
-            class={tw_merge!("", &props.class)}
-            id={props.id.clone()}
-            style={props.style.clone()}
+            class=move || tw_merge!("", class.get())
+            id=id.get()
+            style=style
         >
-            {props.children.clone()}
+            {children()}
         </li>
     }
 }
 
-#[derive(PartialEq, Properties)]
-pub struct PaginationLinkProps {
-    #[prop_or(false)]
-    pub is_active: bool,
-    #[prop_or(ButtonSize::Icon)]
-    pub size: ButtonSize,
 
-    // Global attributes
-    #[prop_or_default]
-    pub aria_label: Option<String>,
-    #[prop_or_default]
-    pub class: Option<String>,
-    #[prop_or_default]
-    pub id: Option<String>,
-    #[prop_or_default]
-    pub style: Style,
+#[component]
+pub fn PaginationLink(
+    #[prop(into, optional)] class: MaybeProp<String>,
+    #[prop(into, optional)] id: MaybeProp<String>,
+    #[prop(into, optional)] style: Signal<Style>,
+    #[prop(into, optional)] node_ref: AnyNodeRef,
+    
+    #[prop(into, optional)] is_active: Signal<bool>,
+    #[prop(into, optional)] size: Signal<ButtonSize>,
 
-    // Attributes from `a`
-    #[prop_or_default]
-    pub href: Option<String>,
+    #[prop(into, optional)] aria_label: MaybeProp<String>,
 
-    // Event handler attributes
-    #[prop_or_default]
-    pub on_click: Callback<MouseEvent>,
+    #[prop(into, optional)] href: MaybeProp<String>,
+    #[prop(into)] on_click: Option<Callback<MouseEvent>>,
 
-    #[prop_or_default]
-    pub node_ref: NodeRef,
-    #[prop_or_default]
-    pub children: Html,
-}
-
-#[function_component]
-pub fn PaginationLink(props: &PaginationLinkProps) -> Html {
-    let class = use_memo(
-        (props.is_active, props.size, props.class.clone()),
-        |(is_active, size, class)| {
-            ButtonClass {
-                variant: if *is_active {
-                    ButtonVariant::Outline
-                } else {
-                    ButtonVariant::Ghost
-                },
-                size: *size,
-            }
-            .with_class(class.clone().unwrap_or_default())
-        },
-    );
-
-    html! {
+    #[prop(optional)] children: Option<Children>,
+) -> impl IntoView {
+    let class = Memo::new(move |_| {
+        ButtonClass {
+            variant: if is_active.get() {
+                ButtonVariant::Outline
+            } else {
+                ButtonVariant::Ghost
+            },
+            size:size.get(),
+        }
+        .with_class(class.get().unwrap_or_default())
+    });
+    
+    view! {
         <a
-            ref={props.node_ref.clone()}
+            node_ref=node_ref
 
-            aria-current={props.is_active.then_some("page")}
-            aria-label={props.aria_label.clone()}
-            class={(*class).clone()}
-            id={props.id.clone()}
-            style={props.style.clone()}
+            aria-current=is_active.get().then_some("page")
+            aria-label=aria_label.get()
+            class=class
+            id=id.get()
+            style=style
 
-            href={props.href.clone()}
+            href=href.get()
 
-            onclick={props.on_click.clone()}
+            on:click=generate_handler(on_click)
         >
-            {props.children.clone()}
+            {
+                if let Some(children) = children {
+                    children();
+                }
+            }
         </a>
     }
 }
 
-#[derive(PartialEq, Properties)]
-pub struct PaginationPreviousProps {
-    #[prop_or(false)]
-    pub is_active: bool,
 
-    // Global attributes
-    #[prop_or_default]
-    pub class: Option<String>,
-    #[prop_or_default]
-    pub id: Option<String>,
-    #[prop_or_default]
-    pub style: Style,
+#[component]
+pub fn PaginationPrevious(
+    #[prop(into, optional)] node_ref: AnyNodeRef,
+    #[prop(into, optional)] class: MaybeProp<String>,
+    #[prop(into, optional)] id: MaybeProp<String>,
+    #[prop(into, optional)] style: Signal<Style>,
 
-    // Attributes from `a`
-    #[prop_or_default]
-    pub href: Option<String>,
+    #[prop(into, optional)] href: MaybeProp<String>,
+    #[prop(into)] on_click: Option<Callback<MouseEvent>>,
 
-    // Event handler attributes
-    #[prop_or_default]
-    pub on_click: Callback<MouseEvent>,
-
-    #[prop_or_default]
-    pub node_ref: NodeRef,
-}
-
-#[function_component]
-pub fn PaginationPrevious(props: &PaginationPreviousProps) -> Html {
-    html! {
+    #[prop(into, optional)] is_active: Signal<bool>,
+) -> impl IntoView {
+    view! {
         <PaginationLink
-            is_active={props.is_active}
-            size={ButtonSize::Default}
+            is_active=is_active
+            size=ButtonSize::Default
 
-            aria_label={"Go to previous page"}
-            class={tw_merge!("gap-1 pl-2.5", &props.class)}
-            id={props.id.clone()}
-            style={props.style.clone()}
+            aria_label="Go to previous page"
+            class= tw_merge!("gap-1 pl-2.5", class.get())
+            id=id.get()
+            style=style
 
-            href={props.href.clone()}
+            href=href
 
-            on_click={props.on_click.clone()}
+            on_click=on_click
 
-            node_ref={props.node_ref.clone()}
+            node_ref=node_ref
         >
-            <ChevronLeftIcon class="h-4 w-4" />
-            <span>{"Previous"}</span>
+            <ChevronLeft/>
+            <span>"Previous"</span>
         </PaginationLink>
     }
 }
 
-#[derive(PartialEq, Properties)]
-pub struct PaginationNextProps {
-    #[prop_or(false)]
-    pub is_active: bool,
 
-    // Global attributes
-    #[prop_or_default]
-    pub class: Option<String>,
-    #[prop_or_default]
-    pub id: Option<String>,
-    #[prop_or_default]
-    pub style: Style,
+#[component]
+pub fn PaginationNext(
+    #[prop(into, optional)] node_ref: AnyNodeRef,
+    #[prop(into, optional)] class: MaybeProp<String>,
+    #[prop(into, optional)] id: MaybeProp<String>,
+    #[prop(into, optional)] style: Signal<Style>,
 
-    // Attributes from `a`
-    #[prop_or_default]
-    pub href: Option<String>,
+    #[prop(into, optional)] href: MaybeProp<String>,
+    #[prop(into)] on_click: Option<Callback<MouseEvent>>,
 
-    // Event handler attributes
-    #[prop_or_default]
-    pub on_click: Callback<MouseEvent>,
-
-    #[prop_or_default]
-    pub node_ref: NodeRef,
-}
-
-#[function_component]
-pub fn PaginationNext(props: &PaginationNextProps) -> Html {
-    html! {
+    #[prop(into, optional)] is_active: Signal<bool>,
+) -> impl IntoView {
+    view! {
         <PaginationLink
-            is_active={props.is_active}
+            is_active=is_active
             size={ButtonSize::Default}
 
-            aria_label={"Go to next page"}
-            class={tw_merge!("gap-1 pr-2.5", &props.class)}
-            id={props.id.clone()}
-            style={props.style.clone()}
+            aria_label="Go to next page"
+            class=tw_merge!("gap-1 pr-2.5", class.get())
+            id=id.get()
+            style=style
 
-            href={props.href.clone()}
+            href=href
 
-            on_click={props.on_click.clone()}
+            on_click=on_click
 
-            node_ref={props.node_ref.clone()}
-        >
-            <span>{"Next"}</span>
-            <ChevronRightIcon class="h-4 w-4" />
+            node_ref= node_ref
+            >
+            <span>"Next"</span>
+            <ChevronRight />
         </PaginationLink>
     }
 }
+ 
 
-#[derive(PartialEq, Properties)]
-pub struct PaginationEllipsisProps {
-    // Global attributes
-    #[prop_or_default]
-    pub class: Option<String>,
-    #[prop_or_default]
-    pub id: Option<String>,
-    #[prop_or_default]
-    pub style: Style,
-
-    #[prop_or_default]
-    pub node_ref: NodeRef,
-}
-
-#[function_component]
-pub fn PaginationEllipsis(props: &PaginationEllipsisProps) -> Html {
-    html! {
+#[component]
+pub fn PaginationEllipsis(
+    #[prop(into, optional)] class: MaybeProp<String>,
+    #[prop(into, optional)] id: MaybeProp<String>,
+    #[prop(into, optional)] style: Signal<Style>,
+    #[prop(into, optional)] node_ref: AnyNodeRef
+) -> impl IntoView {
+    view! {
         <span
-            ref={props.node_ref.clone()}
+            node_ref=node_ref
 
             aria-hidden="true"
-            class={tw_merge!("flex h-9 w-9 items-center justify-center", &props.class)}
-            id={props.id.clone()}
-            style={props.style.clone()}
+            class=move || tw_merge!("flex h-9 w-9 items-center justify-center", class.get())
+            id=id.get()
+            style=style
         >
-            <DotsHorizontalIcon class="h-4 w-4" />
-            <span class="sr-only">{"More pages"}</span>
+            <Ellipsis />
+            <span class="sr-only">"More pages"</span>
         </span>
     }
 }

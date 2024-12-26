@@ -88,7 +88,7 @@ pub fn PaginationLink(
     #[prop(into, optional)] aria_label: MaybeProp<String>,
 
     #[prop(into, optional)] href: MaybeProp<String>,
-    #[prop(into, optional)] on_click: Option<Callback<MouseEvent>>,
+    #[prop(into)] on_click: Option<Callback<MouseEvent>>,
 
     #[prop(optional)] children: Option<Children>,
 ) -> impl IntoView {
@@ -136,7 +136,7 @@ pub fn PaginationPrevious(
     #[prop(into, optional)] style: Signal<Style>,
 
     #[prop(into, optional)] href: MaybeProp<String>,
-    #[prop(into, optional)] on_click: Option<Callback<MouseEvent>>,
+    #[prop(into)] on_click: Option<Callback<MouseEvent>>,
 
     #[prop(into, optional)] is_active: Signal<bool>,
 ) -> impl IntoView {
@@ -152,7 +152,7 @@ pub fn PaginationPrevious(
 
             href=href
 
-            //on_click=on_click
+            on_click=on_click
 
             node_ref=node_ref
         >
@@ -171,7 +171,7 @@ pub fn PaginationNext(
     #[prop(into, optional)] style: Signal<Style>,
 
     #[prop(into, optional)] href: MaybeProp<String>,
-    #[prop(into, optional)] on_click: Option<Callback<MouseEvent>>,
+    #[prop(into)] on_click: Option<Callback<MouseEvent>>,
 
     #[prop(into, optional)] is_active: Signal<bool>,
 ) -> impl IntoView {
@@ -187,7 +187,7 @@ pub fn PaginationNext(
 
             href=href
 
-            //on_click= on_click
+            on_click=on_click
 
             node_ref= node_ref
             >
