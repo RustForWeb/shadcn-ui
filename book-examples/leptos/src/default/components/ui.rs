@@ -11,3 +11,6 @@ pub use shadcn_ui_leptos_button::default as button;
 
 #[cfg(feature = "card")]
 pub use shadcn_ui_leptos_card::default as card;
+
+#[cfg(feature = "pagination")]
+pub use shadcn_ui_leptos_pagination::default as pagination;

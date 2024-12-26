@@ -41,6 +41,10 @@ pub fn Default() -> impl MatchNestedRoutes + Clone {
         {
             component_view(self::card::CardRoutes, ())
         },
+        #[cfg(feature = "pagination")]
+        {
+            component_view(self::pagination::PaginationRoutes, ())
+        },
     );
 
     view! {

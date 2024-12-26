@@ -21,6 +21,7 @@ shadcn-ui-leptos-alert = { path = "../../packages/leptos/alert" , optional = tru
 shadcn-ui-leptos-breadcrumb = { path = "../../packages/leptos/breadcrumb", optional = true }
 shadcn-ui-leptos-button = { path = "../../packages/leptos/button", optional = true }
 shadcn-ui-leptos-card = { path = "../../packages/leptos/card", optional = true }
+shadcn-ui-leptos-pagination = { path = "../../packages/leptos/pagination", optional = true}
 
 [features]
 default = [
@@ -28,6 +29,7 @@ default = [
     "breadcrumb",
     "button",
     "card",
+    "pagination",
 ]
 alert = [
     "dep:lucide-leptos",
@@ -49,3 +51,4 @@ card = [
     "dep:shadcn-ui-leptos-button",
     "dep:shadcn-ui-leptos-card",
 ]
+pagination = ["dep:shadcn-ui-leptos-pagination"]

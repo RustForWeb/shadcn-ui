@@ -3487,6 +3487,7 @@ dependencies = [
  "shadcn-ui-leptos-breadcrumb",
  "shadcn-ui-leptos-button",
  "shadcn-ui-leptos-card",
+ "shadcn-ui-leptos-pagination",
 ]
 
 [[package]]
