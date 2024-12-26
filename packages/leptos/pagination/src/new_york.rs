@@ -114,7 +114,7 @@ pub fn PaginationLink(
 
             on:click=Handler::from(on_click)
         >
-            {children.map(|c| c())}   
+            {children.map(|c| c())}
         </a>
     }
 }
