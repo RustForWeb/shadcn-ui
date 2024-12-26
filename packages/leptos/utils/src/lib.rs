@@ -19,7 +19,7 @@ pub mod handlers {
                 callback.run(event);
             }
         }
-    } 
+    }
 }
 */
 
@@ -27,7 +27,7 @@ pub mod handlers {
     use leptos::prelude::{Callable, Callback};
 
     // Define an enum to handle both cases
-    pub enum MaybeCallback<T: 'static > {
+    pub enum MaybeCallback<T: 'static> {
         Some(Callback<T>),
         None,
     }
@@ -49,10 +49,10 @@ pub mod handlers {
         }
     }
 
-    // Implement Default for MaybeCallback 
+    // Implement Default for MaybeCallback
     impl<T> Default for MaybeCallback<T> {
         fn default() -> Self {
-             MaybeCallback::None 
+            MaybeCallback::None
         }
     }
 
@@ -65,6 +65,21 @@ pub mod handlers {
         move |event: T| {
             if let MaybeCallback::Some(ref callback) = callback {
                 callback.run(event);
+            }
+        }
+    }
+
+    pub struct Handler;
+
+    impl Handler {
+        pub fn from<T>(callback: MaybeCallback<T>) -> impl FnMut(T)
+        where
+            T: 'static,
+        {
+            move |event: T| {
+                if let MaybeCallback::Some(callback) = callback {
+                    callback.run(event);
+                }
             }
         }
     }
