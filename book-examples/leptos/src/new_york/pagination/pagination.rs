@@ -17,8 +17,11 @@ pub fn PaginationDemo() -> impl IntoView {
                     <PaginationLink href="#">"1"</PaginationLink>
                 </PaginationItem>
                 <PaginationItem>
-                    <PaginationLink href="#" is_active=true>
-                    "2"
+                    <PaginationLink 
+                        href="#" 
+                        is_active=true 
+                    >
+                        "2"
                     </PaginationLink>
                 </PaginationItem>
                 <PaginationItem>

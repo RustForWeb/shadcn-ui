@@ -1,11 +1,10 @@
+use leptos::{ev::MouseEvent, prelude::*};
 use leptos_node_ref::AnyNodeRef;
+use leptos_style::Style;
 use lucide_leptos::{ChevronLeft, ChevronRight, Ellipsis};
 use shadcn_ui_leptos_button::default::{ButtonClass, ButtonSize, ButtonVariant};
 use shadcn_ui_leptos_utils::handlers::*;
 use tailwind_fuse::*;
-use leptos::{ev::MouseEvent, prelude::*};
-use leptos_style::Style;
-
 
 #[component]
 pub fn Pagination(
@@ -30,7 +29,6 @@ pub fn Pagination(
     }
 }
 
-
 #[component]
 pub fn PaginationContent(
     #[prop(into, optional)] class: MaybeProp<String>,
@@ -51,7 +49,6 @@ pub fn PaginationContent(
         </ul>
     }
 }
-
 
 #[component]
 pub fn PaginationItem(
@@ -74,14 +71,13 @@ pub fn PaginationItem(
     }
 }
 
-
 #[component]
 pub fn PaginationLink(
     #[prop(into, optional)] class: MaybeProp<String>,
     #[prop(into, optional)] id: MaybeProp<String>,
     #[prop(into, optional)] style: Signal<Style>,
     #[prop(into, optional)] node_ref: AnyNodeRef,
-    
+
     #[prop(into, optional)] is_active: Signal<bool>,
     #[prop(into, optional)] size: Signal<ButtonSize>,
 
@@ -99,11 +95,11 @@ pub fn PaginationLink(
             } else {
                 ButtonVariant::Ghost
             },
-            size:size.get(),
+            size: size.get(),
         }
         .with_class(class.get().unwrap_or_default())
     });
-    
+
     view! {
         <a
             node_ref=node_ref
@@ -116,17 +112,12 @@ pub fn PaginationLink(
 
             href=href.get()
 
-            on:click=generate_handler(on_click)
+            on:click=Handler::from(on_click)
         >
-            {
-                if let Some(children) = children {
-                    children();
-                }
-            }
+            {children.map(|c| c())}   
         </a>
     }
 }
-
 
 #[component]
 pub fn PaginationPrevious(
@@ -162,7 +153,6 @@ pub fn PaginationPrevious(
     }
 }
 
-
 #[component]
 pub fn PaginationNext(
     #[prop(into, optional)] node_ref: AnyNodeRef,
@@ -196,14 +186,13 @@ pub fn PaginationNext(
         </PaginationLink>
     }
 }
- 
 
 #[component]
 pub fn PaginationEllipsis(
     #[prop(into, optional)] class: MaybeProp<String>,
     #[prop(into, optional)] id: MaybeProp<String>,
     #[prop(into, optional)] style: Signal<Style>,
-    #[prop(into, optional)] node_ref: AnyNodeRef
+    #[prop(into, optional)] node_ref: AnyNodeRef,
 ) -> impl IntoView {
     view! {
         <span
