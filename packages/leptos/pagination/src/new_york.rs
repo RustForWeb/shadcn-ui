@@ -21,7 +21,7 @@ pub fn Pagination(
             aria-label="pagination"
             role="navigation"
             class=move || tw_merge!("mx-auto flex w-full justify-center", class.get())
-            id=id.get()
+            id=move || id.get()
             style=style
         >
             {children()}
@@ -42,7 +42,7 @@ pub fn PaginationContent(
             node_ref=node_ref
 
             class=move || tw_merge!("flex flex-row items-center gap-1", class.get())
-            id=id.get()
+            id=move || id.get()
             style=style
         >
             {children()}
@@ -63,7 +63,7 @@ pub fn PaginationItem(
             node_ref=node_ref
 
             class=move || tw_merge!("", class.get())
-            id=id.get()
+            id=move || id.get()
             style=style
         >
             {children()}
@@ -107,10 +107,10 @@ pub fn PaginationLink(
             aria-current=is_active.get().then_some("page")
             aria-label=move || aria_label.get()
             class=move || class.get()
-            id=id.get()
+            id=move || id.get()
             style=style
 
-            href=href.get()
+            href=move || href.get()
 
             on:click=Handler::from(on_click)
         >
@@ -200,7 +200,7 @@ pub fn PaginationEllipsis(
 
             aria-hidden="true"
             class=move || tw_merge!("flex h-9 w-9 items-center justify-center", class.get())
-            id=id.get()
+            id=move || id.get()
             style=style
         >
             <Ellipsis />
