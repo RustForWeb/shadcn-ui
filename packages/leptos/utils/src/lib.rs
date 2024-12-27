@@ -7,7 +7,6 @@
 pub mod default;
 pub mod new_york;
 
-
 pub mod handlers {
     use leptos::prelude::{Callable, Callback};
 
