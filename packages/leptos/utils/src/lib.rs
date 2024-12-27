@@ -11,8 +11,10 @@ pub mod handlers {
     use leptos::prelude::{Callable, Callback};
 
     // Define an enum to handle both cases
+    #[derive(Default)]
     pub enum MaybeCallback<T: 'static> {
         Some(Callback<T>),
+        #[default]
         None,
     }
 
@@ -30,13 +32,6 @@ pub mod handlers {
     impl<T> From<Callback<T>> for MaybeCallback<T> {
         fn from(callback: Callback<T>) -> Self {
             MaybeCallback::Some(callback)
-        }
-    }
-
-    // Implement Default for MaybeCallback
-    impl<T> Default for MaybeCallback<T> {
-        fn default() -> Self {
-            MaybeCallback::None
         }
     }
 
