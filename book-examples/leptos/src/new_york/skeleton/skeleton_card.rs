@@ -3,7 +3,7 @@ use leptos::prelude::*;
 use crate::new_york::components::ui::skeleton::Skeleton;
 
 #[component]
-pub fn SkeletonCard() -> impl IntoView {
+pub fn SkeletonCardDemo() -> impl IntoView {
     view! {
         <div class="flex flex-col space-y-3">
             <Skeleton class="h-[125px] w-[250px] rounded-xl" />

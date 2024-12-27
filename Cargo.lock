@@ -3498,6 +3498,7 @@ dependencies = [
  "shadcn-ui-leptos-badge",
  "shadcn-ui-leptos-button",
  "shadcn-ui-leptos-card",
+ "shadcn-ui-leptos-skeleton",
 ]
 
 [[package]]
@@ -3518,6 +3519,16 @@ dependencies = [
  "leptos 0.7.2",
  "leptos-node-ref",
  "leptos-struct-component",
+ "leptos-style",
+ "tailwind_fuse",
+]
+
+[[package]]
+name = "shadcn-ui-leptos-skeleton"
+version = "0.0.1"
+dependencies = [
+ "leptos 0.7.2",
+ "leptos-node-ref",
  "leptos-style",
  "tailwind_fuse",
 ]

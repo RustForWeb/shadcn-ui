@@ -47,4 +47,4 @@ card = [
     "dep:shadcn-ui-leptos-button",
     "dep:shadcn-ui-leptos-card",
 ]
-skeleton = ["dep:shadcn-ui-yew-skeleton"]
+skeleton = ["dep:shadcn-ui-leptos-skeleton"]
