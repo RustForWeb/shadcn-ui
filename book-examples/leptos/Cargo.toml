@@ -32,7 +32,6 @@ default = [
     "card",
     "input",
 ]
-
 alert = [
     "dep:lucide-leptos",
     "dep:radix-leptos-icons",
