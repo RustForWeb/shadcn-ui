@@ -1,7 +1,7 @@
-use tailwind_fuse::*;
 use leptos::prelude::*;
-use leptos_style::Style;
 use leptos_node_ref::AnyNodeRef;
+use leptos_style::Style;
+use tailwind_fuse::*;
 
 #[component]
 pub fn Skeleton(
