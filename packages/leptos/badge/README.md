@@ -4,9 +4,9 @@
     </a>
 </p>
 
-<h1 align="center">shadcn-ui-leptos-card</h1>
+<h1 align="center">shadcn-ui-leptos-badge</h1>
 
-Displays a card with header, content, and footer.
+Displays a badge or a component that looks like a badge.
 
 [Rust shadcn/ui](https://github.com/RustForWeb/shadcn-ui) is a Rust port of [shadcn/ui](https://ui.shadcn.com/).
 

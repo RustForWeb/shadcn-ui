@@ -3,6 +3,9 @@ mod components;
 #[cfg(feature = "alert")]
 mod alert;
 
+#[cfg(feature = "badge")]
+mod badge;
+
 #[cfg(feature = "breadcrumb")]
 mod breadcrumb;
 
@@ -31,6 +34,10 @@ pub fn Default() -> impl MatchNestedRoutes + Clone {
         #[cfg(feature = "breadcrumb")]
         {
             component_view(self::breadcrumb::BreadcrumbRoutes, ())
+        },
+        #[cfg(feature = "badge")]
+        {
+            component_view(self::badge::BadgeRoutes, ())
         },
         #[cfg(feature = "button")]
         {
