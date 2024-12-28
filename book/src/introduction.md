@@ -12,19 +12,19 @@ Rust shadcn/ui is a Rust port of [shadcn/ui](https://ui.shadcn.com/).
 
 Rust shadcn/ui is available for the following frameworks:
 
--   [Leptos](https://leptos.dev/)
--   [Yew](https://yew.rs/)
+- [Leptos](https://leptos.dev/)
+- [Yew](https://yew.rs/)
 
 The following frameworks are under consideration:
 
--   [Dioxus](https://dioxuslabs.com/)
+- [Dioxus](https://dioxuslabs.com/)
 
 The tables below show the support for the various frameworks.
 
--   ✅ = Supported
--   🟦 = Early Support
--   🚧 = Work In Progress
--   ❌ = Unsupported
+- ✅ = Supported
+- 🟦 = Early Support
+- 🚧 = Work In Progress
+- ❌ = Unsupported
 
 ### Primitives Support
 
@@ -87,6 +87,6 @@ This project is available under the [MIT license](https://github.com/RustForWeb/
 
 ## Rust For Web
 
-The Rust shadcn/ui project is part of the [Rust For Web](https://github.com/RustForWeb).
+The Rust shadcn/ui project is part of [Rust For Web](https://github.com/RustForWeb).
 
 [Rust For Web](https://github.com/RustForWeb) creates and ports web UI libraries for Rust. All projects are free and open source.
