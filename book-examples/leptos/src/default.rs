@@ -38,8 +38,8 @@ pub fn Default() -> impl MatchNestedRoutes + Clone {
         },
         #[cfg(feature = "textarea")]
         {
-            component_view(self::textarea::TextareaRoutes, ())    
-        }
+            component_view(self::textarea::TextareaRoutes, ())
+        },
     );
 
     view! {

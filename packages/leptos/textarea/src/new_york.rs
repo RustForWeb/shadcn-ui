@@ -1,8 +1,11 @@
+use leptos::{
+    ev::{Event, FocusEvent},
+    prelude::*,
+};
 use leptos_node_ref::AnyNodeRef;
-use tailwind_fuse::*;
-use leptos::{ev::{Event, FocusEvent}, prelude::*};
 use leptos_style::Style;
 use shadcn_ui_leptos_utils::handlers::*;
+use tailwind_fuse::*;
 
 #[component]
 pub fn Textarea(
@@ -17,7 +20,6 @@ pub fn Textarea(
     #[prop(into, optional)] readonly: MaybeProp<bool>,
     #[prop(into, optional)] is_error: Signal<bool>,
     #[prop(into, optional)] placeholder: MaybeProp<String>,
-
 
     // Event handler attributes
     #[prop(optional)] onblur: MaybeCallback<FocusEvent>,
