@@ -15,4 +15,5 @@ tailwind_fuse.workspace = true
 leptos.workspace = true
 leptos-style.workspace = true
 leptos-node-ref.workspace = true
+shadcn-ui-leptos-utils = { path = "../utils" }
 

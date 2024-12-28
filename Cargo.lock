@@ -3529,6 +3529,7 @@ dependencies = [
  "leptos 0.7.2",
  "leptos-node-ref",
  "leptos-style",
+ "shadcn-ui-leptos-utils",
  "tailwind_fuse",
 ]
 
