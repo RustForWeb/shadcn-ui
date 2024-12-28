@@ -3523,6 +3523,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "shadcn-ui-leptos-textarea"
+version = "0.0.1"
+dependencies = [
+ "leptos 0.7.2",
+ "leptos-node-ref",
+ "leptos-style",
+ "tailwind_fuse",
+]
+
+[[package]]
 name = "shadcn-ui-leptos-utils"
 version = "0.0.1"
 dependencies = [
