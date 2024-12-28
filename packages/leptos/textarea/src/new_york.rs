@@ -20,10 +20,10 @@ pub fn Textarea(
 
 
     // Event handler attributes
-    #[prop(optional)] on_blur: MaybeCallback<FocusEvent>,
-    #[prop(optional)] on_change: MaybeCallback<Event>,
-    #[prop(optional)] on_focus: MaybeCallback<FocusEvent>,
-    #[prop(optional)] on_input: MaybeCallback<Event>,
+    #[prop(optional)] onblur: MaybeCallback<FocusEvent>,
+    #[prop(optional)] onchange: MaybeCallback<Event>,
+    #[prop(optional)] onfocus: MaybeCallback<FocusEvent>,
+    #[prop(optional)] oninput: MaybeCallback<Event>,
 
     #[prop(into, optional)] node_ref: AnyNodeRef,
 ) -> impl IntoView {
@@ -41,10 +41,10 @@ pub fn Textarea(
             placeholder=move || placeholder.get()
             prop:value=value
 
-            on:blur=Handler::from(on_blur)
-            on:change=Handler::from(on_change)
-            on:focus=Handler::from(on_focus)
-            on:input=Handler::from(on_input)
+            on:blur=Handler::from(onblur)
+            on:change=Handler::from(onchange)
+            on:focus=Handler::from(onfocus)
+            on:input=Handler::from(oninput)
 
             disabled=move || disabled.get()
             readonly=move || readonly.get()
