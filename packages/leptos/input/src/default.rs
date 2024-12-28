@@ -52,10 +52,10 @@ pub fn Input(
     #[prop(into, optional)] r#type: Signal<InputType>,
     #[prop(into, optional)] placeholder: MaybeProp<String>,
 
-    #[prop(into, optional)] on_input: MaybeCallback<Event>,
-    #[prop(into, optional)] on_change: MaybeCallback<Event>,
-    #[prop(into, optional)] on_blur: MaybeCallback<FocusEvent>,
-    #[prop(into, optional)] on_focus: MaybeCallback<FocusEvent>,
+    #[prop(into, optional)] oninput: MaybeCallback<Event>,
+    #[prop(into, optional)] onchange: MaybeCallback<Event>,
+    #[prop(into, optional)] onblur: MaybeCallback<FocusEvent>,
+    #[prop(into, optional)] onfocus: MaybeCallback<FocusEvent>,
 
     #[prop(into, optional)] value: Signal<String>,
 
@@ -80,10 +80,10 @@ pub fn Input(
             placeholder=move || placeholder.get()
 
             // Event Handlers
-            on:blur= Handler::from(on_blur)
-            on:focus = Handler::from(on_focus)
-            on:input= Handler::from(on_input)
-            on:change = Handler::from(on_change)
+            on:blur= Handler::from(onblur)
+            on:focus = Handler::from(onfocus)
+            on:input= Handler::from(oninput)
+            on:change = Handler::from(onchange)
 
             disabled = disabled
             readonly = readonly
