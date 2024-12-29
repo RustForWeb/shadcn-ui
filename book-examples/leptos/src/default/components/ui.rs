@@ -8,3 +8,6 @@ pub use shadcn_ui_leptos_badge::default as badge;
 pub use shadcn_ui_leptos_button::default as button;
 #[cfg(feature = "card")]
 pub use shadcn_ui_leptos_card::default as card;
+
+#[cfg(feature = "input")]
+pub use shadcn_ui_leptos_input::default as input;
