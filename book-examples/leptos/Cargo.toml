@@ -21,6 +21,7 @@ shadcn-ui-leptos-alert = { path = "../../packages/leptos/alert" , optional = tru
 shadcn-ui-leptos-badge = { path = "../../packages/leptos/badge", optional = true }
 shadcn-ui-leptos-button = { path = "../../packages/leptos/button", optional = true }
 shadcn-ui-leptos-card = { path = "../../packages/leptos/card", optional = true }
+shadcn-ui-leptos-table = { path = "../../packages/leptos/table", optional = true }
 
 [features]
 default = [
@@ -28,6 +29,7 @@ default = [
     "badge",
     "button",
     "card",
+    "table",
 ]
 alert = [
     "dep:lucide-leptos",
@@ -45,3 +47,4 @@ card = [
     "dep:shadcn-ui-leptos-button",
     "dep:shadcn-ui-leptos-card",
 ]
+table = ["dep:shadcn-ui-leptos-table"]

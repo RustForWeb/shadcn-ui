@@ -11,7 +11,7 @@ pub fn Table(
     #[prop(into, optional)] style: Signal<Style>,
 
     #[prop(into, optional)] node_ref: AnyNodeRef,
-    #[prop(into, optional)] children: Option<Children>,
+    #[prop(optional)] children: Option<Children>,
 ) -> impl IntoView {
     view! {
         <div class="relative w-full overflow-auto">
@@ -37,7 +37,7 @@ pub fn TableHeader(
     #[prop(into, optional)] style: Signal<Style>,
 
     #[prop(into, optional)] node_ref: AnyNodeRef,
-    #[prop(into, optional)] children: Option<Children>,
+    #[prop(optional)] children: Option<Children>,
 ) -> impl IntoView {
     view! {
         <thead
@@ -61,7 +61,7 @@ pub fn TableBody(
     #[prop(into, optional)] style: Signal<Style>,
 
     #[prop(into, optional)] node_ref: AnyNodeRef,
-    #[prop(into, optional)] children: Option<Children>,
+    #[prop(optional)] children: Option<Children>,
 
 ) -> impl IntoView {
     view! {
@@ -86,7 +86,7 @@ pub fn TableFooter(
     #[prop(into, optional)] style: Signal<Style>,
 
     #[prop(into, optional)] node_ref: AnyNodeRef,
-    #[prop(into, optional)] children: Option<Children>,
+    #[prop(optional)] children: Option<Children>,
 ) -> impl IntoView {
     view! {
         <tfoot
@@ -108,7 +108,7 @@ pub fn TableRow(
     #[prop(into, optional)] style: Signal<Style>,
 
     #[prop(into, optional)] node_ref: AnyNodeRef,
-    #[prop(into, optional)] children: Option<Children>,   
+    #[prop(optional)] children: Option<Children>,   
 ) -> impl IntoView {
     view! {
         <tr
@@ -138,7 +138,7 @@ pub fn TableHead(
     #[prop(into, optional)] scope: MaybeProp<String>,
 
     #[prop(into, optional)] node_ref: AnyNodeRef,
-    #[prop(into, optional)] children: Option<Children>,
+    #[prop(optional)] children: Option<Children>,
 ) -> impl IntoView {
     view! {
         <th
@@ -172,7 +172,7 @@ pub fn TableCell(
     #[prop(into, optional)] rowspan: MaybeProp<String>,
 
     #[prop(into, optional)] node_ref: AnyNodeRef,
-    #[prop(into, optional)] children: Option<Children>,
+    #[prop(optional)] children: Option<Children>,
 ) -> impl IntoView {
     view! {
         <td
@@ -199,7 +199,7 @@ pub fn TableCaption(
     #[prop(into, optional)] style: Signal<Style>,
 
     #[prop(into, optional)] node_ref: AnyNodeRef,
-    #[prop(into, optional)] children: Option<Children>,
+    #[prop(optional)] children: Option<Children>,
 ) -> impl IntoView {
     view! {
         <caption
