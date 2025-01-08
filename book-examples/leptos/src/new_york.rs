@@ -38,8 +38,8 @@ pub fn NewYork() -> impl MatchNestedRoutes + Clone {
         },
         #[cfg(feature = "table")]
         {
-            component_view(self::table::TableRoutes, ())    
-        }
+            component_view(self::table::TableRoutes, ())
+        },
     );
 
     view! {

@@ -1,8 +1,7 @@
-use leptos_node_ref::AnyNodeRef;
-use tailwind_fuse::*;
 use leptos::prelude::*;
+use leptos_node_ref::AnyNodeRef;
 use leptos_style::Style;
-
+use tailwind_fuse::*;
 
 #[component]
 pub fn Table(
@@ -28,8 +27,6 @@ pub fn Table(
     }
 }
 
-
-
 #[component]
 pub fn TableHeader(
     #[prop(into, optional)] class: MaybeProp<String>,
@@ -52,8 +49,6 @@ pub fn TableHeader(
     }
 }
 
-
-
 #[component]
 pub fn TableBody(
     #[prop(into, optional)] class: MaybeProp<String>,
@@ -62,7 +57,6 @@ pub fn TableBody(
 
     #[prop(into, optional)] node_ref: AnyNodeRef,
     #[prop(optional)] children: Option<Children>,
-
 ) -> impl IntoView {
     view! {
         <tbody
@@ -76,8 +70,6 @@ pub fn TableBody(
         </tbody>
     }
 }
-
-
 
 #[component]
 pub fn TableFooter(
@@ -108,7 +100,7 @@ pub fn TableRow(
     #[prop(into, optional)] style: Signal<Style>,
 
     #[prop(into, optional)] node_ref: AnyNodeRef,
-    #[prop(optional)] children: Option<Children>,   
+    #[prop(optional)] children: Option<Children>,
 ) -> impl IntoView {
     view! {
         <tr
@@ -122,8 +114,6 @@ pub fn TableRow(
         </tr>
     }
 }
-
-
 
 #[component]
 pub fn TableHead(
@@ -159,8 +149,6 @@ pub fn TableHead(
     }
 }
 
-
-
 #[component]
 pub fn TableCell(
     #[prop(into, optional)] class: MaybeProp<String>,
@@ -190,7 +178,6 @@ pub fn TableCell(
         </td>
     }
 }
-
 
 #[component]
 pub fn TableCaption(

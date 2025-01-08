@@ -5,7 +5,7 @@ use crate::new_york::components::ui::table::{
 };
 
 #[derive(Clone, Copy)]
-struct PaymentDetails{
+struct PaymentDetails {
     payment_status: &'static str,
     total_amount: &'static str,
     payment_method: &'static str,
@@ -24,61 +24,56 @@ fn invoices() -> Vec<Invoice> {
             details: RwSignal::new(PaymentDetails {
                 payment_status: "Paid",
                 total_amount: "$250.00",
-                payment_method: "Credit Card",    
-            })
-            
+                payment_method: "Credit Card",
+            }),
         },
         Invoice {
             invoice: "INV002",
             details: RwSignal::new(PaymentDetails {
                 payment_status: "Pending",
                 total_amount: "$150.00",
-                payment_method: "PayPal",    
-            })
-            
+                payment_method: "PayPal",
+            }),
         },
         Invoice {
             invoice: "INV003",
-            details: RwSignal::new(PaymentDetails {    
+            details: RwSignal::new(PaymentDetails {
                 payment_status: "Unpaid",
                 total_amount: "$350.00",
                 payment_method: "Bank Transfer",
-            })
+            }),
         },
         Invoice {
             invoice: "INV004",
             details: RwSignal::new(PaymentDetails {
                 payment_status: "Paid",
                 total_amount: "$450.00",
-                payment_method: "Credit Card",    
-            })
-            
+                payment_method: "Credit Card",
+            }),
         },
         Invoice {
             invoice: "INV005",
             details: RwSignal::new(PaymentDetails {
                 payment_status: "Paid",
                 total_amount: "$550.00",
-                payment_method: "PayPal",    
-            })
-            
+                payment_method: "PayPal",
+            }),
         },
         Invoice {
             invoice: "INV006",
             details: RwSignal::new(PaymentDetails {
                 payment_status: "Pending",
                 total_amount: "$200.00",
-                payment_method: "Bank Transfer",    
-            })
-            
+                payment_method: "Bank Transfer",
+            }),
         },
         Invoice {
             invoice: "INV007",
             details: RwSignal::new(PaymentDetails {
                 payment_status: "Unpaid",
                 total_amount: "$300.00",
-                payment_method: "Credit Card",    
-            })
+                payment_method: "Credit Card",
+            }),
         },
     ]
 }
@@ -97,7 +92,7 @@ pub fn TableDemo() -> impl IntoView {
                 </TableRow>
             </TableHeader>
             <TableBody>
-                <For 
+                <For
                     each=move || invoices()
                     key=|row| row.invoice
                     children=move |row| {
