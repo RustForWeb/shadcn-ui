@@ -35,7 +35,7 @@ pub mod handlers {
         }
     }
 
-    impl<T> Into<Callback<T>> for MaybeCallback<T>{
+    impl<T> Into<Callback<T>> for MaybeCallback<T> {
         fn into(self) -> Callback<T> {
             match self {
                 MaybeCallback::Some(callback) => callback,
@@ -43,7 +43,6 @@ pub mod handlers {
             }
         }
     }
-
 
     // Define the function to accept MaybeCallback
     pub fn generate_handler<T>(callback: impl Into<MaybeCallback<T>>) -> impl FnMut(T)
