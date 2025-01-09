@@ -3143,6 +3143,7 @@ dependencies = [
  "shadcn-ui-leptos-badge",
  "shadcn-ui-leptos-button",
  "shadcn-ui-leptos-card",
+ "shadcn-ui-leptos-label",
 ]
 
 [[package]]
