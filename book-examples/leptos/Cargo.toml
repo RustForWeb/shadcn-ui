@@ -23,6 +23,10 @@ shadcn-ui-leptos-button = { path = "../../packages/leptos/button", optional = tr
 shadcn-ui-leptos-card = { path = "../../packages/leptos/card", optional = true }
 shadcn-ui-leptos-label = { path = "../../packages/leptos/label", optional = true }
 
+
+[dev-dependencies]
+web-sys = "0.3"
+
 [features]
 default = [
     "alert",

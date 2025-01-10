@@ -3144,6 +3144,7 @@ dependencies = [
  "shadcn-ui-leptos-button",
  "shadcn-ui-leptos-card",
  "shadcn-ui-leptos-label",
+ "web-sys",
 ]
 
 [[package]]

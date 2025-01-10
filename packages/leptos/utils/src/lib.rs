@@ -35,9 +35,9 @@ pub mod handlers {
         }
     }
 
-    impl<T> Into<Callback<T>> for MaybeCallback<T> {
-        fn into(self) -> Callback<T> {
-            match self {
+    impl<T> From<MaybeCallback<T>> for Callback<T> {
+        fn from(val: MaybeCallback<T>) -> Self {
+            match val {
                 MaybeCallback::Some(callback) => callback,
                 MaybeCallback::None => Callback::new(move |_| {}),
             }
