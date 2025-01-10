@@ -8,6 +8,8 @@ mod badge;
 mod button;
 #[cfg(feature = "card")]
 mod card;
+#[cfg(feature = "label")]
+mod label;
 
 use leptos::prelude::*;
 use leptos_router::{
@@ -33,6 +35,10 @@ pub fn Default() -> impl MatchNestedRoutes + Clone {
         #[cfg(feature = "card")]
         {
             component_view(self::card::CardRoutes, ())
+        },
+        #[cfg(feature = "label")]
+        {
+            component_view(self::label::LabelRoutes, ())
         },
     );
 

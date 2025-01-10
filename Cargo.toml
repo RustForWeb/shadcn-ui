@@ -26,6 +26,7 @@ leptos_router = "0.7.0-rc2"
 leptos-node-ref = "0.0.3"
 leptos-struct-component = "0.0.3"
 leptos-style = "0.0.3"
+#leptos-style = { git = "https://github.com/israelsilvabarbara/leptos-utils.git" , branch = "feature/IntoAttributeValue"}
 log = "0.4.21"
 lucide-leptos = "1.0.0"
 lucide-yew = "1.0.0"
