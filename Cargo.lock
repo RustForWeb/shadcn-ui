@@ -3953,9 +3953,9 @@ dependencies = [
 
 [[package]]
 name = "tailwind_fuse"
-version = "0.3.1"
+version = "0.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2e9d32d52c3191836fe1858b6b38442d1e536eeb11883b2041e6db080a208c2d"
+checksum = "7ca71fb01735fbc6fa13e9390d7a3037dde97053c0b65c0c72c0159cd009d26b"
 dependencies = [
  "nom",
  "tailwind_fuse_macro",
