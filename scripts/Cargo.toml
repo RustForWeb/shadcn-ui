@@ -11,7 +11,7 @@ version.workspace = true
 
 [dependencies]
 anyhow.workspace = true
-convert_case = "0.7.0"
+convert_case = "0.8.0"
 env_logger.workspace = true
 handlebars = "6.1.0"
 log.workspace = true
