@@ -2,12 +2,21 @@ mod components;
 
 #[cfg(feature = "alert")]
 mod alert;
+
 #[cfg(feature = "badge")]
 mod badge;
+
+#[cfg(feature = "breadcrumb")]
+mod breadcrumb;
+
 #[cfg(feature = "button")]
 mod button;
+
 #[cfg(feature = "card")]
 mod card;
+
+#[cfg(feature = "pagination")]
+mod pagination;
 
 use leptos::prelude::*;
 use leptos_router::{
@@ -26,6 +35,10 @@ pub fn NewYork() -> impl MatchNestedRoutes + Clone {
         {
             component_view(self::badge::BadgeRoutes, ())
         },
+        #[cfg(feature = "breadcrumb")]
+        {
+            component_view(self::breadcrumb::BreadcrumbRoutes, ())
+        },
         #[cfg(feature = "button")]
         {
             component_view(self::button::ButtonRoutes, ())
@@ -33,6 +46,10 @@ pub fn NewYork() -> impl MatchNestedRoutes + Clone {
         #[cfg(feature = "card")]
         {
             component_view(self::card::CardRoutes, ())
+        },
+        #[cfg(feature = "pagination")]
+        {
+            component_view(self::pagination::PaginationRoutes, ())
         },
     );
 
