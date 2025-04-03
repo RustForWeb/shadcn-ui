@@ -2838,7 +2838,6 @@ dependencies = [
 [[package]]
 name = "radix-leptos-icons"
 version = "0.0.2"
-source = "git+https://github.com/RustForWeb/radix.git#aa5167ea0c8ae4498e2dc4ef1467fa87c428aa75"
 dependencies = [
  "leptos 0.6.15",
 ]
@@ -2846,7 +2845,6 @@ dependencies = [
 [[package]]
 name = "radix-yew-aspect-ratio"
 version = "0.0.2"
-source = "git+https://github.com/RustForWeb/radix.git#aa5167ea0c8ae4498e2dc4ef1467fa87c428aa75"
 dependencies = [
  "yew",
  "yew-struct-component",
@@ -2856,7 +2854,6 @@ dependencies = [
 [[package]]
 name = "radix-yew-avatar"
 version = "0.0.2"
-source = "git+https://github.com/RustForWeb/radix.git#aa5167ea0c8ae4498e2dc4ef1467fa87c428aa75"
 dependencies = [
  "log",
  "web-sys",
@@ -2868,8 +2865,6 @@ dependencies = [
 [[package]]
 name = "radix-yew-icons"
 version = "0.0.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fbfdd5e2c00a0db14eb1c071c94bb2e063286b21f6480cbd18d4ffe6430e4447"
 dependencies = [
  "yew",
 ]
@@ -2877,7 +2872,6 @@ dependencies = [
 [[package]]
 name = "radix-yew-label"
 version = "0.0.2"
-source = "git+https://github.com/RustForWeb/radix.git#aa5167ea0c8ae4498e2dc4ef1467fa87c428aa75"
 dependencies = [
  "web-sys",
  "yew",
@@ -2888,7 +2882,6 @@ dependencies = [
 [[package]]
 name = "radix-yew-primitive"
 version = "0.0.2"
-source = "git+https://github.com/RustForWeb/radix.git#aa5167ea0c8ae4498e2dc4ef1467fa87c428aa75"
 dependencies = [
  "yew",
 ]
@@ -2896,7 +2889,6 @@ dependencies = [
 [[package]]
 name = "radix-yew-separator"
 version = "0.0.2"
-source = "git+https://github.com/RustForWeb/radix.git#aa5167ea0c8ae4498e2dc4ef1467fa87c428aa75"
 dependencies = [
  "yew",
  "yew-struct-component",
@@ -2906,7 +2898,6 @@ dependencies = [
 [[package]]
 name = "radix-yew-switch"
 version = "0.0.2"
-source = "git+https://github.com/RustForWeb/radix.git#aa5167ea0c8ae4498e2dc4ef1467fa87c428aa75"
 dependencies = [
  "radix-yew-primitive",
  "radix-yew-use-controllable-state",
@@ -2921,7 +2912,6 @@ dependencies = [
 [[package]]
 name = "radix-yew-use-controllable-state"
 version = "0.0.2"
-source = "git+https://github.com/RustForWeb/radix.git#aa5167ea0c8ae4498e2dc4ef1467fa87c428aa75"
 dependencies = [
  "yew",
 ]
@@ -2929,7 +2919,6 @@ dependencies = [
 [[package]]
 name = "radix-yew-use-previous"
 version = "0.0.2"
-source = "git+https://github.com/RustForWeb/radix.git#aa5167ea0c8ae4498e2dc4ef1467fa87c428aa75"
 dependencies = [
  "yew",
 ]
@@ -2937,7 +2926,6 @@ dependencies = [
 [[package]]
 name = "radix-yew-use-size"
 version = "0.0.2"
-source = "git+https://github.com/RustForWeb/radix.git#aa5167ea0c8ae4498e2dc4ef1467fa87c428aa75"
 dependencies = [
  "web-sys",
  "yew",
@@ -3587,8 +3575,23 @@ dependencies = [
  "radix-leptos-icons",
  "shadcn-ui-leptos-alert",
  "shadcn-ui-leptos-badge",
+ "shadcn-ui-leptos-breadcrumb",
  "shadcn-ui-leptos-button",
  "shadcn-ui-leptos-card",
+ "shadcn-ui-leptos-pagination",
+]
+
+[[package]]
+name = "shadcn-ui-leptos-breadcrumb"
+version = "0.0.1"
+dependencies = [
+ "leptos 0.7.2",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "lucide-leptos",
+ "radix-leptos-icons",
+ "tailwind_fuse",
 ]
 
 [[package]]
@@ -3610,6 +3613,21 @@ dependencies = [
  "leptos-node-ref",
  "leptos-struct-component",
  "leptos-style",
+ "tailwind_fuse",
+]
+
+[[package]]
+name = "shadcn-ui-leptos-pagination"
+version = "0.0.1"
+dependencies = [
+ "leptos 0.7.2",
+ "leptos-node-ref",
+ "leptos-struct-component",
+ "leptos-style",
+ "lucide-leptos",
+ "radix-leptos-icons",
+ "shadcn-ui-leptos-button",
+ "shadcn-ui-leptos-utils",
  "tailwind_fuse",
 ]
 
@@ -4799,9 +4817,10 @@ checksum = "1e9df38ee2d2c3c5948ea468a8406ff0db0b29ae1ffde1bcf20ef305bcc95c51"
 
 [[package]]
 name = "xxhash-rust"
-version = "0.8.13"
+version = "0.8.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a08fd76779ae1883bbf1e46c2c46a75a0c4e37c445e68a24b01479d438f26ae6"
+checksum = "d7d48f1b18be023c95e7b75f481cac649d74be7c507ff4a407c55cfb957f7934"
+
 
 [[package]]
 name = "yansi"
