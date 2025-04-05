@@ -7,15 +7,15 @@ use regex::Regex;
 use serde::{Deserialize, Serialize};
 use serde_json::json;
 use shadcn_registry::{
+    REGISTRY,
     registry_base_colors::BASE_COLORS,
-    registry_colors::{Color, COLORS, COLOR_MAPPING},
+    registry_colors::{COLOR_MAPPING, COLORS, Color},
     registry_frameworks::FRAMEWORKS,
     registry_styles::STYLES,
     schema::{
         Mode, RegistryEntry, RegistryItemFile, RegistryItemTailwind, RegistryItemTailwindConfig,
         RegistryItemType, Style,
     },
-    REGISTRY,
 };
 
 const REGISTRY_INDEX_WHITELIST: [RegistryItemType; 5] = [

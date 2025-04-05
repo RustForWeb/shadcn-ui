@@ -1,16 +1,16 @@
 use std::collections::HashMap;
 
-use anyhow::{bail, Result};
+use anyhow::{Result, bail};
 use tokio::fs;
 
 use crate::{
     commands::init::InitOptions,
     utils::{
         errors::ErrorType,
-        get_project_info::{get_project_info, ProjectInfo},
+        get_project_info::{ProjectInfo, get_project_info},
         highlighter::HIGHLIGHTER,
         logger::LOGGER,
-        spinner::{spinner, SpinnerOptions},
+        spinner::{SpinnerOptions, spinner},
     },
 };
 
