@@ -4,8 +4,9 @@ mod alert_destructive;
 
 use leptos::prelude::*;
 use leptos_router::{
+    MatchNestedRoutes,
     components::{Outlet, ParentRoute, Route},
-    path, MatchNestedRoutes,
+    path,
 };
 
 #[component(transparent)]

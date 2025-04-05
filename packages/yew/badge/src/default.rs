@@ -17,9 +17,7 @@ pub enum BadgeVariant {
         class = "border-transparent bg-primary text-primary-foreground hover:bg-primary/80"
     )]
     Default,
-    #[tw(
-        class = "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
-    )]
+    #[tw(class = "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80")]
     Secondary,
     #[tw(
         class = "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80"

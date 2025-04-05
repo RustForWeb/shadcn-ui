@@ -1,7 +1,7 @@
 use radix_yew_icons::{ChevronRightIcon, DotsHorizontalIcon};
 use tailwind_fuse::*;
 use yew::{prelude::*, virtual_dom::VNode};
-use yew_struct_component::{struct_component, StructComponent};
+use yew_struct_component::{StructComponent, struct_component};
 use yew_style::Style;
 
 #[derive(PartialEq, Properties)]

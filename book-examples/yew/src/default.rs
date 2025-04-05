@@ -39,105 +39,105 @@ pub fn render() -> Html {
 
     #[cfg(feature = "alert")]
     {
-        use self::alert::{render, AlertRoute};
+        use self::alert::{AlertRoute, render};
         children.push(html! {
             <Switch<AlertRoute> render={render} />
         });
     }
     #[cfg(feature = "aspect-ratio")]
     {
-        use self::aspect_ratio::{render, AspectRatioRoute};
+        use self::aspect_ratio::{AspectRatioRoute, render};
         children.push(html! {
             <Switch<AspectRatioRoute> render={render} />
         });
     }
     #[cfg(feature = "avatar")]
     {
-        use self::avatar::{render, AvatarRoute};
+        use self::avatar::{AvatarRoute, render};
         children.push(html! {
             <Switch<AvatarRoute> render={render} />
         });
     }
     #[cfg(feature = "badge")]
     {
-        use self::badge::{render, BadgeRoute};
+        use self::badge::{BadgeRoute, render};
         children.push(html! {
             <Switch<BadgeRoute> render={render} />
         });
     }
     #[cfg(feature = "breadcrumb")]
     {
-        use self::breadcrumb::{render, BreadcrumbRoute};
+        use self::breadcrumb::{BreadcrumbRoute, render};
         children.push(html! {
             <Switch<BreadcrumbRoute> render={render} />
         });
     }
     #[cfg(feature = "button")]
     {
-        use self::button::{render, ButtonRoute};
+        use self::button::{ButtonRoute, render};
         children.push(html! {
             <Switch<ButtonRoute> render={render} />
         });
     }
     #[cfg(feature = "card")]
     {
-        use self::card::{render, CardRoute};
+        use self::card::{CardRoute, render};
         children.push(html! {
             <Switch<CardRoute> render={render} />
         });
     }
     #[cfg(feature = "input")]
     {
-        use self::input::{render, InputRoute};
+        use self::input::{InputRoute, render};
         children.push(html! {
             <Switch<InputRoute> render={render} />
         });
     }
     #[cfg(feature = "label")]
     {
-        use self::label::{render, LabelRoute};
+        use self::label::{LabelRoute, render};
         children.push(html! {
             <Switch<LabelRoute> render={render} />
         });
     }
     #[cfg(feature = "pagination")]
     {
-        use self::pagination::{render, PaginationRoute};
+        use self::pagination::{PaginationRoute, render};
         children.push(html! {
             <Switch<PaginationRoute> render={render} />
         });
     }
     #[cfg(feature = "separator")]
     {
-        use self::separator::{render, SeparatorRoute};
+        use self::separator::{SeparatorRoute, render};
         children.push(html! {
             <Switch<SeparatorRoute> render={render} />
         });
     }
     #[cfg(feature = "skeleton")]
     {
-        use self::skeleton::{render, SkeletonRoute};
+        use self::skeleton::{SkeletonRoute, render};
         children.push(html! {
             <Switch<SkeletonRoute> render={render} />
         });
     }
     #[cfg(feature = "switch")]
     {
-        use self::switch::{render, SwitchRoute};
+        use self::switch::{SwitchRoute, render};
         children.push(html! {
             <Switch<SwitchRoute> render={render} />
         });
     }
     #[cfg(feature = "table")]
     {
-        use self::table::{render, TableRoute};
+        use self::table::{TableRoute, render};
         children.push(html! {
             <Switch<TableRoute> render={render} />
         });
     }
     #[cfg(feature = "textarea")]
     {
-        use self::textarea::{render, TextareaRoute};
+        use self::textarea::{TextareaRoute, render};
         children.push(html! {
             <Switch<TextareaRoute> render={render} />
         });

@@ -1,6 +1,6 @@
 use anyhow::Result;
 use clap::{Args, Parser, Subcommand};
-use shadcn::commands::init::{init, InitOptions};
+use shadcn::commands::init::{InitOptions, init};
 
 #[derive(Parser)]
 #[command(version, propagate_version = true)]
