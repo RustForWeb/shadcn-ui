@@ -8,6 +8,8 @@ mod badge;
 mod button;
 #[cfg(feature = "card")]
 mod card;
+#[cfg(feature = "textarea")]
+mod textarea;
 
 use leptos::prelude::*;
 use leptos_router::{
@@ -34,6 +36,10 @@ pub fn Default() -> impl MatchNestedRoutes + Clone {
         #[cfg(feature = "card")]
         {
             component_view(self::card::CardRoutes, ())
+        },
+        #[cfg(feature = "textarea")]
+        {
+            component_view(self::textarea::TextareaRoutes, ())
         },
     );
 
