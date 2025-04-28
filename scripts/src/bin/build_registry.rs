@@ -53,7 +53,7 @@ fn build_registry(output_path: &Path) -> Result<()> {
             .collect::<Vec<_>>();
 
         let registry_json = serde_json::to_string_pretty(&items)?;
-        let path = output_path.join(format!("r/frameworks/{}/index.json", framework));
+        let path = output_path.join(format!("r/frameworks/{framework}/index.json"));
         fs::write(&path, registry_json)?;
     }
 
@@ -63,7 +63,7 @@ fn build_registry(output_path: &Path) -> Result<()> {
 /// Build `registry/frameworks/[framework]/styles/[style]/[name].json` and `registry/frameworks/[framework]/styles/index.json`.
 fn build_styles(input_path: &Path, output_path: &Path) -> Result<()> {
     for (framework, registry) in REGISTRY.iter() {
-        let target_path = output_path.join(format!("r/frameworks/{}", framework));
+        let target_path = output_path.join(format!("r/frameworks/{framework}"));
 
         for style in STYLES {
             let target_path = target_path.join(format!("styles/{}", style.name));
@@ -88,7 +88,7 @@ fn build_styles(input_path: &Path, output_path: &Path) -> Result<()> {
                             item.name,
                             style.name.to_string().to_case(Case::Snake)
                         ));
-                        log::info!("{:?}", path);
+                        log::info!("{path:?}");
                         let content = fs::read_to_string(path)?;
 
                         // TODO: Strip certain declarations?

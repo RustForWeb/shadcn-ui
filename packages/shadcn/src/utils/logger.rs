@@ -28,7 +28,7 @@ impl Logger {
     }
 
     pub fn log(&self, text: &str) {
-        println!("{}", text);
+        println!("{text}");
     }
 
     pub fn r#break(&self) {
