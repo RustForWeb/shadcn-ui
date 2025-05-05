@@ -8,3 +8,5 @@ pub use shadcn_ui_leptos_badge::new_york as badge;
 pub use shadcn_ui_leptos_button::new_york as button;
 #[cfg(feature = "card")]
 pub use shadcn_ui_leptos_card::new_york as card;
+#[cfg(feature = "table")]
+pub use shadcn_ui_leptos_table::new_york as table;
