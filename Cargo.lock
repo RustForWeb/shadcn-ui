@@ -2186,9 +2186,9 @@ dependencies = [
 
 [[package]]
 name = "lucide-yew"
-version = "1.1.0"
+version = "1.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "58dc9ff13b652cbcf1883126c5fcb2b9970198715f9ff2d88740cbdd1846733f"
+checksum = "a5e0b5c4fefe694cd7a3436db1f2296eae5ce4c27d72cedeaf7a957e208e7182"
 dependencies = [
  "yew",
 ]
