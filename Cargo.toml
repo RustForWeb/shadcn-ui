@@ -10,7 +10,7 @@ members = [
 resolver = "2"
 
 [workspace.package]
-authors = ["Rust For Web <info@rustforweb.org>"]
+authors = ["Rust for Web <info@rustforweb.org>"]
 edition = "2024"
 license = "MIT"
 repository = "https://github.com/RustForWeb/shadcn-ui"
