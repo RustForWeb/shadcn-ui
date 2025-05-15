@@ -1,7 +1,7 @@
 {
     "name": "@rustforweb/shadcn-ui",
     "description": "Rust port of shadcn/ui.",
-    "author": "Rust For Web <info@rustforweb.org>",
+    "author": "Rust for Web <info@rustforweb.org>",
     "repository": "github:RustForWeb/shadcn-ui",
     "license": "MIT",
     "private": true,
