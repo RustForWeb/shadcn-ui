@@ -14,7 +14,7 @@ console_error_panic_hook.workspace = true
 console_log.workspace = true
 leptos = { workspace = true, features = ["csr"] }
 leptos_router.workspace = true
-lucide-leptos = { version = "1.2.0", optional = true }
+lucide-leptos = { workspace = true, optional = true }
 log.workspace = true
 radix-leptos-icons = { workspace = true, optional = true }
 shadcn-ui-leptos-alert = { path = "../../packages/leptos/alert", optional = true }
@@ -28,15 +28,21 @@ alert = [
     "dep:lucide-leptos",
     "dep:radix-leptos-icons",
     "dep:shadcn-ui-leptos-alert",
+    "lucide-leptos/development",
+    "lucide-leptos/notifications",
 ]
 badge = ["dep:shadcn-ui-leptos-badge"]
 button = [
     "dep:lucide-leptos",
     "dep:radix-leptos-icons",
     "dep:shadcn-ui-leptos-button",
+    "lucide-leptos/layout",
+    "lucide-leptos/mail",
+    "lucide-leptos/navigation",
 ]
 card = [
     "dep:lucide-leptos",
     "dep:shadcn-ui-leptos-button",
     "dep:shadcn-ui-leptos-card",
+    "lucide-leptos/notifications",
 ]
