@@ -56,6 +56,8 @@ alert = [
     "dep:lucide-yew",
     "dep:radix-yew-icons",
     "dep:shadcn-ui-yew-alert",
+    "lucide-yew/development",
+    "lucide-yew/notifications",
 ]
 aspect-ratio = ["dep:shadcn-ui-yew-aspect-ratio"]
 avatar = ["dep:shadcn-ui-yew-avatar"]
@@ -64,11 +66,15 @@ breadcrumb = [
     "dep:lucide-yew",
     "dep:radix-yew-icons",
     "dep:shadcn-ui-yew-breadcrumb",
+    "lucide-yew/development",
 ]
 button = [
     "dep:lucide-yew",
     "dep:radix-yew-icons",
     "dep:shadcn-ui-yew-button",
+    "lucide-yew/layout",
+    "lucide-yew/mail",
+    "lucide-yew/navigation",
 ]
 card = [
     "dep:lucide-yew",
@@ -78,6 +84,7 @@ card = [
     "dep:shadcn-ui-yew-input",
     "dep:shadcn-ui-yew-label",
     "dep:shadcn-ui-yew-switch",
+    "lucide-yew/notifications",
 ]
 input = [
     "dep:shadcn-ui-yew-button",

@@ -27,8 +27,8 @@ leptos-node-ref = "0.2.0"
 leptos-struct-component = "0.2.0"
 leptos-style = "0.2.0"
 log = "0.4.21"
-lucide-leptos = "1.2.0"
-lucide-yew = "1.0.0"
+lucide-leptos = "2.0.0"
+lucide-yew = "2.0.0"
 radix-leptos-icons = { git = "https://github.com/RustForWeb/radix.git" }
 radix-yew-icons = "0.0.2"
 serde = { version = "1.0.203", features = ["derive"] }
