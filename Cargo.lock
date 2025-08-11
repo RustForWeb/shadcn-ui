@@ -2039,9 +2039,9 @@ dependencies = [
 
 [[package]]
 name = "lucide-yew"
-version = "2.15.0"
+version = "2.29.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3a63726c169cfeec48c31065bec9024f166c76d0050543b4af8bb592356936e1"
+checksum = "9877dcab5080230003370ec28684139a4c4112958eb5dc556c00bb7c7f8d3b4b"
 dependencies = [
  "yew",
 ]
@@ -3766,7 +3766,7 @@ dependencies = [
  "getrandom 0.3.3",
  "once_cell",
  "rustix",
- "windows-sys 0.59.0",
+ "windows-sys 0.52.0",
 ]
 
 [[package]]
@@ -4345,7 +4345,7 @@ version = "0.1.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cf221c93e13a30d793f7645a0e7762c55d169dbb0a49671918a2319d289b10bb"
 dependencies = [
- "windows-sys 0.59.0",
+ "windows-sys 0.52.0",
 ]
 
 [[package]]
