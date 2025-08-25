@@ -1,15 +1,40 @@
 repos:
-    - repo: https://github.com/doublify/pre-commit-rust
-      rev: v1.0
-      hooks:
-          - id: fmt
-          - id: clippy
-
     - repo: https://github.com/pre-commit/mirrors-prettier
       rev: v3.1.0
       hooks:
           - id: prettier
             language: node
             additional_dependencies:
-                - prettier@^3.2.5
-                - prettier-plugin-tailwindcss@^0.6.0
+                - prettier@^3.6.2
+                - prettier-plugin-tailwindcss@^0.6.6
+
+    - repo: https://github.com/doublify/pre-commit-rust
+      rev: v1.0
+      hooks:
+          - id: fmt
+          - id: clippy
+
+    - repo: https://github.com/EmbarkStudios/cargo-deny
+      rev: 0.18.4
+      hooks:
+          - id: cargo-deny
+
+    # - repo: https://github.com/bnjbvr/cargo-machete
+    #   rev: ba1bcd4
+    #   hooks:
+    #       - id: cargo-machete
+    - repo: local
+      hooks:
+          - id: cargo-machete
+            name: cargo-machete
+            language: rust
+            entry: cargo machete
+            types: [file, toml]
+            files: Cargo\.(toml|lock)
+            pass_filenames: false
+
+    - repo: https://github.com/DevinR528/cargo-sort
+      rev: v2.0.1
+      hooks:
+          - id: cargo-sort
+            args: ['--workspace']

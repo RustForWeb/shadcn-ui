@@ -11,8 +11,7 @@ repository.workspace = true
 version.workspace = true
 
 [dependencies]
-leptos-node-ref.workspace = true
-leptos-struct-component.workspace = true
-leptos-style.workspace = true
 leptos.workspace = true
+leptos-node-ref.workspace = true
+leptos-style.workspace = true
 tailwind_fuse.workspace = true

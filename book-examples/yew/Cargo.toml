@@ -9,31 +9,6 @@ license.workspace = true
 repository.workspace = true
 version.workspace = true
 
-[dependencies]
-console_error_panic_hook.workspace = true
-console_log.workspace = true
-log.workspace = true
-lucide-yew = { workspace = true, optional = true }
-radix-yew-icons = { workspace = true, optional = true }
-shadcn-ui-yew-alert = { path = "../../packages/yew/alert", optional = true }
-shadcn-ui-yew-aspect-ratio = { path = "../../packages/yew/aspect-ratio", optional = true }
-shadcn-ui-yew-avatar = { path = "../../packages/yew/avatar", optional = true }
-shadcn-ui-yew-badge = { path = "../../packages/yew/badge", optional = true }
-shadcn-ui-yew-breadcrumb = { path = "../../packages/yew/breadcrumb", optional = true }
-shadcn-ui-yew-button = { path = "../../packages/yew/button", optional = true }
-shadcn-ui-yew-card = { path = "../../packages/yew/card", optional = true }
-shadcn-ui-yew-input = { path = "../../packages/yew/input", optional = true }
-shadcn-ui-yew-label = { path = "../../packages/yew/label", optional = true }
-shadcn-ui-yew-pagination = { path = "../../packages/yew/pagination", optional = true }
-shadcn-ui-yew-separator = { path = "../../packages/yew/separator", optional = true }
-shadcn-ui-yew-skeleton = { path = "../../packages/yew/skeleton", optional = true }
-shadcn-ui-yew-switch = { path = "../../packages/yew/switch", optional = true }
-shadcn-ui-yew-table = { path = "../../packages/yew/table", optional = true }
-shadcn-ui-yew-textarea = { path = "../../packages/yew/textarea", optional = true }
-web-sys.workspace = true
-yew = { workspace = true, features = ["csr"] }
-yew-router.workspace = true
-
 [features]
 default = [
     "alert",
@@ -102,3 +77,27 @@ textarea = [
     "dep:shadcn-ui-yew-label",
     "dep:shadcn-ui-yew-textarea",
 ]
+
+[dependencies]
+console_error_panic_hook.workspace = true
+console_log.workspace = true
+log.workspace = true
+lucide-yew = { workspace = true, optional = true }
+radix-yew-icons = { workspace = true, optional = true }
+shadcn-ui-yew-alert = { path = "../../packages/yew/alert", optional = true }
+shadcn-ui-yew-aspect-ratio = { path = "../../packages/yew/aspect-ratio", optional = true }
+shadcn-ui-yew-avatar = { path = "../../packages/yew/avatar", optional = true }
+shadcn-ui-yew-badge = { path = "../../packages/yew/badge", optional = true }
+shadcn-ui-yew-breadcrumb = { path = "../../packages/yew/breadcrumb", optional = true }
+shadcn-ui-yew-button = { path = "../../packages/yew/button", optional = true }
+shadcn-ui-yew-card = { path = "../../packages/yew/card", optional = true }
+shadcn-ui-yew-input = { path = "../../packages/yew/input", optional = true }
+shadcn-ui-yew-label = { path = "../../packages/yew/label", optional = true }
+shadcn-ui-yew-pagination = { path = "../../packages/yew/pagination", optional = true }
+shadcn-ui-yew-separator = { path = "../../packages/yew/separator", optional = true }
+shadcn-ui-yew-skeleton = { path = "../../packages/yew/skeleton", optional = true }
+shadcn-ui-yew-switch = { path = "../../packages/yew/switch", optional = true }
+shadcn-ui-yew-table = { path = "../../packages/yew/table", optional = true }
+shadcn-ui-yew-textarea = { path = "../../packages/yew/textarea", optional = true }
+yew = { workspace = true, features = ["csr"] }
+yew-router.workspace = true

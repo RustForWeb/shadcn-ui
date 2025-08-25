@@ -23,7 +23,6 @@ jobs:
             - name: Set up Rust toolchain
               uses: actions-rust-lang/setup-rust-toolchain@v1
               with:
-                  components: clippy, rustfmt
                   target: wasm32-unknown-unknown
 
             - name: Install Cargo Binary Install
@@ -49,7 +48,6 @@ jobs:
             - name: Set up Rust toolchain
               uses: actions-rust-lang/setup-rust-toolchain@v1
               with:
-                  components: clippy, rustfmt
                   target: wasm32-unknown-unknown
 
             - name: Install Cargo Binary Install
@@ -59,7 +57,7 @@ jobs:
               run: cargo binstall --force -y mdbook mdbook-tabs mdbook-trunk trunk
 
             - name: Install Node.js dependencies
-              run: npm install
+              run: npm ci
 
             - name: Build Book
               run: mdbook build
@@ -89,7 +87,6 @@ jobs:
             - name: Set up Rust toolchain
               uses: actions-rust-lang/setup-rust-toolchain@v1
               with:
-                  components: clippy, rustfmt
                   target: wasm32-unknown-unknown
 
             - name: Build Registry

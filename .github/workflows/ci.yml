@@ -9,10 +9,45 @@ on:
 permissions:
     contents: read
 
-env:
-    RUSTFLAGS: '-Dwarnings'
-
 jobs:
+    lint:
+        name: Lint
+        runs-on: ubuntu-latest
+
+        env:
+            RUSTFLAGS: '-Dwarnings'
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v5
+
+            - name: Set up Rust toolchain
+              uses: actions-rust-lang/setup-rust-toolchain@v1
+              with:
+                  components: clippy, rustfmt
+                  target: wasm32-unknown-unknown
+
+            - name: Install Cargo Binary Install
+              uses: cargo-bins/cargo-binstall@main
+
+            - name: Install crates
+              run: cargo binstall -y --force cargo-deny cargo-machete cargo-sort
+
+            - name: Lint
+              run: cargo clippy --all-features --locked
+
+            - name: Check dependencies
+              run: cargo deny check
+
+            - name: Check unused dependencies
+              run: cargo machete
+
+            - name: Check manifest formatting
+              run: cargo sort --workspace --check
+
+            - name: Check formatting
+              run: cargo fmt --all --check
+
     test:
         name: Test
         runs-on: ubuntu-latest
@@ -26,12 +61,6 @@ jobs:
               with:
                   components: clippy, rustfmt
                   target: wasm32-unknown-unknown
-
-            - name: Check formatting
-              run: cargo fmt --all --check
-
-            - name: Lint
-              run: cargo clippy --all-features --locked
 
             - name: Test
               run: cargo test --all-features --locked --release
