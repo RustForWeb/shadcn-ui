@@ -3,6 +3,9 @@ name: Labels
 on:
     workflow_dispatch:
 
+permissions:
+    issues: write
+
 jobs:
     sync-labels:
         name: Sync Labels

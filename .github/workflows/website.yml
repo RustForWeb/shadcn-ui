@@ -5,6 +5,9 @@ on:
         branches:
             - main
 
+permissions:
+    contents: read
+
 concurrency:
     group: ${{ github.workflow }}-${{ github.ref }}
     cancel-in-progress: false
@@ -13,19 +16,15 @@ jobs:
     book-test:
         name: Test Book
         runs-on: ubuntu-latest
+
         steps:
             - uses: actions/checkout@v5
 
             - name: Set up Rust toolchain
-              run: |
-                  rustup toolchain install stable --no-self-update --profile minimal
-                  rustup target add wasm32-unknown-unknown
-
-            - name: Set up Rust cache
-              uses: swatinem/rust-cache@v2
+              uses: actions-rust-lang/setup-rust-toolchain@v1
               with:
-                  cache-on-failure: true
-                  save-if: ${{ github.ref == 'refs/heads/main' }}
+                  components: clippy, rustfmt
+                  target: wasm32-unknown-unknown
 
             - name: Install Cargo Binary Install
               uses: cargo-bins/cargo-binstall@main
@@ -41,21 +40,17 @@ jobs:
         name: Build Book
         needs: book-test
         runs-on: ubuntu-latest
+
         steps:
             - uses: actions/checkout@v5
               with:
                   fetch-depth: 0
 
             - name: Set up Rust toolchain
-              run: |
-                  rustup toolchain install stable --no-self-update --profile minimal
-                  rustup target add wasm32-unknown-unknown
-
-            - name: Set up Rust cache
-              uses: swatinem/rust-cache@v2
+              uses: actions-rust-lang/setup-rust-toolchain@v1
               with:
-                  cache-on-failure: true
-                  save-if: ${{ github.ref == 'refs/heads/main' }}
+                  components: clippy, rustfmt
+                  target: wasm32-unknown-unknown
 
             - name: Install Cargo Binary Install
               uses: cargo-bins/cargo-binstall@main
@@ -85,19 +80,17 @@ jobs:
     registry-build:
         name: Build Registry
         runs-on: ubuntu-latest
+
         steps:
             - uses: actions/checkout@v5
               with:
                   fetch-depth: 0
 
             - name: Set up Rust toolchain
-              run: rustup toolchain install stable --no-self-update --profile minimal
-
-            - name: Set up Rust cache
-              uses: swatinem/rust-cache@v2
+              uses: actions-rust-lang/setup-rust-toolchain@v1
               with:
-                  cache-on-failure: true
-                  save-if: ${{ github.ref == 'refs/heads/main' }}
+                  components: clippy, rustfmt
+                  target: wasm32-unknown-unknown
 
             - name: Build Registry
               run: cargo run -p scripts --bin build_registry
@@ -115,10 +108,12 @@ jobs:
         needs: [book-build, registry-build]
         if: github.ref == 'refs/heads/main'
         runs-on: ubuntu-latest
+
         permissions:
             contents: read
             pages: write
             id-token: write
+
         steps:
             - uses: actions/checkout@v5
               with:
