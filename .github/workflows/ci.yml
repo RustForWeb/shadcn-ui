@@ -31,7 +31,7 @@ jobs:
               run: cargo fmt --all --check
 
             - name: Lint
-              run: cargo clippy --all-features
+              run: cargo clippy --all-features --locked
 
             - name: Test
-              run: cargo test --all-features
+              run: cargo test --all-features --locked --release
