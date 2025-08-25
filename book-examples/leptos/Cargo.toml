@@ -9,24 +9,11 @@ license.workspace = true
 repository.workspace = true
 version.workspace = true
 
-[dependencies]
-console_error_panic_hook.workspace = true
-console_log.workspace = true
-leptos = { workspace = true, features = ["csr"] }
-leptos_router.workspace = true
-lucide-leptos = { workspace = true, optional = true }
-log.workspace = true
-radix-leptos-icons = { workspace = true, optional = true }
-shadcn-ui-leptos-alert = { path = "../../packages/leptos/alert", optional = true }
-shadcn-ui-leptos-badge = { path = "../../packages/leptos/badge", optional = true }
-shadcn-ui-leptos-button = { path = "../../packages/leptos/button", optional = true }
-shadcn-ui-leptos-card = { path = "../../packages/leptos/card", optional = true }
-
 [features]
 default = ["alert", "badge", "button", "card"]
 alert = [
     "dep:lucide-leptos",
-    "dep:radix-leptos-icons",
+    # "dep:radix-leptos-icons",
     "dep:shadcn-ui-leptos-alert",
     "lucide-leptos/development",
     "lucide-leptos/notifications",
@@ -34,7 +21,7 @@ alert = [
 badge = ["dep:shadcn-ui-leptos-badge"]
 button = [
     "dep:lucide-leptos",
-    "dep:radix-leptos-icons",
+    # "dep:radix-leptos-icons",
     "dep:shadcn-ui-leptos-button",
     "lucide-leptos/layout",
     "lucide-leptos/mail",
@@ -46,3 +33,16 @@ card = [
     "dep:shadcn-ui-leptos-card",
     "lucide-leptos/notifications",
 ]
+
+[dependencies]
+console_error_panic_hook.workspace = true
+console_log.workspace = true
+leptos = { workspace = true, features = ["csr"] }
+leptos_router.workspace = true
+log.workspace = true
+lucide-leptos = { workspace = true, optional = true }
+# radix-leptos-icons = { workspace = true, optional = true }
+shadcn-ui-leptos-alert = { path = "../../packages/leptos/alert", optional = true }
+shadcn-ui-leptos-badge = { path = "../../packages/leptos/badge", optional = true }
+shadcn-ui-leptos-button = { path = "../../packages/leptos/button", optional = true }
+shadcn-ui-leptos-card = { path = "../../packages/leptos/card", optional = true }
