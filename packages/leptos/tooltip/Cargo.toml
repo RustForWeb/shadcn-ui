@@ -1,0 +1,27 @@
+[package]
+name = "shadcn-ui-leptos-tooltip"
+description = "Leptos port of shadcn/ui Tooltip."
+homepage = "https://shadcn-ui.rustforweb.org/components/tooltip.html"
+publish = false
+
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+version.workspace = true
+
+[dependencies]
+tailwind_fuse.workspace = true
+leptos.workspace = true
+leptos-node-ref.workspace = true
+leptos-struct-component.workspace = true
+leptos-style.workspace = true
+web-sys.workspace = true
+
+[features]
+default = []
+new_york = []
+
+[dev-dependencies]
+shadcn-ui-test-utils = { path = "../../test-utils", features = ["leptos-testing"] }
+wasm-bindgen-test = { workspace = true }
