@@ -58,43 +58,59 @@ check_server() {
     
     if curl -s http://localhost:8080 > /dev/null 2>&1; then
         print_status "Development server is running on port 8080"
+        return 0
     else
         print_warning "Development server not running on port 8080"
-        print_info "Starting development server..."
-        
-        # Start the server in the background
-        cd book-examples/leptos
-        trunk serve > /dev/null 2>&1 &
-        SERVER_PID=$!
-        
-        # Wait for server to start
-        echo "Waiting for server to start..."
-        for i in {1..30}; do
-            if curl -s http://localhost:8080 > /dev/null 2>&1; then
-                print_status "Server started successfully"
-                break
-            fi
-            sleep 1
-        done
-        
-        if ! curl -s http://localhost:8080 > /dev/null 2>&1; then
-            print_error "Failed to start development server"
-            exit 1
+        return 1
+    fi
+}
+
+# Start the development server
+start_server() {
+    print_info "Starting development server..."
+    
+    # Change to the correct directory
+    cd book-examples/leptos
+    
+    # Start trunk serve in background with output
+    print_info "Running: trunk serve"
+    trunk serve > /tmp/trunk.log 2>&1 &
+    SERVER_PID=$!
+    
+    # Store PID for cleanup
+    echo $SERVER_PID > .server.pid
+    
+    # Wait for server to start with progress indicator
+    print_info "Waiting for server to start..."
+    for i in {1..30}; do
+        if curl -s http://localhost:8080 > /dev/null 2>&1; then
+            print_status "Server started successfully on port 8080"
+            return 0
         fi
         
-        # Store PID for cleanup
-        echo $SERVER_PID > .server.pid
+        # Show progress
+        echo -n "."
+        sleep 1
+    done
+    
+    echo "" # New line after progress dots
+    
+    if ! curl -s http://localhost:8080 > /dev/null 2>&1; then
+        print_error "Failed to start development server after 30 seconds"
+        print_error "Check /tmp/trunk.log for server errors"
+        print_info "You can start the server manually with: cd book-examples/leptos && trunk serve"
+        return 1
     fi
 }
 
 # Clean up server on exit
 cleanup() {
-    if [ -f .server.pid ]; then
-        SERVER_PID=$(cat .server.pid)
+    if [ -f book-examples/leptos/.server.pid ]; then
+        SERVER_PID=$(cat book-examples/leptos/.server.pid)
         if kill -0 $SERVER_PID 2>/dev/null; then
-            print_info "Stopping development server..."
+            print_info "Stopping development server (PID: $SERVER_PID)..."
             kill $SERVER_PID
-            rm .server.pid
+            rm book-examples/leptos/.server.pid
         fi
     fi
 }
@@ -120,8 +136,8 @@ run_test_suite() {
     echo "Browser: $browser"
     echo ""
     
-    # Run the test
-    if npx playwright test $test_file --project=$browser --reporter=html,json,junit; then
+    # Run the test with better output handling
+    if npx playwright test $test_file --project=$browser --reporter=html,json,junit --timeout=30000; then
         print_status "$suite_name tests passed on $browser"
         return 0
     else
@@ -194,7 +210,7 @@ run_custom_tests() {
     print_info "Browser: $browser"
     echo ""
     
-    if npx playwright test --grep="$test_pattern" --project=$browser --reporter=html,json,junit; then
+    if npx playwright test --grep="$test_pattern" --project=$browser --reporter=html,json,junit --timeout=30000; then
         print_status "Custom tests completed successfully"
         return 0
     else
@@ -247,12 +263,14 @@ show_help() {
     echo "  --headless            Run in headless mode"
     echo "  --debug               Run with debug output"
     echo "  --report              Generate detailed reports"
+    echo "  --no-server           Don't start server (assume it's already running)"
     echo ""
     echo "Examples:"
     echo "  $0                    # Run all tests on chromium"
     echo "  $0 dynamic            # Run only dynamic loading tests"
     echo "  $0 --browser firefox # Run all tests on Firefox"
     echo "  $0 custom 'button'   # Run tests containing 'button'"
+    echo "  $0 --no-server       # Run tests without starting server"
 }
 
 # Main execution
@@ -262,6 +280,7 @@ main() {
     local headless=true
     local debug=false
     local generate_reports=true
+    local start_server_flag=true
     
     # Parse command line arguments
     while [[ $# -gt 0 ]]; do
@@ -280,6 +299,10 @@ main() {
                 ;;
             --report)
                 generate_reports=true
+                shift
+                ;;
+            --no-server)
+                start_server_flag=false
                 shift
                 ;;
             help|--help|-h)
@@ -310,6 +333,7 @@ main() {
     echo "  Headless: $headless"
     echo "  Debug: $debug"
     echo "  Reports: $generate_reports"
+    echo "  Start Server: $start_server_flag"
     echo ""
     
     # Check prerequisites
@@ -317,7 +341,25 @@ main() {
     
     # Setup
     setup_reports
-    check_server
+    
+    # Handle server startup
+    if [ "$start_server_flag" = true ]; then
+        if ! check_server; then
+            if ! start_server; then
+                print_error "Failed to start development server. Exiting."
+                exit 1
+            fi
+        fi
+    else
+        if ! check_server; then
+            print_error "Server not running and --no-server flag specified."
+            print_info "Please start the server manually: cd book-examples/leptos && trunk serve"
+            exit 1
+        fi
+    fi
+    
+    # Give server a moment to stabilize
+    sleep 2
     
     # Run tests based on command
     case $command in

@@ -1,79 +1,54 @@
-# Rust shadcn/ui Documentation
+# 📚 ShadCN UI Documentation
 
-This documentation provides comprehensive guides for achieving feature parity in the Rust port of shadcn/ui.
+> **Centralized documentation for the ShadCN UI project**
 
-## 📋 **Documentation Overview**
+## 🗂️ **Documentation Structure**
 
-### **[Feature Parity Design](./feature-parity-design.md)**
-Complete architectural design for implementing all 51 shadcn/ui components across Leptos and Yew frameworks.
+### **🧪 Testing Documentation**
+- **[Testing Guide](testing/TESTING_GUIDE.md)** - Comprehensive E2E testing guide for dynamic loading systems
+- **Test Suites** - Located in `tests/e2e/` directory
 
-**Contents:**
-- Current state analysis and component gaps
-- Multi-phase implementation strategy
-- Registry system enhancement design
-- Cross-framework compatibility layer
-- Technical specifications and standards
+### **🧩 Component Documentation**
+- **[Leptos Demo](components/leptos-demo.md)** - Enhanced lazy loading demo for Leptos book examples
+- **[Example Usage](components/example-usage.md)** - How to integrate the enhanced lazy loading system
+- **[Demo Features](components/DEMO_FEATURES.md)** - Overview of available features and capabilities
+- **[Distribution Guide](components/DISTRIBUTION_GUIDE.md)** - How to distribute and use the system
 
-### **[Testing Strategy](./testing-strategy.md)**
-Comprehensive testing approach ensuring quality, consistency, and reliability across frameworks.
+### **🚀 Development Documentation**
+- **[Setup Script](development/setup-for-other-projects.sh)** - Automated setup script for integrating the system
+- **[Development Guide](DEVELOPMENT.md)** - Project development guidelines and setup
 
-**Contents:**
-- 5-layer testing architecture (Unit, Integration, Parity, Visual, E2E)
-- Component testing framework design
-- CI/CD pipeline integration
-- Quality gates and success criteria
-- Automated testing tools and utilities
+## 🔍 **Quick Navigation**
 
-### **[Implementation Plan](./implementation-plan.md)**
-Detailed 11-week execution plan with specific deliverables, commands, and quality gates.
+### **For Developers**
+- Start with [DEVELOPMENT.md](../DEVELOPMENT.md) for project setup
+- Check [components/leptos-demo.md](components/leptos-demo.md) for component examples
+- Use [development/setup-for-other-projects.sh](development/setup-for-other-projects.sh) for integration
 
-**Contents:**
-- Phase-by-phase component implementation schedule
-- Technical development workflows
-- Resource requirements and team structure
-- Quality assurance checkpoints
-- Success metrics and monitoring
+### **For Testers**
+- Read [testing/TESTING_GUIDE.md](testing/TESTING_GUIDE.md) for comprehensive testing
+- Run tests from `tests/e2e/` directory
+- Use the automated test runner for dynamic loading systems
 
-## 🎯 **Quick Reference**
+### **For Users**
+- Check [components/example-usage.md](components/example-usage.md) for integration
+- Review [components/DEMO_FEATURES.md](components/DEMO_FEATURES.md) for capabilities
+- Follow [components/DISTRIBUTION_GUIDE.md](components/DISTRIBUTION_GUIDE.md) for deployment
 
-### **Current Status**
-- **Leptos**: 44/51 components (86% coverage) 
-- **Yew**: 20/51 components (39% coverage)
-- **Target**: 51/51 components (100% coverage)
+## 📝 **Documentation Standards**
 
-### **Framework Status Detail**
-- **Leptos**: Near-complete implementation with 44 components
-- **Yew**: Solid foundation with 20 components, 25 missing from Leptos
-- **Missing from both**: avatar, data-table, chart, resizable, sidebar, sonner, typography (7 components)
+- **Keep it focused** - One concept per document
+- **Include examples** - Code snippets and usage patterns
+- **Stay current** - Update when features change
+- **Cross-reference** - Link between related documents
 
-### **Implementation Timeline**
-- **Phase 1** (Weeks 1-2): Infrastructure & Leptos Parity
-- **Phase 2** (Weeks 3-4): Critical Form Components  
-- **Phase 3** (Weeks 5-7): Navigation & Overlay Components
-- **Phase 4** (Weeks 8-9): Layout & Display Components
-- **Phase 5** (Weeks 10-11): Advanced Features & QA
+## 🚀 **Contributing to Documentation**
 
-### **Quality Standards**
-- **Test Coverage**: ≥90% unit test coverage
-- **Framework Parity**: 100% API consistency
-- **Performance**: <50KB bundle size per component
-- **Visual Accuracy**: 99.5% pixel-perfect consistency
-- **Browser Support**: Chrome, Firefox, Safari, Edge
-
-## 🚀 **Getting Started**
-
-1. **Review the Design**: Start with [Feature Parity Design](./feature-parity-design.md)
-2. **Understand Testing**: Review [Testing Strategy](./testing-strategy.md)
-3. **Follow the Plan**: Execute [Implementation Plan](./implementation-plan.md)
-
-## 🔗 **Additional Resources**
-
-- [Original shadcn/ui Documentation](https://ui.shadcn.com/docs)
-- [Rust shadcn/ui Book](https://shadcn-ui.rustforweb.org)
-- [Leptos Framework](https://leptos.dev)
-- [Yew Framework](https://yew.rs)
+1. **Add new docs** to appropriate subdirectory
+2. **Update this index** when adding new files
+3. **Keep it organized** - follow the existing structure
+4. **Test examples** - ensure code snippets work
 
 ---
 
-**Last Updated**: August 2024  
-**Status**: Implementation Ready
+*Last updated: September 2025*
