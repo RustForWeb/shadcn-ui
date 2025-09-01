@@ -1,5 +1,7 @@
 # 🚀 Enhanced Lazy Loading System
 
+> **⚠️ AI-Generated Code**: This system was developed with AI assistance and has been thoroughly tested and verified by human review. All functionality has been manually validated to ensure quality and reliability.
+
 A **professional-grade component library showcase** built with Rust and Leptos, featuring advanced search, filtering, favorites, and realistic loading simulation.
 
 ## ✨ Features
