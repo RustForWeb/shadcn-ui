@@ -1,5 +1,10 @@
 use leptos::prelude::*;
+
+#[cfg(feature = "lucide-leptos")]
 use lucide_leptos::Terminal;
+
+#[cfg(not(feature = "lucide-leptos"))]
+const Terminal: () = ();
 
 use crate::default::components::ui::alert::{Alert, AlertDescription, AlertTitle};
 

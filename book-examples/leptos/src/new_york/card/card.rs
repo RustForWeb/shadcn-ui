@@ -1,5 +1,12 @@
 use leptos::prelude::*;
+
+#[cfg(feature = "lucide-leptos")]
 use lucide_leptos::{BellRing, Check};
+
+#[cfg(not(feature = "lucide-leptos"))]
+const BellRing: () = ();
+#[cfg(not(feature = "lucide-leptos"))]
+const Check: () = ();
 
 use crate::new_york::components::ui::{
     button::Button,
@@ -42,7 +49,16 @@ pub fn CardDemo() -> impl IntoView {
             </CardHeader>
             <CardContent class="grid gap-4">
                 <div class=" flex items-center space-x-4 rounded-md border p-4">
-                    <BellRing />
+                    {
+                        #[cfg(feature = "lucide-leptos")]
+                        {
+                            view! { <BellRing /> }
+                        }
+                        #[cfg(not(feature = "lucide-leptos"))]
+                        {
+                            view! { <span class="h-4 w-4">"🔔"</span> }
+                        }
+                    }
                     <div class="flex-1 space-y-1">
                         <p class="text-sm font-medium leading-none">
                             {"Push Notifications"}
@@ -78,7 +94,17 @@ pub fn CardDemo() -> impl IntoView {
             </CardContent>
             <CardFooter>
                 <Button class="w-full">
-                    <Check />{" Mark all as read"}
+                    {
+                        #[cfg(feature = "lucide-leptos")]
+                        {
+                            view! { <Check /> }
+                        }
+                        #[cfg(not(feature = "lucide-leptos"))]
+                        {
+                            view! { <span>"✓"</span> }
+                        }
+                    }
+                    {" Mark all as read"}
                 </Button>
             </CardFooter>
         </Card>

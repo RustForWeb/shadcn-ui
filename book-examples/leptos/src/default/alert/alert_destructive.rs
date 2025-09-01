@@ -1,5 +1,10 @@
 use leptos::prelude::*;
+
+#[cfg(feature = "lucide-leptos")]
 use lucide_leptos::CircleAlert;
+
+#[cfg(not(feature = "lucide-leptos"))]
+const CircleAlert: () = ();
 
 use crate::default::components::ui::alert::{Alert, AlertDescription, AlertTitle, AlertVariant};
 

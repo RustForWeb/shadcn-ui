@@ -1,13 +1,19 @@
 mod components;
 
-#[cfg(feature = "alert")]
-mod alert;
-#[cfg(feature = "badge")]
-mod badge;
+// #[cfg(feature = "alert")]
+// mod alert;
+// #[cfg(feature = "badge")]
+// mod badge;
 #[cfg(feature = "button")]
 mod button;
 #[cfg(feature = "card")]
 mod card;
+// #[cfg(feature = "radio-group")]
+// mod radio_group;
+// #[cfg(feature = "combobox")]
+// mod combobox;
+// #[cfg(feature = "form")]
+// mod form;
 
 use leptos::prelude::*;
 use leptos_router::{
@@ -19,14 +25,14 @@ use leptos_router::{
 #[component(transparent)]
 pub fn Default() -> impl MatchNestedRoutes + Clone {
     let children = (
-        #[cfg(feature = "alert")]
-        {
-            component_view(self::alert::AlertRoutes, ())
-        },
-        #[cfg(feature = "badge")]
-        {
-            component_view(self::badge::BadgeRoutes, ())
-        },
+        // #[cfg(feature = "alert")]
+        // {
+        //     component_view(self::alert::AlertRoutes, ())
+        // },
+        // #[cfg(feature = "badge")]
+        // {
+        //     component_view(self::badge::BadgeRoutes, ())
+        // },
         #[cfg(feature = "button")]
         {
             component_view(self::button::ButtonRoutes, ())
@@ -35,6 +41,18 @@ pub fn Default() -> impl MatchNestedRoutes + Clone {
         {
             component_view(self::card::CardRoutes, ())
         },
+        // #[cfg(feature = "radio-group")]
+        // {
+        //     component_view(self::radio_group::RadioGroupRoutes, ())
+        // },
+        // #[cfg(feature = "combobox")]
+        // {
+        //     component_view(self::combobox::ComboboxRoutes, ())
+        // },
+        // #[cfg(feature = "form")]
+        // {
+        //     component_view(self::form::FormRoutes, ())
+        // },
     );
 
     view! {
