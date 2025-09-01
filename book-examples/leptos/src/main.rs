@@ -1,14 +1,14 @@
 mod app;
 mod default;
 mod new_york;
+mod lazy_loading;
+mod bundle_analyzer;
+mod dynamic_loader;
 
-use leptos::prelude::*;
-
+use leptos::*;
+use leptos::mount::mount_to_body;
 use crate::app::App;
 
-pub fn main() {
-    _ = console_log::init_with_level(log::Level::Debug);
-    console_error_panic_hook::set_once();
-
-    mount_to_body(App);
+fn main() {
+    mount_to_body(|| view! { <App /> })
 }
