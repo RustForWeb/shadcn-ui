@@ -2,7 +2,7 @@ use leptos::*;
 use leptos::prelude::*;
 use crate::lazy_loading::LazyComponentWrapper;
 use crate::bundle_analyzer::BundleAnalysisDisplay;
-use crate::dynamic_loader::BundleStatusDisplay;
+use crate::dynamic_loader::{DynamicLoaderDisplay, DynamicComponentWrapper, DynamicLoader};
 
 #[component]
 pub fn App() -> impl IntoView {
@@ -19,6 +19,10 @@ pub fn App() -> impl IntoView {
     let toggle_favorites = move |_| {
         set_show_favorites.update(|f| *f = !*f);
     };
+    
+    // Create dynamic loader context
+    let dynamic_loader = DynamicLoader::new();
+    provide_context(dynamic_loader);
 
     view! {
         <div class="app-container">
@@ -34,7 +38,7 @@ pub fn App() -> impl IntoView {
                     </div>
                     
                     <div class="panel bundle-status">
-                        <BundleStatusDisplay />
+                        <DynamicLoaderDisplay />
                     </div>
                 </div>
 
@@ -187,6 +191,21 @@ pub fn App() -> impl IntoView {
                                     <LazyComponentWrapper name="Table".to_string() />
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dynamic-components">
+                        <h3>"Dynamic WASM Components (Real Loading)"</h3>
+                        <p class="dynamic-description">
+                            "These components use real dynamic WASM loading instead of simulation:"
+                        </p>
+                        
+                        <div class="dynamic-grid">
+                            <DynamicComponentWrapper name="Button".to_string() />
+                            <DynamicComponentWrapper name="Input".to_string() />
+                            <DynamicComponentWrapper name="Card".to_string() />
+                            <DynamicComponentWrapper name="Modal".to_string() />
+                            <DynamicComponentWrapper name="Table".to_string() />
                         </div>
                     </div>
                 </div>
