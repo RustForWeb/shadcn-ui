@@ -164,3 +164,16 @@ book/book/
 
 # Tailwind CSS ouput
 tailwind.output.css
+
+# Playwright
+test-results/
+playwright-report/
+.playwright-browsers/
+
+# Generated test files backup
+*.bak
+*.bak2
+*.bak3
+
+# Generated scripts
+scripts/generate_missing_tests
