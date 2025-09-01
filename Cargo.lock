@@ -2905,9 +2905,11 @@ version = "0.0.1"
 dependencies = [
  "console_error_panic_hook",
  "console_log",
+ "gloo-timers 0.3.0",
  "leptos",
  "leptos_router",
  "log",
+ "lucide-leptos",
  "shadcn-ui-leptos-button",
  "shadcn-ui-leptos-card",
  "shadcn-ui-leptos-input",

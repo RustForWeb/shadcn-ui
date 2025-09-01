@@ -41,11 +41,11 @@ new_york_theme = []
 
 
 [dependencies]
-console_error_panic_hook.workspace = true
-console_log.workspace = true
 leptos = { workspace = true, features = ["csr"] }
 leptos_router.workspace = true
 log.workspace = true
+console_error_panic_hook.workspace = true
+console_log.workspace = true
 
 # Only include essential components
 shadcn-ui-leptos-button = { path = "../../packages/leptos/button", optional = true }
@@ -56,4 +56,4 @@ shadcn-ui-leptos-separator = { path = "../../packages/leptos/separator", optiona
 
 # Include lucide-leptos for icons
 lucide-leptos = { workspace = true, optional = true }
-gloo-timers = "0.3.0"
+gloo-timers = { version = "0.3.0", features = ["futures"] }
