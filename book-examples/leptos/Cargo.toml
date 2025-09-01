@@ -1,7 +1,14 @@
 [package]
-name = "shadcn-ui-leptos-book"
-description = "Book examples for shadcn/ui Leptos."
+name = "enhanced-lazy-loading-demo"
+description = "Enhanced lazy loading system with advanced search, filters, and professional UI"
 publish = false
+version = "0.1.0"
+edition = "2021"
+authors = ["Your Name <your.email@example.com>"]
+license = "MIT"
+repository = "https://github.com/your-username/enhanced-lazy-loading"
+keywords = ["leptos", "lazy-loading", "component-library", "ui-components"]
+categories = ["web-programming", "gui", "development-tools"]
 
 authors.workspace = true
 edition.workspace = true
@@ -41,11 +48,11 @@ new_york_theme = []
 
 
 [dependencies]
+console_error_panic_hook.workspace = true
+console_log.workspace = true
 leptos = { workspace = true, features = ["csr"] }
 leptos_router.workspace = true
 log.workspace = true
-console_error_panic_hook.workspace = true
-console_log.workspace = true
 
 # Only include essential components
 shadcn-ui-leptos-button = { path = "../../packages/leptos/button", optional = true }
@@ -56,4 +63,4 @@ shadcn-ui-leptos-separator = { path = "../../packages/leptos/separator", optiona
 
 # Include lucide-leptos for icons
 lucide-leptos = { workspace = true, optional = true }
-gloo-timers = { version = "0.3.0", features = ["futures"] }
+gloo-timers = "0.3.0"
