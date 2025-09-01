@@ -1,7 +1,3 @@
-[[hooks]]
-stage = "pre_build"
-command = "sh"
-command_arguments = [
-    "-c",
-    "npx tailwindcss -i style/tailwind.css -o style/tailwind.output.css",
-]
+# Production build optimizations
+# Note: Trunk doesn't support all these optimizations in TOML
+# We'll use Cargo.toml profiles instead for WASM optimization
