@@ -1,0 +1,15 @@
+[package]
+name = "shadcn-ui-leptos-lazy-loading"
+version = "0.0.1"
+edition = "2021"
+description = "Lazy loading system for shadcn/ui Leptos components"
+license = "MIT"
+repository = "https://github.com/shadcn/ui"
+keywords = ["leptos", "shadcn-ui", "ui-components", "lazy-loading", "code-splitting"]
+categories = ["web-programming", "gui"]
+
+[dependencies]
+leptos = "0.8.6"
+
+[dev-dependencies]
+leptos = { version = "0.8.6", features = ["csr"] }

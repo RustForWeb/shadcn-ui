@@ -1,156 +1,142 @@
-use leptos::{ev::MouseEvent, prelude::*};
-use leptos_node_ref::AnyNodeRef;
-use leptos_struct_component::{StructComponent, struct_component};
+use leptos::prelude::*;
 use leptos_style::Style;
-use tailwind_fuse::*;
 
-#[derive(TwClass)]
-#[tw(
-    class = "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0"
-)]
-pub struct ButtonClass {
-    pub variant: ButtonVariant,
-    pub size: ButtonSize,
-}
+const BUTTON_CLASS: &str = "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50";
 
-#[derive(PartialEq, TwVariant)]
+/// Button variant types
+#[derive(Debug, Clone, PartialEq)]
 pub enum ButtonVariant {
-    #[tw(
-        default,
-        class = "bg-primary text-primary-foreground shadow hover:bg-primary/90"
-    )]
     Default,
-    #[tw(class = "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90")]
     Destructive,
-    #[tw(
-        class = "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground"
-    )]
     Outline,
-    #[tw(class = "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80")]
     Secondary,
-    #[tw(class = "hover:bg-accent hover:text-accent-foreground")]
     Ghost,
-    #[tw(class = "text-primary underline-offset-4 hover:underline")]
     Link,
 }
 
-#[derive(PartialEq, TwVariant)]
+impl Default for ButtonVariant {
+    fn default() -> Self {
+        ButtonVariant::Default
+    }
+}
+
+impl From<String> for ButtonVariant {
+    fn from(s: String) -> Self {
+        match s.as_str() {
+            "destructive" => ButtonVariant::Destructive,
+            "outline" => ButtonVariant::Outline,
+            "secondary" => ButtonVariant::Secondary,
+            "ghost" => ButtonVariant::Ghost,
+            "link" => ButtonVariant::Link,
+            _ => ButtonVariant::Default,
+        }
+    }
+}
+
+/// Button size types
+#[derive(Debug, Clone, PartialEq)]
 pub enum ButtonSize {
-    #[tw(default, class = "h-9 px-4 py-2")]
     Default,
-    #[tw(class = "h-8 rounded-md px-3 text-xs")]
     Sm,
-    #[tw(class = "h-10 rounded-md px-8")]
     Lg,
-    #[tw(class = "h-9 w-9")]
     Icon,
 }
 
-#[derive(Clone, StructComponent)]
-#[struct_component(tag = "button")]
+impl Default for ButtonSize {
+    fn default() -> Self {
+        ButtonSize::Default
+    }
+}
+
+impl From<String> for ButtonSize {
+    fn from(s: String) -> Self {
+        match s.as_str() {
+            "sm" => ButtonSize::Sm,
+            "lg" => ButtonSize::Lg,
+            "icon" => ButtonSize::Icon,
+            _ => ButtonSize::Default,
+        }
+    }
+}
+
+/// Props for child components when using as_child
+#[derive(Debug, Clone)]
 pub struct ButtonChildProps {
-    pub node_ref: AnyNodeRef,
-
-    // Global attributes
-    pub autofocus: Signal<bool>,
-    pub class: Signal<String>,
-    pub id: MaybeProp<String>,
-    pub style: Signal<Style>,
-
-    // Attributes from `button`
-    // pub command: MaybeProp<String>,
-    // pub commandfor: MaybeProp<String>,
-    pub disabled: Signal<bool>,
-    pub form: MaybeProp<String>,
-    pub formaction: MaybeProp<String>,
-    pub formenctype: MaybeProp<String>,
-    pub formmethod: MaybeProp<String>,
-    pub formnovalidate: Signal<bool>,
-    pub formtarget: MaybeProp<String>,
-    pub name: MaybeProp<String>,
-    // pub popovertarget: MaybeProp<String>,
-    // pub popovertargetaction: MaybeProp<String>,
-    pub r#type: MaybeProp<String>,
-    pub value: MaybeProp<String>,
-
-    // Event handler attributes
-    pub onclick: Option<Callback<MouseEvent>>,
+    pub class: String,
+    pub id: String,
+    pub style: String,
+    pub disabled: bool,
+    pub r#type: String,
+    pub onclick: Option<Callback<()>>,
 }
 
 #[component]
 pub fn Button(
-    #[prop(into, optional)] variant: Signal<ButtonVariant>,
-    #[prop(into, optional)] size: Signal<ButtonSize>,
-
-    // Global attributes
-    #[prop(into, optional)] autofocus: Signal<bool>,
+    #[prop(into, optional)] variant: MaybeProp<ButtonVariant>,
+    #[prop(into, optional)] size: MaybeProp<ButtonSize>,
+    #[prop(into, optional)] on_click: Option<Callback<()>>,
+    #[prop(into, optional)] disabled: Signal<bool>,
     #[prop(into, optional)] class: MaybeProp<String>,
     #[prop(into, optional)] id: MaybeProp<String>,
     #[prop(into, optional)] style: Signal<Style>,
-
-    // Attributes from `button`
-    // #[prop(into, optional)] command: MaybeProp<String>,
-    // #[prop(into, optional)] commandfor: MaybeProp<String>,
-    #[prop(into, optional)] disabled: Signal<bool>,
-    #[prop(into, optional)] form: MaybeProp<String>,
-    #[prop(into, optional)] formaction: MaybeProp<String>,
-    #[prop(into, optional)] formenctype: MaybeProp<String>,
-    #[prop(into, optional)] formmethod: MaybeProp<String>,
-    #[prop(into, optional)] formnovalidate: Signal<bool>,
-    #[prop(into, optional)] formtarget: MaybeProp<String>,
-    #[prop(into, optional)] name: MaybeProp<String>,
-    // #[prop(into, optional)] popovertarget: MaybeProp<String>,
-    // #[prop(into, optional)] popovertargetaction: MaybeProp<String>,
-    #[prop(into, optional)] r#type: MaybeProp<String>,
-    #[prop(into, optional)] value: MaybeProp<String>,
-
-    // Event handler attributes
-    #[prop(into, optional)] onclick: Option<Callback<MouseEvent>>,
-
-    #[prop(into, optional)] node_ref: AnyNodeRef,
     #[prop(into, optional)] as_child: Option<Callback<ButtonChildProps, AnyView>>,
     #[prop(optional)] children: Option<Children>,
-) -> impl IntoView {
-    let class = Memo::new(move |_| {
-        ButtonClass {
-            variant: variant.get(),
-            size: size.get(),
+    ) -> impl IntoView {
+    let handle_click = {
+        let on_click = on_click.clone();
+        move |_| {
+            if let Some(callback) = &on_click {
+                callback.run(());
+            }
         }
-        .with_class(class.get().unwrap_or_default())
-    });
-
-    let child_props = ButtonChildProps {
-        node_ref,
-
-        // Global attributes
-        autofocus,
-        class: class.into(),
-        id,
-        style,
-
-        // Attributes from `button`
-        // command,
-        // commandfor,
-        disabled,
-        form,
-        formaction,
-        formenctype,
-        formmethod,
-        formnovalidate,
-        formtarget,
-        name,
-        // popovertarget,
-        // popovertargetaction,
-        r#type,
-        value,
-
-        // Event handler attributes
-        onclick,
     };
 
-    if let Some(as_child) = as_child.as_ref() {
-        as_child.run(child_props)
-    } else {
-        child_props.render(children)
-    }
+    let computed_class = Signal::derive(move || {
+        let variant_class = match variant.get().unwrap_or_default() {
+            ButtonVariant::Default => "bg-primary text-primary-foreground hover:bg-primary/90",
+            ButtonVariant::Destructive => "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+            ButtonVariant::Outline => "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+            ButtonVariant::Secondary => "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+            ButtonVariant::Ghost => "hover:bg-accent hover:text-accent-foreground",
+            ButtonVariant::Link => "text-primary underline-offset-4 hover:underline",
+        };
+        
+        let size_class = match size.get().unwrap_or_default() {
+            ButtonSize::Default => "h-10 px-4 py-2",
+            ButtonSize::Sm => "h-9 rounded-md px-3",
+            ButtonSize::Lg => "h-11 rounded-md px-8",
+            ButtonSize::Icon => "h-10 w-10",
+        };
+        
+        format!("{} {} {} {}", BUTTON_CLASS, variant_class, size_class, class.get().unwrap_or_default())
+    });
+
+    // Implement as_child functionality using conditional rendering
+            if let Some(as_child) = as_child {
+            let child_props = ButtonChildProps {
+                class: computed_class.get(),
+                id: id.get().unwrap_or_default(),
+                style: style.get().to_string(),
+                disabled: disabled.get(),
+                r#type: "button".to_string(),
+                onclick: Some(Callback::new(move |_| {
+                    if let Some(callback) = &on_click {
+                        callback.run(());
+                    }
+                })),
+            };
+            as_child.run(child_props).into_any()
+        } else {
+            view! {
+                <button
+                    class=computed_class
+                    id=id.get().unwrap_or_default()
+                    style=move || style.get().to_string()
+                    disabled=disabled
+                    on:click=handle_click
+                >
+                    {children.map(|c| c())}
+                </button>
+            }.into_any()
+        }
 }

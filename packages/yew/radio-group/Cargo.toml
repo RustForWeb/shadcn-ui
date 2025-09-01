@@ -1,0 +1,22 @@
+[package]
+name = "shadcn-ui-yew-radio-group"
+description = "Yew port of shadcn/ui Radio Group."
+homepage = "https://shadcn-ui.rustforweb.org/components/radio-group.html"
+publish = false
+
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+version.workspace = true
+
+[dependencies]
+tailwind_fuse.workspace = true
+yew.workspace = true
+yew-struct-component.workspace = true
+yew-style.workspace = true
+web-sys.workspace = true
+
+[dev-dependencies]
+shadcn-ui-test-utils = { path = "../../test-utils", features = ["yew-testing"] }
+wasm-bindgen-test = { workspace = true }

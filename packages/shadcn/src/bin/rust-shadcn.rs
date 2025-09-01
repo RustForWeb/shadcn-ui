@@ -1,6 +1,7 @@
 use anyhow::Result;
 use clap::{Args, Parser, Subcommand};
 use shadcn::commands::init::{InitOptions, init};
+use shadcn::commands::generate::{GenerateArgs, generate};
 
 #[derive(Parser)]
 #[command(version, propagate_version = true)]
@@ -17,6 +18,8 @@ enum Commands {
     Add(AddArgs),
     #[command(about = "check for updates against the registry")]
     Diff(DiffArgs),
+    #[command(about = "generate a new component scaffold")]
+    Generate(GenerateArgs),
     #[command(about = "initialize your project and install dependencies")]
     Init(InitOptions),
 }
@@ -34,6 +37,7 @@ async fn main() -> Result<()> {
     match cli.command {
         Commands::Add(_args) => Ok(()),
         Commands::Diff(_args) => Ok(()),
+        Commands::Generate(args) => generate(args).await,
         Commands::Init(args) => init(args).await,
     }
 }

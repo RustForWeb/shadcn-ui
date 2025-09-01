@@ -1,8 +1,10 @@
-//! Leptos port of [shadcn/ui Alert](https://ui.shadcn.com/docs/components/alert).
-//!
-//! Displays a callout for user attention.
-//!
-//! See [the Rust shadcn/ui book](https://shadcn-ui.rustforweb.org/components/alert.html) for more documenation.
+//! Leptos port of shadcn/ui alert
 
 pub mod default;
 pub mod new_york;
+
+pub use default::{Alert, AlertTitle, AlertDescription, AlertVariant};
+pub use new_york::{Alert as AlertNewYork, AlertTitle as AlertTitleNewYork, AlertDescription as AlertDescriptionNewYork, AlertVariant as AlertVariantNewYork};
+
+#[cfg(test)]
+mod tests;

@@ -1,0 +1,37 @@
+{
+  "name": "@shadcn-ui/leptos-types",
+  "version": "0.0.1",
+  "description": "TypeScript definitions for shadcn/ui Leptos components",
+  "main": "index.d.ts",
+  "types": "index.d.ts",
+  "files": [
+    "index.d.ts",
+    "README.md"
+  ],
+  "keywords": [
+    "typescript",
+    "leptos",
+    "shadcn-ui",
+    "ui-components",
+    "rust",
+    "wasm",
+    "web-components"
+  ],
+  "author": "shadcn/ui Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shadcn/ui.git",
+    "directory": "packages/leptos/typescript-definitions"
+  },
+  "bugs": {
+    "url": "https://github.com/shadcn/ui/issues"
+  },
+  "homepage": "https://ui.shadcn.com",
+  "peerDependencies": {
+    "typescript": ">=4.5.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

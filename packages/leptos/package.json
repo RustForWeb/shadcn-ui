@@ -1,0 +1,47 @@
+{
+  "name": "@shadcn-ui/leptos",
+  "version": "0.0.1",
+  "description": "shadcn/ui components for Leptos framework",
+  "main": "index.js",
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "test-storybook": "test-storybook",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [
+    "leptos",
+    "shadcn-ui",
+    "ui-components",
+    "rust",
+    "wasm",
+    "web-components",
+    "storybook"
+  ],
+  "author": "shadcn/ui Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@storybook/addon-a11y": "^7.6.17",
+    "@storybook/addon-docs": "^7.6.17",
+    "@storybook/addon-essentials": "^7.6.17",
+    "@storybook/addon-interactions": "^7.6.17",
+    "@storybook/addon-links": "^7.6.17",
+    "@storybook/addon-onboarding": "^1.0.12",
+    "@storybook/addon-themes": "^7.6.17",
+    "@storybook/blocks": "^7.6.17",
+    "@storybook/react": "^7.6.17",
+    "@storybook/react-vite": "^7.6.17",
+    "@storybook/testing-library": "^0.2.2",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.6.17",
+    "typescript": "^5.4.2",
+    "vite": "^5.2.8"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  }
+}

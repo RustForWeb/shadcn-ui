@@ -92,7 +92,7 @@ pub fn TooltipTrigger(
     #[prop(into, optional)] style: Signal<Style>,
     #[prop(optional)] children: Option<Children>,
 ) -> impl IntoView {
-    let (is_open, set_is_open, on_open_change, _delay_duration) = 
+    let (_is_open, set_is_open, on_open_change, _delay_duration) = 
         expect_context::<(ReadSignal<bool>, WriteSignal<bool>, Option<Callback<bool>>, Signal<u32>)>();
 
     let handle_mouse_enter = move |_: MouseEvent| {
@@ -138,8 +138,8 @@ pub struct TooltipTriggerChildProps {
 
 #[component]
 pub fn TooltipContent(
-    #[prop(into, optional)] side: TooltipSide,
-    #[prop(into, optional)] side_offset: i32,
+    #[prop(into, optional)] _side: TooltipSide,
+    #[prop(into, optional)] _side_offset: i32,
     #[prop(into, optional)] class: MaybeProp<String>,
     #[prop(into, optional)] id: MaybeProp<String>,
     #[prop(into, optional)] style: Signal<Style>,

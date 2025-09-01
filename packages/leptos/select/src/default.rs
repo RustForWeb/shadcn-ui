@@ -167,7 +167,7 @@ pub fn SelectValue(
 pub fn SelectContent(
     #[prop(into, optional)] class: MaybeProp<String>,
     #[prop(into, optional)] style: Signal<Style>,
-    #[prop(into, optional)] position: MaybeProp<String>,
+    #[prop(into, optional)] _position: MaybeProp<String>,
     #[prop(optional)] children: Option<Children>,
 ) -> impl IntoView {
     let ctx = expect_context::<SelectContextValue>();

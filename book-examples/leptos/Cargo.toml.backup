@@ -1,0 +1,59 @@
+[package]
+name = "shadcn-ui-leptos-book"
+description = "Book examples for shadcn/ui Leptos."
+publish = false
+
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+version.workspace = true
+
+# Production build profiles with aggressive optimization
+[profile.release]
+opt-level = 3
+codegen-units = 1
+strip = true
+incremental = false
+lto = true
+
+[profile.release.package."*"]
+opt-level = 3
+codegen-units = 1
+strip = true
+
+# Feature sets for different optimization levels
+[features]
+default = ["essential"]
+essential = ["button", "input", "label", "card", "separator", "default_theme", "new_york_theme"]
+essential_with_icons = ["button", "input", "label", "card", "separator", "default_theme", "new_york_theme", "lucide-leptos"]
+
+# Individual component features
+button = ["dep:shadcn-ui-leptos-button"]
+input = ["dep:shadcn-ui-leptos-input"]
+label = ["dep:shadcn-ui-leptos-label"]
+card = ["dep:shadcn-ui-leptos-card"]
+separator = ["dep:shadcn-ui-leptos-separator"]
+lucide-leptos = ["dep:lucide-leptos"]
+default_theme = []
+new_york_theme = []
+
+
+
+[dependencies]
+console_error_panic_hook.workspace = true
+console_log.workspace = true
+leptos = { workspace = true, features = ["csr"] }
+leptos_router.workspace = true
+log.workspace = true
+
+# Only include essential components
+shadcn-ui-leptos-button = { path = "../../packages/leptos/button", optional = true }
+shadcn-ui-leptos-input = { path = "../../packages/leptos/input", optional = true }
+shadcn-ui-leptos-label = { path = "../../packages/leptos/label", optional = true }
+shadcn-ui-leptos-card = { path = "../../packages/leptos/card", optional = true }
+shadcn-ui-leptos-separator = { path = "../../packages/leptos/separator", optional = true }
+
+# Include lucide-leptos for icons
+lucide-leptos = { workspace = true, optional = true }
+gloo-timers = "0.3.0"

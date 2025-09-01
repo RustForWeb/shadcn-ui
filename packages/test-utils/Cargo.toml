@@ -1,0 +1,26 @@
+[package]
+name = "shadcn-ui-test-utils"
+description = "Testing utilities for shadcn-ui components."
+publish = false
+
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+version.workspace = true
+
+[dependencies]
+wasm-bindgen-test = "0.3"
+web-sys = { workspace = true, features = ["console", "Document", "Element", "HtmlElement"] }
+js-sys = "0.3"
+console_error_panic_hook = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+# Framework-specific testing
+yew = { workspace = true, optional = true }
+leptos = { workspace = true }
+
+[features]
+default = []
+yew-testing = ["yew"]

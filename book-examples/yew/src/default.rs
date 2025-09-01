@@ -14,6 +14,8 @@ mod breadcrumb;
 mod button;
 #[cfg(feature = "card")]
 mod card;
+#[cfg(feature = "dialog")]
+mod dialog;
 #[cfg(feature = "input")]
 mod input;
 #[cfg(feature = "label")]
@@ -84,6 +86,13 @@ pub fn render() -> Html {
         use self::card::{CardRoute, render};
         children.push(html! {
             <Switch<CardRoute> render={render} />
+        });
+    }
+    #[cfg(feature = "dialog")]
+    {
+        use self::dialog::{DialogRoute, render};
+        children.push(html! {
+            <Switch<DialogRoute> render={render} />
         });
     }
     #[cfg(feature = "input")]

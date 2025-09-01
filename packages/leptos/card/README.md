@@ -1,21 +1,13 @@
-<p align="center">
-    <a href="../../../logo.svg">
-        <img src="../../../logo.svg" width="300" height="200" alt="Rust shadcn/ui Logo">
-    </a>
-</p>
+# Card
 
-<h1 align="center">shadcn-ui-leptos-card</h1>
+Leptos port of shadcn/ui card
 
-Displays a card with header, content, and footer.
+## Usage
 
-[Rust shadcn/ui](https://github.com/RustForWeb/shadcn-ui) is a Rust port of [shadcn/ui](https://ui.shadcn.com/).
+```rust
+use shadcn_ui_leptos_card::Card;
+```
 
 ## Documentation
 
-See [the Rust shadcn/ui book](https://shadcn-ui.rustforweb.org/) for documentation.
-
-## Rust for Web
-
-The Rust shadcn/ui project is part of [Rust for Web](https://github.com/RustForWeb).
-
-[Rust for Web](https://github.com/RustForWeb) creates and ports web libraries for Rust. All projects are free and open source.
+See [shadcn/ui documentation](https://ui.shadcn.com/docs/components/card).

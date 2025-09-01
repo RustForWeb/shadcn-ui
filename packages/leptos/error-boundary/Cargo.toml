@@ -1,0 +1,24 @@
+[package]
+name = "shadcn-ui-leptos-error-boundary"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Production-ready error boundary component for Leptos applications"
+keywords = ["leptos", "error-handling", "error-boundary", "production", "resilience"]
+categories = ["web-programming", "gui", "development-tools"]
+
+[dependencies]
+leptos = { workspace = true, features = ["csr"] }
+log = "0.4"
+web-sys = { version = "0.3", features = ["Window", "Location"] }
+
+[dev-dependencies]
+wasm-bindgen-test = { workspace = true }
+shadcn-ui-test-utils = { workspace = true }
+
+[features]
+default = []
+development = []
+production = []

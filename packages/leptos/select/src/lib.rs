@@ -12,3 +12,6 @@ pub use default::*;
 
 #[cfg(feature = "new_york")]
 pub use new_york as select;
+
+#[cfg(test)]
+mod tests;

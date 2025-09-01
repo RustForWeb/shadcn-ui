@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for Storybook */
+.sb-show-main {
+  background: transparent;
+}
+
+.storybook-wrapper {
+  padding: 1rem;
+  min-height: 100vh;
+}
+
+/* Component showcase styles */
+.component-showcase {
+  @apply p-6 space-y-4;
+}
+
+.component-variant {
+  @apply p-4 border rounded-lg;
+}
+
+.component-demo {
+  @apply p-4 bg-gray-50 rounded-lg;
+}
+
+/* Interactive playground */
+.props-panel {
+  @apply p-4 bg-white border rounded-lg shadow-sm;
+}
+
+.props-control {
+  @apply mb-4;
+}
+
+.props-label {
+  @apply block text-sm font-medium text-gray-700 mb-2;
+}
+
+.props-input {
+  @apply block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
+}
+
+.props-select {
+  @apply block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
+}
+
+.props-checkbox {
+  @apply h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded;
+}
+
+/* Code examples */
+.code-example {
+  @apply p-4 bg-gray-900 text-gray-100 rounded-lg font-mono text-sm overflow-x-auto;
+}
+
+.code-comment {
+  @apply text-gray-400;
+}
+
+.code-keyword {
+  @apply text-purple-400;
+}
+
+.code-string {
+  @apply text-green-400;
+}
+
+.code-number {
+  @apply text-yellow-400;
+}

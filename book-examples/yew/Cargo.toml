@@ -18,9 +18,11 @@ default = [
     "breadcrumb",
     "button",
     "card",
+    "dialog",
     "input",
     "label",
     "pagination",
+    "radio-group",
     "separator",
     "skeleton",
     "switch",
@@ -77,6 +79,8 @@ textarea = [
     "dep:shadcn-ui-yew-label",
     "dep:shadcn-ui-yew-textarea",
 ]
+radio-group = ["dep:shadcn-ui-yew-radio-group"]
+dialog = ["dep:shadcn-ui-yew-dialog"]
 
 [dependencies]
 console_error_panic_hook.workspace = true
@@ -98,6 +102,8 @@ shadcn-ui-yew-separator = { path = "../../packages/yew/separator", optional = tr
 shadcn-ui-yew-skeleton = { path = "../../packages/yew/skeleton", optional = true }
 shadcn-ui-yew-switch = { path = "../../packages/yew/switch", optional = true }
 shadcn-ui-yew-table = { path = "../../packages/yew/table", optional = true }
+shadcn-ui-yew-radio-group = { path = "../../packages/yew/radio-group", optional = true }
+shadcn-ui-yew-dialog = { path = "../../packages/yew/dialog", optional = true }
 shadcn-ui-yew-textarea = { path = "../../packages/yew/textarea", optional = true }
 yew = { workspace = true, features = ["csr"] }
 yew-router.workspace = true

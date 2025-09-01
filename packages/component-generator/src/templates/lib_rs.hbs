@@ -1,0 +1,14 @@
+//! {{framework}} port of [shadcn/ui {{component_title}}](https://ui.shadcn.com/docs/components/{{component_name}}).
+//!
+//! {{description}}
+//!
+//! See [the Rust shadcn/ui book](https://shadcn-ui.rustforweb.org/components/{{component_name}}.html) for more documentation.
+
+pub mod default;
+pub mod new_york;
+
+// Re-export the components for easy access
+pub use default::*;
+
+#[cfg(feature = "new_york")]
+pub use new_york as {{component_name}};

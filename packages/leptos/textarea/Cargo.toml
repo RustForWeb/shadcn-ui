@@ -1,0 +1,27 @@
+[package]
+name = "shadcn-ui-leptos-textarea"
+description = "Leptos port of shadcn/ui textarea"
+homepage = "https://shadcn-ui.rustforweb.org/components/textarea.html"
+publish = false
+
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+version.workspace = true
+
+[dependencies]
+leptos.workspace = true
+leptos-node-ref.workspace = true
+leptos-struct-component.workspace = true
+leptos-style.workspace = true
+tailwind_fuse.workspace = true
+web-sys.workspace = true
+
+[features]
+default = []
+new_york = []
+
+[dev-dependencies]
+shadcn-ui-test-utils = { path = "../../test-utils" }
+wasm-bindgen-test = { workspace = true }

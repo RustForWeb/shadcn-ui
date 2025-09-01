@@ -1,135 +1,141 @@
 use leptos::prelude::*;
-use leptos_node_ref::AnyNodeRef;
 use leptos_style::Style;
-use tailwind_fuse::*;
+
+const CARD_CLASS: &str = "rounded-lg border bg-card text-card-foreground shadow-sm";
+const CARD_HEADER_CLASS: &str = "flex flex-col space-y-1.5 p-6";
+const CARD_TITLE_CLASS: &str = "text-2xl font-semibold leading-none tracking-tight";
+const CARD_DESCRIPTION_CLASS: &str = "text-sm text-muted-foreground";
+const CARD_CONTENT_CLASS: &str = "p-6 pt-0";
+const CARD_FOOTER_CLASS: &str = "flex items-center p-6 pt-0";
 
 #[component]
 pub fn Card(
-    // Global attributes
     #[prop(into, optional)] class: MaybeProp<String>,
     #[prop(into, optional)] id: MaybeProp<String>,
     #[prop(into, optional)] style: Signal<Style>,
-
-    #[prop(into, optional)] node_ref: AnyNodeRef,
-    children: Children,
+    #[prop(optional)] children: Option<Children>,
 ) -> impl IntoView {
+    let computed_class = Signal::derive(move || {
+        format!("{} {}", CARD_CLASS, class.get().unwrap_or_default())
+    });
+
     view! {
         <div
-            node_ref=node_ref
-            class=move || tw_merge!("rounded-lg border bg-card text-card-foreground shadow-sm", class.get())
-            id=move || id.get()
-            style=style
+            class=computed_class
+            id=id.get().unwrap_or_default()
+            style=move || style.get().to_string()
         >
-            {children()}
+            {children.map(|c| c())}
         </div>
     }
 }
 
 #[component]
 pub fn CardHeader(
-    // Global attributes
     #[prop(into, optional)] class: MaybeProp<String>,
     #[prop(into, optional)] id: MaybeProp<String>,
     #[prop(into, optional)] style: Signal<Style>,
-
-    #[prop(into, optional)] node_ref: AnyNodeRef,
-    children: Children,
+    #[prop(optional)] children: Option<Children>,
 ) -> impl IntoView {
+    let computed_class = Signal::derive(move || {
+        format!("{} {}", CARD_HEADER_CLASS, class.get().unwrap_or_default())
+    });
+
     view! {
         <div
-            node_ref=node_ref
-            class=move || tw_merge!("flex flex-col space-y-1.5 p-6", class.get())
-            id=move || id.get()
-            style=style
-        >{children()}
+            class=computed_class
+            id=id.get().unwrap_or_default()
+            style=move || style.get().to_string()
+        >
+            {children.map(|c| c())}
         </div>
     }
 }
 
 #[component]
 pub fn CardTitle(
-    // Global attributes
     #[prop(into, optional)] class: MaybeProp<String>,
     #[prop(into, optional)] id: MaybeProp<String>,
     #[prop(into, optional)] style: Signal<Style>,
-
-    #[prop(into, optional)] node_ref: AnyNodeRef,
-    children: Children,
+    #[prop(optional)] children: Option<Children>,
 ) -> impl IntoView {
+    let computed_class = Signal::derive(move || {
+        format!("{} {}", CARD_TITLE_CLASS, class.get().unwrap_or_default())
+    });
+
     view! {
-        <div
-            node_ref=node_ref
-            class=move || tw_merge!("text-2xl font-semibold leading-none tracking-tight", class.get())
-            id=move || id.get()
-            style=style
+        <h3
+            class=computed_class
+            id=id.get().unwrap_or_default()
+            style=move || style.get().to_string()
         >
-            {children()}
-        </div>
+            {children.map(|c| c())}
+        </h3>
     }
 }
 
 #[component]
 pub fn CardDescription(
-    // Global attributes
     #[prop(into, optional)] class: MaybeProp<String>,
     #[prop(into, optional)] id: MaybeProp<String>,
     #[prop(into, optional)] style: Signal<Style>,
-
-    #[prop(into, optional)] node_ref: AnyNodeRef,
-    children: Children,
+    #[prop(optional)] children: Option<Children>,
 ) -> impl IntoView {
+    let computed_class = Signal::derive(move || {
+        format!("{} {}", CARD_DESCRIPTION_CLASS, class.get().unwrap_or_default())
+    });
+
     view! {
-        <div
-            node_ref=node_ref
-            class=move || tw_merge!("text-sm text-muted-foreground", class.get())
-            id=move || id.get()
-            style=style
+        <p
+            class=computed_class
+            id=id.get().unwrap_or_default()
+            style=move || style.get().to_string()
         >
-            {children()}
-        </div>
+            {children.map(|c| c())}
+        </p>
     }
 }
 
 #[component]
 pub fn CardContent(
-    // Global attributes
     #[prop(into, optional)] class: MaybeProp<String>,
     #[prop(into, optional)] id: MaybeProp<String>,
     #[prop(into, optional)] style: Signal<Style>,
-
-    #[prop(into, optional)] node_ref: AnyNodeRef,
-    children: Children,
+    #[prop(optional)] children: Option<Children>,
 ) -> impl IntoView {
+    let computed_class = Signal::derive(move || {
+        format!("{} {}", CARD_CONTENT_CLASS, class.get().unwrap_or_default())
+    });
+
     view! {
         <div
-            node_ref=node_ref
-            class=move || tw_merge!("p-6 pt-0", class.get())
-            id=move || id.get()
-            style=style
+            class=computed_class
+            id=id.get().unwrap_or_default()
+            style=move || style.get().to_string()
         >
-            {children()}
+            {children.map(|c| c())}
         </div>
     }
 }
 
 #[component]
 pub fn CardFooter(
-    // Global attributes
     #[prop(into, optional)] class: MaybeProp<String>,
     #[prop(into, optional)] id: MaybeProp<String>,
     #[prop(into, optional)] style: Signal<Style>,
-
-    #[prop(into, optional)] node_ref: AnyNodeRef,
-    children: Children,
+    #[prop(optional)] children: Option<Children>,
 ) -> impl IntoView {
+    let computed_class = Signal::derive(move || {
+        format!("{} {}", CARD_FOOTER_CLASS, class.get().unwrap_or_default())
+    });
+
     view! {
         <div
-            node_ref=node_ref
-            class=move || tw_merge!("flex items-center p-6 pt-0", class.get())
-            id=move || id.get()
-            style=style
+            class=computed_class
+            id=id.get().unwrap_or_default()
+            style=move || style.get().to_string()
         >
-            {children()}
+            {children.map(|c| c())}
         </div>
     }
 }

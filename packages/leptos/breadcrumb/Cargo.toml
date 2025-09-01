@@ -1,0 +1,20 @@
+[package]
+name = "shadcn-ui-leptos-breadcrumb"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+leptos = { version = "0.8.0", features = ["csr", "ssr"] }
+tailwind_fuse = "0.3.0"
+serde = { version = "1.0", features = ["derive"] }
+
+[features]
+default = ["leptos/csr"]
+csr = ["leptos/csr"]
+ssr = ["leptos/ssr"]
+hydrate = ["leptos/hydrate"]
+new_york = []
+
+[dev-dependencies]
+shadcn-ui-test-utils = { path = "../../test-utils"}
+wasm-bindgen-test = { workspace = true }

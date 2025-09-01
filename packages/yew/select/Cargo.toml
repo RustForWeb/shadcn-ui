@@ -1,0 +1,21 @@
+[package]
+name = "shadcn-ui-yew-select"
+description = "Yew port of shadcn/ui Select."
+homepage = "https://shadcn-ui.rustforweb.org/components/select.html"
+publish = false
+
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+version.workspace = true
+
+[dependencies]
+tailwind_fuse = { workspace = true, features = ["variant"] }
+yew = { workspace = true, features = ["csr"] }
+yew-style.workspace = true
+web-sys.workspace = true
+
+[dev-dependencies]
+shadcn-ui-test-utils = { path = "../../test-utils", features = ["yew-testing"] }
+wasm-bindgen-test = { workspace = true }

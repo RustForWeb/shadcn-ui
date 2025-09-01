@@ -1,0 +1,18 @@
+[package]
+name = "shadcn-ui-yew-dialog"
+description = "Yew port of shadcn/ui Dialog component"
+publish = false
+
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+version.workspace = true
+
+[dependencies]
+yew.workspace = true
+yew-style.workspace = true
+web-sys.workspace = true
+
+[dev-dependencies]
+wasm-bindgen-test.workspace = true

@@ -1,8 +1,10 @@
-//! Leptos port of [shadcn/ui Card](https://ui.shadcn.com/docs/components/card).
-//!
-//! Displays a card with header, content, and footer.
-//!
-//! See [the Rust shadcn/ui book](https://shadcn-ui.rustforweb.org/components/card.html) for more documenation.
+//! Leptos port of shadcn/ui card
 
 pub mod default;
 pub mod new_york;
+
+pub use default::{Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter};
+pub use new_york::{Card as CardNewYork, CardHeader as CardHeaderNewYork, CardTitle as CardTitleNewYork, CardDescription as CardDescriptionNewYork, CardContent as CardContentNewYork, CardFooter as CardFooterNewYork};
+
+#[cfg(test)]
+mod tests;

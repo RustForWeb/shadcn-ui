@@ -1,0 +1,28 @@
+[package]
+name = "shadcn-ui-leptos-combobox"
+version = "0.0.0"
+edition = "2021"
+description = "Leptos port of shadcn/ui Combobox component"
+license = "MIT"
+repository = "https://github.com/RustForWeb/shadcn-ui"
+keywords = ["leptos", "ui", "combobox", "autocomplete", "shadcn"]
+categories = ["wasm", "gui"]
+
+[dependencies]
+leptos = "0.8"
+leptos-style = "0.2"
+web-sys = { version = "0.3", features = ["HtmlInputElement", "HtmlElement", "Element", "Node", "NodeList", "Event", "EventTarget", "MouseEvent", "KeyboardEvent", "FocusEvent"] }
+wasm-bindgen = "0.2"
+tailwind_fuse = "0.1"
+
+[dev-dependencies]
+shadcn-ui-test-utils = { path = "../../test-utils"}
+wasm-bindgen-test = { workspace = true }
+
+[lib]
+name = "shadcn_ui_leptos_combobox"
+path = "src/lib.rs"
+
+[[example]]
+name = "combobox_example"
+path = "examples/combobox_example.rs"

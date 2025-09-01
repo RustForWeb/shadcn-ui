@@ -1,0 +1,46 @@
+use leptos::prelude::*;
+use leptos_node_ref::AnyNodeRef;
+use leptos_struct_component::{StructComponent, component};
+use leptos_style::Style;
+use tailwind_fuse::{TwClass, TwVariant};
+
+#[derive(TwClass)]
+#[tw(class = "{{base_classes}}")]
+pub struct {{component_name}}Class;
+
+#[component]
+pub fn {{component_name}}(
+    {{#each props}}
+    #[prop({{#if optional}}optional{{else}}default{{/if}})]
+    {{name}}: {{prop_type}},
+    {{/each}}
+    
+    // Global attributes
+    #[prop(optional)]
+    class: Option<String>,
+    #[prop(optional)]
+    id: Option<String>,
+    #[prop(default)]
+    style: Style,
+    
+    #[prop(optional)]
+    node_ref: Option<AnyNodeRef>,
+    children: Children,
+) -> impl IntoView {
+    let node_ref = node_ref.unwrap_or_default();
+    
+    let computed_class = move || {
+        {{component_name}}Class.with_class(class.clone().unwrap_or_default())
+    };
+    
+    view! {
+        <{{html_tag}}
+            node_ref=node_ref
+            class=computed_class()
+            id=id.clone()
+            style=style.clone()
+        >
+            {children()}
+        </{{html_tag}}>
+    }
+}

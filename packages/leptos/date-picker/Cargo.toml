@@ -1,0 +1,32 @@
+[package]
+name = "shadcn-ui-leptos-date-picker"
+description = "Leptos port of shadcn/ui date picker"
+homepage = "https://shadcn-ui.rustforweb.org/components/date-picker.html"
+publish = false
+
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+version.workspace = true
+
+[dependencies]
+leptos.workspace = true
+leptos-node-ref.workspace = true
+leptos-struct-component.workspace = true
+leptos-style.workspace = true
+tailwind_fuse.workspace = true
+web-sys.workspace = true
+js-sys.workspace = true
+lucide-leptos.workspace = true
+shadcn-ui-leptos-calendar = { path = "../calendar" }
+shadcn-ui-leptos-popover = { path = "../popover" }
+shadcn-ui-leptos-button = { path = "../button" }
+
+[features]
+default = []
+new_york = []
+
+[dev-dependencies]
+shadcn-ui-test-utils = { path = "../../test-utils" }
+wasm-bindgen-test = { workspace = true }

@@ -41,3 +41,5 @@ pub use shadcn_ui_yew_switch::default as switch;
 pub use shadcn_ui_yew_table::default as table;
 #[cfg(feature = "textarea")]
 pub use shadcn_ui_yew_textarea::default as textarea;
+// #[cfg(feature = "radio-group")]
+// pub use shadcn_ui_yew_radio_group::default as radio_group;

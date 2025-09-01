@@ -1,0 +1,116 @@
+[package]
+name = "shadcn-ui-leptos-registry"
+version = "0.0.1"
+edition = "2021"
+description = "Feature-based component registry for shadcn/ui Leptos components"
+license = "MIT"
+repository = "https://github.com/shadcn/ui"
+keywords = ["leptos", "shadcn-ui", "ui-components", "registry", "features"]
+categories = ["web-programming", "gui"]
+
+[dependencies]
+leptos = "0.8.6"
+
+[features]
+# Enable all components (default)
+all = [
+    "alert",
+    "badge",
+    "button",
+    "card",
+    "checkbox",
+    "combobox",
+    "dialog",
+    "form",
+    "input",
+    "label",
+    "pagination",
+    "radio-group",
+    "select",
+    "separator",
+    "skeleton",
+    "switch",
+    "table",
+    "tabs",
+    "textarea",
+    "tooltip",
+    "utils",
+]
+
+# Essential components only
+essential = [
+    "button",
+    "input",
+    "label",
+    "card",
+    "separator",
+]
+
+# Form components
+forms = [
+    "input",
+    "label",
+    "checkbox",
+    "radio-group",
+    "select",
+    "textarea",
+    "form",
+]
+
+# Layout components
+layout = [
+    "card",
+    "separator",
+    "skeleton",
+    "tabs",
+]
+
+# Interactive components
+interactive = [
+    "button",
+    "checkbox",
+    "radio-group",
+    "select",
+    "switch",
+    "tabs",
+]
+
+# Data display components
+data = [
+    "table",
+    "pagination",
+    "badge",
+]
+
+# Feedback components
+feedback = [
+    "alert",
+    "dialog",
+    "tooltip",
+]
+
+# Individual component features
+alert = []
+badge = []
+button = []
+card = []
+checkbox = []
+combobox = []
+dialog = []
+form = []
+input = []
+label = []
+pagination = []
+radio-group = []
+select = []
+separator = []
+skeleton = []
+switch = []
+table = []
+tabs = []
+textarea = []
+tooltip = []
+utils = []
+
+[dev-dependencies]
+leptos = { version = "0.8.6", features = ["csr"] }

@@ -23,5 +23,5 @@ default = []
 new_york = []
 
 [dev-dependencies]
-shadcn-ui-test-utils = { path = "../../test-utils", features = ["leptos-testing"] }
+shadcn-ui-test-utils = { path = "../../test-utils"}
 wasm-bindgen-test = { workspace = true }
