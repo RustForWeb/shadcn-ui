@@ -3,14 +3,23 @@
   "version": "0.1.0",
   "description": "shadcn/ui components for Rust web frameworks (Leptos & Yew)",
   "scripts": {
-    "test": "playwright test",
-    "test:headed": "playwright test --headed",
-    "test:ui": "playwright test --ui",
-    "test:debug": "playwright test --debug",
-    "install-playwright": "playwright install",
+    "test": "./scripts/run-tests.sh",
+    "test:headed": "pnpm exec playwright test --headed --reporter=line",
+    "test:ui": "pnpm exec playwright test --ui",
+    "test:debug": "pnpm exec playwright test --debug --reporter=line",
+    "test:dynamic-loading": "./scripts/run-tests.sh tests/e2e/dynamic-loading.spec.ts",
+    "test:bundle-optimization": "./scripts/run-tests.sh tests/e2e/bundle-optimization.spec.ts",
+    "install-playwright": "pnpm exec playwright install",
     "dev:leptos": "cd book-examples/leptos && trunk serve",
+    "dev:leptos:port": "cd book-examples/leptos && trunk serve --port",
     "dev:yew": "cd book-examples/yew && trunk serve",
-    "build:examples": "cd book-examples/leptos && trunk build && cd ../yew && trunk build"
+    "build:examples": "cd book-examples/leptos && trunk build && cd ../yew && trunk build",
+    "build:leptos": "cd book-examples/leptos && trunk build",
+    "build:yew": "cd book-examples/yew && trunk build",
+    "clean": "rm -rf node_modules && rm -rf target && rm -rf dist",
+    "clean:examples": "cd book-examples/leptos && rm -rf dist && cd ../yew && rm -rf dist",
+    "debug:wasm": "node debug-simple.js",
+    "test:system": "node test-system.js"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0",
@@ -36,5 +45,6 @@
   "engines": {
     "node": ">=18.0.0",
     "pnpm": ">=8.0.0"
-  }
+  },
+  "packageManager": "pnpm@10.15.0"
 }

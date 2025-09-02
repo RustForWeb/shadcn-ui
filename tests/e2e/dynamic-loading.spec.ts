@@ -3,11 +3,11 @@ import { test, expect } from '@playwright/test';
 test.describe('Dynamic Loading System - Comprehensive E2E Testing', () => {
   test.beforeEach(async ({ page }) => {
     // Navigate to the enhanced lazy loading demo
-    await page.goto('http://127.0.0.1:8080');
+    await page.goto('http://localhost:8082');
     // Wait for the app to be fully loaded
     await page.waitForLoadState('networkidle');
     // Wait for WASM to initialize
-    await page.waitForFunction(() => window.wasmBindings !== undefined);
+    await page.waitForFunction(() => (window as any).wasmBindings !== undefined);
   });
 
   test.describe('Page Structure & Navigation', () => {
@@ -448,7 +448,7 @@ test.describe('Dynamic Loading System - Comprehensive E2E Testing', () => {
   test.describe('Integration with WASM', () => {
     test('should properly initialize WASM bindings', async ({ page }) => {
       // Check that WASM bindings are available
-      const wasmBindings = await page.evaluate(() => window.wasmBindings);
+      const wasmBindings = await page.evaluate(() => (window as any).wasmBindings);
       expect(wasmBindings).toBeDefined();
       
       // Check that the app is properly mounted

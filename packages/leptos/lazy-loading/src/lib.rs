@@ -3,38 +3,43 @@
 //! This module provides lazy loading capabilities to reduce initial bundle size
 //! by loading components only when they're needed.
 
-use leptos::*;
+use leptos::prelude::*;
+use leptos::html::ElementChild;
+use leptos::task::spawn_local;
 use std::collections::HashMap;
 use std::sync::Arc;
 use std::sync::Mutex;
 
+
+
 /// Lazy component loader that manages dynamic imports
+#[derive(Clone)]
 pub struct LazyComponentLoader {
     components: Arc<Mutex<HashMap<String, ComponentLoader>>>,
 }
 
 /// Component loader function type
-pub type ComponentLoader = Box<dyn Fn() -> Result<View, String> + Send + Sync>;
+pub type ComponentLoader = Box<dyn Fn() -> Result<View<()>, String> + Send + Sync>;
 
 impl LazyComponentLoader {
     /// Create a new lazy component loader
     pub fn new() -> Self {
         Self {
-            components: Arc::new(Mutex::new(HashMap::new())},
+            components: Arc::new(Mutex::new(HashMap::new())),
         }
     }
 
     /// Register a component for lazy loading
     pub fn register_component<F>(&self, name: &str, loader: F)
     where
-        F: Fn() -> Result<View, String> + Send + Sync + 'static,
+        F: Fn() -> Result<View<()>, String> + Send + Sync + 'static,
     {
         let mut components = self.components.lock().unwrap();
         components.insert(name.to_string(), Box::new(loader));
     }
 
     /// Load a component by name
-    pub fn load_component(&self, name: &str) -> Result<View, String> {
+    pub fn load_component(&self, name: &str) -> Result<View<()>, String> {
         let components = self.components.lock().unwrap();
         if let Some(loader) = components.get(name) {
             loader()
@@ -66,18 +71,18 @@ impl Default for LazyComponentLoader {
 #[component]
 pub fn LazyComponent(
     #[prop(into)] name: String,
-    #[prop(optional)] fallback: Option<View>,
-    #[prop(optional)] error_fallback: Option<Box<dyn Fn(String) -> View>>,
+    #[prop(optional)] fallback: Option<View<()>>,
+    #[prop(optional)] error_fallback: Option<Box<dyn Fn(String) -> View<()> + Send + Sync>>,
 ) -> impl IntoView {
     let loader = use_context::<LazyComponentLoader>()
         .expect("LazyComponentLoader not found in context");
     
-    let (component, set_component) = signal(None::<Result<View, String>>);
+    let (component, set_component) = signal(None::<Result<View<()>, String>>);
     let (loading, set_loading) = signal(true);
     let (error, set_error) = signal(None::<String>);
 
     // Load component when name changes
-    create_effect(move |_| {
+    Effect::new(move |_| {
         let name = name.clone();
         let loader = loader.clone();
         
@@ -91,8 +96,8 @@ pub fn LazyComponent(
             set_component.set(Some(result.clone()));
             set_loading.set(false);
             
-            if let Err(ref err) = result {
-                set_error.set(Some(err.clone()));
+            if let Err(err) = result {
+                set_error.set(Some(err));
             }
         });
     });
@@ -102,22 +107,23 @@ pub fn LazyComponent(
         if loading.get() {
             // Show fallback while loading
             fallback.clone().unwrap_or_else(|| {
-                view! {
+                let view: View<()> = view! {
                     <div class="lazy-loading-fallback">
                         <div class="loading-spinner"></div>
                         <p>"Loading component..."</p>
                     </div>
-                }
+                };
+                view
             })
         } else if let Some(Ok(comp)) = component.get() {
             // Component loaded successfully
             comp
-        } else if let Some(Err(err)) = error.get() {
+        } else if let Some(err) = error.get() {
             // Component failed to load
             if let Some(error_fn) = &error_fallback {
                 error_fn(err)
             } else {
-                view! {
+                let view: View<()> = view! {
                     <div class="lazy-loading-error">
                         <p class="error-message">"Failed to load component: {err}"</p>
                         <button 
@@ -130,28 +136,31 @@ pub fn LazyComponent(
                             "Retry"
                         </button>
                     </div>
-                }
+                };
+                view
             }
         } else {
             // No component loaded yet
-            view! { <div></div> }
+            let view: View<()> = view! { <div></div> };
+            view
         }
     }
 }
 
 /// Hook for lazy loading components
-pub fn use_lazy_component(name: &str) -> (ReadSignal<bool>, ReadSignal<Option<Result<View, String>>>, WriteSignal<bool>) {
+pub fn use_lazy_component(name: &str) -> (ReadSignal<bool>, ReadSignal<Option<Result<View<()>, String>>>, WriteSignal<bool>) {
     let (loading, set_loading) = signal(false);
-    let (component, set_component) = signal(None::<Result<View, String>>);
+    let (component, set_component) = signal(None::<Result<View<()>, String>>);
     
     let loader = use_context::<LazyComponentLoader>()
         .expect("LazyComponentLoader not found in context");
     
+    let name = name.to_string();
     let load = move || {
         set_loading.set(true);
         
         spawn_local(async move {
-            let result = loader.load_component(name);
+            let result = loader.load_component(&name);
             set_component.set(Some(result));
             set_loading.set(false);
         });

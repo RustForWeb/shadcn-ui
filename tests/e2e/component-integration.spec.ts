@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('Leptos Component Integration Testing Suite', () => {
   test.beforeEach(async ({ page }) => {
     // Navigate to Leptos example app
-    await page.goto('http://127.0.0.1:8080');
+    await page.goto('/');
     await page.waitForLoadState('networkidle');
   });
 

@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('Leptos Performance Testing Suite', () => {
   test.beforeEach(async ({ page }) => {
     // Navigate to Leptos example app
-    await page.goto('http://127.0.0.1:8080');
+    await page.goto('/');
     await page.waitForLoadState('networkidle');
   });
 
@@ -11,7 +11,7 @@ test.describe('Leptos Performance Testing Suite', () => {
     test('initial page load time is under 3 seconds', async ({ page }) => {
       const startTime = Date.now();
       
-      await page.goto('http://127.0.0.1:8080');
+      await page.goto('/');
       await page.waitForLoadState('networkidle');
       
       const loadTime = Date.now() - startTime;
@@ -26,7 +26,7 @@ test.describe('Leptos Performance Testing Suite', () => {
       // Measure time to interactive (when buttons become clickable)
       const startTime = Date.now();
       
-      await page.goto('http://127.0.0.1:8080');
+      await page.goto('/');
       
       // Wait for interactive elements to be ready
       await page.waitForSelector('button, input, select', { state: 'visible' });
@@ -50,7 +50,7 @@ test.describe('Leptos Performance Testing Suite', () => {
       
       if (initialMemory) {
         // Navigate and interact to trigger memory usage
-        await page.goto('http://127.0.0.1:8080');
+        await page.goto('/');
         await page.waitForLoadState('networkidle');
         
         // Perform some interactions
@@ -243,7 +243,7 @@ test.describe('Leptos Performance Testing Suite', () => {
         requests.push(request.url());
       });
       
-      await page.goto('http://127.0.0.1:8080');
+      await page.goto('/');
       await page.waitForLoadState('networkidle');
       
       // Check for unnecessary requests
@@ -296,7 +296,7 @@ test.describe('Leptos Performance Testing Suite', () => {
       
       const startTime = Date.now();
       
-      await page.goto('http://127.0.0.1:8080');
+      await page.goto('/');
       await page.waitForLoadState('networkidle');
       
       const mobileLoadTime = Date.now() - startTime;
@@ -313,7 +313,7 @@ test.describe('Leptos Performance Testing Suite', () => {
       
       const startTime = Date.now();
       
-      await page.goto('http://127.0.0.1:8080');
+      await page.goto('/');
       await page.waitForLoadState('networkidle');
       
       const tabletLoadTime = Date.now() - startTime;
@@ -330,7 +330,7 @@ test.describe('Leptos Performance Testing Suite', () => {
       
       const startTime = Date.now();
       
-      await page.goto('http://127.0.0.1:8080');
+      await page.goto('/');
       await page.waitForLoadState('networkidle');
       
       const desktopLoadTime = Date.now() - startTime;

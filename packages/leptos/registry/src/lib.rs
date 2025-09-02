@@ -3,8 +3,6 @@
 //! This module provides conditional compilation of components based on features,
 //! enabling code splitting and reducing bundle size by only including used components.
 
-use leptos::*;
-
 /// Component registry that conditionally includes components based on features
 pub struct ComponentRegistry;
 
@@ -38,7 +36,32 @@ impl ComponentRegistry {
 
     /// Check if a component feature is enabled
     pub fn has_feature(feature: &str) -> bool {
-        cfg!(feature = feature)
+        // Note: This is a runtime check, not a compile-time feature gate
+        // For compile-time feature gates, use cfg!(feature = "feature_name")
+        match feature {
+            "alert" => cfg!(feature = "alert"),
+            "badge" => cfg!(feature = "badge"),
+            "button" => cfg!(feature = "button"),
+            "card" => cfg!(feature = "card"),
+            "checkbox" => cfg!(feature = "checkbox"),
+            "combobox" => cfg!(feature = "combobox"),
+            "dialog" => cfg!(feature = "dialog"),
+            "form" => cfg!(feature = "form"),
+            "input" => cfg!(feature = "input"),
+            "label" => cfg!(feature = "label"),
+            "pagination" => cfg!(feature = "pagination"),
+            "radio-group" => cfg!(feature = "radio-group"),
+            "select" => cfg!(feature = "select"),
+            "separator" => cfg!(feature = "separator"),
+            "skeleton" => cfg!(feature = "skeleton"),
+            "switch" => cfg!(feature = "switch"),
+            "table" => cfg!(feature = "table"),
+            "tabs" => cfg!(feature = "tabs"),
+            "textarea" => cfg!(feature = "textarea"),
+            "tooltip" => cfg!(feature = "tooltip"),
+            "utils" => cfg!(feature = "utils"),
+            _ => false,
+        }
     }
 
     /// Get enabled component features

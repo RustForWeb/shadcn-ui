@@ -24,6 +24,9 @@
         # Node.js and pnpm for Playwright and frontend tooling
         nodejs = pkgs.nodejs_20;
         pnpm = pkgs.nodePackages.pnpm;
+        
+        # Additional Node.js tools
+        nodePackages = pkgs.nodePackages;
 
       in
       {
@@ -43,6 +46,7 @@
             # Node.js ecosystem for Playwright
             nodejs
             pnpm
+            nodePackages.typescript
             
             # Build tools
             gnumake
@@ -57,9 +61,7 @@
             curl
             git
             
-            # Browser automation (for Playwright)
-            chromium
-            firefox
+            # Browser automation (for Playwright) - will be installed by Playwright
           ];
 
           shellHook = ''
@@ -69,9 +71,13 @@
             echo "Cargo version: $(cargo --version)"
             echo "Node.js version: $(node --version)"
             echo "pnpm version: $(pnpm --version)"
+            echo "TypeScript version: $(tsc --version 2>/dev/null || echo 'Not installed')"
             echo "Make version: $(make --version | head -n1)"
             echo ""
             echo "Available commands:"
+            echo "  pnpm test          - Run Playwright tests (auto-closing)"
+            echo "  pnpm test:headed   - Run tests with browser visible"
+            echo "  pnpm test:ui       - Run tests with Playwright UI"
             echo "  make help          - Show available make targets"
             echo "  make dev           - Start development environment"
             echo "  make test          - Run all tests"
@@ -86,14 +92,28 @@
             export PLAYWRIGHT_BROWSERS_PATH=$PWD/.playwright-browsers
             export PATH="$PWD/node_modules/.bin:$PATH"
             
+            # Ensure pnpm is properly configured
+            export PNPM_HOME="$HOME/.local/share/pnpm"
+            export PATH="$PNPM_HOME:$PATH"
+            
             # Create necessary directories
             mkdir -p .playwright-browsers
             mkdir -p tests/e2e
+            mkdir -p test-results
             
-            # Install Playwright if not already installed
-            if [ ! -f "package.json" ]; then
-              echo "Setting up Playwright dependencies..."
+            # Check if dependencies are installed
+            if [ ! -d "node_modules" ] && [ -f "package.json" ]; then
+              echo "📦 Installing Node.js dependencies with pnpm..."
+              pnpm install
             fi
+            
+            # Install Playwright browsers if not already installed
+            if [ ! -d ".playwright-browsers" ] || [ -z "$(ls -A .playwright-browsers 2>/dev/null)" ]; then
+              echo "🎭 Installing Playwright browsers..."
+              pnpm exec playwright install --with-deps
+            fi
+            
+            echo "🚀 Environment ready! Run 'pnpm test' to start testing."
           '';
 
           # Environment variables

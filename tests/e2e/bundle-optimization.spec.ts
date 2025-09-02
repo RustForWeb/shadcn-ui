@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('Bundle Optimization & Performance - Comprehensive Testing', () => {
   test.beforeEach(async ({ page }) => {
     // Navigate to the enhanced lazy loading demo
-    await page.goto('http://127.0.0.1:8080');
+    await page.goto('/');
     // Wait for the app to be fully loaded
     await page.waitForLoadState('networkidle');
     // Wait for WASM to initialize
@@ -61,7 +61,7 @@ test.describe('Bundle Optimization & Performance - Comprehensive Testing', () =>
     test('should measure initial WASM load time', async ({ page }) => {
       // Navigate to page and measure load time
       const startTime = Date.now();
-      await page.goto('http://127.0.0.1:8080');
+      await page.goto('/');
       await page.waitForFunction(() => window.wasmBindings !== undefined);
       const loadTime = Date.now() - startTime;
       

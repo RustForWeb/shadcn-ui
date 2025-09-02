@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('Leptos Components - Comprehensive E2E Testing', () => {
   test.beforeEach(async ({ page }) => {
     // Navigate to Leptos example app
-    await page.goto('http://127.0.0.1:8080');
+    await page.goto('/');
     // Wait for the app to be fully loaded
     await page.waitForLoadState('networkidle');
   });
@@ -422,7 +422,7 @@ test.describe('Leptos Components - Comprehensive E2E Testing', () => {
     test('component loading performance', async ({ page }) => {
       const startTime = Date.now();
       
-      await page.goto('http://127.0.0.1:8080');
+      await page.goto('/');
       await page.waitForLoadState('networkidle');
       
       const loadTime = Date.now() - startTime;
@@ -474,7 +474,7 @@ test.describe('Leptos Components - Comprehensive E2E Testing', () => {
         await input.fill('Persistent test value');
         
         // Navigate away and back
-        await page.goto('http://127.0.0.1:8080');
+        await page.goto('/');
         await page.waitForLoadState('networkidle');
         
         // Check if state is maintained (this depends on implementation)
