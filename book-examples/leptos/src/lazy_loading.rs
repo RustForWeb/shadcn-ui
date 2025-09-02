@@ -344,9 +344,9 @@ pub fn LazyComponentWrapper(
                     <button 
                         on:click={toggle_favorite} 
                         class="favorite-toggle"
-                        class:active={is_favorite}
+                        class:active={move || is_favorite.get()}
                     >
-                        {if is_favorite.get() { "★" } else { "☆" }}
+                        {move || if is_favorite.get() { "★" } else { "☆" }}
                     </button>
                 </div>
                 <div class="component-meta">
@@ -382,7 +382,7 @@ pub fn LazyComponentWrapper(
                         <div class="loading-spinner"></div>
                         <p>"Loading {name}..."</p>
                         <div class="progress-bar">
-                            <div class="progress-fill" style={format!("width: {}%", load_progress.get())}></div>
+                            <div class="progress-fill" style={move || format!("width: {}%", load_progress.get())}></div>
                         </div>
                         <span class="progress-text">{move || format!("{}%", load_progress.get() as i32)}</span>
                     </div>

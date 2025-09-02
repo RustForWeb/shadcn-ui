@@ -12,7 +12,7 @@ pub fn App() -> impl IntoView {
     let (show_favorites, set_show_favorites) = signal(false);
 
     let toggle_theme = move |_| {
-        let new_theme = if current_theme.get() == "default" { "new_york" } else { "default" };
+        let new_theme = if current_theme.get_untracked() == "default" { "new_york" } else { "default" };
         set_current_theme.set(new_theme.to_string());
     };
 
@@ -53,7 +53,7 @@ pub fn App() -> impl IntoView {
                                         placeholder="Search components..." 
                                         class="search-input"
                                         on:input={move |ev| {
-                                            let value = event_target_value(&ev);
+                                            let value = ev.target().unwrap().value_of().as_string().unwrap_or_default();
                                             set_search_query.set(value);
                                         }}
                                     />
@@ -64,7 +64,7 @@ pub fn App() -> impl IntoView {
                                     <select 
                                         class="category-filter"
                                         on:change={move |ev| {
-                                            let value = event_target_value(&ev);
+                                            let value = ev.target().unwrap().value_of().as_string().unwrap_or_default();
                                             set_selected_category.set(value);
                                         }}
                                     >
@@ -78,9 +78,9 @@ pub fn App() -> impl IntoView {
                                     <button 
                                         on:click={toggle_favorites} 
                                         class="favorites-btn"
-                                        class:active={show_favorites}
+                                        class:active={move || show_favorites.get()}
                                     >
-                                        {if show_favorites.get() { "★" } else { "☆" }}
+                                        {move || if show_favorites.get() { "★" } else { "☆" }}
                                         " Favorites"
                                     </button>
                                 </div>
@@ -132,63 +132,63 @@ pub fn App() -> impl IntoView {
                             <div class="category" data-category="form">
                                 <h4>"Form & Input Components"</h4>
                                 <div class="lazy-grid">
-                                    <LazyComponentWrapper name="Alert".to_string() />
-                                    <LazyComponentWrapper name="Badge".to_string() />
-                                    <LazyComponentWrapper name="Checkbox".to_string() />
-                                    <LazyComponentWrapper name="Combobox".to_string() />
-                                    <LazyComponentWrapper name="Form".to_string() />
-                                    <LazyComponentWrapper name="Input OTP".to_string() />
-                                    <LazyComponentWrapper name="Radio Group".to_string() />
-                                    <LazyComponentWrapper name="Select".to_string() />
-                                    <LazyComponentWrapper name="Slider".to_string() />
-                                    <LazyComponentWrapper name="Switch".to_string() />
-                                    <LazyComponentWrapper name="Textarea".to_string() />
-                                    <LazyComponentWrapper name="Toggle".to_string() />
+                                    <LazyComponentWrapper name="Alert" />
+                                    <LazyComponentWrapper name="Badge" />
+                                    <LazyComponentWrapper name="Checkbox" />
+                                    <LazyComponentWrapper name="Combobox" />
+                                    <LazyComponentWrapper name="Form" />
+                                    <LazyComponentWrapper name="Input OTP" />
+                                    <LazyComponentWrapper name="Radio Group" />
+                                    <LazyComponentWrapper name="Select" />
+                                    <LazyComponentWrapper name="Slider" />
+                                    <LazyComponentWrapper name="Switch" />
+                                    <LazyComponentWrapper name="Textarea" />
+                                    <LazyComponentWrapper name="Toggle" />
                                 </div>
                             </div>
 
                             <div class="category" data-category="layout">
                                 <h4>"Layout & Navigation"</h4>
                                 <div class="lazy-grid">
-                                    <LazyComponentWrapper name="Accordion".to_string() />
-                                    <LazyComponentWrapper name="Breadcrumb".to_string() />
-                                    <LazyComponentWrapper name="Collapsible".to_string() />
-                                    <LazyComponentWrapper name="Command".to_string() />
-                                    <LazyComponentWrapper name="Navigation Menu".to_string() />
-                                    <LazyComponentWrapper name="Pagination".to_string() />
-                                    <LazyComponentWrapper name="Scroll Area".to_string() />
-                                    <LazyComponentWrapper name="Separator".to_string() />
-                                    <LazyComponentWrapper name="Skeleton".to_string() />
-                                    <LazyComponentWrapper name="Tabs".to_string() />
+                                    <LazyComponentWrapper name="Accordion" />
+                                    <LazyComponentWrapper name="Breadcrumb" />
+                                    <LazyComponentWrapper name="Collapsible" />
+                                    <LazyComponentWrapper name="Command" />
+                                    <LazyComponentWrapper name="Navigation Menu" />
+                                    <LazyComponentWrapper name="Pagination" />
+                                    <LazyComponentWrapper name="Scroll Area" />
+                                    <LazyComponentWrapper name="Separator" />
+                                    <LazyComponentWrapper name="Skeleton" />
+                                    <LazyComponentWrapper name="Tabs" />
                                 </div>
                             </div>
 
                             <div class="category" data-category="overlay">
                                 <h4>"Overlay & Feedback"</h4>
                                 <div class="lazy-grid">
-                                    <LazyComponentWrapper name="Alert Dialog".to_string() />
-                                    <LazyComponentWrapper name="Dialog".to_string() />
-                                    <LazyComponentWrapper name="Drawer".to_string() />
-                                    <LazyComponentWrapper name="Dropdown Menu".to_string() />
-                                    <LazyComponentWrapper name="Hover Card".to_string() />
-                                    <LazyComponentWrapper name="Menubar".to_string() />
-                                    <LazyComponentWrapper name="Popover".to_string() />
-                                    <LazyComponentWrapper name="Sheet".to_string() />
-                                    <LazyComponentWrapper name="Toast".to_string() />
-                                    <LazyComponentWrapper name="Tooltip".to_string() />
+                                    <LazyComponentWrapper name="Alert Dialog" />
+                                    <LazyComponentWrapper name="Dialog" />
+                                    <LazyComponentWrapper name="Drawer" />
+                                    <LazyComponentWrapper name="Dropdown Menu" />
+                                    <LazyComponentWrapper name="Hover Card" />
+                                    <LazyComponentWrapper name="Menubar" />
+                                    <LazyComponentWrapper name="Popover" />
+                                    <LazyComponentWrapper name="Sheet" />
+                                    <LazyComponentWrapper name="Toast" />
+                                    <LazyComponentWrapper name="Tooltip" />
                                 </div>
                             </div>
 
                             <div class="category" data-category="data">
                                 <h4>"Data & Media"</h4>
                                 <div class="lazy-grid">
-                                    <LazyComponentWrapper name="Aspect Ratio".to_string() />
-                                    <LazyComponentWrapper name="Calendar".to_string() />
-                                    <LazyComponentWrapper name="Carousel".to_string() />
-                                    <LazyComponentWrapper name="Context Menu".to_string() />
-                                    <LazyComponentWrapper name="Date Picker".to_string() />
-                                    <LazyComponentWrapper name="Progress".to_string() />
-                                    <LazyComponentWrapper name="Table".to_string() />
+                                    <LazyComponentWrapper name="Aspect Ratio" />
+                                    <LazyComponentWrapper name="Calendar" />
+                                    <LazyComponentWrapper name="Carousel" />
+                                    <LazyComponentWrapper name="Context Menu" />
+                                    <LazyComponentWrapper name="Date Picker" />
+                                    <LazyComponentWrapper name="Progress" />
+                                    <LazyComponentWrapper name="Table" />
                                 </div>
                             </div>
                         </div>

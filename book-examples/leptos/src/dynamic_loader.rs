@@ -27,7 +27,7 @@ pub struct DynamicLoader {
 
 impl DynamicLoader {
     pub fn new() -> Self {
-        let (state, set_state) = create_signal(LoadingState {
+        let (state, set_state) = signal(LoadingState {
             is_loading: false,
             progress: 0.0,
             error: None,
@@ -83,10 +83,10 @@ impl DynamicLoader {
 
 #[component]
 pub fn DynamicLoaderDisplay() -> impl IntoView {
-    let (is_loading, set_is_loading) = create_signal(false);
-    let (progress, set_progress) = create_signal(0.0);
-    let (loaded_count, set_loaded_count) = create_signal(0);
-    let (show_details, set_show_details) = create_signal(false);
+            let (is_loading, set_is_loading) = signal(false);
+        let (progress, set_progress) = signal(0.0);
+        let (loaded_count, set_loaded_count) = signal(0);
+        let (show_details, set_show_details) = signal(false);
 
     let toggle_details = move |_| {
         set_show_details.update(|s| *s = !*s);
@@ -180,8 +180,8 @@ pub fn DynamicLoaderDisplay() -> impl IntoView {
 pub fn DynamicComponentWrapper(
     name: String,
 ) -> impl IntoView {
-    let (is_loaded, set_is_loaded) = create_signal(false);
-    let (load_error, set_load_error) = create_signal(None::<String>);
+            let (is_loaded, set_is_loaded) = signal(false);
+        let (load_error, set_load_error) = signal(None::<String>);
 
     let load_component = move |_| {
         let set_is_loaded = set_is_loaded.clone();
@@ -238,7 +238,7 @@ pub fn DynamicComponentWrapper(
                     <div class="error-icon">"❌"</div>
                     <p class="error-text">"Failed to load component"</p>
                     <div class="error-details">
-                        <p>{load_error.get().unwrap_or_default()}</p>
+                        <p>{move || load_error.get().unwrap_or_default()}</p>
                         <button on:click={load_component.clone()} class="retry-btn">"Retry"</button>
                     </div>
                 </div>
