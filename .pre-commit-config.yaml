@@ -15,7 +15,7 @@ repos:
           - id: clippy
 
     - repo: https://github.com/EmbarkStudios/cargo-deny
-      rev: 0.18.4
+      rev: 0.18.5
       hooks:
           - id: cargo-deny
 
