@@ -1830,9 +1830,9 @@ checksum = "34080505efa8e45a4b816c349525ebe327ceaa8559756f0356cba97ef3bf7432"
 
 [[package]]
 name = "lucide-leptos"
-version = "2.34.0"
+version = "2.35.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c61e11ed3f54ff8c17347fd5ecd20963e16872f00d06ec62ca152941726a075c"
+checksum = "06c543cc3accf4ef64dffb19c73aa51a26f9bc43332c914b1af680762fa9671c"
 dependencies = [
  "leptos",
 ]
