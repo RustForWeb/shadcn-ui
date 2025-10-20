@@ -6,7 +6,7 @@ repos:
             language: node
             additional_dependencies:
                 - prettier@^3.6.2
-                - prettier-plugin-tailwindcss@^0.6.6
+                - prettier-plugin-tailwindcss@^0.7.0
 
     - repo: https://github.com/doublify/pre-commit-rust
       rev: v1.0
