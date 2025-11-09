@@ -1,3 +1,6 @@
+> [!WARNING]
+> This project is unmaintained.
+
 <p align="center">
     <a href="./logo.svg">
         <img src="./logo.svg" width="300" height="200" alt="Rust shadcn/ui Logo">
