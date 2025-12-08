@@ -47,9 +47,9 @@ button = [
     "dep:lucide-yew",
     "dep:radix-yew-icons",
     "dep:shadcn-ui-yew-button",
+    "lucide-yew/arrows",
     "lucide-yew/layout",
     "lucide-yew/mail",
-    "lucide-yew/navigation",
 ]
 card = [
     "dep:lucide-yew",
