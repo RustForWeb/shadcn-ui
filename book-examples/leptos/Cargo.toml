@@ -23,9 +23,9 @@ button = [
     "dep:lucide-leptos",
     # "dep:radix-leptos-icons",
     "dep:shadcn-ui-leptos-button",
+    "lucide-leptos/arrows",
     "lucide-leptos/layout",
     "lucide-leptos/mail",
-    "lucide-leptos/navigation",
 ]
 card = [
     "dep:lucide-leptos",
