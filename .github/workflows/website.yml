@@ -68,7 +68,7 @@ jobs:
               working-directory: book
 
             - name: Upload artifact
-              uses: actions/upload-artifact@v5
+              uses: actions/upload-artifact@v6
               with:
                   name: book
                   path: book/dist
@@ -93,7 +93,7 @@ jobs:
               run: cargo run -p scripts --bin build_registry
 
             - name: Upload artifact
-              uses: actions/upload-artifact@v5
+              uses: actions/upload-artifact@v6
               with:
                   name: registry
                   path: dist
@@ -117,7 +117,7 @@ jobs:
                   fetch-depth: 0
 
             - name: Download artifacts
-              uses: actions/download-artifact@v6
+              uses: actions/download-artifact@v7
               with:
                   path: dist
                   merge-multiple: true
