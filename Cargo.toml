@@ -36,7 +36,7 @@ serde_json = "1.0.117"
 tailwind_fuse = { version = "0.3.0", features = ["variant"] }
 tokio = { version = "1.38.0", features = ["full"] }
 web-sys = "0.3.70"
-yew = "0.21.0"
+yew = "0.22.0"
 yew-router = "0.18.0"
 yew-struct-component = "0.1.4"
 yew-style = "0.1.4"
