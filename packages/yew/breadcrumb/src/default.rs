@@ -1,7 +1,7 @@
 use lucide_yew::{ChevronRight, Ellipsis};
 use tailwind_fuse::*;
 use yew::{prelude::*, virtual_dom::VNode};
-use yew_struct_component::{StructComponent, struct_component};
+use yew_struct_component::StructComponent;
 use yew_style::Style;
 
 #[derive(PartialEq, Properties)]
